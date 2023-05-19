@@ -10,7 +10,7 @@
                 <div class="col-lg-12">
                     <div class="card"> 
                         <div class="card-body">
-                            <h3 class="text-center">Dashboard Contenido</h3>
+                            <h3 class="text-center">Hola Mundo</h3>
                         </div>
                     </div>
                 </div> 
