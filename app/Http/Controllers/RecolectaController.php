@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Recolecta;
 class RecolectaController extends Controller
 {
+    /*
     function __construct(){
-        $this->middleware('permission:ver-recolecta | crear-recolecta | editar-recolecta | borrar-recolecta')->only('index');
+        $this->middleware('permission:ver-recolecta | crear-recolecta | editar-recolecta')->only('index');
         $this->middleware('permission:crear-recolecta', ['only'=>['create', 'store']]);
         $this->middleware('permission:editar-recolecta', ['only'=>['edit', 'update']]);
         $this->middleware('permission:borrar-recolecta', ['only'=>['destroy']]);
 
     }
+    */
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +22,7 @@ class RecolectaController extends Controller
      */
     public function index()
     {
-        $recoelctas = Recolecta::paginate(5);
+        $recolectas = Recolecta::paginate(5);
         return view('recolecta.index', compact('recolectas'));
     }
 

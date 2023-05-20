@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h3 class="text-center">Datos del Usuario</h3>
                         </div>
-                        <form action="/store" method="post">
+                        <form action="/usuarios" method="post">
                             @csrf
                             <div class="row m-2">
                                 <div class="col-8">
