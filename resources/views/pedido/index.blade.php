@@ -224,9 +224,7 @@ input[type="date"]:valid::before {
 
             <select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
                 <option value="seleccionar">Sin asignar</option>
-                @foreach($repartidores as $repartidor)
-                <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
-                @endforeach
+               
             </select>
 
 
@@ -265,7 +263,7 @@ input[type="date"]:valid::before {
 &nbsp;
 <i class="fas fa-print" ></i> 
 
-<a href="/pedido/lista/{{ $pedidof }}/{{ $rutaf }}/{{ $repaf }}" ><span style="font-size:15px;">Imprimir Reporte</span></a></li> 
+<a href="/pedido/lista/" ><span style="font-size:15px;">Imprimir Reporte</span></a></li> 
 
 
     </li>

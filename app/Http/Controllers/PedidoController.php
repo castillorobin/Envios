@@ -15,7 +15,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos= Pedido::All;
+        $pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
         return view('pedido.index', compact('pedidos'));
     }
 
