@@ -37,7 +37,7 @@
                                                     @endforeach
                                                 @endif
                                             </td>
-                                            <td>
+                                            <td> 
                                             @can('borrar-recolecta')
                                                 <a class="btn btn-info" href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>
                                             @endif

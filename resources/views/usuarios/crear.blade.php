@@ -18,7 +18,11 @@
                                 <div class="col-8">
                                 <div class="from-group">
                                 <label for="name">Nombre</label>
-                                <input type="text" class="form-control" name="name">
+                                <select class="form-control" name="name" id="">
+                                @foreach($repartidores as $repartidor)
+                                    <option value="{{ $repartidor->nombre}}">{{ $repartidor->nombre}}</option>
+                                        @endforeach
+                                </select>
                                 </div>
                                 </div>
                             </div>

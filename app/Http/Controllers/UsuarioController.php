@@ -10,6 +10,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
+use App\Models\Repartidor;
 
 
 class UsuarioController extends Controller
@@ -22,10 +23,11 @@ class UsuarioController extends Controller
     public function index()
     {
         $usuarios = User::paginate(5);
-        return view('usuarios.index', compact('usuarios'));
+        $repartidores = Repartidor::all();
+        return view('usuarios.index')->with(['usuarios'=>$usuarios, 'repartidores'=>$repartidores]);
 
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +36,9 @@ class UsuarioController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('usuarios.crear', compact('roles'));
+        $repartidores = Repartidor::all();
+        return view('usuarios.crear')->with(['roles'=>$roles, 'repartidores'=>$repartidores]);;
+        
     }
 
     /**
