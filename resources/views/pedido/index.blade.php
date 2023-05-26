@@ -155,169 +155,55 @@ input[type="date"]:valid::before {
 </style>
 <br>
  
-    <div class="row " style="background-color: white; border: 1px solid; ">
-            <h8 style="font-size:14px"><i class="fas fa-home"></i> Inicio / Almacen / Envíos</h8>
-        
-            <div class="col-12">
-           
-                <div class="row " style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb; " >
-        
-                    <div class="  col-sm-6 " style="">
-                    <h3>Reporte de envíos</h3>
-                    </div>
-                    <div class="col-sm-5">
-    
-                    </div>
-                </div>
-            </div>
-    
- 
-<div class="col-12">
-<form action="/pedido/filtrar" method="GET" >
-        @csrf
-        @method('GET')
-        
-<table >
-    <tr>
-        <td style="width: 250px; float:left;">
-        <div class="input-group mb-2 " style="width: 250px;">
-
-            <div class="input-group-prepend ">
-                <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-            </div>
-
-
-            <input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Seleccionar Fecha" aria-describedby="basic-addon1"> 
-
-        </div>
-&nbsp; &nbsp;
-        </td>
-
-        <td style="width: 250px; float:left;">
-        
-        <div class="input-group mb-2" style="width: 250px;">
-        &nbsp; &nbsp;
-            <div class="input-group-prepend ">
-                <span class="input-group-text" id="basic-addon1" style="height:40px "> <i class="fas fa-route"></i></span>
-            </div>
-
-            <select id="route" name="route" style="width: 190px; height:40px; border-radius: 0px;" >
-                <option value="seleccionar">Seleccionar ruta</option>
-                <option value="Ruta 1">Ruta 1</option>
-                <option value="Ruta 2">Ruta 2</option>
-                <option value="Ruta 3">Ruta 3</option>
-                <option value="Ruta 4">Ruta 4</option>
-                <option value="Ruta 5">Ruta 5</option>
-            </select>
-
-        </div>
-
- 
-        </td>
-        <td style="width: 250px; float:left;">
-        
-        <div class="input-group mb-2" style="width: 250px;">
-        &nbsp;
-            <div class="input-group-prepend ">
-                <span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
-            </div>
-
-            <select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
-                <option value="seleccionar">Sin asignar</option>
-               
-            </select>
-
-
-        </div>
-
-        </td>
-
-        <td style="width: 250px; float:left;">
-        <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
-        <a href="/pedidos" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>     
-        
-        </td>
-
-        <td align='right'>
-
-        <div class="col-4 d-flex justify-content-end">
-    
-    <div class="opciones ">
-     
-    <a href="" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" style="border-radius: 5px; color:white;">
-
-<i class="fas fa-list"></i>&nbsp;Opciones</a>
-<ul class="dropdown-menu">
-
- <div class="botones" style="width:300px;"> 
-<li class="botones">
-&nbsp;
-<i class="fas fa-database"></i>
-&nbsp; &nbsp;
-<a href="/pedidos/create" > <span style="font-size:15px;"> Agregar Nuevo</span></a></li> 
-
-</div>  
-
-
-<li class="botones">
-&nbsp;
-<i class="fas fa-print" ></i> 
-
-<a href="/pedido/lista/" ><span style="font-size:15px;">Imprimir Reporte</span></a></li> 
-
-
-    </li>
-
- 
-
-</div>
-</ul>
-
-
+<div class="row" style="background-color: white;" >
+    <div class="  col-sm-12 py-3" >
+        <h3 class="text-center">Reporte de envíos</h3>
     </div>
-        </td>
-    </tr>
-</table>
-
-
-
-
-
-
-   
-
-   
-</form>
+            
+          
     
+ 
+    <div class="col-12">
+
+        
+
+
+            <div class="d-flex justify-content-end">
+    
+            <div >
+
+<a href="/pedidos/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Nuevo</a>
+<br>
+            </div>
+   
 
   
-</div>
+            </div>
 
 
 
 
-<div class="col-12">
+<div class="table-responsive">
 
-<div class="row pt-2" style="background-color: white; border-top: 1px solid; border-top-color:#bbb5bb;">
+
 
 <br>
-<table id="tpedido" class="table table-bordered shadow-lg mt-4 cell-border">
-<thead >
-    <tr >
+<table id="tpedido" class="table table-striped mt-2">
+<thead style="background-color:#6777ef;">
         
-        <th scope="col">ID</th>
-        <th scope="col">Comercio</th>
-        <th scope="col">Destinatario</th>
-        <th scope="col">Direccion</th>
+        <th style="color: #fff;">ID</th>
+        <th style="color: #fff;">Comercio</th>
+        <th style="color: #fff;">Destinatario</th>
+        <th style="color: #fff;">Direccion</th>
         
-        <th scope="col">Tipo</th>
-        <th scope="col">Estado del envio</th>
-        <th scope="col">Fecha de entrega</th>
-        <th scope="col">Agencia</th>
-        <th scope="col">Repartidor</th>
-        <th scope="col">Ruta</th>
-        <th scope="col">Nota</th>
-        <th scope="col">Opciones</th>
+        <th style="color: #fff;">Tipo</th>
+        <th style="color: #fff;">Estado del envio</th>
+        <th style="color: #fff;">Fecha de entrega</th>
+        <th style="color: #fff;">Agencia</th>
+        <th style="color: #fff;">Repartidor</th>
+        <th style="color: #fff;">Ruta</th>
+        <th style="color: #fff;">Nota</th>
+        <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
 <tbody>
@@ -329,7 +215,7 @@ input[type="date"]:valid::before {
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     <td>{{ $pedidos[$i]->direccion }}</td>
     <td>{{ $pedidos[$i]->tipo }}</td>
-    <td style="background: #e3e8e7"> {{ $pedidos[$i]->estado }}</td>
+    <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
     <td> {{ $pedidos[$i]->agencia }}</td>
     <td> {{ $pedidos[$i]->repartidor }}</td>

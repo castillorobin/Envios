@@ -21,7 +21,7 @@
                                         <th style="color: #fff;">E-mail</th>
                                         <th style="color: #fff;">Rol</th>
                                         <th style="color: #fff;">Acciones</th>
-                                    
+                                     
                                 </thead>
                                 <tbody>
                                    @foreach($usuarios as $usuario)

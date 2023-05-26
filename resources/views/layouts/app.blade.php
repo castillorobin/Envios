@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
     @yield('page_css')
-
+ 
     @yield('css')
 </head>
 <body>
@@ -80,5 +80,8 @@
     }(jQuery));
 
     
+</script>
+<script>
+
 </script>
 </html>

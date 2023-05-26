@@ -27,7 +27,7 @@
         top: 0;
         width: auto;
     }
-
+ 
     input[type="date"]::before {
 	color: #999999;
 	content: attr(placeholder) !important;
@@ -137,83 +137,33 @@ ul li ul:hover {
 </style>
 
 <style> 
-  body {
-  font-family: 'Roboto', sans-serif;
-}
+ 
 </style>
 
 
-<div class="row" style="background-color: white; border: 1px solid;">
+<div class="row" style="background-color: white;" >
+<!--
 <h8 style="font-size:14px" ><i class="fas fa-home"></i> Inicio / Almacen / Recolectas</h8>
-   
-    <div class="  col-sm-6 py-3" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
-        <h3>Listado de Recolectas</h3>
+-->
+    <div class="  col-sm-12 py-3" >
+        <h3 class="text-center">Listado de Recolectas</h3>
     </div>
 
  
     <div class="col-12">
-<form action="/recolecta/filtrar" method="GET" >
-        @csrf
-        @method('GET')
-        
-<table >
-    <tr >
-        <td style="width: 250px; float:left;">
-            <div class="input-group mb-2 " style="width: 250px;">
-
-            <div class="input-group-prepend ">
-                <span class="input-group-text" id="basic-addon1" style="height:40px ">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-            </div>
-
-
-            <input type="date" name="filtrodia" id="filtrodia" style="height:40px; border-radius: 0px;" class="form-control" placeholder="Seleccionar Fecha" aria-describedby="basic-addon1"> 
-
-            </div>
-                &nbsp; &nbsp;
-        </td>
 
         
-        <td style="width: 250px; float:left;">
-        
-            <div class="input-group mb-2" style="width: 250px;">
-                &nbsp;
-                <div class="input-group-prepend ">
-                  <span class="input-group-text" id="basic-addon1" style="height:40px ">  <i class="fas fa-truck"></i></span>
-                </div>
 
-            <select id="filtrorepa" name="filtrorepa" style="width: 190px; height:40px; border-radius: 0px;">
-                <option value="seleccionar">Sin asignar</option>
-         
-            </select>
-
-
-            </div>
-
-        </td>
-
-        <td style="width: 250px; float:left;">
-            <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
-            <a href="/recolectas" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>     
-        
-        </td>
-
-        <td align='right'>
 
             <div class="d-flex justify-content-end">
     
             <div >
-                <a href="/recolectas/create" class="btn btn-primary float-right" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
+                <a href="/recolectas/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
+                <br>
             </div>
-
-            </div>
-        </td>
-    </tr>
-</table>
-
 
    
-</form>
-    
+
 
  
 </div>
@@ -228,21 +178,21 @@ ul li ul:hover {
  
 
 
-  <div class="table-responsive" style="border-top: 1px solid; border-top-color:#bbb5bb; ">
+  <div class="table-responsive" >
 
 
 
-<table id="tvendedor" class="table table-bordered shadow-lg mt-4 cell-border">
-<thead >
+<table id="tvendedor" class="table table-striped mt-2">
+<thead style="background-color:#6777ef;">
     <tr >
-        <th scope="col">Comercio</th>
-        <th scope="col">Dirección de recolecta</th>
-        <th scope="col">Teléfono</th>
-        <th scope="col">Fecha de recolecta</th>
-        <th scope="col">Fecha de entrega</th>
-        <th scope="col" >Estado de recolecta</th>
-        <th scope="col">Agencia</th>
-        <th scope="col">Opciones</th>
+        <th style="color: #fff;">Comercio</th>
+        <th style="color: #fff;">Dirección de recolecta</th>
+        <th style="color: #fff;">Teléfono</th>
+        <th style="color: #fff;">Fecha de recolecta</th>
+        <th style="color: #fff;">Fecha de entrega</th>
+        <th style="color: #fff;" >Estado de recolecta</th>
+        <th style="color: #fff;">Agencia</th>
+        <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
 <tbody> 
@@ -254,7 +204,7 @@ ul li ul:hover {
     <td>{{ $recolectas[$i]->telefono }}</td>
     <td>{{  date('d/m/Y', strtotime($recolectas[$i]->created_at))  }} </td>
     <td>{{  date('d/m/Y', strtotime($recolectas[$i]->fechaent))  }}</td>
-    <td style="background: #e3e8e7">{{ $recolectas[$i]->estado }}</td>
+    <td class="text-center" style="background: #e3e8e7"><h5><span class="badge badge-dark">{{ $recolectas[$i]->estado }}</span></h5></td>
     <td>{{ $recolectas[$i]->agencia }}</td>
 
     
@@ -423,9 +373,11 @@ $(document).ready(function(){
 
 $(document).ready(function() {
 
+
   $('#tvendedor').DataTable( {
     language: {
-            "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+        url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish_Mexico.json'
+
            
         },
         
