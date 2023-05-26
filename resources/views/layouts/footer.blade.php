@@ -1,3 +1,3 @@
 <div class="footer-left">
-    All rights reserved &copy; {{ date('Y') }}
+    Melo Express &copy; {{ date('Y') }}
 </div>

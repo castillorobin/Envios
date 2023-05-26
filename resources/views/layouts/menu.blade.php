@@ -14,7 +14,7 @@
           <a class="dropdown-item" href="/recolecta">
                 <i class="fas fa-archive"></i>Recolectas</a>
           <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Comercios</a>
-          <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Empleados</a>
+          <a class="dropdown-item" href="/repartidores"><i class="fas fa-user"></i> Empleados</a>
         </div>
       </li>
 

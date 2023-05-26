@@ -7,6 +7,7 @@ use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RecolectaController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\RepartidorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('recolecta', RecolectaController::class);
     Route::resource('pedidos', PedidoController::class);
+    Route::resource('repartidores', RepartidorController::class);
     
 });
