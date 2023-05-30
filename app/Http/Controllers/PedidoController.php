@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
-
+use App\Models\Vendedor;
+use App\Models\Repartidor;
+use Carbon\Carbon;
 
 class PedidoController extends Controller
 {
@@ -18,6 +20,8 @@ class PedidoController extends Controller
         $pedidos = Pedido::all();
        // $repartidores = Repartidor::all();
         return view('pedido.index', compact('pedidos'));
+
+
     }
 
     /**
@@ -27,7 +31,14 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        //
+        $last = Pedido::latest('id')->first();
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        $repartidores = Repartidor::all();
+        $fecha = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $fecha = strftime("%A %d de %B %Y");
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last]);
     }
 
     /**

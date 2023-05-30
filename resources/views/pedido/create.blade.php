@@ -4,29 +4,21 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Melo Express</h3>
+            <h3 class="page__heading">Crear Envio</h3>
         </div>
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card"> 
-                        <div class="card-body">
-<h6 ><i class="fas fa-home"></i> Inicio / Almacen / Agregar envios</h6>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>         
-@stop
-
-@section('content')
+                    <div class="card-body">
+                            <h3 class="text-center">Datos del Envio</h3>
+                        </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 body {
-  font-family: 'Roboto', sans-serif;
+ 
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -195,7 +187,7 @@ $(document).ready(function() {
 
        
   <div class="row mx-5" >
-    <h3>Agregar envio</h3>
+   
       <div class="alert alert-danger" role="alert">
       <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
       </div>
@@ -218,7 +210,7 @@ $(document).ready(function() {
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/fluency-systems-regular/48/null/checked-identification-documents.png" width="25" /></span>
               </div>
-              <input type="text" class="form-control" placeholder="{{ $uid }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
+              <input type="text" class="form-control" placeholder="{{ $last->id }}" aria-label="Username" aria-describedby="basic-addon1" disabled>
             </div>
         </div>
    
@@ -262,42 +254,36 @@ $(document).ready(function() {
   </div>
 
   <div class="col-12">
+
   <div class="row border mx-5 py-4" style="background-color: white;" >
-    <div class="row">
-      <div class="col-sm-6 ">
-      <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
-      <input type="text" id="desti" name="desti" class="form-control" tabindex="2" placeholder="Ingrese el nombre del destinatario" required>
-      <div class="invalid-feedback">Este campo es obligatorio.</div>
-      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
+   
+      <div class="col-6 ">
+        <label for="inputEmail3" class="col-6 col-form-label">Destinatario *</label>
+        <input type="text" id="desti" name="desti" class="form-control" tabindex="2" placeholder="Ingrese el nombre del destinatario" required>
+        <div class="invalid-feedback">Este campo es obligatorio.</div>
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
       </div>
     
-      <div class="col-sm-6">
-      <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono</label>
-     <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="Ingrese teléfono del destinatario" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
+      <div class="col-6">
+        <label for="inputEmail3" class="col-6 col-form-label">Telefono</label>
+        <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" placeholder="Ingrese teléfono del destinatario" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
      
-      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>    
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>    
       </div>
+    
+      <div class="col-12">
+        <label for="" class="col-12 col-form-label">Direccion de entrega *</label>
+        <div class="input-group mb-3">
 
-
-    </div>
-
-    <div class="row">
-      <div class="col-sm-12">
-      <label for="" class="col-sm-6 col-form-label">Direccion de entrega *</label>
-
-
-      <div class="input-group mb-3">
-
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
           </div>
-          <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="4" required>
-          <div class="invalid-feedback">Este campo es obligatorio.</div>
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
+            <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="4" required>
+            <div class="invalid-feedback">Este campo es obligatorio.</div>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
         </div>
       </div>
 
-    </div>
                                     
 
     </div>
@@ -313,36 +299,35 @@ $(document).ready(function() {
   <div class="col-12">
     <div class="row border mx-5 py-4" style="background-color: white;">
 
-      <div class="row">
-        <div class="col-sm-6 ">
+      
+        <div class="col-6 ">
           <label for="" class="col-sm-6 col-form-label">Fecha de creacion</label>
 
           <div class="input-group mb-3">
-          <div class="input-group-prepend">
+            <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-          </div>
+            </div>
   
-          <input type="text" class="form-control" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   
+            <input type="text" class="form-control" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   
           </div>
         
         </div>
     
         <div class="col-sm-6">
-            <label for="" class="col-sm-6 col-form-label">Fecha de entrega *</label>
-          <div class="input-group mb-3">
+              <label for="" class="col-sm-6 col-form-label">Fecha de entrega *</label>
+            <div class="input-group mb-3">
 
-            <div class="input-group-prepend">
+              <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-            </div>
+              </div>
               <input type="date" id="fentrega" name="fentrega" tabindex="5" class="form-control" placeholder="Seleccionar Fecha" aria-label="Username" aria-describedby="basic-addon1" required>
               <div class="invalid-feedback">Este campo es obligatorio.</div>
-      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>                                       
-          </div>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>                                       
+            </div>
 
         </div>
-   
-      </div>        
+             
     </div>     
   </div>  
 
@@ -350,10 +335,10 @@ $(document).ready(function() {
   <div class="col-12">
     <div class="row border mx-5 py-4" style="background-color: white;">
 
-    <div class="row">
+    
      
-      <div class="col-sm-6 ">
-        <label for="" class="col-sm-6 col-form-label">Tipo de servicio</label>
+      <div class="col-6 ">
+        <label for="" class="col-6 col-form-label">Tipo de servicio</label>
           <div class="input-group mb-3">
 
             <div class="input-group-prepend">
@@ -361,16 +346,16 @@ $(document).ready(function() {
             </div>
             <select id="servicio" name="servicio" class="form-control" tabindex="6">
      
-            <option value="Entrega">Entrega</option>
-            <option value="Entrega y recolecta">Entrega y recolecta</option>
+             <option option value="Entrega">Entrega</option>
+              <option value="Entrega y recolecta">Entrega y recolecta</option>
   
             </select>
             <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
           </div>
       </div>
      
-      <div class="col-sm-6">
-        <label for="" class="col-sm-6 col-form-label">Tipo de envio</label>
+      <div class="col-6">
+        <label for="" class="col-6 col-form-label">Tipo de envio</label>
         <div class="input-group mb-3">
 
           <div class="input-group-prepend">
@@ -378,29 +363,29 @@ $(document).ready(function() {
           </div>
           <select id="tenvio" name="tenvio" class="form-control" tabindex="7">
       
-          <option value="Personalizado">Personalizado</option>
-          <option value="Personalizado departamental">Personalizado departamental</option>
-          <option value="Punto fijo">Punto fijo</option>
-          <option value="Casillero departamental">Casillero departamental</option>
-          <option value="Casillero San Salvador">Casillero San Salvador</option>
-          <option value="Casillero San Miguel">Casillero San Miguel</option>
-          <option value="Casillero Santa Ana">Casillero Santa Ana</option>
-          <option value="Casillero centro logístico">Casillero centro logístico</option>
+            <option value="Personalizado">Personalizado</option>
+            <option value="Personalizado departamental">Personalizado departamental</option>
+            <option value="Punto fijo">Punto fijo</option>
+            <option value="Casillero departamental">Casillero departamental</option>
+            <option value="Casillero San Salvador">Casillero San Salvador</option>
+            <option value="Casillero San Miguel">Casillero San Miguel</option>
+            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+            <option value="Casillero centro logístico">Casillero centro logístico</option>
           </select>
           <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
         </div>
       </div>                                      
+    
     </div>
-    </div>
-    </div>
+  </div>
  
 
     <div class="col-12">
-    <div class="row mx-5 " style="background-color: white;">
-    <div class="row">
+    <div class="row border mx-5 py-4" style="background-color: white;">
+   
 
-      <div class="col-sm-4">
-        <label for="" class="col-sm-8 col-form-label">Cobro del envio</label>
+      <div class="col-4">
+        <label for="" class="col-8 col-form-label">Cobro del envio</label>
         <div class="input-group mb-3">
 
           <div class="input-group-prepend">
@@ -414,8 +399,8 @@ $(document).ready(function() {
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <label for="" class="col-sm-8 col-form-label">Estado del envio</label>
+      <div class="col-4">
+        <label for="" class="col-8 col-form-label">Estado del envio</label>
         <div class="input-group mb-3">
 
           <div class="input-group-prepend">
@@ -442,8 +427,8 @@ $(document).ready(function() {
       </div>
 
 
-      <div class="col-sm-4">
-        <label for="" class="col-sm-8 col-form-label">Estado del pago</label>
+      <div class="col-4">
+        <label for="" class="col-8 col-form-label">Estado del pago</label>
         <div class="input-group mb-3">
 
           <div class="input-group-prepend">
@@ -460,56 +445,53 @@ $(document).ready(function() {
         </div>
       </div>
 
-    </div>
+    
     </div>
     </div>
 
 
     <div class="col-12">
-    <div class="row mx-5 " style="background-color: white;">
-    <div class="row">
-
-    <div class="col-sm-4">
-      <label for="" class="col-sm-8 col-form-label">Precio del paquete</label>
+    <div class="row border mx-5 py-4" style="background-color: white;">
     
-      <div class="input-group mb-3">
 
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-    </div>
-      <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="11">
-      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
-  </div>
-  </div>
+      <div class="col-4">
+          <label for="" class="col-8 col-form-label">Precio del paquete</label>
+    
+        <div class="input-group mb-3">
 
-  <div class="col-sm-4">
-    <label for="" class="col-sm-8 col-form-label">Costo del envio</label>
-    <div class="input-group mb-3">
-
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-    </div>
-      <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="12">
-      <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+          </div>
+           <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="11">
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        </div>
       </div>
-  </div>
+
+      <div class="col-sm-4">
+          <label for="" class="col-sm-8 col-form-label">Costo del envio</label>
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+          </div>
+            <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="12">
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+          </div>
+      </div>
 
 
-  <div class="col-sm-4">
-    <label for="" class="col-sm-8 col-form-label">Total a cobrar</label>
-    <div class="input-group mb-3">
+      <div class="col-sm-4">
+          <label for="" class="col-sm-8 col-form-label">Total a cobrar</label>
+          <div class="input-group mb-3">
 
-    <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+            </div>
+            <input type="text" id="total" name="total" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
+          </div>
+      </div>
+
     </div>
-    <input type="text" id="total" name="total" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
     </div>
-  </div>
-
-
-</div>
-</div>
-</div>
 
 
 <div class="row mx-5 mt-4 " >
@@ -518,10 +500,10 @@ $(document).ready(function() {
 
   <div class="col-12">
   <div class="row border mx-5 py-4" style="background-color: white;">
-    <div class="row">
     
-    <div class="col-sm-6 ">
-      <label for="" class="col-sm-6 col-form-label">Usuario que registra</label>
+    
+    <div class="col-6 ">
+      <label for="" class="col-6 col-form-label">Usuario que registra</label>
       <div class="input-group mb-3">
 
         <div class="input-group-prepend">
@@ -529,14 +511,14 @@ $(document).ready(function() {
         </div>
         <select id="ingresado" name="ingresado" class="form-control" tabindex="13">
        
-       <option value="ERICK">Erick</option>
-       <option value="KAREN">Karen</option>
-       <option value="ALEIDI">Aleidi</option>
-       <option value="GABI">Gabi</option>
+          <option value="ERICK">Erick</option>
+          <option value="KAREN">Karen</option>
+          <option value="ALEIDI">Aleidi</option>
+          <option value="GABI">Gabi</option>
      
         </select>
         <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
-      </div>
+        </div>
     </div>
     
     <div class="col-sm-6">
@@ -547,25 +529,21 @@ $(document).ready(function() {
           <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
         </div>
         <select id="agencia" name="agencia" class="form-control" tabindex="14">
-       
-         <option value="San Salvador">San Salvador</option>
-          <option value="San Miguel">San Miguel</option>
+          <option value="San Salvador">San Salvador</option>
+            <option value="San Miguel">San Miguel</option>
           <option value="Santa Ana">Santa Ana</option>
         </select>
         <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
       </div>
     </div>
-
-
-
-   </div>   
+  
   </div> 
   </div> 
 
 
   <div class="col-12">
   <div class="row border mx-5 py-4" style="background-color: white;">
-    <div class="row">
+    
       <div class="col-sm-6 ">
         <label for="" class="col-sm-6 col-form-label">Repartidor</label>
         <div class="input-group mb-3">
@@ -601,12 +579,12 @@ $(document).ready(function() {
         </div>
       </div>
 
-   </div>
+   
    </div>
 
 
    <div class="row border mx-5 py-4" style="background-color: white;">
-    <div class="row">
+    
 
       <div class="col-sm-6 ">
         <label for="" class="col-sm-6 col-form-label">Nota</label>
@@ -630,14 +608,14 @@ $(document).ready(function() {
         </div>
       </div>
 
-    </div>
+    
     </div>
     </div>
 
  
     <div class="col-12">
   <div class="row border mx-5 py-4" style="background-color: white;">
-    <div class="row">
+    
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
       <div class="col-sm-6">
@@ -649,12 +627,12 @@ $(document).ready(function() {
       
       <br>
     </div>
-  </div>
+  
   </div>
 
   <div class="col-12">
   <div class="row border mx-5 py-4" style="background-color: white;">
-  <div class="row">
+
     <div class="modal-footer">
 
 
@@ -668,7 +646,7 @@ $(document).ready(function() {
         <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
 
-  </div>
+  
   </div>
   </div>
 
