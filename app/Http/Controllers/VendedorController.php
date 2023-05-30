@@ -31,7 +31,20 @@ class VendedorController extends Controller
      */
     public function create()
     {
-        //
+        $last = Vendedor::latest('id')->first();
+        $lastid =$last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        $vendedores = Vendedor::all();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('vendedor.create')->with(['vendedores'=>$vendedores, 'date'=>$date, 'uid'=>$uid]);
     }
 
     /**
