@@ -29,7 +29,8 @@ class RepartidorController extends Controller
      */
     public function create()
     {
-        //
+        $repartidores = Repartidor::all();
+        return view('repartidor.create');
     }
 
     /**
