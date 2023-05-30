@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recolecta; 
+use App\Models\Vendedor;
+use App\Models\Repartidor;
+use Carbon\Carbon;
+
 class RecolectaController extends Controller
 {
     /*
@@ -33,7 +37,14 @@ class RecolectaController extends Controller
      */
     public function create()
     {
-        return view('recolecta.crear');
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
+        $recolectas = Recolecta::all();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('recolecta.create')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
     }
 
     /**
@@ -45,7 +56,7 @@ class RecolectaController extends Controller
     public function store(Request $request)
     {
         Recolecta::create($request->all());
-        return redirect()->route('recoelcta.index');
+        return redirect()->route('recolecta.index');
     }
 
     /**

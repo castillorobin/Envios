@@ -156,7 +156,7 @@ ul li ul:hover {
             <div class="d-flex justify-content-end">
     
             <div >
-                <a href="/recolectas/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
+                <a href="/recolecta/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
                 <br>
             </div>
 
