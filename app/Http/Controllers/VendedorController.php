@@ -77,7 +77,16 @@ class VendedorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vendedor = Vendedor::find($id);
+        $last = Vendedor::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        return view('vendedor.edit')->with(['vendedor'=>$vendedor , 'uid'=>$uid]);
     }
 
     /**
