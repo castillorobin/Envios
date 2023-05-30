@@ -243,7 +243,7 @@ $(document).ready(function() {
         <div class="col-2 pt-4" style="display: flex; align-items: center; ">
             <a href="/pedido/desdeenvio">+ Crear</a>
         </div>
-        
+         
         </div>
       </div>
     </div>
