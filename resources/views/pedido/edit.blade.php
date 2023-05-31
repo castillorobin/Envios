@@ -311,14 +311,7 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
   </div>
-  <select id="ingresado" name="ingresado" class="form-control">
-  <option value="{{$pedido->ingresado}}" selected >{{$pedido->ingresado}}</option>
-       <option value="ERICK">Erick</option>
-       <option value="KAREN">Karen</option>
-       <option value="ALEIDI">Aleidi</option>
-       <option value="GABI">Gabi</option>
-     
-       </select>
+  <input type="text" id="ingresado" name="ingresado" value ="{{\Illuminate\Support\Facades\Auth::user()->name}}" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
 </div>
     </div>
     
