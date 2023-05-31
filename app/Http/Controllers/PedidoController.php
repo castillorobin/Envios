@@ -7,6 +7,7 @@ use App\Models\Pedido;
 use App\Models\Vendedor;
 use App\Models\Repartidor;
 use Carbon\Carbon;
+use App\Models\User;
 
 class PedidoController extends Controller
 {
@@ -31,6 +32,7 @@ class PedidoController extends Controller
      */
     public function create()
     {
+        $usuarios = User::all();
         $last = Pedido::latest('id')->first();
         setlocale(LC_TIME, "spanish");
         $vendedores = Vendedor::all();
@@ -38,7 +40,7 @@ class PedidoController extends Controller
         $fecha = Carbon::today();
         //$date = $date->format('l jS F Y');
         $fecha = strftime("%A %d de %B %Y");
-        return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last]);
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
     }
 
     /**
@@ -139,7 +141,7 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         return view('pedido.edit')->with(['pedido'=>$pedido, 'vendedores'=>$vendedores, 'repartidores'=>$repartidores]);
     }
-
+ 
     /**
      * Update the specified resource in storage.
      *

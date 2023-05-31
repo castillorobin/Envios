@@ -201,7 +201,7 @@ $(document).ready(function() {
   </div>
   
 <div class="col-12">
-    <div class="row border mx-5 py-4" style="background-color: white;" >
+    <div class="row mx-5 py-4" style="background-color: white;" >
       <div class="col-12">
         <div class="row">
         <div class="  col-sm-6">
@@ -255,7 +255,7 @@ $(document).ready(function() {
 
   <div class="col-12">
 
-  <div class="row border mx-5 py-4" style="background-color: white;" >
+  <div class="row mx-5 py-4" style="background-color: white;" >
    
       <div class="col-6 ">
         <label for="inputEmail3" class="col-6 col-form-label">Destinatario *</label>
@@ -297,7 +297,7 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-    <div class="row border mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 py-4" style="background-color: white;">
 
       
         <div class="col-6 ">
@@ -333,7 +333,7 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-    <div class="row border mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 py-4" style="background-color: white;">
 
     
      
@@ -381,7 +381,7 @@ $(document).ready(function() {
  
 
     <div class="col-12">
-    <div class="row border mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 py-4" style="background-color: white;">
    
 
       <div class="col-4">
@@ -451,7 +451,7 @@ $(document).ready(function() {
 
 
     <div class="col-12">
-    <div class="row border mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 py-4" style="background-color: white;">
     
 
       <div class="col-4">
@@ -499,7 +499,7 @@ $(document).ready(function() {
   </div>
 
   <div class="col-12">
-  <div class="row border mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-4" style="background-color: white;">
     
     
     <div class="col-6 ">
@@ -509,16 +509,10 @@ $(document).ready(function() {
         <div class="input-group-prepend">
          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
         </div>
-        <select id="ingresado" name="ingresado" class="form-control" tabindex="13">
-       
-          <option value="ERICK">Erick</option>
-          <option value="KAREN">Karen</option>
-          <option value="ALEIDI">Aleidi</option>
-          <option value="GABI">Gabi</option>
-     
-        </select>
-        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        <input type="text" id="usuario" name="usuario" value ="{{\Illuminate\Support\Facades\Auth::user()->name}}" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
+        
         </div>
+        
     </div>
     
     <div class="col-sm-6">
@@ -542,7 +536,7 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-  <div class="row border mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-4" style="background-color: white;">
     
       <div class="col-sm-6 ">
         <label for="" class="col-sm-6 col-form-label">Repartidor</label>
@@ -583,7 +577,7 @@ $(document).ready(function() {
    </div>
 
 
-   <div class="row border mx-5 py-4" style="background-color: white;">
+   <div class="row mx-5 py-4" style="background-color: white;">
     
 
       <div class="col-sm-6 ">
@@ -614,7 +608,7 @@ $(document).ready(function() {
 
  
     <div class="col-12">
-  <div class="row border mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-4" style="background-color: white;">
     
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
@@ -631,7 +625,7 @@ $(document).ready(function() {
   </div>
 
   <div class="col-12">
-  <div class="row border mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-4" style="background-color: white;">
 
     <div class="modal-footer">
 
