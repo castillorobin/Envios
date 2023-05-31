@@ -124,7 +124,7 @@ $(document).ready(function() {
 </script>
 
 
-      <form action="/recolectas" method="POST" id="myForm">
+      <form action="/recolecta" method="POST" id="myForm">
     @csrf
 
     <div class="row mx-5" >
