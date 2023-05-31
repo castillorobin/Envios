@@ -221,7 +221,7 @@ ul li ul:hover {
     
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/recolectas/{{ $recolectas[$i]->id }}/edit" ><button>Editar</button></a></li> 
+    <a href="/recolecta/{{ $recolectas[$i]->id }}/edit" ><button>Editar</button></a></li> 
     </div>  
     @endcan
 	<li class="botones">

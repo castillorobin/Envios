@@ -55,8 +55,28 @@ class RecolectaController extends Controller
      */
     public function store(Request $request)
     {
-        Recolecta::create($request->all());
-        return redirect()->route('recolecta.index');
+       // Recolecta::create($request->all());
+       $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
+        $recolecta = new Recolecta();
+        
+        $recolecta->nombre = $request->get('nombre2');
+        $recolecta->direccion = $request->get('direccion');
+        $recolecta->telefono = $request->get('telefono');
+        $recolecta->fechaent = $request->get('fechaen');
+        $recolecta->repartidor = $request->get('repartidor');
+        $recolecta->estado = $request->get('estado');
+        $recolecta->nota = $request->get('nota');
+        $recolecta->agencia = $request->get('agencia');
+        $recolecta->save();
+
+        $recolectas = Recolecta::all();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date , 'repartidores'=>$repartidores, 'vendedores'=>$vendedores  ]);
+        //return redirect()->route('recolecta.index');
     }
 
     /**
@@ -78,7 +98,10 @@ class RecolectaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $recolecta = Recolecta::find($id);
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
+        return view('recolecta.edit')->with(['recolecta'=>$recolecta, 'repartidores'=>$repartidores, 'vendedores'=>$vendedores ]);
     }
 
     /**
@@ -90,7 +113,25 @@ class RecolectaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     
+        $recolecta = Recolecta::find($id) ;
+        
+        $recolecta->nombre = $request->get('nombre');
+        $recolecta->direccion = $request->get('direccion');
+        $recolecta->telefono = $request->get('telefono');
+        $recolecta->fechaent = $request->get('fechaen');
+        $recolecta->repartidor = $request->get('repartidor');
+        $recolecta->estado = $request->get('estado');
+        $recolecta->nota = $request->get('nota');
+        $recolecta->agencia = $request->get('agencia');
+        $recolecta->save();
+
+        $recolectas = Recolecta::all();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('recolecta.index')->with(['recolectas'=>$recolectas, 'date'=>$date  ]);
     }
 
     /**
@@ -101,6 +142,8 @@ class RecolectaController extends Controller
      */
     public function destroy($id)
     {
-        
+        $pedido = Recolecta::find($id);
+        $pedido->delete();
+        return redirect('/recolecta');
     }
 }

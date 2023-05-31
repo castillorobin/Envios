@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Recolecta extends Model
 {
     use HasFactory;
-    //protected $fillable = ['nombre']
+    //protected $fillable = ['nombre'];
 }
