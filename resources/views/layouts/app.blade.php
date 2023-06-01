@@ -18,10 +18,16 @@
 <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
+
+    
     @yield('page_css')
- 
+
+
+
     @yield('css')
+    
 </head>
+
 <body>
 
 <div id="app">
@@ -62,6 +68,69 @@
 <script src="{{ mix('assets/js/profile.js') }}"></script>
 <script src="{{ mix('assets/js/custom/custom.js') }}"></script>
 @yield('page_js')
+<style>
+    .cambiar {
+   
+   float: left;
+     
+   }
+
+.cambiar2 {
+   float: right;
+   margin-right: 20px;
+   margin-top: 5px;
+  /*
+   
+   margin-right: 300px;
+   margin-bottom: 15px; 
+   margin-top: -15px; 
+   
+   */
+}
+
+.pagina1{
+   margin-bottom: 30px;
+   margin-top: -30px;
+   
+}
+.pagina2{
+   
+   margin-bottom: -25px;
+   padding-top: 10px;
+   
+}
+.pagina3{
+   margin-bottom: 0px;
+   margin-top: 0px;
+   
+}
+.dataTables_paginate a:hover {
+   color: white !important;
+   background:#0d6efd !important;
+   
+}
+</style>
+<script>
+    
+    $(document).ready(function () {
+    $('#tpedido').DataTable(
+        {
+            
+            language: {
+            "url": "https://cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+           
+        },
+/*
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        */
+        
+        dom: '<"cambiar" f><"cambiar2"l><"pagina2" p>tri<"pagina1" p>',
+       
+
+        } /*hasata aqui*/
+    );
+});
+</script>
 @yield('scripts')
 <script>
     let loggedInUser =@json(\Illuminate\Support\Facades\Auth::user());
@@ -79,10 +148,13 @@
         };
     }(jQuery));
 
+
+
     
 </script>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script>
 
-</script>
+
+
+
+
 </html>

@@ -1,6 +1,8 @@
+
 @extends('layouts.app')
 
 @section('content')
+
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
@@ -471,7 +473,7 @@ input[type="date"]:valid::before {
 
 
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
-\
+
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
 
                  
@@ -561,45 +563,32 @@ $(document).ready(function(){
  
 
 
+
+
+
+
+    </script>
+
+    <script>
+         /*
         $(document).ready(function () {
     $('#tpedido').DataTable(
         {
+           
             language: {
             "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
            
         },
-        
+
         dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-        buttons: [
-            { extend: 'print', text: 'Imprimir reporte',
-                orientation: 'landscape',
-                
-                customize: function ( win ) {
-                    $(win.document.body)
-                        .css( 'font-size', '10pt' )
-                        .prepend(
-                            '<h2>probando sonido</h2>'
-                        );
- 
-                    $(win.document.body).find( 'table' )
-                        .addClass( 'compact')
-                        .css( 'font-size', 'inherit', );
-                },
-                exportOptions: {
-                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-                }
-            
-            },
-           
-        ]
+        
+        
+        dom: '<"cambiar" f><"cambiar2"l>tri<"pagina1" p>',
+       
 
-        } /*hasata aqui*/
+        } 
     );
-});
-
-
-
-
+}); */
     </script>
 
 </div>
