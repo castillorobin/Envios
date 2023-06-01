@@ -8,6 +8,7 @@ use App\Models\Vendedor;
 use App\Models\Repartidor;
 use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class PedidoController extends Controller
 {

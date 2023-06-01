@@ -9,8 +9,8 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card"> 
-                    <div class="card-body">
+                    <div class="card" style="background-color:#f3f3f3"> 
+                    <div class="card-body" style="background-color:#ffffff">
                             <h3 class="text-center">Datos del Envio</h3>
                         </div>
 
@@ -186,7 +186,7 @@ $(document).ready(function() {
     @csrf
 
        
-  <div class="row mx-5" >
+  <div class="row mx-1" >
    
       <div class="alert alert-danger" role="alert">
       <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
@@ -201,6 +201,7 @@ $(document).ready(function() {
   </div>
   
 <div class="col-12">
+  
     <div class="row mx-5 py-4" style="background-color: white;" >
       <div class="col-12">
         <div class="row">
@@ -224,7 +225,7 @@ $(document).ready(function() {
       </div>
 
       <div class="col-12">
-        <div class="row py-4" style="background-color: white;" >
+        <div class="row py-1" style="background-color: white;" >
 
         <div class="col-10">
           <label for="" class="col-10 col-form-label">Nombre de comercio / Tienda *</label>
@@ -297,13 +298,13 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-    <div class="row mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 py-1" style="background-color: white;">
 
       
         <div class="col-6 ">
           <label for="" class="col-sm-6 col-form-label">Fecha de creacion</label>
 
-          <div class="input-group mb-3">
+          <div class="input-group ">
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
             </div>
@@ -316,7 +317,7 @@ $(document).ready(function() {
     
         <div class="col-sm-6">
               <label for="" class="col-sm-6 col-form-label">Fecha de entrega *</label>
-            <div class="input-group mb-3">
+            <div class="input-group ">
 
               <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
@@ -333,13 +334,13 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-    <div class="row mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5" style="background-color: white;">
 
     
      
       <div class="col-6 ">
         <label for="" class="col-6 col-form-label">Tipo de servicio</label>
-          <div class="input-group mb-3">
+          <div class="input-group">
 
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/online-support.png"/></span>
@@ -356,7 +357,7 @@ $(document).ready(function() {
      
       <div class="col-6">
         <label for="" class="col-6 col-form-label">Tipo de envio</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
 
           <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
@@ -381,12 +382,12 @@ $(document).ready(function() {
  
 
     <div class="col-12">
-    <div class="row mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 1" style="background-color: white;">
    
 
       <div class="col-4">
         <label for="" class="col-8 col-form-label">Cobro del envio</label>
-        <div class="input-group mb-3">
+        <div class="input-group ">
 
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
@@ -401,7 +402,7 @@ $(document).ready(function() {
 
       <div class="col-4">
         <label for="" class="col-8 col-form-label">Estado del envio</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
 
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
@@ -429,7 +430,7 @@ $(document).ready(function() {
 
       <div class="col-4">
         <label for="" class="col-8 col-form-label">Estado del pago</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
 
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cash-in-hand.png"/></span>
@@ -451,13 +452,13 @@ $(document).ready(function() {
 
 
     <div class="col-12">
-    <div class="row mx-5 py-4" style="background-color: white;">
+    <div class="row mx-5 py-1" style="background-color: white;">
     
 
       <div class="col-4">
           <label for="" class="col-8 col-form-label">Precio del paquete</label>
     
-        <div class="input-group mb-3">
+        <div class="input-group">
 
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
@@ -469,7 +470,7 @@ $(document).ready(function() {
 
       <div class="col-sm-4">
           <label for="" class="col-sm-8 col-form-label">Costo del envio</label>
-          <div class="input-group mb-3">
+          <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
           </div>
@@ -499,12 +500,12 @@ $(document).ready(function() {
   </div>
 
   <div class="col-12">
-  <div class="row mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-1" style="background-color: white;">
     
     
     <div class="col-6 ">
       <label for="" class="col-6 col-form-label">Usuario que registra</label>
-      <div class="input-group mb-3">
+      <div class="input-group">
 
         <div class="input-group-prepend">
          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
@@ -517,7 +518,7 @@ $(document).ready(function() {
     
     <div class="col-sm-6">
       <label for="" class="col-sm-6 col-form-label">Recepción agencia</label>
-      <div class="input-group mb-3">
+      <div class="input-group">
 
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
@@ -536,11 +537,11 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-  <div class="row mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-1" style="background-color: white;">
     
       <div class="col-sm-6 ">
         <label for="" class="col-sm-6 col-form-label">Repartidor</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
 
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
@@ -557,7 +558,7 @@ $(document).ready(function() {
     
       <div class="col-sm-6">
         <label for="" class="col-sm-6 col-form-label">Ruta</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
 
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
@@ -577,12 +578,12 @@ $(document).ready(function() {
    </div>
 
 
-   <div class="row mx-5 py-4" style="background-color: white;">
+   <div class="row mx-5 py-1" style="background-color: white;">
     
 
       <div class="col-sm-6 ">
         <label for="" class="col-sm-6 col-form-label">Nota</label>
-        <div class="input-group mb-3">
+        <div class="input-group ">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"> <i class="fas fa-file-alt"></i> </span>
           </div>
@@ -593,7 +594,7 @@ $(document).ready(function() {
 
       <div class="col-sm-6">
         <label for="" class="col-sm-8 col-form-label">Código de barra del estante</label>
-        <div class="input-group mb-3">
+        <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
         </div>
@@ -608,7 +609,7 @@ $(document).ready(function() {
 
  
     <div class="col-12">
-  <div class="row mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-1" style="background-color: white;">
     
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
@@ -625,7 +626,7 @@ $(document).ready(function() {
   </div>
 
   <div class="col-12">
-  <div class="row mx-5 py-4" style="background-color: white;">
+  <div class="row mx-5 py-1" style="background-color: white;">
 
     <div class="modal-footer">
 
