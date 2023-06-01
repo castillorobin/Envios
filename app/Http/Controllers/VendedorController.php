@@ -55,7 +55,40 @@ class VendedorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vendedor = new Vendedor();
+        $vendedor->nombre = $request->get('nombre');
+        $vendedor->direccion = $request->get('direccion');
+        $vendedor->telefono = $request->get('telefono');
+        $vendedor->whatsapp = $request->get('whatsapp');
+        
+        $vendedor->falta = date("Y-m-d", strtotime($request->get('falta')));
+        $vendedor->fbaja = $request->get('fbaja');
+        $vendedor->tipovende = $request->get('tipoven');
+        $vendedor->correo = $request->get('correo');
+        $vendedor->titular = $request->get('titular');
+        $vendedor->banco = $request->get('banco');
+        $vendedor->cuenta = $request->get('ncuenta');
+        $vendedor->tcuenta = $request->get('tcuenta');
+        $vendedor->chivo = $request->get('chivo');
+        $vendedor->tmoney = $request->get('tmoney');
+        $vendedor->empresa = $request->get('empresa');
+        $vendedor->giro = $request->get('giro');
+        $vendedor->dui = $request->get('dui');
+        $vendedor->niva = $request->get('niva');
+
+        $vendedor->nrc = $request->get('nrc');
+        $vendedor->estado = $request->get('estado');
+        
+                
+        $vendedor->save();
+
+        $vendedores = Vendedor::all();
+        
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
     }
 
     /**
@@ -98,7 +131,33 @@ class VendedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $vendedor = Vendedor::find($id) ;
+        $vendedor->nombre = $request->get('nombre');
+        $vendedor->direccion = $request->get('dire');
+        $vendedor->telefono = $request->get('tele');
+        $vendedor->whatsapp = $request->get('what');
+        $vendedor->falta =  date('Y/m/d', strtotime($request->get('falta')));
+        $vendedor->fbaja = date('Y/m/d', strtotime($request->get('fbaja')));
+        $vendedor->tipovende = $request->get('tvende');
+        $vendedor->correo = $request->get('correo');
+        $vendedor->estado = $request->get('estado');
+        $vendedor->agencia = $request->get('agen');
+        $vendedor->titular = $request->get('titular');
+        $vendedor->banco = $request->get('banco');
+        $vendedor->cuenta = $request->get('cuenta');
+        $vendedor->tcuenta = $request->get('tcuenta');
+        $vendedor->chivo = $request->get('chivo');
+        $vendedor->tmoney = $request->get('money');
+        $vendedor->empresa = $request->get('empresa');
+        $vendedor->giro = $request->get('giro');
+        $vendedor->dui = $request->get('dui');
+        $vendedor->niva = $request->get('iva');
+        $vendedor->nrc = $request->get('nrc');
+
+        $vendedor->save();
+        //return redirect('/vendedores');
+        $vendedores = Vendedor::all();
+        return view('vendedor.index')->with(['vendedores'=>$vendedores]);
     }
 
     /**
