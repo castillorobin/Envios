@@ -9,7 +9,7 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card" style="background-color:#f3f3f3"> 
+                    <div class="card"> 
                     <div class="card-body" style="background-color:#ffffff">
                             <h3 class="text-center">Datos del Envio</h3>
                         </div>
@@ -196,13 +196,14 @@ $(document).ready(function() {
 
 
 
-  <div class="row mx-5" >
+  <div class="row mx-5 mt-4" >
     <h4>Datos del Comercio</h4>
   </div>
   
+  <div class="row mx-5 border py-4" style="background-color: white; border-radius: 10px;" >
 <div class="col-12">
   
-    <div class="row mx-5 py-4" style="background-color: white;" >
+    <div class="row " style="background-color: white; " >
       <div class="col-12">
         <div class="row">
         <div class="  col-sm-6">
@@ -250,13 +251,16 @@ $(document).ready(function() {
     </div>
 </div> 
 
+
+</div>
   <div class="row mx-5 mt-4 " >
       <h4>Datos del destinatario</h4>
   </div>
 
+  <div class="row mx-5 border py-4" style="background-color: white; border-radius: 10px;" >
   <div class="col-12">
 
-  <div class="row mx-5 py-4" style="background-color: white;" >
+  <div class="row " style="background-color: white; " >
    
       <div class="col-6 ">
         <label for="inputEmail3" class="col-6 col-form-label">Destinatario *</label>
@@ -290,15 +294,15 @@ $(document).ready(function() {
     </div>
     </div>
   
-
+    </div>
   
   <div class="row mx-5 mt-4 " >
       <h4>Datos del paquete</h4>
   </div>
 
-
+  <div class="row mx-5 border py-1" style="background-color: white; border-radius: 10px;">
   <div class="col-12">
-    <div class="row mx-5 py-1" style="background-color: white;">
+    <div class="row " style="background-color: white; ">
 
       
         <div class="col-6 ">
@@ -334,7 +338,7 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-    <div class="row mx-5" style="background-color: white;">
+    <div class="row " style="background-color: white;">
 
     
      
@@ -382,7 +386,7 @@ $(document).ready(function() {
  
 
     <div class="col-12">
-    <div class="row mx-5 1" style="background-color: white;">
+    <div class="row " style="background-color: white;">
    
 
       <div class="col-4">
@@ -452,7 +456,7 @@ $(document).ready(function() {
 
 
     <div class="col-12">
-    <div class="row mx-5 py-1" style="background-color: white;">
+    <div class="row " style="background-color: white;">
     
 
       <div class="col-4">
@@ -493,14 +497,15 @@ $(document).ready(function() {
 
     </div>
     </div>
-
+    </div> 
 
 <div class="row mx-5 mt-4 " >
       <h4>Datos del internos</h4>
   </div>
 
+  <div class="row mx-5 border py-1" style="background-color: white; border-radius: 10px;">
   <div class="col-12">
-  <div class="row mx-5 py-1" style="background-color: white;">
+  <div class="row " style="background-color: white;">
     
     
     <div class="col-6 ">
@@ -537,7 +542,7 @@ $(document).ready(function() {
 
 
   <div class="col-12">
-  <div class="row mx-5 py-1" style="background-color: white;">
+  <div class="row " style="background-color: white;">
     
       <div class="col-sm-6 ">
         <label for="" class="col-sm-6 col-form-label">Repartidor</label>
@@ -578,7 +583,7 @@ $(document).ready(function() {
    </div>
 
 
-   <div class="row mx-5 py-1" style="background-color: white;">
+   <div class="row " style="background-color: white;">
     
 
       <div class="col-sm-6 ">
@@ -609,7 +614,7 @@ $(document).ready(function() {
 
  
     <div class="col-12">
-  <div class="row mx-5 py-1" style="background-color: white;">
+  <div class="row" style="background-color: white;">
     
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
@@ -624,7 +629,7 @@ $(document).ready(function() {
     </div>
   
   </div>
-
+  </div>
   <div class="col-12">
   <div class="row mx-5 py-1" style="background-color: white;">
 
