@@ -201,13 +201,13 @@ ul li ul:hover {
     <a href="" class="dropdown-toggle" data-toggle="dropdown">
 
     <i class="fas fa-list"></i></a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" style="background-color: #ffffff;">
      <div class="botones"> 
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/repartidores/{{ $repartidores[$i]->id }}/edit" ><button>Editar</button></a></li> 
+    <a href="/repartidores/{{ $repartidores[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
     </div>  
 	<li class="botones">
     <form >
@@ -215,7 +215,7 @@ ul li ul:hover {
     &nbsp;
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
-    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $repartidores[$i]->id }}" data-bs-target="#exampleModal">Ver</button>
+    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $repartidores[$i]->id }}" data-bs-target="#exampleModal" style="background: none; border: 0;">Ver</button>
   
     
     </form>
@@ -227,7 +227,7 @@ ul li ul:hover {
         &nbsp;
         <i class="fas fa-trash-alt"></i> 
         &nbsp;&nbsp;
-        <button >Eliminar</button>
+        <button style="background: none; border: 0;">Eliminar</button>
         </form>
         </li>
     </ul>

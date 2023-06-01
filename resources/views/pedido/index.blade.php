@@ -244,30 +244,26 @@ input[type="date"]:valid::before {
 
     <td class="opciones text-center" style="">
     
-    
+  
   
  
     <a href="" class="dropdown-toggle" data-toggle="dropdown">
 
     <i class="fas fa-list"></i></a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" style="background-color: #ffffff;"> 
      <div class="botones"> 
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button>Editar</button></a></li> 
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
     </div>  
 	<li class="botones">
-    <!--
-    <form action="{{ route ('pedidos.show', $pedidos[$i]->id)}}" method="POST">
-    @csrf
-    @method('GET')
--->
+   
     &nbsp;
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
-    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $pedidos[$i]->id }}" data-bs-target="#exampleModal">Ver</button>
+    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $pedidos[$i]->id }}" data-bs-target="#exampleModal" style="background: none; border: 0;">Ver</button>
 </form>
 </li>
 <li class="botones">
@@ -277,12 +273,22 @@ input[type="date"]:valid::before {
         &nbsp;
         <i class="fas fa-trash-alt"></i> 
         &nbsp;&nbsp;
-        <button >Eliminar</button>
+        <button style="background: none; border: 0;">Eliminar</button>
         </form>
         </li>
     </ul>
  
+  <!--
+ <a class="btn btn-info" href="{{ route('pedidos.edit', $pedidos[$i]->id) }}">Editar</a>
 
+
+ <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger">Eliminar</button>
+        </form>
+
+-->
 
     </td>
     </tr>
