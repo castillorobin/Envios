@@ -188,11 +188,11 @@ $(document).ready(function() {
        
   <div class="row mx-1" >
    
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger mx-5 mt-4" role="alert">
       <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
       </div>
   </div>
-  <br>
+  
 
 
 
@@ -627,10 +627,12 @@ $(document).ready(function() {
       
       <br>
     </div>
-  
+    <br>
   </div>
   </div>
+ 
   <div class="col-12">
+  
   <div class="row mx-5 py-1" style="background-color: white;">
 
     <div class="modal-footer">

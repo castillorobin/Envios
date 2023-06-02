@@ -243,6 +243,8 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedido = Pedido::find($id);
+        $pedido->delete();
+        return redirect('/pedidos');
     }
 }
