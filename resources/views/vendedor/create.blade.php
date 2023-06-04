@@ -188,7 +188,7 @@ if(document.getElementById("flexs").checked)
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
   </div>
-  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese direccion del comercio" aria-label="Username" aria-describedby="basic-addon1" >
+  <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese direccion del comercio" aria-label="Username" aria-describedby="basic-addon1" required>
 
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
