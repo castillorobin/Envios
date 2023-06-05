@@ -149,7 +149,7 @@ $(document).ready(function() {
                       </div>
 <!-- termina fila  -->
 
-
+ 
 <div class="col-6">
                   {{-- Input de Direccion  --}}
             <div class="form-group">
