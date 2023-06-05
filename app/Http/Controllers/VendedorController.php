@@ -141,7 +141,7 @@ class VendedorController extends Controller
         $vendedor->tipovende = $request->get('tvende');
         $vendedor->correo = $request->get('correo');
         $vendedor->estado = $request->get('estado');
-        $vendedor->agencia = $request->get('agen');
+        $vendedor->agencia = $request->get('agenr');
         $vendedor->titular = $request->get('titular');
         $vendedor->banco = $request->get('banco');
         $vendedor->cuenta = $request->get('cuenta');

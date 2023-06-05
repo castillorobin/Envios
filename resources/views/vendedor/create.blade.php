@@ -182,14 +182,14 @@ if(document.getElementById("flexs").checked)
   
 
   <div class="col-sm-12">
-<label for="" class="col-sm-6 col-form-label">Direccion del comercio</label>
+<label for="" class="col-sm-6 col-form-label">Direccion del comercio *</label>
 <div class="input-group mb-3">
 
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
   </div>
   <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese direccion del comercio" aria-label="Username" aria-describedby="basic-addon1" required>
-
+  <div class="invalid-feedback">Este campo es obligatorio.</div>
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
 
@@ -203,7 +203,7 @@ if(document.getElementById("flexs").checked)
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/phone--v1.png"/></span>
   </div>
-  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'" required>
+  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
  
 
       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
