@@ -146,7 +146,7 @@ $(document).ready(function() {
                 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-user"></i> </span>
                 </div>
                 <select id="nombre" name="nombre" class="form-control" tabindex="1" required>
-                    <option value="Sin asignar" selected >Sin asignar</option>
+                    <option >Sin asignar</option>
        
                     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$i}}">{{ $vendedores[$i]->nombre }} </option>
@@ -322,10 +322,10 @@ $(document).ready(function() {
      
 <br>
 <div class="modal-footer" >
-<a href="/recolectas" class="btn btn-primary">Cancelar</a>
+<a href="/recolecta" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
 
-        <a href="/recolectas/create" class="btn btn-primary">Limpiar</a>
+        <a href="/recolecta/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
 <button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
 
