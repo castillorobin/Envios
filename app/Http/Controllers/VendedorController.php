@@ -168,6 +168,8 @@ class VendedorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedido = Vendedor::find($id);
+        $pedido->delete();
+        return redirect('/vendedores');
     }
 }
