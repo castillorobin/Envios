@@ -324,12 +324,11 @@ $(document).ready(function() {
      
 <br>
 <div class="modal-footer" >
-<a href="/recolectas" class="btn btn-primary">Cancelar</a>
+<a href="/recolecta" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
 
-        <a href="/recolectas/create" class="btn btn-primary">Limpiar</a>
-      &nbsp; &nbsp;
-<button type="submit" class="btn btn-primary" tabindex="10">Guardar</button>
+        
+<button type="submit" class="btn btn-primary" tabindex="10">Editar</button>
 
 </div>
   </div><!-- termina fila  -->
