@@ -65,7 +65,7 @@ input[type="date"]:valid::before {
  });
 </script>
 <script>
-
+ 
 function myFunction() {
   document.getElementById("myForm").reset();
 }
