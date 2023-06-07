@@ -1,20 +1,21 @@
-
-@extends('adminlte::page')
-
-@section('title', 'Melo Express')
-
-@section('content_header')
-<h6 ><i class="fas fa-home"></i> Inicio / Almacen / Agregar Comercio</h6>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-@stop
+@extends('layouts.app')
 
 @section('content')
+    <section class="section">
+        <div class="section-header">
+            <h3 class="page__heading">Agregar Comercio</h3>
+        </div>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card"> 
+                        <div class="card-body">
+
+                            <h3 class="text-center">Datos de Comercio</h3>
+
+
 <style>
-body {
-  font-family: 'Roboto', sans-serif;
-}
+
 
  
 
@@ -29,7 +30,7 @@ function myFunction() {
     @csrf
     @method('GET')
     <div class="row mx-5" >
-    <h3>Agregar Comercio</h3>
+ 
       <div class="alert alert-danger" role="alert">
       <i class="fas fa-exclamation-circle"></i> Estimado usuario los campos con * son obligatorios
       </div>
@@ -37,7 +38,7 @@ function myFunction() {
   <br>
 <!-- empieza row general  -->
 <div class="row border mx-5 py-4" style="background-color: white;" >
-  <div class="row">
+  
 
 
   <div class="col-sm-4">
@@ -53,9 +54,9 @@ function myFunction() {
 
 
 
-  </div><!-- termina fila  -->
+ <!-- termina fila  -->
 
-  <div class="row">
+
 
   <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Comercio/Tienda *</label>
@@ -71,8 +72,8 @@ function myFunction() {
 
 
 
-  </div><!-- termina fila  -->
-  <div class="row">
+  <!-- termina fila  -->
+ 
 
   <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Direccion del comercio *</label>
@@ -86,8 +87,8 @@ function myFunction() {
 
 </div>
 
-  </div><!-- termina fila  -->
-  <div class="row">
+  <!-- termina fila  -->
+ 
   <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Telefono *</label>
     <div class="input-group mb-3">
@@ -109,8 +110,8 @@ function myFunction() {
   <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ingrese whatsapp" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
-  </div><!-- termina fila  -->
-  <div class="row">
+ <!-- termina fila  -->
+
 
   <div class="col-sm-4">
 <label for="" class="col-sm-6 col-form-label">Fecha de alta</label>
@@ -152,8 +153,8 @@ function myFunction() {
        </select>
 </div>
 </div>
-</div><!-- termina fila  -->
-<div class="row">
+<!-- termina fila  -->
+
  
 <div class="col-sm-8 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Correo</label>
@@ -181,8 +182,8 @@ function myFunction() {
        </select>
 </div>
     </div>
-</div><!-- termina fila  -->
-<div class="row">
+<!-- termina fila  -->
+
      
 <div class="col-sm-8 ">
     <label for="inputEmail3" class="col-sm-4 col-form-label">Nota</label>
@@ -210,7 +211,7 @@ function myFunction() {
        </select>
 </div>
     </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
 </div><!--termina row general  -->
 
@@ -220,7 +221,7 @@ function myFunction() {
   </div>
 
   <div class="row border mx-5 py-4" style="background-color: white;" >
-  <div class="row">
+
  
   <div class="col-sm-12">
 <label for="" class="col-sm-6 col-form-label">Nombre del titular de la cuenta</label>
@@ -233,9 +234,9 @@ function myFunction() {
 </div>
 
 </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
-<div class="row">
+
  
 <div class="col-sm-6 ">
     <label for="inputEmail3" class="col-sm-6 col-form-label">Nombre del banco</label>
@@ -258,9 +259,9 @@ function myFunction() {
   <input type="text" id="ncuenta" name="ncuenta" class="form-control" placeholder="Ingrese el número de cuenta" aria-label="Username" aria-describedby="basic-addon1">
 </div>
     </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
-<div class="row">
+
 
 <div class="col-sm-4">
 <label for="" class="col-sm-6 col-form-label">Tipo de cuenta</label>
@@ -303,7 +304,7 @@ function myFunction() {
 <input type="text" id="tmoney" name="tmoney" class="form-control" placeholder="TIGO MONEY" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
 
 </div><!--termina row general  -->
@@ -315,7 +316,7 @@ function myFunction() {
 
   <div class="row border mx-5 py-4" style="background-color: white;" >
 
-  <div class="row">
+
 
   <div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Nombre de la empresa</label>
@@ -328,9 +329,9 @@ function myFunction() {
 </div>
     </div>
     
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
-<div class="row">
+
 
 <div class="col-sm-8 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Giro</label>
@@ -358,9 +359,9 @@ function myFunction() {
        </select>
 </div>
     </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
-<div class="row">
+
 
 <div class="col-sm-4">
 <label for="" class="col-sm-8 col-form-label">Número de (DUI)</label>
@@ -398,9 +399,9 @@ function myFunction() {
 <input type="text" id="nrc" name="nrc" class="form-control" placeholder="Ingrese el NRC de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
 </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
-<div class="row">
+
 
 <div class="col-sm-12 ">
     <label for="inputEmail3" class="col-sm-8 col-form-label">Dirección fiscal</label>
@@ -412,14 +413,14 @@ function myFunction() {
 <input type="text" id="empresa" name="empresa" class="form-control" placeholder="Ingrese la dirección fiscal de la empresa" aria-label="Username" aria-describedby="basic-addon1" >
 </div>
     </div>
-</div><!-- termina fila  -->
+<!-- termina fila  -->
 
 <div class="modal-footer px-4">
         
-<a href="/pedidos/create" class="btn btn-primary">Cerrarr</a>
+<a href="/pedidos" class="btn btn-primary">Cerrarr</a>
         &nbsp; &nbsp;
         
-        <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
+        <a href="/pedido/desdeenvio" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar y cerrar</button>
       </div>
@@ -437,15 +438,13 @@ function myFunction() {
 
    
 
-   
-  
 
 
+</div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>    
 @endsection
 
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-@stop

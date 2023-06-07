@@ -44,6 +44,31 @@ class PedidoController extends Controller
         return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
     }
 
+    public function desdeenvio()
+    {
+        $last = Pedido::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        
+        
+        
+        $repartidores = Repartidor::all();
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+
+        return view('pedido.denvio')->with(['vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+
+        //return view('pedido.create')->with('vendedores', $vendedores);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

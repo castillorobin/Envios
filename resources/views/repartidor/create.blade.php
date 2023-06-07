@@ -339,7 +339,7 @@ $(document).ready(function() {
     <option selected>Sin Asignar</option>
     <option value="Ceo">Ceo</option>
     <option value="Gerente general">Gerente General</option>
-    <option value="gerente">Gerente</option>
+    <option value="Gerente">Gerente</option>
     <option value="Supervisor">Supervisor</option>
     <option value="Repartidor">Repartidor</option>
     <option value="Auxiliar">Auxiliar</option>
