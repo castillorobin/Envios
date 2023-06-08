@@ -175,7 +175,7 @@ if(document.getElementById("flexs").checked)
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/phone--v1.png"/></span>
   </div>
-  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
     </div>
@@ -187,8 +187,13 @@ if(document.getElementById("flexs").checked)
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/material/24/null/whatsapp--v1.png"/></span>
   </div>
-  <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ingrese whatsapp" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="Ingrese whatsapp" aria-label="Username" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+</div>
+<div class="form-check form-switch" style="font-size:12px; float: right; margin-top: -12px;" >
+        
+      Activa si el telefono es igual al whatsapp  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  <input class="form-check-input" type="checkbox" role="switch" id="flexs" name="flexs">
+  
 </div>
     </div>
  <!-- termina fila  -->
@@ -545,5 +550,15 @@ if(document.getElementById("flexs").checked)
             </div>
         </div>
     </section>    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
+    <script>
+  $(document).ready(function(){
+  
+ /* $(":input").inputmask();*/
+ Inputmask().mask(document.querySelectorAll("input"));
+});
+</script>
 @endsection
 

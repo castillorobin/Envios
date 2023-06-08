@@ -14,63 +14,20 @@
                              
 <style>
  
- input[type="date"]::-webkit-calendar-picker-indicator {
-        display: block;
-        background: transparent;
-        bottom: 0;
-        color: transparent;
-        cursor: pointer;
-        height: auto;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: auto;
-    }
  
-    input[type="date"]::before {
-	color: #999999;
-	content: attr(placeholder) !important;
-}
-input[type="date"] {
-	color: #ffffff;
-    
-}
-input[type="date"]:focus,
-input[type="date"]:valid {
-	color: #666666;
-    
-}
-input[type="date"]:focus::before,
-input[type="date"]:valid::before {
-	content: "" !important;
-}
 
-    .dropdown-menu-center {
-  left: 50% !important;
-  /*right: auto !important;*/
-  text-align: center !important;
-  transform: translate(-50%, 0) !important;
-        margin-top: 15px;
-}
 .cambiar {
    
-   float: left;
-   margin-top: 15px;
+    float: left;
+    margin - 
      
    }
 
 .cambiar2 {
-   float: right;
-   margin-right: 20px;
-   margin-top: 5px;
-  /*
-   
-   margin-right: 300px;
-   margin-bottom: 15px; 
-   margin-top: -15px; 
-   
-   */
+    float: right;
+    margin-right: 20px;
+    margin-top: 5px;
+ 
 }
 
 .pagina1{
@@ -79,7 +36,6 @@ input[type="date"]:valid::before {
     
 }
 .pagina2{
-    
     margin-bottom: -25px;
     padding-top: 10px;
     
@@ -136,9 +92,6 @@ ul li ul:hover {
 }
 </style>
 
-<style> 
- 
-</style>
 
 
 <div class="row" style="background-color: white;" >
@@ -270,7 +223,6 @@ ul li ul:hover {
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://kit.fontawesome.com/b64093b700.js" crossorigin="anonymous"></script> 
 
 
@@ -278,37 +230,16 @@ ul li ul:hover {
 
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
 
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
+  
 
                  
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js" defer></script>
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
 
-<!--
-<script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js" defer></script>
-<script src="https://cdn.datatables.net/responsive/2.4.0/js/dataTables.responsive.min.js" defer></script>
 
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" ></script>
-
-
-
-
-
-
-
-
-<script src="https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"></script>
-<script>
-
-
-
-</script>
-
--->
 
 <script>
     
@@ -366,31 +297,49 @@ $(document).ready(function(){
 });
        
 
-$(document).ready(function() {
-
-
-  $('#tvendedor').DataTable( {
-    language: {
-        url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish_Mexico.json'
-
-           
-        },
-        
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-           
-
-    //responsive: true
-
-
-
-} );
-
-
-
-} );
     
     </script>
 
+
+<script>
+    
+$(document).ready(function() {
+
+
+$('#tvendedor').DataTable( {
+    language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+      dom: '<"cambiar"f><"pagina2"p><"cambiar2"l>tri<"pagina1"p>',
+         
+
+  //responsive: true
+
+
+
+} );
+
+
+
+} );
+</script>
 
 
                         </div>
