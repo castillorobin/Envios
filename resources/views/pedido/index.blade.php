@@ -148,7 +148,7 @@ input[type="date"]:valid::before {
  background: #ffffff;
 }
 .modal-backdrop {
-  z-index: -1;
+  z-index: 0;
 }
 </style>
 <br>
@@ -299,12 +299,12 @@ input[type="date"]:valid::before {
 
 <!-- Inicio Modal -->
 
-<div class="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
-        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button></span>
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button></span>
       </div>
       <div class="modal-body">
         <div class="row p-3 m-3" style="border: solid 1px;">
@@ -439,7 +439,7 @@ input[type="date"]:valid::before {
        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
         <a id="impri" class="btn btn-primary" style="color: #ffffff;">Imprimir</a>
       </div>
     </div>

@@ -236,12 +236,12 @@ ul li ul:hover {
 
 <!-- Inicio Modal -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal"  aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 999999999;">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
-        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button></span>
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button></span>
       </div>
       <div class="modal-body">
         <div class="row p-3 m-3" style="border: solid 1px;">
@@ -366,7 +366,7 @@ ul li ul:hover {
        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
         <button type="button" class="btn btn-primary"><i class="fas fa-print"></i> &nbsp; Imprimir</button>
       </div>
     </div>
