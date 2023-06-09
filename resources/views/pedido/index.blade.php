@@ -71,14 +71,7 @@ ul li ul:hover {
 .cambiar2 {
     float: right;
     margin-right: 20px;
-    margin-top: 5px;
-   /*
-    
-    margin-right: 300px;
-    margin-bottom: 15px; 
-    margin-top: -15px; 
-    
-    */
+  
 }
 
 .pagina1{

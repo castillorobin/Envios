@@ -13,13 +13,7 @@
 
 
                         <style>
-    .dropdown-menu-center {
-  left: 50% !important;
-  /*right: auto !important;*/
-  text-align: center !important;
-  transform: translate(-50%, 0) !important;
-        margin-top: 15px;
-}
+   
 .cambiar {
    
     float: left;
@@ -29,7 +23,7 @@
 .cambiar2 {
    
    float: right;
-     
+   margin-right: 20px;
 }
 .pagina1{
     margin-bottom: 30px;
@@ -38,8 +32,8 @@
 }
 .pagina2{
     
-    margin-bottom: 5px;
-    padding-top: 15px;
+    margin-bottom: -25px;
+    padding-top: 10px;
     
 }
 .opciones li {
@@ -478,7 +472,7 @@ $(document).ready(function(){
         }
     },
         
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        dom: '<"cambiar"f><"pagina2"p><"cambiar2"l>tri<"pagina1" p>',
        
 
         } /*hasata aqui*/

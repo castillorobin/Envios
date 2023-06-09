@@ -29,7 +29,7 @@
 .cambiar2 {
    float: right;
    margin-right: 20px;
-   margin-top: 5px;
+  
   /*
    
    margin-right: 300px;
