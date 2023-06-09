@@ -147,6 +147,9 @@ input[type="date"]:valid::before {
  font-size: 14px;
  background: #ffffff;
 }
+.modal-backdrop {
+  z-index: -1;
+}
 </style>
 <br>
  
