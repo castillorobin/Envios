@@ -202,7 +202,7 @@ ul li ul:hover {
     &nbsp;
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
-    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $vendedores[$i]->id }}" data-bs-target="#exampleModal" style="background: none; border: 0;">Ver</button>
+    <button type="button" class="edit" data-toggle="modal" value="{{ $vendedores[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
  
     
     </form>
@@ -242,7 +242,7 @@ ul li ul:hover {
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
-        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></span>
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button></span>
       </div>
       <div class="modal-body">
         <div class="row p-3 m-3" style="border: solid 1px;">

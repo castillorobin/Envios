@@ -569,7 +569,8 @@ $(document).ready(function() {
             <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
           </div>
           <select id="ruta" name="ruta" class="form-control" tabindex="16"> 
-            <option value="Ruta 1">Ruta 1</option>
+          <option value="Ruta 1">Sin asignar</option>
+          <option value="Ruta 1">Ruta 1</option>
             <option value="Ruta 2">Ruta 2</option>
             <option value="Ruta 3">Ruta 3</option>
             <option value="Ruta 4">Ruta 4</option>
