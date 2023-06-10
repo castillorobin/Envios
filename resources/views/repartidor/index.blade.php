@@ -22,7 +22,7 @@
 .cambiar {
    
    float: left;
-   margin-top: 15px;
+   
      
    }
 

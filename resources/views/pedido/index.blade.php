@@ -236,9 +236,9 @@ input[type="date"]:valid::before {
     <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
     <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
     <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
-    <span hidden id="fot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->foto}}</span>
-    <span hidden id="fot2{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->foto2}}</span>
-    <span hidden id="fot3{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->foto3}}</span>
+    <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
+    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
 
     <td class="opciones text-center" style="">
     
@@ -320,9 +320,9 @@ input[type="date"]:valid::before {
                 <tr class="headt">
                     <td width="230px">Nombre de comercio / Tienda </td>
                     <td> <span ></span> <label for="" id="nombre"></label> </td>
-                    <td rowspan="15"> <span ></span> <label for="" > </label> <img  alt="" id="fotos" width="250"> 
-                    <br> <img  alt="" id="fotos2" width="250">
-                    <br> <img  alt="" id="fotos3" width="250"></td>
+                    <td rowspan="15"><span ></span> <label for="" > </label> <img alt="" class=" img-thumbnail" id="fotos" width="250"> 
+                    <br> <img alt="" id="fotos2" width="250">
+                    <br> <img alt="" id="fotos3" width="250"></td>
                 </tr>
 
                 <tr class="headt">
