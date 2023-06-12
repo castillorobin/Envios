@@ -63,8 +63,10 @@
                     <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
                   @endforeach
                 </select>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
             </div>
-    
+
 
 
 
@@ -86,6 +88,8 @@
           <div class="col-6">
             <label for="inputEmail3" class="col-4 col-form-label">Telefono</label>
             <input type="text" id="telefono" name="telefono" class="form-control" tabindex="3" value=" {{$pedido->telefono}} ">
+            <div class="invalid-feedback">Este campo es obligatorio.</div>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
 
           <div class="col-12">
@@ -97,6 +101,8 @@
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
           </div>
             <input type="text" id="direccion" name="direccion" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->direccion}} ">
+            <div class="invalid-feedback">Este campo es obligatorio.</div>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
         </div>
 
     </div>
@@ -119,6 +125,7 @@
                 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
             </div>
               <input type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" value=" {{  date('Y/m/d', strtotime($pedido->created_at))  }} " >
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
       </div>
      
@@ -130,6 +137,7 @@
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
           </div>
           <input type="text" id="fentrega" name="fentrega" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{  date('Y/m/d', strtotime($pedido->fecha_entrega))  }} ">
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
         </div>
     </div>
         
@@ -149,9 +157,10 @@
             <select id="servicio" name="servicio" class="form-control"  ">
               <option value="{{$pedido->servicio}}" selected >{{$pedido->servicio}}</option>
                 <option value="Entrega">Entrega</option>
-                <option value="Entrega y recoelcta">Entrega y recoelcta</option>
+                <option value="Entrega y recoelcta">Entrega y recolecta</option>
   
                 </select>
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
     </div>
      
@@ -173,6 +182,7 @@
        <option value="Casillero San Miguel">Casillero San Miguel</option>
        <option value="Casillero Santa Ana">Casillero Santa Ana</option>
        </select>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
       </div>
     </div>      
     
@@ -200,6 +210,7 @@
                 <option value="Casillero pendiente">Casillero pendiente</option>
       
               </select>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
       </div>
 
@@ -227,6 +238,7 @@
                 <option value="Casillero San Miguel">Casillero San Miguel</option>
                 <option value="Casillero Santa Ana">Casillero Santa Ana</option>
               </select>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
       </div>
 
@@ -245,6 +257,7 @@
                 <option value="Trans. a la empresa">Trans. a la empresa</option>
                 <option value="Trans. al comercio">Trans. al comercio</option>
               </select>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
       </div>
 </div>
@@ -259,6 +272,7 @@
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
 <input type="text" id="precio" name="precio" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->precio}} ">
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -272,6 +286,7 @@
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
 <input type="text" id="envio" name="envio" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->envio}} ">
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -284,6 +299,7 @@
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
 </div>
 <input type="text" id="total" name="total" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly value=" {{$pedido->total}} ">
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -328,6 +344,7 @@
        <option value="San Miguel">San Miguel</option>
        <option value="Santa Ana">Santa Ana</option>
        </select>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 
 
@@ -360,6 +377,7 @@
                 @endforeach
      
             </select>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
         </div>
     
@@ -378,6 +396,7 @@
                 <option value="RUTA 4">RUTA 4</option>
                 <option value="RUTA 5">RUTA 5</option>
               </select>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
             </div>
         </div>
 
@@ -395,6 +414,7 @@
     <span class="input-group-text" id="basic-addon1"> <i class="fas fa-file-alt"></i> </span>
   </div>
   <input type="text" id="nota" name="nota" class="form-control" aria-describedby="basic-addon1"  value=" {{$pedido->nota}} ">
+  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
     </div>
     <div class="col-sm-6">
@@ -416,6 +436,7 @@
 
     <div class="col-sm-12">
     <input type="file" id="foto" name="foto" class="form-control" tabindex="10">
+    <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
     </div>
     
     <br>

@@ -156,7 +156,7 @@ $(document).ready(function() {
       
                 <div class="invalid-feedback">Este campo es obligatorio.</div>
 
-                    <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
         </div>
                 @for($i=0;  $i< count($vendedores); $i++ )
        
@@ -185,7 +185,7 @@ $(document).ready(function() {
   <span class="input-group-text" id="basic-addon1"> <i class="fas fa-map-marker-alt"></i> </span>
   </div>
   <input type="text" class="form-control" id="direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1" tabindex="2" value="{{$recolecta->direccion}}">
-  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
     </div>
      
@@ -197,7 +197,7 @@ $(document).ready(function() {
          <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
         </div>
           <input type="text" class="form-control" name="telefono" id="telefono" aria-label="Username" aria-describedby="basic-addon1" value="{{$recolecta->telefono}}" tabindex="3" data-inputmask="'mask': '9999-9999'">
-        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 
 </div>
     </div>
@@ -210,7 +210,7 @@ $(document).ready(function() {
          <span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square-alt"></i> </span>
         </div>
           <input type="text" class="form-control" name="whatsapp" id="whatsapp" aria-label="Username" aria-describedby="basic-addon1" value="" tabindex="3" data-inputmask="'mask': '9999-9999'">
-        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 
 </div>
     </div>
@@ -227,7 +227,7 @@ $(document).ready(function() {
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-dolly"></i> </span>
 </div>
 <input type="date" class="form-control" name="fechare" placeholder="" value="{{date('Y-m-d')}}" aria-label="Username" aria-describedby="basic-addon1" tabindex="4">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -240,7 +240,7 @@ $(document).ready(function() {
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-archive"></i> </span>
 </div>
 <input type="date" class="form-control" name="fechaen" placeholder="" aria-label="Username" value="{{$recolecta->fechaent}}" aria-describedby="basic-addon1" tabindex="5">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 <!-- termina fila  -->
@@ -262,7 +262,7 @@ $(document).ready(function() {
      
        </select>
 
-       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
 
@@ -282,7 +282,7 @@ $(document).ready(function() {
         
        <option value="No recolectada">No recolectada</option>
        </select>
-       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
  <!-- termina fila  -->
@@ -297,7 +297,7 @@ $(document).ready(function() {
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-book"></i> </span>
 </div>
 <input type="text" class="form-control" name="nota" placeholder="Ingrese nota, indicación, etc." aria-label="Username" aria-describedby="basic-addon1" tabindex="8" value="{{$recolecta->nota}}">
-<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+<div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
  
@@ -315,7 +315,7 @@ $(document).ready(function() {
        <option value="San Miguel">San Miguel</option>
        <option value="Santa Ana">Santa Ana</option>
        </select>
-       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>
+       <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
 </div>
 </div>
   <!-- termina fila  -->
