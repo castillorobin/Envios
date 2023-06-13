@@ -2,6 +2,118 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+body {
+ 
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+        display: block;
+        background: transparent;
+        bottom: 0;
+        color: transparent;
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+    }
+
+    input[type="date"]::before {
+	color: #999999;
+	content: attr(placeholder);
+}
+input[type="date"] {
+	color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+	color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+	content: "" !important;
+}
+.select2-selection{
+  height: 35px !important;
+ 
+}
+</style>
+
+<script>
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>  
+jQuery(document).ready(function($){
+    $(document).ready(function() {
+        $('.mi-selector').select2();
+    });
+});
+</script>
+<script>
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
+$('#nombre').on('select2:change', function (e) {
+  window.alert("Bienvenido a nuestro sitio web");
+    document.getElementById("direccion").value = 'cambio esto';
+});
+</script>
+
+ 
+
+<script>
+  $(document).ready(function() {
+  $("input").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+
+$(document).ready(function() {
+  $("select").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+
+  
+
+});
+
+
+ 
+ 
+
+
+</script>
+
+
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Editar Envio</h3>
