@@ -194,7 +194,9 @@ $(document).ready(function() {
     
           <div class="col-6 ">
             <label for="inputEmail3" class="col-sm-4 col-form-label">Destinatario *</label>
-            <input type="text" id="desti" name="desti" class="form-control" tabindex="3" value=" {{$pedido->destinatario}} ">
+            <input type="text" id="desti" name="desti" class="form-control" tabindex="3" value=" {{$pedido->destinatario}} " required>
+            <div class="invalid-feedback">Este campo es obligatorio.</div>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
           </div>
     
           <div class="col-6">
@@ -212,7 +214,7 @@ $(document).ready(function() {
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
           </div>
-            <input type="text" id="direccion" name="direccion" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->direccion}} ">
+            <input type="text" id="direccion" name="direccion" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{$pedido->direccion}} " required>
             <div class="invalid-feedback">Este campo es obligatorio.</div>
             <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
         </div>
@@ -248,8 +250,9 @@ $(document).ready(function() {
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
           </div>
-          <input type="text" id="fentrega" name="fentrega" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{  date('Y/m/d', strtotime($pedido->fecha_entrega))  }} ">
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
+          <input type="text" id="fentrega" name="fentrega" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value=" {{  date('Y/m/d', strtotime($pedido->fecha_entrega))  }} " required>
+          <div class="invalid-feedback">Este campo es obligatorio.</div>
+            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Editado con Éxito</div> 
         </div>
     </div>
         
