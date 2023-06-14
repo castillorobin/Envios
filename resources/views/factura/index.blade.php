@@ -44,13 +44,13 @@
 <button type="button" class="btn btn-success">Editar</button>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12"> <!-- div tabla  -->
-<table id="tvendedor" class="table table-striped mt-2">
+<div class="col-12" style=" height:500px;  overflow: scroll;" > <!-- div tabla  -->
+<table id="tvendedor" class="table table-striped mt-2" style=" ">
 <thead style="background-color:#6777ef;">
     <tr >
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
-        <th style="color: #fff;">Direccióno</th>
+        <th style="color: #fff;">Dirección</th>
         <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
@@ -64,19 +64,35 @@
 </thead>
 <tbody> 
 </tbody> 
+@for($i=0;  $i< count($pedidos); $i++ )
 <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="background-color:#cecece"></td>
-    <td></td>
+                    <td>{{ $pedidos[$i]->vendedor }} </td>
+                    <td>{{ $pedidos[$i]->destinatario }} </td>
+                    <td>{{ $pedidos[$i]->direccion }} </td>
+                    <td>{{ $pedidos[$i]->tipo }} </td>
+                    <td>{{ $pedidos[$i]->estado }} </td>
+                    <td>{{ $pedidos[$i]->fecha_entrega }} </td>
+                    <td>{{ $pedidos[$i]->pagado }} </td>
+                    <td> </td>
+                    <td>{{ $pedidos[$i]->precio }} </td>
+                    <td>{{ $pedidos[$i]->total }} </td>
+                    <td>{{ $pedidos[$i]->agencia }} </td>
+                    <td>Opciones </td>
+                    </tr>
+                        @endfor
+<tr>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; "></td>
+    <td style="width: 100px; " style="background-color:#cecece"></td>
+    <td style="width: 100px; "></td>
 </tr>
 <tr>
 <td></td>
