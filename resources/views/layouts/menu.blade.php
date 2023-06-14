@@ -20,6 +20,13 @@
 <li>
     
     </li>
+    
+    <li>
+    
+     <a class="nav-link" href="/facturas">
+     <i class="fas fa-file-invoice"></i><span>Facturación</span>
+    </a>
+    </li>
 
     <li>
     @can('ver-rol')
@@ -27,9 +34,9 @@
     <i class="fas fa-users"></i><span>Usuarios</span>
     </a>
     </li>
-
-    <li>
     @endcan
+    <li>
+ 
     @can('ver-rol')
     <a class="nav-link" href="/roles">
     <i class="fas fa-user-tag"></i><span>Roles</span>

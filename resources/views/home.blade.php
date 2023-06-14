@@ -11,7 +11,7 @@
                     <div class="card"> 
                         <div class="card-body">
 
-                            <h3 class="text-center"></h3>
+                            <h3 class="text-center">Facturación</h3>
 
                             
                         </div>

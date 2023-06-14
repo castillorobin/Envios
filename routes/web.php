@@ -9,6 +9,7 @@ use App\Http\Controllers\RecolectaController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\RepartidorController;
 use App\Http\Controllers\VendedorController;
+use App\Http\Controllers\FacturacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('pedidos', PedidoController::class);
     Route::resource('repartidores', RepartidorController::class);
     Route::resource('vendedores', VendedorController::class);
+    Route::resource('facturas', FacturacionController::class);
     
 });
 
