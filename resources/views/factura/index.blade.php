@@ -13,8 +13,8 @@
 
                             <h3 class="text-center">Facturación</h3>
                         
-            <div class="row border mx-5 py-4" style="background-color: white;" >   <!-- Inicia fila General -->
-                <div class="col-8 ">   <!-- Inicia columna 8  -->
+            <div class="row border mx-1 py-4" style="background-color: white;" >   <!-- Inicia fila General -->
+                <div class="col-9 ">   <!-- Inicia columna 8  -->
                 <div class="col-12 border ">   
                     <h4>Pagar</h4>
                 </div> 
@@ -51,8 +51,14 @@
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Direccióno</th>
+        <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Estado del envio</th>
-        <th style="color: #fff;">Estatus del pago</th>
+        <th style="color: #fff;">Fecha de entrega</th>
+        <th style="color: #fff;">Estado del pago</th>
+        <th style="color: #fff;">Estado del paquete</th>
+        <th style="color: #fff;">Precio del envio</th>
+        <th style="color: #fff;">Total</th>
+        <th style="color: #fff;">Agencia</th>
         <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
@@ -63,10 +69,8 @@
     <td></td>
     <td></td>
     <td></td>
-    <td style="background-color:#cecece"></td>
     <td></td>
-</tr>
-<tr>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>
@@ -75,14 +79,12 @@
     <td></td>
 </tr>
 <tr>
+<td></td>
     <td></td>
     <td></td>
     <td></td>
     <td></td>
-    <td style="background-color:#cecece"></td>
     <td></td>
-</tr>
-<tr>
     <td></td>
     <td></td>
     <td></td>
@@ -91,6 +93,12 @@
     <td></td>
 </tr>
 <tr>
+<td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>
@@ -99,6 +107,40 @@
     <td></td>
 </tr>
 <tr>
+<td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="background-color:#cecece"></td>
+    <td></td>
+</tr>
+<tr>
+<td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="background-color:#cecece"></td>
+    <td></td>
+</tr>
+<tr>
+<td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
     <td></td>
     <td></td>
     <td></td>
@@ -108,32 +150,32 @@
 </tr>
 <tr style="background-color:#ffffff">
     
-    <td colspan="5" class="text-right" >SUMAS</td>
+    <td colspan="11" class="text-right" >SUMAS</td>
     <td>$000.00</td>
 </tr>
 <tr style="background-color:#ffffff">
     
-    <td colspan="5" class="text-right" style="">IVA</td>
+    <td colspan="11" class="text-right" style="">IVA</td>
     <td>$000.00</td>
 </tr>
 <tr style="background-color:#ffffff">
     
-    <td colspan="5" class="text-right" style="">SUBTOTAL</td>
+    <td colspan="11" class="text-right" style="">SUBTOTAL</td>
     <td>$000.00</td>
 </tr>
 <tr style="background-color:#ffffff">
     
-    <td colspan="5" class="text-right" style="">VENTA NO SUJETA</td>
+    <td colspan="11" class="text-right" style="">VENTA NO SUJETA</td>
     <td>$000.00</td>
 </tr>
 <tr style="background-color:#ffffff">
     
-    <td colspan="5" class="text-right" style="">VENTA EXCENTA</td>
+    <td colspan="11" class="text-right" style="">VENTA EXCENTA</td>
     <td>$000.00</td>
 </tr>
 <tr style="background-color:#ffffff">
     
-    <td colspan="5" class="text-right" style="">TOTAL</td>
+    <td colspan="11" class="text-right" style="">TOTAL</td>
     <td>$000.00</td>
 </tr>
 </table>
@@ -144,7 +186,7 @@
 
                 </div>  <!-- Termina columna 8  -->
 
-                <div class="col-4 border">  <!-- Inicia columna 4  -->
+                <div class="col-3 border px-0 ">  <!-- Inicia columna 4  -->
 
                 <div class="col-12 text-center pt-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
                 <H1>Total $000.00</H1>
