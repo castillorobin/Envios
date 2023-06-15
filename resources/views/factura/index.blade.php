@@ -77,7 +77,7 @@
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
         <th style="color: #fff;">Estado del pago</th>
-        <th style="color: #fff;">Estado del paquete</th>
+        <th style="color: #fff;">Precio del paquete</th>
         <th style="color: #fff;">Precio del envio</th>
         <th style="color: #fff;">Total</th>
         <th style="color: #fff;">Agencia</th>
@@ -91,12 +91,18 @@
                     <td>{{ $pedidos[$i]->vendedor }} </td>
                     <td>{{ $pedidos[$i]->destinatario }} </td>
                     <td>{{ $pedidos[$i]->direccion }} </td>
-                    <td>{{ $pedidos[$i]->tipo }} </td>
+                    <td>{{ $pedidos[$i]->tipo }}</td>  
                     <td>{{ $pedidos[$i]->estado }} </td>
                     <td>{{ $pedidos[$i]->fecha_entrega }} </td>
-                    <td>{{ $pedidos[$i]->pagado }} </td>
-                    <td> </td>
-                    <td>{{ $pedidos[$i]->precio }} </td>
+                    @if($pedidos[$i]->pagado=='Pagado')
+                    <td class="text-center"><h5><span class="badge badge-success ">{{ $pedidos[$i]->pagado }} </span></h5></td>
+                    @else
+                    <td class="text-center"><h5><span class="badge badge-danger ">{{ $pedidos[$i]->pagado }} </span></h5></td>
+                    @endif
+
+                   
+                    <td>{{ $pedidos[$i]->precio }}  </td>
+                    <td>{{ $pedidos[$i]->envio }} </td>
                     <td>{{ $pedidos[$i]->total }} </td>
                     <td>{{ $pedidos[$i]->agencia }} </td>
                     <td>Opciones </td>
