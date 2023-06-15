@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+<script languague="javascript">
+       
+
+        function mostrando()
+{
+  var checkbox = document.getElementById('check2');
+  if (checkbox.checked != true)
+  {
+    div = document.getElementById('flotante');
+            div.style.display = 'none';
+            div2 = document.getElementById('flotante2');
+            div2.style.display = 'none';
+
+  }else{
+    div = document.getElementById('flotante');
+            div.style.display = '';
+            div2 = document.getElementById('flotante2');
+            div2.style.display = '';
+  }
+}
+
+</script>
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
@@ -13,16 +35,16 @@
 
                             <h3 class="text-center">Facturación</h3>
                         
-            <div class="row border mx-1 py-4" style="background-color: white;" >   <!-- Inicia fila General -->
-                <div class="col-9 ">   <!-- Inicia columna 8  -->
-                <div class="col-12 border ">   
+            <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
+                <div class="col-8">   <!-- Inicia columna 8  -->
+                <div class="col-12">   
                     <h4>Pagar</h4>
                 </div> 
-                <div class="row mt-2">   
+                <div class="row mt-1 border mr-1">   
                 
-                <div class="col-sm-6"> <!-- div buscar -->
+                <div class="col-sm-6 mt-1"> <!-- div buscar -->
 
-<div class="input-group mb-3">
+<div class="input-group mb-3 ">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
@@ -39,14 +61,14 @@
 </div> <!-- Termina div buscar  -->
 
 
-<div class="col-6">  <!-- div filtrros  -->
+<div class="col-6 mt-1">  <!-- div filtrros  -->
 <button type="button" class="btn btn-warning">Ver</button>
 <button type="button" class="btn btn-success">Editar</button>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12" style=" height:500px;  overflow: scroll;" > <!-- div tabla  -->
-<table id="tvendedor" class="table table-striped mt-2" style=" ">
-<thead style="background-color:#6777ef;">
+<div class="col-12 table-responsive " style=" height:500px; " > <!-- div tabla  -->
+<table id="tvendedor" class="table table-striped " style="  ">
+<thead style="background-color:#6777ef;"> 
     <tr >
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
@@ -94,76 +116,8 @@
     <td style="width: 100px; " style="background-color:#cecece"></td>
     <td style="width: 100px; "></td>
 </tr>
-<tr>
-<td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="background-color:#cecece"></td>
-    <td></td>
-</tr>
-<tr>
-<td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="background-color:#cecece"></td>
-    <td></td>
-</tr>
-<tr>
-<td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="background-color:#cecece"></td>
-    <td></td>
-</tr>
-<tr>
-<td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="background-color:#cecece"></td>
-    <td></td>
-</tr>
-<tr>
-<td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td style="background-color:#cecece"></td>
-    <td></td>
-</tr>
+
+
 <tr style="background-color:#ffffff">
     
     <td colspan="11" class="text-right" >SUMAS</td>
@@ -202,7 +156,7 @@
 
                 </div>  <!-- Termina columna 8  -->
 
-                <div class="col-3 border px-0 ">  <!-- Inicia columna 4  -->
+                <div class="col-4 border px-0 ">  <!-- Inicia columna 4  -->
 
                 <div class="col-12 text-center pt-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
                 <H1>Total $000.00</H1>
@@ -282,23 +236,24 @@
                 <br>
 
                 <div class="col-12">
-                <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    IVA
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Hacer descuento
-  </label>
-</div>
+                <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="check1">
+    <label class="form-check-label" for="check1">IVA</label>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="check2" Onclick="javascript:mostrando();">
+    <label class="form-check-label" for="check2">Hacer descuento</label>
+  </div>
 
                 </div>
 
 
-                <div class="col-6">
+
+
+
+
+
+                <div class="col-6" id="flotante" style="display:none;">
              
 <div class="input-group ">
   <div class="input-group-prepend">
@@ -318,10 +273,19 @@
                 </div>
 
 <br>
-            <div class="col-12">
+            <div class="col-12" id="flotante2" style="display:none;">
                 Nota de descuento
                 <input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
             </div>
+
+
+
+
+
+
+
+
+
             <br>
             <div class="col-12">
             <button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
