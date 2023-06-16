@@ -37,12 +37,10 @@
                         
             <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
                 <div class="col-8">   <!-- Inicia columna 8  -->
-                <div class="col-12">   
-                    <h4>Pagar</h4>
-                </div> 
+                
                 <div class="row mt-1 border mr-1">   
                 
-                <div class="col-sm-6 mt-1"> <!-- div buscar -->
+                <div class="col-sm-6 mt-4"> <!-- div buscar -->
 
 <div class="input-group mb-3 ">
 
@@ -61,7 +59,7 @@
 </div> <!-- Termina div buscar  -->
 
 
-<div class="col-6 mt-1">  <!-- div filtrros  -->
+<div class="col-6 mt-4">  <!-- div filtrros  -->
 <button type="button" class="btn btn-warning">Ver</button>
 <button type="button" class="btn btn-success">Editar</button>
                 </div> <!-- Termina div filtros  -->
@@ -161,8 +159,8 @@
                 </div> <!-- Termina columna 12 -->
 
                 </div>  <!-- Termina columna 8  -->
-
-                <div class="col-4 border px-0 ">  <!-- Inicia columna 4  -->
+  
+                <div class="col-4 border px-0 mt-1">  <!-- Inicia columna 4  -->
 
                 <div class="col-12 text-center pt-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
                 <H1>Total $000.00</H1>
@@ -170,7 +168,7 @@
                 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
                 <br>
                 Cajero
-                <input type="text" class="form-control" name="cajero" id="cajero" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" >
+                <input type="text" class="form-control" name="cajero" id="cajero" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
                 <br>
                 <div class="row pt-2">
                     
@@ -293,7 +291,7 @@
 
 
             <br>
-            <div class="col-12">
+            <div class="col-12 mb-3">
             <button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
             </div>
 
