@@ -68,6 +68,7 @@
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
+        <th>*</th>
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Dirección</th>
@@ -86,6 +87,12 @@
 </tbody> 
 @for($i=0;  $i< count($pedidos); $i++ )
 <tr>
+                    <td >
+                    <div class="form-group form-check" style="width: 5px;">
+                     <input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" >
+                     
+                    </div>
+                    </td>
                     <td>{{ $pedidos[$i]->vendedor }} </td>
                     <td>{{ $pedidos[$i]->destinatario }} </td>
                     <td>{{ $pedidos[$i]->direccion }} </td>
@@ -100,6 +107,7 @@
 
                    
                     <td>{{ $pedidos[$i]->precio }}  </td>
+                    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
                     <td>{{ $pedidos[$i]->envio }} </td>
                     <td>{{ $pedidos[$i]->total }} </td>
                     <td>{{ $pedidos[$i]->agencia }} </td>
@@ -163,7 +171,8 @@
                 <div class="col-4 border px-0 mt-1">  <!-- Inicia columna 4  -->
 
                 <div class="col-12 text-center pt-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
-                <H1>Total $000.00</H1>
+                <H1>Total $ <label for="" id="preci">0</label></H1>
+             
                 </div> <!-- Termina columna total  -->
                 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
                 <br>
@@ -213,6 +222,7 @@
                         <option value="Efectivo">Ticket</option>
                         <option value="Deposito">Factura</option>
                         <option value="Tigo Money">Crédito Fiscal</option>
+                        <option value="Tigo Money">PDF</option>
                         
                     </select>
 
@@ -305,4 +315,25 @@
             </div>
         </div>
     </section>    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+         <script>
+        
+$(document).ready(function(){
+	$(document).on('click', '#check3', function(){
+		var id=$(this).val();
+		var prec=$('#pre'+id).text();
+        
+        //alert("le diste click" + prec);
+        var tota = $('#preci').text();
+        //var tota = document.getElementById("pre").val;
+        var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
+        $('#preci').text(to3);  
+       // $('#preci').text(tota.toString() + 'hola' );  
+
+
+
+    });
+});
+ 
+        </script> 
 @endsection
