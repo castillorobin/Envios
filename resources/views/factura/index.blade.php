@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .modal-backdrop {
+  z-index: 0;
+}
+</style>
 <script languague="javascript">
        
 
@@ -36,7 +41,12 @@
                             <h3 class="text-center">Facturación</h3>
                         
             <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
-                <div class="col-8">   <!-- Inicia columna 8  -->
+            <div class="col-12 text-center pt-3 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
+<H1>Total $ <label for="" id="preci">0</label></H1>
+
+</div> <!-- Termina columna total  -->
+
+                <div class="col-12">   <!-- Inicia columna 8  -->
                 
                 <div class="row mt-1 border mr-1">   
                 
@@ -62,9 +72,12 @@
 <div class="col-6 mt-4">  <!-- div filtrros  -->
 <button type="button" class="btn btn-warning">Ver</button>
 <button type="button" class="btn btn-success">Editar</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ Pagar
+</button>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12 table-responsive " style=" height:500px; " > <!-- div tabla  -->
+<div class="col-12 table-responsive " style=" height:800px; " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
@@ -168,114 +181,113 @@
 
                 </div>  <!-- Termina columna 8  -->
   
-                <div class="col-4 border px-0 mt-1">  <!-- Inicia columna 4  -->
+            
+            </div> <!-- Termina fila General -->
+                            
+            
+            
+            <!-- Empieza Modal -->
 
-                <div class="col-12 text-center pt-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
-                <H1>Total $ <label for="" id="preci">0</label></H1>
-             
-                </div> <!-- Termina columna total  -->
-                <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
-                <br>
-                Cajero
-                <input type="text" class="form-control" name="cajero" id="cajero" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
-                <br>
-                <div class="row pt-2">
-                    
-                <div class="col-6">Medio de pago
-                    <select name="medio" id="medio" class="form-control">
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="Deposito">Deposito</option>
-                        <option value="Tigo Money">Tigo Money</option>
-                        <option value="Chivo">Chivo</option>
-                    </select>
-
-                </div>
-                <div class="col-6">
-                    
-               
-          Fecha de pago
-
-          <div class="input-group ">
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-            </div>
-  
-            <input type="text" class="form-control" name="fpago" id="fpago" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
-              
-          </div>
-        
+            <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pagar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         
 
+      <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
+
+<div class="col-12">  <!-- Inicia cajero, pagos etc. -->
+<br>
+Cajero
+<input type="text" class="form-control" name="cajero" id="cajero" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+<br>
+<div class="row pt-2">
+    
+<div class="col-6">Medio de pago
+    <select name="medio" id="medio" class="form-control">
+        <option value="Efectivo">Efectivo</option>
+        <option value="Deposito">Deposito</option>
+        <option value="Tigo Money">Tigo Money</option>
+        <option value="Chivo">Chivo</option>
+    </select>
+
+</div>
+<div class="col-6">
+    
+
+Fecha de pago
+
+<div class="input-group ">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
+</div>
+
+<input type="text" class="form-control" name="fpago" id="fpago" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+
+</div>
 
 
-                </div>
-                </div>
+
+
+
+</div>
+</div>
 
 
 
 <br>
 
-                <div class="row pt-2">
-                    
-                <div class="col-6">Tipo de comprobante
-                    <select name="medio" id="medio" class="form-control">
-                        <option value="Efectivo">Ticket</option>
-                        <option value="Deposito">Factura</option>
-                        <option value="Tigo Money">Crédito Fiscal</option>
-                        <option value="Tigo Money">PDF</option>
-                        
-                    </select>
-
-                </div>
-                <div class="col-6">
-                    
-               
-          No. de comprobante
-
-          <div class="input-group ">
-            <div class="input-group-prepend">
-            
-            </div>
-  
-            <input type="text" class="form-control" name="fpago" id="fpago" aria-label="Username" aria-describedby="basic-addon1" >
-              
-          </div>
-        
-        
-
-
-
-                </div>
-                </div>
-                <br>
-
-                <div class="col-12">
-                <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="check1">
-    <label class="form-check-label" for="check1">IVA</label>
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="check2" Onclick="javascript:mostrando();">
-    <label class="form-check-label" for="check2">Hacer descuento</label>
-  </div>
-
-                </div>
-
-
-
-
-
-
-
-                <div class="col-6" id="flotante" style="display:none;">
-             
-<div class="input-group ">
-  <div class="input-group-prepend">
-  <span class="input-group-text" id="basic-addon1"> <i class="far fa-money-bill-alt"></i> </span>
-  </div>
-
-  <input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+<div class="row pt-2">
     
+<div class="col-6">Tipo de comprobante
+    <select name="medio" id="medio" class="form-control">
+        <option value="Efectivo">Ticket</option>
+        <option value="Deposito">Factura</option>
+        <option value="Tigo Money">Crédito Fiscal</option>
+        <option value="Tigo Money">PDF</option>
+        
+    </select>
+
+</div>
+<div class="col-6">
+    
+
+No. de comprobante
+
+<div class="input-group ">
+<div class="input-group-prepend">
+
+</div>
+
+<input type="text" class="form-control" name="fpago" id="fpago" aria-label="Username" aria-describedby="basic-addon1" >
+
+</div>
+
+
+
+
+
+</div>
+</div>
+<br>
+
+<div class="col-12">
+<div class="form-group form-check">
+<input type="checkbox" class="form-check-input" id="check1">
+<label class="form-check-label" for="check1">IVA</label>
+</div>
+<div class="form-group form-check">
+<input type="checkbox" class="form-check-input" id="check2" Onclick="javascript:mostrando();">
+<label class="form-check-label" for="check2">Hacer descuento</label>
+</div>
+
 </div>
 
 
@@ -283,14 +295,31 @@
 
 
 
-      </div>
-                </div>
+
+<div class="col-6" id="flotante" style="display:none;">
+
+<div class="input-group ">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> <i class="far fa-money-bill-alt"></i> </span>
+</div>
+
+<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+
+</div>
+
+
+
+
+
+
+</div>
+</div>
 
 <br>
-            <div class="col-12" id="flotante2" style="display:none;">
-                Nota de descuento
-                <input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
-            </div>
+<div class="col-12" id="flotante2" style="display:none;">
+Nota de descuento
+<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+</div>
 
 
 
@@ -300,15 +329,35 @@
 
 
 
-            <br>
-            <div class="col-12 mb-3">
-            <button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
-            </div>
+<br>
+<div class="col-12 mb-3">
+<button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
+</div>
 
-                </div> <!-- Termina cajero, pagos etc.  -->
-                </div> <!-- Termina columna 4  -->
-            </div> <!-- Termina fila General -->
-                            
+</div> <!-- Termina cajero, pagos etc.  -->
+</div> <!-- Termina columna 4  -->
+
+
+
+      </div>
+      <div class="modal-footer " style="background-color:white;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            <!-- Termina Modal -->
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div> 
