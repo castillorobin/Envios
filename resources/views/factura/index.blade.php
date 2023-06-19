@@ -374,9 +374,17 @@ $(document).ready(function(){
         
         //alert("le diste click" + prec);
         var tota = $('#preci').text();
-        //var tota = document.getElementById("pre").val;
-        var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
+        if ($(this).prop('checked')) {
+            var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
         $('#preci').text(to3);  
+        } else {
+            var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
+        $('#preci').text(to3);  
+        }
+        
+        
+        //var tota = document.getElementById("pre").val;
+        
        // $('#preci').text(tota.toString() + 'hola' );  
 
 
