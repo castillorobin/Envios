@@ -28,6 +28,15 @@
 }
 
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>  
+jQuery(document).ready(function($){
+    $(document).ready(function() {
+        $('.mi-selector').select2();
+    });
+});
+</script>
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
@@ -57,7 +66,7 @@
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
-<select class="form-control" name="" id="">
+<select class="form-control mi-selector" name="" id="">
     <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
