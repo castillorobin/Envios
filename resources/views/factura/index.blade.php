@@ -162,7 +162,7 @@ jQuery(document).ready(function($){
     <td  style="color: #fff; height:5px;" colspan="2">VENTA NO SUJETA </td>
     <td  style="color: #fff; height:5px;" colspan="2">VENTA EXCENTA </td>
     <td  style="color: #fff; height:5px;" colspan="2">TOTAL</td>
-    <td style="height:5px;"><i class="fa-solid fa-sack-dollar"></i></td>
+    <td style="color: #fff; height:5px;"><i class="fas fa-money-bill-wave"></i></td>
     <td style="color: #fff; height:5px;"><i class="fas fa-window-close"></i></td>
     <td style="color: #fff; height:5px;"></td>
     
