@@ -128,51 +128,54 @@
                     </tr>
                         @endfor
 <tr>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; "></td>
-    <td style="width: 100px; " style="background-color:#cecece"></td>
-    <td style="width: 100px; "></td>
+<td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+</tr>
+<tr style="background-color:#6777ef;">
+<td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
+    <td style="color: #fff;" ></td>
 </tr>
 
 
 <tr style="background-color:#ffffff">
-    
-    <td colspan="11" class="text-right" >SUMAS</td>
-    <td>$000.00</td>
+    <td> </td>
+    <td>SUMAS $000.00</td>
+    <td>IVA $000.00</td>
+    <td >SUBTOTAL $000.00</td>
+    <td >VENTA NO SUJETA $000.00</td>
+    <td >VENTA EXCENTA $000.00</td>
+    <td >TOTAL $000.00</td>
+    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ Pagar
+</button></td>
+    <td> <button type="button" class="btn btn-danger">Cancelar</button></td>
 </tr>
-<tr style="background-color:#ffffff">
-    
-    <td colspan="11" class="text-right" style="">IVA</td>
-    <td>$000.00</td>
-</tr>
-<tr style="background-color:#ffffff">
-    
-    <td colspan="11" class="text-right" style="">SUBTOTAL</td>
-    <td>$000.00</td>
-</tr>
-<tr style="background-color:#ffffff">
-    
-    <td colspan="11" class="text-right" style="">VENTA NO SUJETA</td>
-    <td>$000.00</td>
-</tr>
-<tr style="background-color:#ffffff">
-    
-    <td colspan="11" class="text-right" style="">VENTA EXCENTA</td>
-    <td>$000.00</td>
-</tr>
-<tr style="background-color:#ffffff">
-    
-    <td colspan="11" class="text-right" style="">TOTAL</td>
-    <td>$000.00</td>
-</tr>
+
+
+
+
 </table>
 </div><!-- termina div tabla  -->
 
@@ -202,9 +205,12 @@
         
 
       <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
+      <div class="col-12 text-center pt-2 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
+<H1>Total $ <label for="" id="preci">0</label></H1>
 
+</div> <!-- Termina columna total  -->
 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
-<br>
+
 Cajero
 <input type="text" class="form-control" name="cajero" id="cajero" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
 <br>
