@@ -154,24 +154,35 @@ jQuery(document).ready(function($){
 
 
 
-<tr style="background-color:#6777ef">
+<tr class="text-center" style="background-color:#6777ef; height:5px;">
     
-    <td style="color: #fff;" colspan="2">SUMAS $000.00</td>
-    <td style="color: #fff;">IVA $000.00</td>
-    <td  style="color: #fff;">SUBTOTAL $000.00</td>
-    <td  style="color: #fff;" colspan="2">VENTA NO SUJETA $000.00</td>
-    <td  style="color: #fff;" colspan="2">VENTA EXCENTA $000.00</td>
-    <td  style="color: #fff;" colspan="2">TOTAL $000.00</td>
-    <td colspan="3" style="color: #fff;"> <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> 
-   &nbsp; <a href="/facturas" class="btn btn-danger">Cancelar</a>
-</td>
+    <td style="color: #fff; height:5px;" colspan="2">SUMAS</td>
+    <td style="color: #fff; height:5px;">IVA </td>
+    <td  style="color: #fff; height:5px;">SUBTOTAL</td>
+    <td  style="color: #fff; height:5px;" colspan="2">VENTA NO SUJETA </td>
+    <td  style="color: #fff; height:5px;" colspan="2">VENTA EXCENTA </td>
+    <td  style="color: #fff; height:5px;" colspan="2">TOTAL</td>
+    <td style="height:5px;"><i class="fa-solid fa-sack-dollar"></i></td>
+    <td style="color: #fff; height:5px;"><i class="fas fa-window-close"></i></td>
+    <td style="color: #fff; height:5px;"></td>
     
-      
+     
     
    
 </tr>
 
+<tr class="text-center">    
+<td colspan="2">$000.00</td>
+    <td>$000.00</td>
+    <td > $000.00</td>
+    <td  colspan="2">$000.00</td>
+    <td  colspan="2">$000.00</td>
+    <td  colspan="2">$000.00</td>
+    <td > <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> </td>
+    <td> <a href="/facturas" class="btn btn-danger">Cancelar</a></td>
+   <td></td>
 
+</tr>
 
 
 </table>
