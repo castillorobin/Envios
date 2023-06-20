@@ -151,35 +151,24 @@ jQuery(document).ready(function($){
     <td  ></td>
     <td  ></td>
 </tr>
-<tr style="background-color:#6777ef;">
-<td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-    <td style="color: #fff;" ></td>
-</tr>
 
 
-<tr style="background-color:#ffffff">
-    <td> </td>
-    <td>SUMAS $000.00</td>
-    <td>IVA $000.00</td>
-    <td >SUBTOTAL $000.00</td>
-    <td >VENTA NO SUJETA $000.00</td>
-    <td >VENTA EXCENTA $000.00</td>
-    <td >TOTAL $000.00</td>
-    <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
- Pagar
-</button></td>
-    <td> <button type="button" class="btn btn-danger">Cancelar</button></td>
+
+<tr style="background-color:#6777ef">
+    
+    <td style="color: #fff;" colspan="2">SUMAS $000.00</td>
+    <td style="color: #fff;">IVA $000.00</td>
+    <td  style="color: #fff;">SUBTOTAL $000.00</td>
+    <td  style="color: #fff;" colspan="2">VENTA NO SUJETA $000.00</td>
+    <td  style="color: #fff;" colspan="2">VENTA EXCENTA $000.00</td>
+    <td  style="color: #fff;" colspan="2">TOTAL $000.00</td>
+    <td colspan="3" style="color: #fff;"> <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> 
+   &nbsp; <a href="/facturas" class="btn btn-danger">Cancelar</a>
+</td>
+    
+      
+    
+   
 </tr>
 
 
