@@ -86,7 +86,7 @@ jQuery(document).ready(function($){
 </button>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12 table-responsive " style=" height:800px; " > <!-- div tabla  -->
+<div class="col-12 table-responsive " style=" " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
@@ -178,14 +178,18 @@ jQuery(document).ready(function($){
     <td  colspan="2">$000.00</td>
     <td  colspan="2">$000.00</td>
     <td  colspan="2">$000.00</td>
-    <td > <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> </td>
-    <td> <a href="/facturas" class="btn btn-danger">Cancelar</a></td>
+    <td >  </td>
+    <td> </td>
    <td></td>
 
 </tr>
 
 
 </table>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> 
+    <a href="/facturas" class="btn btn-danger">Cancelar</a>
+    <br>
+    <p></p>
 </div><!-- termina div tabla  -->
 
 
