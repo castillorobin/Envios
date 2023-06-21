@@ -188,7 +188,7 @@ jQuery(document).ready(function($){
 </table>
 
 </div><!-- termina div tabla  -->
-
+<div class="col-6 my-4">
 &nbsp; &nbsp;
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> 
   &nbsp;  &nbsp; <a href="/facturas" class="btn btn-danger">Cancelar</a>
@@ -196,7 +196,7 @@ jQuery(document).ready(function($){
     <p></p>
     &nbsp;
     <p></p>
-
+    </div>
 
                 </div> <!-- Termina columna 12 -->
      
