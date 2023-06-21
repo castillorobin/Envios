@@ -86,7 +86,7 @@ jQuery(document).ready(function($){
 </button>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12 table-responsive " style=" " > <!-- div tabla  -->
+<div class="col-12 table-responsive " style="height:700px; " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
