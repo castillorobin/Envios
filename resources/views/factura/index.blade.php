@@ -186,20 +186,25 @@ jQuery(document).ready(function($){
 
 
 </table>
+
+</div><!-- termina div tabla  -->
+
+&nbsp; &nbsp;
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> 
-    <a href="/facturas" class="btn btn-danger">Cancelar</a>
+  &nbsp;  &nbsp; <a href="/facturas" class="btn btn-danger">Cancelar</a>
     <br>
     <p></p>
-</div><!-- termina div tabla  -->
+    &nbsp;
+    <p></p>
 
 
                 </div> <!-- Termina columna 12 -->
-
+     
                 </div>  <!-- Termina columna 8  -->
-  
-            
+             
             </div> <!-- Termina fila General -->
                             
+         
             
             
             <!-- Empieza Modal -->
@@ -369,8 +374,6 @@ Nota de descuento
 
 
             <!-- Termina Modal -->
-
-
 
 
 
