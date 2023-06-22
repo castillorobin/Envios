@@ -29,13 +29,28 @@
 
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>  
 jQuery(document).ready(function($){
     $(document).ready(function() {
         $('.mi-selector').select2();
+       
+        $('#comer').on('select2:select', function (e) { 
+            
+            var data = e.params.data;
+    console.log(data.text);
+    //document.getElementById('mostrar').value = data.text;
+    window.location = "http://54.237.159.219/facturasfiltro/" + data.text;
+
+        });
+
     });
+
+   
 });
+
+
+
 </script>
     <section class="section">
         <div class="section-header">
@@ -66,7 +81,7 @@ jQuery(document).ready(function($){
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
-<select class="form-control mi-selector" name="" id="">
+<select class="form-control mi-selector" name="comer" id="comer">
     <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
@@ -408,11 +423,24 @@ $(document).ready(function(){
         //var tota = document.getElementById("pre").val;
         
        // $('#preci').text(tota.toString() + 'hola' );  
-
-
+     
 
     });
+   
+    
+    
+
+    
+
+   // $(document).on('change', '.selection', function(){   
+//console.log('Hola');
+ //   });
+    
 });
  
+
+
+
+
         </script> 
 @endsection

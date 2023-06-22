@@ -24,6 +24,16 @@ class FacturacionController extends Controller
 
     }
 
+    public function filtro($comercio)
+    {
+        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        //$pedidos = Pedido::all();
+        $vendedores = Vendedor::all();
+       //$repartidores = Repartidor::all();
+       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
