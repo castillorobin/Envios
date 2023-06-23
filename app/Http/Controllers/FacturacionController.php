@@ -29,8 +29,9 @@ class FacturacionController extends Controller
         $pedidos = Pedido::where('vendedor', $comercio)->get();
         //$pedidos = Pedido::all();
         $vendedores = Vendedor::all();
+        $vende = Vendedor::where('nombre', $comercio)->get();
        //$repartidores = Repartidor::all();
-       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
+       return view('factura.inicio')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'vende'=>$vende  ]);
 
     }
 

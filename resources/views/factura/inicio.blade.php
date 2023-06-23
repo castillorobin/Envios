@@ -41,7 +41,8 @@ jQuery(document).ready(function($){
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
     window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   // window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+
         });
 
     });
@@ -82,7 +83,8 @@ jQuery(document).ready(function($){
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
 <select class="form-control mi-selector" name="comer" id="comer">
-    <option value="">Buscar Comercio</option>
+    
+    <option value="{{$vende[0]->nombre }}" selected >{{$vende[0]->nombre }}</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
        
@@ -95,7 +97,8 @@ jQuery(document).ready(function($){
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
 <button type="button" class="btn btn-warning">Ver</button>
-<button type="button" class="btn btn-success">Editar</button>
+<a href="/vendedores/{{ $vende[0]->id }}/edit" ><button class="btn btn-success" >Editar</button></a>
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  Pagar
 </button>
@@ -122,7 +125,91 @@ jQuery(document).ready(function($){
 </thead>
 <tbody> 
 </tbody> 
+@for($i=0;  $i< count($pedidos); $i++ )
+<tr>
+                    <td >
+                    <div class="form-group form-check" style="width: 5px;">
+                     <input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" >
+                     
+                    </div>
+                    </td>
+                    <td>{{ $pedidos[$i]->vendedor }} </td>
+                    <td>{{ $pedidos[$i]->destinatario }} </td>
+                    <td>{{ $pedidos[$i]->direccion }} </td>
+                    <td>{{ $pedidos[$i]->tipo }}</td>  
+                    <td>{{ $pedidos[$i]->estado }} </td>
+                    <td>{{ $pedidos[$i]->fecha_entrega }} </td>
+                    @if($pedidos[$i]->pagado=='Pagado')
+                    <td class="text-center"><h5><span class="badge badge-success ">{{ $pedidos[$i]->pagado }} </span></h5></td>
+                    @else
+                    <td class="text-center"><h5><span class="badge badge-danger ">{{ $pedidos[$i]->pagado }} </span></h5></td>
+                    @endif
 
+                   
+                    <td>{{ $pedidos[$i]->precio }}  </td>
+                    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+                    <td>{{ $pedidos[$i]->envio }} </td>
+                    <td>{{ $pedidos[$i]->total }} </td>
+                    <td>{{ $pedidos[$i]->agencia }} </td>
+                    
+
+
+
+                    <td class="opciones text-center" style="">
+    
+  
+  
+ 
+    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+
+    <i class="fas fa-list"></i></a>
+    <ul class="dropdown-menu" style="background-color: #ffffff;"> 
+     <div class="botones"> 
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    </div>  
+	<li class="botones">
+   
+    &nbsp;
+    <i class="fas fa-eye"></i>
+    &nbsp;&nbsp;
+    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
+</form>
+</li>
+<li class="botones">
+    <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        &nbsp;
+        <i class="fas fa-trash-alt"></i> 
+        &nbsp;&nbsp;
+        <button style="background: none; border: 0;">Eliminar</button>
+        </form>
+        </li>
+    </ul>
+ 
+  <!--
+ <a class="btn btn-info" href="{{ route('pedidos.edit', $pedidos[$i]->id) }}">Editar</a>
+
+
+ <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger">Eliminar</button>
+        </form>
+
+-->
+
+    </td>
+
+
+
+
+                    </tr>
+                        @endfor
 <tr>
 <td  ></td>
     <td  ></td>
