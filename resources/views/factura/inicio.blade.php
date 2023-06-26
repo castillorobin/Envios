@@ -36,14 +36,14 @@ function ivan()
 		//var ivavalor = 1.0;
         //var iva = parseFloat(total, 10) + parseFloat(ivavalor, 10);
         //alert("le diste click" + prec);
-        var tota = total * 0.13;
+        var tiva = document.getElementById('atotal').textContent;
        
          
 
         if (document.getElementById("checkiva").checked) {
             
             //var to3 = parseFloat(total, 10) + parseFloat(ivavalor, 10);
-            document.getElementById('preci2').innerHTML = parseFloat(total) + parseFloat(tota) ; 
+            document.getElementById('preci2').innerHTML = parseFloat(total) - parseFloat(tiva) ; 
            
             //document.getElementById(preci2) = to4;  
         } else {
@@ -68,7 +68,7 @@ jQuery(document).ready(function($){
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
    window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -176,6 +176,7 @@ jQuery(document).ready(function($){
                     <td>{{ $pedidos[$i]->precio }}  </td>
                     <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
                     <td>{{ $pedidos[$i]->envio }} </td>
+                    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
                     <td>{{ $pedidos[$i]->total }} </td>
                     <td>{{ $pedidos[$i]->agencia }} </td>
                     
@@ -494,26 +495,32 @@ $(document).ready(function(){
 	$(document).on('click', '#check3', function(){
 		var id=$(this).val();
 		var prec=$('#pre'+id).text();
+        var envi=$('#env'+id).text();
         
         //alert("le diste click" + prec);
         var tota = $('#preci').text();
+        var senvi = $('#sumas').text();
         if ($(this).prop('checked')) {
             var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
+            var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
         $('#preci').text(to3); 
-        $('#preci2').text(to3);  
+        $('#preci2').text(to3); 
+        $('#sumas').text(tenv);  
         } else {
             var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
+            var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
         $('#preci').text(to3); 
-        $('#preci2').text(to3);  
+        $('#preci2').text(to3);
+        $('#sumas').text(tenv);  
         }
-        $('#sumas').text(to3); 
-        $('#ivat').text((parseFloat(to3, 10) * 0.13).toFixed(2) ); 
-        $('#stotal').text(parseFloat(to3, 10) + (parseFloat(to3, 10) * 0.13) ); 
-        $('#atotal').text(parseFloat(to3, 10) + (parseFloat(to3, 10) * 0.13) ); 
-        
-        //var tota = document.getElementById("pre").val;
-        
-       // $('#preci').text(tota.toString() + 'hola' );  
+
+
+
+       
+       $('#ivat').text((parseFloat(tenv, 10) * 0.13).toFixed(2) ); 
+        $('#stotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
+        $('#atotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
+  
      
 
     });
