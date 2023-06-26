@@ -67,8 +67,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-   // window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-    window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -273,12 +273,12 @@ jQuery(document).ready(function($){
 </tr>
 
 <tr class="text-center">    
-<td colspan="2">$000.00</td>
-    <td>$000.00</td>
-    <td > $000.00</td>
+<td colspan="2">$<label for="" id="sumas">0</label></td>
+    <td>$<label for="" id="ivat">0</label></td>
+    <td > $<label for="" id="stotal">0</label></td>
+    <td  colspan="2">$ 000.00</td>
     <td  colspan="2">$000.00</td>
-    <td  colspan="2">$000.00</td>
-    <td  colspan="2">$000.00</td>
+    <td  colspan="2">$<label for="" id="atotal">0</label></td>
     <td >  </td>
     <td> </td>
    <td></td>
@@ -506,7 +506,10 @@ $(document).ready(function(){
         $('#preci').text(to3); 
         $('#preci2').text(to3);  
         }
-        
+        $('#sumas').text(to3); 
+        $('#ivat').text((parseFloat(to3, 10) * 0.13).toFixed(2) ); 
+        $('#stotal').text(parseFloat(to3, 10) + (parseFloat(to3, 10) * 0.13) ); 
+        $('#atotal').text(parseFloat(to3, 10) + (parseFloat(to3, 10) * 0.13) ); 
         
         //var tota = document.getElementById("pre").val;
         
@@ -515,31 +518,7 @@ $(document).ready(function(){
 
     });
    
-    $(document).on('click', '#chec', function(){
-		var total=$('#preci2').val();
-		var ivavalor = 1.0;
-        var iva = parseFloat(total, 10) + parseFloat(ivavalor, 10);
-        //alert("le diste click" + prec);
-        //var tota = $('#preci').text();
-        if ($(this).prop('checked')) {
-            
-            //var to3 = parseFloat(total, 10) + parseFloat(ivavalor, 10);
-            var to4 = parseFloat(total) + parseFloat(ivavalor);
-            
-        $('#preci2').text(to4);  
-        } else {
-            var to4 = parseFloat(tota, 10) - parseFloat(prec, 10);
-        
-        $('#preci2').text(to4);  
-        }
-        
-        
-        //var tota = document.getElementById("pre").val;
-        
-       // $('#preci').text(tota.toString() + 'hola' );  
-     
-
-    });
+    
     
 
 
