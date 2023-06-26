@@ -40,8 +40,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   // window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+    //window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
         });
 
     });
@@ -94,9 +94,9 @@ jQuery(document).ready(function($){
 
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
-<button type="button" class="btn btn-warning">Ver</button>
-<button type="button" class="btn btn-success">Editar</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-warning" disabled>Ver</button>
+<button type="button" class="btn btn-success" disabled>Editar</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>
  Pagar
 </button>
                 </div> <!-- Termina div filtros  -->
@@ -217,7 +217,7 @@ jQuery(document).ready(function($){
 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
 
 Cajero
-<input type="text" class="form-control" name="cajero" id="cajero" value="{{\Illuminate\Support\Facades\Auth::user()->name}}" readonly>
+<input type="text" class="form-control" name="cajero" id="cajero" value="" readonly>
 <br>
 <div class="row pt-2">
     

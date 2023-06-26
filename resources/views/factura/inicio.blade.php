@@ -27,6 +27,33 @@
   }
 }
 
+
+
+
+function ivan()
+{
+    var total = document.getElementById('preci2').textContent;
+		//var ivavalor = 1.0;
+        //var iva = parseFloat(total, 10) + parseFloat(ivavalor, 10);
+        //alert("le diste click" + prec);
+        var tota = total * 0.13;
+       
+         
+
+        if (document.getElementById("checkiva").checked) {
+            
+            //var to3 = parseFloat(total, 10) + parseFloat(ivavalor, 10);
+            document.getElementById('preci2').innerHTML = parseFloat(total) + parseFloat(tota) ; 
+           
+            //document.getElementById(preci2) = to4;  
+        } else {
+            document.getElementById('preci2').innerHTML = document.getElementById('preci').textContent ; 
+        
+        
+        }
+        
+}
+
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -40,8 +67,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   // window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+    window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -298,7 +325,7 @@ jQuery(document).ready(function($){
 
       <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
       <div class="col-12 text-center pt-2 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
-<H1>Total $ <label for="" id="preci">0</label></H1>
+<H1>Total $ <label for="" id="preci2">0</label></H1>
 
 </div> <!-- Termina columna total  -->
 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
@@ -378,7 +405,7 @@ No. de comprobante
 
 <div class="col-12">
 <div class="form-group form-check">
-<input type="checkbox" class="form-check-input" id="check1">
+<input type="checkbox" class="form-check-input" id="checkiva" Onclick="javascript:ivan();">
 <label class="form-check-label" for="check1">IVA</label>
 </div>
 <div class="form-group form-check">
@@ -472,10 +499,12 @@ $(document).ready(function(){
         var tota = $('#preci').text();
         if ($(this).prop('checked')) {
             var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
-        $('#preci').text(to3);  
+        $('#preci').text(to3); 
+        $('#preci2').text(to3);  
         } else {
             var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
-        $('#preci').text(to3);  
+        $('#preci').text(to3); 
+        $('#preci2').text(to3);  
         }
         
         
@@ -486,10 +515,33 @@ $(document).ready(function(){
 
     });
    
-    
+    $(document).on('click', '#chec', function(){
+		var total=$('#preci2').val();
+		var ivavalor = 1.0;
+        var iva = parseFloat(total, 10) + parseFloat(ivavalor, 10);
+        //alert("le diste click" + prec);
+        //var tota = $('#preci').text();
+        if ($(this).prop('checked')) {
+            
+            //var to3 = parseFloat(total, 10) + parseFloat(ivavalor, 10);
+            var to4 = parseFloat(total) + parseFloat(ivavalor);
+            
+        $('#preci2').text(to4);  
+        } else {
+            var to4 = parseFloat(tota, 10) - parseFloat(prec, 10);
+        
+        $('#preci2').text(to4);  
+        }
+        
+        
+        //var tota = document.getElementById("pre").val;
+        
+       // $('#preci').text(tota.toString() + 'hola' );  
+     
+
+    });
     
 
-    
 
    // $(document).on('change', '.selection', function(){   
 //console.log('Hola');
@@ -497,7 +549,6 @@ $(document).ready(function(){
     
 });
  
-
 
 
 
