@@ -72,9 +72,14 @@ jQuery(document).ready(function($){
 
         });
 
+
+
+        
+   
     });
 
-   
+ 
+    
 });
 
 
@@ -429,7 +434,7 @@ No. de comprobante
 <span class="input-group-text" id="basic-addon1"> <i class="far fa-money-bill-alt"></i> </span>
 </div>
 
-<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" name="descu" id="descu"  aria-label="Username" aria-describedby="basic-addon1">
 
 </div>
 
@@ -468,7 +473,7 @@ Nota de descuento
       </div>
       <div class="modal-footer " style="background-color:white;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        
       </div>
     </div>
   </div>
@@ -492,6 +497,26 @@ Nota de descuento
          <script>
         
 $(document).ready(function(){
+
+    $("#descu").change(function() {
+
+//alert('hola mundo');
+
+var total = document.getElementById('preci2').textContent;
+//const preci = parseFloat(document.getElementById("precio").value);						                                                    
+const desc =parseFloat($(this).val()); 
+var final = total - desc ;
+
+document.getElementById("preci2").textContent = final;
+
+ 
+
+
+
+ });
+
+
+
 	$(document).on('click', '#check3', function(){
 		var id=$(this).val();
 		var prec=$('#pre'+id).text();
