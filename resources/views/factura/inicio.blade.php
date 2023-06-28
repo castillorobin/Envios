@@ -18,6 +18,8 @@
             div.style.display = 'none';
             div2 = document.getElementById('flotante2');
             div2.style.display = 'none';
+            document.getElementById('preci2').innerHTML = document.getElementById('preci').textContent ; 
+            document.getElementById('descu').value = 0;
 
   }else{
     div = document.getElementById('flotante');
@@ -379,10 +381,11 @@ Fecha de pago
     
 <div class="col-6">Tipo de comprobante
     <select name="medio" id="medio" class="form-control">
-        <option value="Efectivo">Ticket</option>
-        <option value="Deposito">Factura</option>
-        <option value="Tigo Money">Crédito Fiscal</option>
-        <option value="Tigo Money">PDF</option>
+        <option value="Ticket">Ticket</option>
+        <option value="Factura">Factura</option>
+        <option value="Credito Fiscal">Crédito Fiscal</option>
+        <option value="PDF">PDF</option>
+        <option value="Sin comprobante">Sin comprobante</option>
         
     </select>
 
