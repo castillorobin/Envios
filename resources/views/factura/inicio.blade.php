@@ -18,7 +18,9 @@
             div.style.display = 'none';
             div2 = document.getElementById('flotante2');
             div2.style.display = 'none';
-            document.getElementById('preci2').innerHTML = document.getElementById('preci').textContent ; 
+            var total = document.getElementById('preci2').textContent;
+            var desc = document.getElementById('descu').value;
+            document.getElementById('preci2').innerHTML = parseFloat(total) + parseFloat(desc) ; 
             document.getElementById('descu').value = 0;
 
   }else{
