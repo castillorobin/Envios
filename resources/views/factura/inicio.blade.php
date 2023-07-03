@@ -467,7 +467,7 @@ Nota de descuento
 
 <br>
 <div class="col-12 mb-3">
-<button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
+<a href="/factura/facturapdf" ><button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
 </div>
 
 </div> <!-- Termina cajero, pagos etc.  -->

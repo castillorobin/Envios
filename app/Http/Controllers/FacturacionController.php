@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Facturacion;
 use App\Models\Pedido;
 use App\Models\Vendedor;
+use Illuminate\Support\Str;
+use PDF; 
 
 class FacturacionController extends Controller
 {
@@ -35,6 +37,15 @@ class FacturacionController extends Controller
 
     }
 
+    public function facturapdf()
+    {
+
+        $pedido = Pedido::all();
+        $pdf = PDF::loadView('factura.facturapdf', ['pedido'=>$pedido]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+        
+        return $pdf->stream();
+    }
     /**
      * Show the form for creating a new resource.
      *
