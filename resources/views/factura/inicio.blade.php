@@ -5,6 +5,14 @@
     .modal-backdrop {
   z-index: 0;
 }
+
+
+.headt td {
+  height: 15px !important;
+  padding: 0px;
+ font-size: 14px;
+ background: #ffffff;
+}
 </style>
 <script languague="javascript">
        
