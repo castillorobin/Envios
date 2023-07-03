@@ -20,30 +20,30 @@
     <tr>
         <td class="columna" ><b> Caja: </b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1  </td>
    
-        <td class="columna">  <b> Entregados: </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{ $numentre }}   </td>
-        <td class="columna2"> $ {{ $totalentre }}</td>
+        <td class="columna">  <b> Entregados: </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </td>
+        <td class="columna2"> $ </td>
     </tr>
     <tr>
         <td class="columna"><b> Usuario: </b> &nbsp;&nbsp; &nbsp; &nbsp; 1 </td>
-        <td class="columna">  <b> Reprogramados: </b>  {{ $numrepro }} </td>
-        <td class="columna2"> $ {{ $totalrepro }}</td>
+        <td class="columna">  <b> Reprogramados: </b>  </td>
+        <td class="columna2"> $</td>
     </tr>
     <tr>
-        <td class="columna"><b> Repartidor: </b>{{ $repar }} </td>
+        <td class="columna"><b> Repartidor: </b> </td>
         <td class="columna">  <b> No entregados: </b> &nbsp; &nbsp;0 </td>
         <td class="columna2">$ 0 
             
         </td>
     </tr>
     <tr>
-        <td class="columna"><b> Ruta: </b>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $rutat }} </td>
+        <td class="columna"><b> Ruta: </b>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
         <td class="columna">     </td>
         <td style="border-top: 1px solid;"> </td>
     </tr>
     <tr>
-        <td class="columna"><b> Envios: </b> &nbsp; &nbsp; &nbsp; &nbsp; {{ $cuantos }}   </td>
+        <td class="columna"><b> Envios: </b> &nbsp; &nbsp; &nbsp; &nbsp;    </td>
         <td class="columna">  Total   </td>
-        <td class="columna2"> $ {{ $totalentre - $totalrepro}}</td>
+        <td class="columna2"> $ </td>
     </tr>
    </table>
 
@@ -66,25 +66,7 @@
         
     </tr>
 </thead>
-<tbody>
-    @foreach($pedidos as $pedido)
-    <tr style='border-bottom: 1px solid;'>
-    
-    <td >{{ $pedido->vendedor }}</td>
-    <td >{{ $pedido->destinatario }}</td>
-    <td>{{ $pedido->direccion }}</td>
-    <td>{{ $pedido->tipo }}</td>
-    <td> {{ $pedido->estado }}</td>
-    <td> {{ $pedido->fecha_entrega }}</td>
-    <td> {{ $pedido->agencia }}</td>
-    <td> {{ $pedido->repartidor }}</td>
-    <td> {{ $pedido->ruta }}</td>
-    <td> {{ $pedido->nota }}</td>
-    
-</tr>
 
-    @endforeach
-</tbody>
 </table>
 
                             
