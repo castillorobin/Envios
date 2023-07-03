@@ -214,10 +214,12 @@ jQuery(document).ready(function($){
     <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
     <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
     <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
+    <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}} </span>
     <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
     <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
     <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
     <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
+    
 
 
                     <td class="opciones text-center" style="">
@@ -559,7 +561,7 @@ Nota de descuento
                     
                 </tr>
                 
-
+               
                 <tr class="headt">
                     <br>
                     <td  colspan="3" class="pt-2"> <h4> Datos del destinatario</h4>
@@ -572,7 +574,8 @@ Nota de descuento
                     <td width="230px">Destinatario </td>
                     <td> <span ></span> <label for="" id="desti"></label> </td>
                     
-                </tr>
+                </tr>         
+
                 <tr class="headt">
                     <td width="230px">Telefono </td>
                     <td> <span ></span> <label for="" id="telef"></label> </td>
@@ -627,6 +630,12 @@ Nota de descuento
                     <td> <span ></span> <label for="" id="total"></label> </td>  
                 </tr>
 
+                <tr class="headt">
+                    <td width="230px">Cobro del envio </td>
+                    <td> <span ></span> <label for="" id="cobro"></label> </td>  
+                </tr>
+               
+             
                 <tr class="headt">
                     <br>
                     <td  colspan="3" class="pt-2"> <h4> Datos internos</h4>
@@ -778,11 +787,13 @@ document.getElementById("preci2").textContent = final;
                var ingr=$('#ing'+id).text();
                var ange=$('#ang'+id).text();
                var repa=$('#rep'+id).text();
+               var cobr=$('#cob'+id).text();
                var ruta=$('#rut'+id).text();
                var nota=$('#not'+id).text();
                var foto=$('#fot'+id).text();
                var foto2=$('#fot2'+id).text();
                var foto3=$('#fot3'+id).text();
+               
                //foti= '/imgs/fotos/';
        
                
@@ -805,17 +816,15 @@ document.getElementById("preci2").textContent = final;
                $('#repar').text(repa);
                $('#ruta1').text(ruta);
                $('#nota1').text(nota);
-       
                $('#empresa').text(empre);
-               $('#giro').text(gir);   
-        
+               $('#giro').text(gir); 
+               $('#cobro').text(cobr);    
                $('#nrc').text(nr);
-               //$('#fotos').src(fot);
                var ide = '/repartidor/imprimir/'+id ;
                $('#fotos').attr("src", foto);
                $('#fotos2').attr("src", foto2);
                $('#fotos3').attr("src", foto3);
-       
+              
                //$('#impri a').prop("href", ide);
                //$('.paginacion a').prop('href','http://nuevaUrl.com');
        

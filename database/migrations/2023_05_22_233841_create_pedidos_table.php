@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('servicio')->nullable();
             $table->string('ingresado')->nullable();
             $table->string('agencia')->nullable();
+            $table->string('cobroenvio')->nullable();
             $table->string('foto')->nullable();
             $table->string('foto2')->nullable();
             $table->string('foto3')->nullable();

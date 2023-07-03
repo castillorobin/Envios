@@ -196,6 +196,7 @@ class PedidoController extends Controller
         $pedido->fecha_entrega = $request->get('fentrega');
         $pedido->precio = $request->get('precio');
         $pedido->envio = $request->get('envio');
+        $pedido->cobroenvio = $request->get('cenvio');
         $pedido->total = $request->get('total');
         $pedido->estado = $request->get('estado');
         $pedido->pagado = $request->get('pagado');
