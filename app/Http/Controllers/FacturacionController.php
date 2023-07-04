@@ -37,16 +37,17 @@ class FacturacionController extends Controller
 
     }
 
-    public function facturapdf()
+    public function facturapdf($comercio)
     {
 
        // $pedidos = Pedido::all();
-//        $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos]);
-        $pdf = PDF::loadView('factura.facturapdf');  
+       $pedidos = Pedido::where('vendedor', $comercio)->get();
+        $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos]);
+        //$pdf = PDF::loadView('factura.facturapdf');  
         //return view('pedido.etiqueta')->with('pedido', $pedido);
-        
-        //return $pdf->stream();
-        return $pdf->download('factura.pdf');
+        $pdf->setPaper('letter', 'landscape');
+        return $pdf->stream();
+        //return $pdf->download('factura.pdf');
     }
     /**
      * Show the form for creating a new resource.

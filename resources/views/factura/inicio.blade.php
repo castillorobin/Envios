@@ -497,7 +497,7 @@ Nota de descuento
 
 <br>
 <div class="col-12 mb-3">
-<a href="/factura/facturapdf" ><button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button> </a>
+<a href="/factura/facturapdf/{{$vende[0]->nombre }}" ><button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button> </a>
 </div>
 
 </div> <!-- Termina cajero, pagos etc.  -->
