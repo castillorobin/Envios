@@ -45,7 +45,8 @@ class FacturacionController extends Controller
         $pdf = PDF::loadView('factura.facturapdf');  
         //return view('pedido.etiqueta')->with('pedido', $pedido);
         
-        return $pdf->stream();
+        //return $pdf->stream();
+        return $pdf->download('factura.pdf');
     }
     /**
      * Show the form for creating a new resource.
