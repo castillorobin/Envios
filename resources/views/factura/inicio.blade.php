@@ -79,8 +79,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-   window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -361,11 +361,13 @@ jQuery(document).ready(function($){
         </button>
       </div>
       <div class="modal-body">
-        
+
 
       <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
       <div class="col-12 text-center pt-2 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
 <H1>Total $ <label for="" id="preci2">0</label></H1>
+
+<form action="/factura/facturapdf/{{$vende[0]->nombre }}" method="get">
 
 </div> <!-- Termina columna total  -->
 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
@@ -412,7 +414,7 @@ Fecha de pago
 <div class="row pt-2">
     
 <div class="col-6">Tipo de comprobante
-    <select name="medio" id="medio" class="form-control">
+    <select name="comp" id="comp" class="form-control">
         <option value="Ticket">Ticket</option>
         <option value="Factura">Factura</option>
         <option value="Credito Fiscal">Crédito Fiscal</option>
@@ -497,7 +499,8 @@ Nota de descuento
 
 <br>
 <div class="col-12 mb-3">
-<a href="/factura/facturapdf/{{$vende[0]->nombre }}" ><button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button> </a>
+
+<button type="submit" class="btn btn-lg btn-warning btn-block">PAGAR</button> 
 </div>
 
 </div> <!-- Termina cajero, pagos etc.  -->
@@ -508,7 +511,7 @@ Nota de descuento
       </div>
       <div class="modal-footer " style="background-color:white;">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
+        </form>
       </div>
     </div>
   </div>

@@ -37,16 +37,34 @@ class FacturacionController extends Controller
 
     }
 
-    public function facturapdf($comercio)
+    public function facturapdf(Request $request, $comercio)
     {
 
        // $pedidos = Pedido::all();
-       $pedidos = Pedido::where('vendedor', $comercio)->get();
-        $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos]);
+       $total = $request->string('preci2');
+      
+       if($request->get('comp')=='Ticket'){
+        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        $pdf = PDF::loadView('factura.ticket', ['pedidos'=>$pedidos, 'total'=>$total]);
+       
+        $pdf->setPaper('b7', 'portrait');
+        return $pdf->stream();
+
+       }elseif($request->get('comp')=='PDF'){
+
+        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos, 'total'=>$total]);
         //$pdf = PDF::loadView('factura.facturapdf');  
         //return view('pedido.etiqueta')->with('pedido', $pedido);
+       
+        //->setPaper('b7', 'portrait');
         $pdf->setPaper('letter', 'landscape');
         return $pdf->stream();
+       }else{
+        $total = 'no entro';
+       }
+
+      
         //return $pdf->download('factura.pdf');
     }
     /**

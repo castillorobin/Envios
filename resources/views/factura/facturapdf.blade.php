@@ -81,7 +81,7 @@
    <tr>
        
        <td >  Total Pagado:  </td>
-       <td > $ </td>
+       <td > $ {{ $total}}</td>
    </tr>
   </table>   
    
