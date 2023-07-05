@@ -31,39 +31,9 @@
    </div>
    <hr>
 <p></p>
-   <table style="width:100%" >
-    <tr>
-        <td class="columna" ><b> Caja: </b> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1  </td>
-   
-        <td class="columna">  <b> Entregados: </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 </td>
-        <td class="columna2"> $ </td>
-    </tr>
-    <tr>
-        <td class="columna"><b> Usuario: </b> &nbsp;&nbsp; &nbsp; &nbsp; 
-                    {{\Illuminate\Support\Facades\Auth::user()->name}}</td>
-        <td class="columna">  <b> Reprogramados: </b>  &nbsp; &nbsp;0 </td>
-        <td class="columna2"> $</td>
-    </tr>
-    <tr>
-        <td class="columna"><b> Total pagados: </b> 0 </td>
-        <td class="columna">  <b> No entregados: </b> &nbsp; &nbsp;0 </td>
-        <td class="columna2">$ 0 
-            
-        </td>
-    </tr>
-    <tr>
-        <td class="columna"><b> Ruta: </b>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </td>
-        <td class="columna">     </td>
-        <td style="border-top: 1px solid;"> </td>
-    </tr>
-    <tr>
-        <td class="columna"><b> </b> &nbsp; &nbsp; &nbsp; &nbsp;    </td>
-        <td class="columna">  Total   </td>
-        <td class="columna2"> $ </td>
-    </tr>
-   </table>
 
-   <br>
+
+
 <table class="table table-bordered shadow-lg mt-4" style="width:100%">
 <thead >
     <tr style='background: #223161; color:white; font-size:13px; text-align: center;'>
@@ -102,8 +72,18 @@
     @endforeach
 </tbody>
 </table>
+<br>
+<hr>
 
-                       
+<table >
+   
+  
+   <tr>
+       
+       <td >  Total Pagado:  </td>
+       <td > $ </td>
+   </tr>
+  </table>   
    
 
 
