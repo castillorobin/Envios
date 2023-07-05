@@ -29,6 +29,7 @@
             var total = document.getElementById('preci2').textContent;
             var desc = document.getElementById('descu').value;
             document.getElementById('preci2').innerHTML = parseFloat(total) + parseFloat(desc) ; 
+            document.getElementById('toti').value = parseFloat(total) + parseFloat(desc) ; 
             document.getElementById('descu').value = 0;
 
   }else{
@@ -56,10 +57,12 @@ function ivan()
             
             //var to3 = parseFloat(total, 10) + parseFloat(ivavalor, 10);
             document.getElementById('preci2').innerHTML = parseFloat(total) - parseFloat(tiva) ; 
+            document.getElementById('toti').value = parseFloat(total) - parseFloat(tiva) ; 
            
             //document.getElementById(preci2) = to4;  
         } else {
             document.getElementById('preci2').innerHTML = document.getElementById('preci').textContent ; 
+            document.getElementById('toti').value = document.getElementById('preci').textContent ; 
         
         
         }
@@ -362,12 +365,13 @@ jQuery(document).ready(function($){
       </div>
       <div class="modal-body">
 
-
+      <form action="/factura/facturapdf/{{$vende[0]->nombre }}" method="get">
       <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
       <div class="col-12 text-center pt-2 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
 <H1>Total $ <label for="" id="preci2">0</label></H1>
+<br>
 
-<form action="/factura/facturapdf/{{$vende[0]->nombre }}" method="get">
+<input hidden type="text" id="toti" name="toti" >
 
 </div> <!-- Termina columna total  -->
 <div class="col-12">  <!-- Inicia cajero, pagos etc. -->
@@ -712,6 +716,7 @@ const desc =parseFloat($(this).val());
 var final = total - desc ;
 
 document.getElementById("preci2").textContent = final;
+document.getElementById("toti").value = final;
 
  
 
@@ -734,12 +739,14 @@ document.getElementById("preci2").textContent = final;
             var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
         $('#preci').text(to3); 
         $('#preci2').text(to3); 
+        $('#toti').val(to3); 
         $('#sumas').text(tenv);  
         } else {
             var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
             var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
         $('#preci').text(to3); 
         $('#preci2').text(to3);
+        $('#toti').val(to3);
         $('#sumas').text(tenv);  
         }
 

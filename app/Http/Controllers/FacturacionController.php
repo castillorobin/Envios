@@ -41,7 +41,7 @@ class FacturacionController extends Controller
     {
 
        // $pedidos = Pedido::all();
-       $total = $request->string('preci2');
+       $total = $request->get('toti');
       
        if($request->get('comp')=='Ticket'){
         $pedidos = Pedido::where('vendedor', $comercio)->get();
