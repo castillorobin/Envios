@@ -143,7 +143,8 @@ jQuery(document).ready(function($){
 
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
-<button type="button" class="btn btn-warning">Ver</button>
+
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal3" >Ver</button>
 <a href="/vendedores/{{ $vende[0]->id }}/edit" ><button class="btn btn-success" >Editar</button></a>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -692,6 +693,161 @@ Nota de descuento
 
 
 <!-- Termina Modal ver-->
+
+
+
+
+
+
+
+
+<!-- Inicio Modal ver vendedor-->
+
+<div class="modal fade" id="exampleModal3"  aria-labelledby="exampleModalLabel3" aria-hidden="true" style="z-index: 999999999;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel3" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button></span>
+      </div>
+      <div class="modal-body">
+        <div class="row p-3 m-3" style="border: solid 1px;">
+           
+            <table class="table table-borderless" >
+                <tr>
+                    <td  colspan="2"><h4>Informacion del Comercio </h4>
+                        <hr>
+                    </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Comercio / tienda </td>
+                    <td> <span ></span> <label for="" > {{ $vende[0]->nombre}}</label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Dirección </td>
+                    <td> <span ></span> <label for=""> {{ $vende[0]->direccion}}</label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Teléfono </td>
+                    <td> <span ></span> <label for="" > {{ $vende[0]->telefono}}</label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Whatsapp</td>
+                    <td> <span ></span> <label for="" > {{ $vende[0]->whatsapp}}</label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Fecha de Alta</td>
+                    <td> <span ></span> <label for="" > {{  date("d/m/Y", strtotime($vende[0]->falta))  }}</label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Fecha de Baja</td>
+                    <td> <span ></span> <label for="" >{{  date("d/m/Y", strtotime($vende[0]->fbaja))  }}</label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Tipo de Comercio</td>
+                    <td> <span ></span> <label for="" ></label> {{ $vende[0]->tipovende}}</td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Correo</td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Estado del comercio </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Agencia </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+
+                <tr class="headt">
+                    <br>
+                    <td  colspan="2" class="pt-2"> <h4> Datos Bancarios</h4>
+                        <hr>
+                    </td>
+                     
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Nombre del titular de la cuenta </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Nombre del Banco </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Número de cuenta </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Tipo de cuenta </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de Chivo Wallet </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de Tigo Money </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td  colspan="2" class="pt-2"> <h4>Información Fiscal</h4>
+                        <hr>
+                    </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Nombre de la empresa</td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Giro</td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de DUI </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+                <tr tr class="headt">
+                    <td width="200px">Numero de IVA </td>
+                    <td><label for="" ></label> </td>
+                </tr>
+                <tr class="headt">
+                    <td width="200px">Numero de NRC </td>
+                    <td> <label for="" ></label> </td>
+                </tr>
+
+
+            </table>
+
+
+        </div>
+
+
+
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Termina Modal ver vendedor-->
+
+
+
+
+
+
 
 
 
