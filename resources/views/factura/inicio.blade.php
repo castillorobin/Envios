@@ -82,8 +82,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-   window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -754,15 +754,15 @@ Nota de descuento
                 </tr>
                 <tr class="headt">
                     <td width="200px">Correo</td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->correo}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Estado del comercio </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->estado}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Agencia </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->agencia}}</label> </td>
                 </tr>
 
                 <tr class="headt">
@@ -774,27 +774,27 @@ Nota de descuento
                 </tr>
                 <tr class="headt">
                     <td width="230px">Nombre del titular de la cuenta </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->titular}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Nombre del Banco </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->banco}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Número de cuenta </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->cuenta}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Tipo de cuenta </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->tcuenta}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Numero de Chivo Wallet </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->chivo}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Numero de Tigo Money </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->tmoney}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td  colspan="2" class="pt-2"> <h4>Información Fiscal</h4>
@@ -803,23 +803,23 @@ Nota de descuento
                 </tr>
                 <tr class="headt">
                     <td width="200px">Nombre de la empresa</td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->empresa}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Giro</td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->giro}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Numero de DUI </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->dui}}</label> </td>
                 </tr>
                 <tr tr class="headt">
                     <td width="200px">Numero de IVA </td>
-                    <td><label for="" ></label> </td>
+                    <td><label for="" >{{ $vende[0]->niva}}</label> </td>
                 </tr>
                 <tr class="headt">
                     <td width="200px">Numero de NRC </td>
-                    <td> <label for="" ></label> </td>
+                    <td> <label for="" >{{ $vende[0]->nrc}}</label> </td>
                 </tr>
 
 
