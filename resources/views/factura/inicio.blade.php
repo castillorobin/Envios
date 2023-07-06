@@ -884,7 +884,7 @@ document.getElementById("toti").value = final;
 
 	$(document).on('click', '#check3', function(){
 		var id=$(this).val();
-		var prec=$('#pre'+id).text();
+		var prec=$('#tot'+id).text();
         var envi=$('#env'+id).text();
         
         //alert("le diste click" + prec);
