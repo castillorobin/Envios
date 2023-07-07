@@ -82,8 +82,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-   window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -111,7 +111,7 @@ jQuery(document).ready(function($){
                         <div class="card-body">
 
                             <h3 class="text-center">Facturación</h3>
-                        
+                            <form action="/factura/facturapdf/{{$vende[0]->nombre }}" method="get">
             <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
             <div class="col-12 text-center pt-3 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
 <H1>Total $ <label for="" id="preci">0</label></H1>
@@ -177,7 +177,7 @@ jQuery(document).ready(function($){
 <tr>
                     <td >
                     <div class="form-group form-check" style="width: 5px;">
-                     <input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" >
+                     <input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" >
                      
                     </div>
                     </td>
@@ -366,7 +366,7 @@ jQuery(document).ready(function($){
       </div>
       <div class="modal-body">
 
-      <form action="/factura/facturapdf/{{$vende[0]->nombre }}" method="get">
+      
       <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
       <div class="col-12 text-center pt-2 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
 <H1>Total $ <label for="" id="preci2">0</label></H1>

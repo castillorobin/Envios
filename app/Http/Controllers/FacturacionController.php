@@ -44,15 +44,24 @@ class FacturacionController extends Controller
        $total = (float)$request->get('toti');
       
        if($request->get('comp')=='Ticket'){
-        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        //$pedidos = Pedido::where('vendedor', $comercio)->get();
+
+        $checked = $request->input('checked');
+        $pedidos = Pedido::query()->find($checked);
+
         $pdf = PDF::loadView('factura.ticket', ['pedidos'=>$pedidos, 'total'=>$total]);
        
-        $pdf->setPaper('b7', 'portrait');
+        $pdf->setPaper('b6', 'portrait');
         return $pdf->stream();
 
        }elseif($request->get('comp')=='PDF'){
 
-        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        //$pedidos = Pedido::where('vendedor', $comercio)->get();
+        $checked = $request->input('checked');
+        $pedidos = Pedido::query()->find($checked);
+      
+        
+
         $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos, 'total'=>$total]);
         //$pdf = PDF::loadView('factura.facturapdf');  
         //return view('pedido.etiqueta')->with('pedido', $pedido);

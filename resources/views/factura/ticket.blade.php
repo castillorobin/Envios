@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,46 +20,76 @@
     text-align: center;
 }
 .centrar{
-    font-weight: bolder;
+  
     text-align: center;
 }
+.melo{
+    font-size: 26px;
+    font-weight: bolder;
+}
+.compro{
+    font-size: 10px;
+    text-align: center;
+}
+
 
     </style>
 
     <div style="width:100%; " class="text-center centrar">
-            <span class="page__heading " >Melo Express</span>
+    <img src="../public/img/logo.jpg" alt="" width="60%">
+    <br>
+            <span class="page__heading melo" >Melo Express</span>
            <!-- <img alt="image" src="/public/img/logo.png" > -->
            <br>
            <span>Servicios de Encomiendas</span>
            <br>
            <span>Centro Comercial Metrogaleria</span>
-           
+           local 3-9 San Salvador
         </div>
         
 
-                        <div class="fecha centrar">
-   Fecha: {{ now()->Format('d/m/Y')}}
+                        <div class="fecha centrar " style="font-weight: bolder;">
+   Teléfono 7457-6280
    </div>
    <br>
-   
+   <div class="fecha centrar">
+   Fecha: {{ now()->Format('d/m/Y')}}
+   </div>
+   <hr>
+   <span>Id:</span>
+   <br>
    <span>Cajero: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
    <br>
 <span>Comercio: {{ $pedidos[0]->vendedor}}</span>
 <br>
 <span>Agencia: {{ $pedidos[0]->agencia}}</span>
+<p></p>
 
-<br>
-<hr>
+<span style="font-weight: bolder;"> Paquetes cancelados</span>
+<table style="width:100%; ">
 
-<table >
-   
-  
-   <tr>
+@for($i=0;  $i< count($pedidos); $i++ )
+<tr>
+        <td>{{ $pedidos[$i]->destinatario}}</td>
+        <td>$ {{ $pedidos[$i]->total}}</td>
+    </tr>
        
+                        @endfor
+                        <hr>           
+    <tr>
+    
        <td >  Total Pagado:  </td>
        <td > $ {{ $total}}</td>
    </tr>
-  </table>   
+</table>
+<br>
+<p></p>
+<p class="compro">
+Para reclamos, por favor presentar este comprobante 
+
+</p>
+<p class="compro">Este documento no es un comprobante fiscal</p>
+
    
 
 

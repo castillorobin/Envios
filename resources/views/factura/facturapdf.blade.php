@@ -20,16 +20,18 @@
 }
 
     </style>
-
+    <div>
+ <img src="../public/img/logo.jpg" alt="" width="10%">
             <h3 class="page__heading">Melo Express</h3>
-            <img alt="image" src="/public/img/logo.png" >
+            
         </div>
-        
+       
 
                         <div class="fecha">
    Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('H:i A')}}
-   </div>
    <hr>
+   </div>
+   
 <p></p>
 
 
