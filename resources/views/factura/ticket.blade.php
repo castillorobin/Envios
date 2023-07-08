@@ -53,7 +53,7 @@
    </div>
    <br>
    <div class="fecha centrar">
-   Fecha: {{ now()->Format('d/m/Y')}}
+   Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('H:i A')}}
    </div>
    <hr>
    <span>Id:</span>
@@ -67,7 +67,7 @@
 
 <span style="font-weight: bolder;"> Paquetes cancelados</span>
 <table style="width:100%; ">
-
+<tbody>
 @for($i=0;  $i< count($pedidos); $i++ )
 <tr>
         <td>{{ $pedidos[$i]->destinatario}}</td>
@@ -75,14 +75,18 @@
     </tr>
        
                         @endfor
-                        <hr>           
-    <tr>
-    
-       <td >  Total Pagado:  </td>
-       <td > $ {{ $total}}</td>
-   </tr>
+                                  
+
+   </tbody>
 </table>
 <br>
+<hr>
+<div style="width:70%; text-align: right; " >
+ 
+
+    <span >  Total Pagado:  </span>
+    <span>$ {{ $total}}</span>
+</div>
 <p></p>
 <p class="compro">
 Para reclamos, por favor presentar este comprobante 

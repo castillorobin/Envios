@@ -23,15 +23,23 @@
     <div>
  <img src="../public/img/logo.jpg" alt="" width="10%">
             <h3 class="page__heading">Melo Express</h3>
-            
+            <div style="width:100%; text-align: right; " >
+   Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('H:i A')}}
+  
+   </div>
         </div>
        
 
-                        <div class="fecha">
-   Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('H:i A')}}
-   <hr>
-   </div>
    
+   <hr>
+   <span>Id:</span>
+   <br>
+   <span>Cajero: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+   <br>
+<span>Comercio: {{ $pedidos[0]->vendedor}}</span>
+<br>
+<span>Agencia: {{ $pedidos[0]->agencia}}</span>
+<p></p>
 <p></p>
 
 
@@ -40,17 +48,15 @@
 <thead >
     <tr style='background: #223161; color:white; font-size:13px; text-align: center;'>
         
-        <th scope="col">Comercio</th>
+        
         <th scope="col">Destinatario</th>
         <th scope="col">Direccion</th>
         
         <th scope="col">Tipo</th>
         <th scope="col">Estado del envio</th>
         <th scope="col">Fecha de entrega</th>
-        <th scope="col">Agencia</th>
-        <th scope="col">Repartidor</th>
-        <th scope="col">Ruta</th>
-        <th scope="col">Nota</th>
+        <th scope="col">Total</th>
+        
         
     </tr>
 </thead>
@@ -58,16 +64,15 @@
     @foreach($pedidos as $pedido)
     <tr style='border-bottom: 1px solid; font-size: 12px'>
     
-    <td >{{ $pedido->vendedor }}</td>
+   
     <td >{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
+
     <td>{{ $pedido->tipo }}</td>
     <td> {{ $pedido->estado }}</td>
     <td> {{ $pedido->fecha_entrega }}</td>
-    <td> {{ $pedido->agencia }}</td>
-    <td> {{ $pedido->repartidor }}</td>
-    <td> {{ $pedido->ruta }}</td>
-    <td> {{ $pedido->nota }}</td>
+    <td> {{ $pedido->total }}</td>
+ 
     
 </tr>
 
@@ -75,17 +80,34 @@
 </tbody>
 </table>
 <br>
+<p></p>
 <hr>
 
-<table >
+<table style="width:100%; text-align: right; ">
    
   
-   <tr>
+   <tr  >
        
-       <td >  Total Pagado:  </td>
-       <td > $ {{ $total}}</td>
+       <td >  Total Pagado:  $ {{ $total}}</td>
+       
    </tr>
   </table>   
+  <span style="font-weight: bolder;"> Centro Comercial Metrogaleria</span>
+           local 3-9 San Salvador
+        </div>
+        
+
+                        <div style="font-weight: bolder;">
+   Teléfono 7457-6280
+   </div>
+
+  <p></p>
+<p class="compro">
+Para reclamos, por favor presentar este comprobante 
+
+</p>
+<p class="compro">Este documento no es un comprobante fiscal</p>
+
    
 
 
