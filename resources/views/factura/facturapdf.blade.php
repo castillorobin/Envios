@@ -85,7 +85,11 @@
 
 <table style="width:100%; text-align: right; ">
    
-  
+<tr  >
+       
+       <td >  Descuento: &nbsp; &nbsp; &nbsp; $ {{ $descue}}&nbsp;</td>
+       
+   </tr>
    <tr  >
        
        <td >  Total Pagado:  $ {{ $total}}</td>

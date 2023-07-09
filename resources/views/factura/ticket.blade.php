@@ -82,8 +82,10 @@
 <br>
 <hr>
 <div style="width:70%; text-align: right; " >
- 
-
+    
+<span >  Descuento: &nbsp; &nbsp; </span>
+    <span>$ {{ $descue}} &nbsp;</span>
+<br>
     <span >  Total Pagado:  </span>
     <span>$ {{ $total}}</span>
 </div>

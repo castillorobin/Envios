@@ -45,11 +45,18 @@ class FacturacionController extends Controller
       
        if($request->get('comp')=='Ticket'){
         //$pedidos = Pedido::where('vendedor', $comercio)->get();
+        $descuento = (float)$request->input('descu'); 
+        if($descuento>0){
+            $descue=$descuento;
+        }else{
+            $descue= 0;
+        }
+
 
         $checked = $request->input('checked');
         $pedidos = Pedido::query()->find($checked);
 
-        $pdf = PDF::loadView('factura.ticket', ['pedidos'=>$pedidos, 'total'=>$total]);
+        $pdf = PDF::loadView('factura.ticket', ['pedidos'=>$pedidos, 'total'=>$total, 'descue'=>$descue]);
        
         $pdf->setPaper('b6', 'portrait');
         return $pdf->stream();
@@ -59,10 +66,15 @@ class FacturacionController extends Controller
         //$pedidos = Pedido::where('vendedor', $comercio)->get();
         $checked = $request->input('checked');
         $pedidos = Pedido::query()->find($checked);
-      
+        $descuento = (float)$request->input('descu'); 
+        if($descuento>0){
+            $descue=$descuento;
+        }else{
+            $descue= 0;
+        }
         
 
-        $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos, 'total'=>$total]);
+        $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos, 'total'=>$total, 'descue'=>$descue]);
         //$pdf = PDF::loadView('factura.facturapdf');  
         //return view('pedido.etiqueta')->with('pedido', $pedido);
        

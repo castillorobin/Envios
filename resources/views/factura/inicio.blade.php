@@ -83,7 +83,7 @@ jQuery(document).ready(function($){
     console.log(data.text);
    document.getElementById('mostrar').value = data.text;
    window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
