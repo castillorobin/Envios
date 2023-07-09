@@ -90,6 +90,17 @@ ul li ul:hover {
     font-size: 16px;
     float: right;
 }
+
+.headt td {
+  height: 15px !important;
+  padding: 0px;
+ font-size: 14px;
+ background: #ffffff;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
 </style>
 
 
@@ -155,7 +166,16 @@ ul li ul:hover {
     <td class="text-center" style="background: #e3e8e7"><h5><span class="badge badge-dark">{{ $recolectas[$i]->estado }}</span></h5></td>
     <td>{{ $recolectas[$i]->agencia }}</td>
 
-    
+    <span hidden id="nom{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->nombre }}</span>
+    <span hidden id="dir{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->direccion }}</span>
+    <span hidden id="tel{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->telefono }}</span>
+    <span hidden id="wha{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->whatsapp }}</span>
+    <span hidden id="fec{{ $recolectas[$i]->id }}"> {{  date('d/m/Y', strtotime($recolectas[$i]->created_at))  }}</span>
+    <span hidden id="fece{{ $recolectas[$i]->id }}"> {{  date('d/m/Y', strtotime($recolectas[$i]->fechaent))}}</span>
+    <span hidden id="rep{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->repartidor }}</span>
+    <span hidden id="est{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->estado }}</span>
+    <span hidden id="not{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->nota }}</span>
+    <span hidden id="age{{ $recolectas[$i]->id }}"> {{ $recolectas[$i]->agencia }}</span>
 
     <td class="opciones text-center" style="">
     
@@ -183,7 +203,7 @@ ul li ul:hover {
     &nbsp;
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
-    <button type="button" class="edit" data-bs-toggle="modal" value="{{ $recolectas[$i]->id }}" data-bs-target="#exampleModal" style="background: none; border: 0;">Ver</button>
+    <button type="button" class="edit" data-toggle="modal" value="{{ $recolectas[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
   
     
     </form>
@@ -213,6 +233,101 @@ ul li ul:hover {
 
 
 
+
+<!-- Inicio Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button></span>
+      </div>
+      <div class="modal-body">
+        <div class="row p-3 m-3" style="border: solid 1px;">
+           
+            <table class="table table-borderless" >
+                <tr>
+                    <td  colspan="3"><h4>Datos de Recolecta</h4>
+                        <hr>
+                    </td>
+                    
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Nombre de comercio / Tienda </td>
+                    <td> <span ></span> <label for="" id="nombr"></label> </td>
+                    <td rowspan="15"><span ></span> <label for="" > </label> <img alt="" class=" img-thumbnail" id="fotos" width="250"> 
+                    <br> <img alt="" id="fotos2" width="250">
+                    <br> <img alt="" id="fotos3" width="250"></td>
+                </tr>
+
+                <tr class="headt">
+                    <td width="230px">Dirección </td>
+                    <td> <span ></span> <label for="" id="direc"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Telefono </td>
+                    <td> <span ></span> <label for="" id="tele"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Whatsapp </td>
+                    <td> <span ></span> <label for="" id="whats"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Fecha de recoelcta </td>
+                    <td> <span ></span> <label for="" id="feche"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Fecha de entrega </td>
+                    <td> <span ></span> <label for="" id="fecha"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Repartidor </td>
+                    <td> <span ></span> <label for="" id="repar"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Estado </td>
+                    <td> <span ></span> <label for="" id="estad"></label> </td>
+                    
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Nota`</td>
+                    <td> <span ></span> <label for="" id="notas"></label> </td>
+                    
+                </tr>
+                
+                <tr class="headt">
+                    <td width="230px">Agencia</td>
+                    <td> <span ></span> <label for="" id="agenc"></label> </td>
+                    
+                </tr>
+               
+            </table>
+
+
+        </div>
+
+
+
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
+        <a id="impri" class="btn btn-primary" style="color: #ffffff;">Imprimir</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Termina Modal -->
 
 
 
@@ -247,51 +362,30 @@ ul li ul:hover {
 $(document).ready(function(){
 	$(document).on('click', '.edit', function(){
 		var id=$(this).val();
-		var first=$('#nombre'+id).text();
-        var direc=$('#dire'+id).text();
-        var telef=$('#tele'+id).text();
-        var email=$('#correo'+id).text();
-        var du=$('#dui'+id).text();
-        var ni=$('#nit'+id).text();
-        var alt=$('#tipoc'+id).text();
-        var baj=$('#agencia'+id).text();
-        var tip=$('#isss'+id).text();
-        var esta=$('#afp'+id).text();
-        var agenc=$('#cargo'+id).text();
-        var titu=$('#falta'+id).text();
-        var banc=$('#sala'+id).text();
-        var cuent=$('#fbaja'+id).text();
-        var tcuent=$('#nota'+id).text();
-        var chiv=$('#tvehi'+id).text();
-        var tmon=$('#equipo'+id).text();
-        var empre=$('#placa'+id).text();
-        var gir=$('#tarjeta'+id).text();
-
-        var nr=$('#licencia'+id).text();
+		var nomb=$('#nom'+id).text();
+        var dire=$('#dir'+id).text();
+        var telef=$('#tel'+id).text();
+        var what=$('#wha'+id).text();
+        var fech=$('#fec'+id).text();     
+        var feche=$('#fece'+id).text();
+        var repa=$('#rep'+id).text();
+        var esta=$('#est'+id).text();
+        var nota=$('#not'+id).text();     
+        var agen=$('#age'+id).text();     
+        
 		
 	
 		$('#edit').modal('show');
-		$('#efirstname').text(first);
-        $('#dire').text(direc);
+		$('#nombr').text(nomb);
+        $('#direc').text(dire);
         $('#tele').text(telef);
-        $('#corre').text(email);
-        $('#dui').text(du);
-        $('#iva').text(ni);
-        $('#alta').text(alt);
-        $('#baja').text(baj);
-        $('#tipo').text(tip);
-        $('#estado').text(esta);  
-        $('#agenci').text(agenc);
-        $('#titul').text(titu);
-        $('#banco').text(banc);
-        $('#cuenta').text(cuent);
-        $('#tcuenta').text(tcuent);
-        $('#chivo').text(chiv);
-        $('#tmoney').text(tmon);
-        $('#empresa').text(empre);
-        $('#giro').text(gir);   
-
-        $('#nrc').text(nr);
+        $('#whats').text(what);
+        $('#feche').text(fech);
+        $('#fecha').text(feche);
+        $('#repar').text(repa);
+        $('#estad').text(esta);
+        $('#notas').text(nota);
+        $('#agenc').text(agen);
 		
 	});
 });
