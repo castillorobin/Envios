@@ -82,8 +82,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
    document.getElementById('mostrar').value = data.text;
-   window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -145,7 +145,7 @@ jQuery(document).ready(function($){
 <div class="col-6 mt-4">  <!-- div filtrros  -->
 
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal3" >Ver</button>
-<a href="/vendedores/{{ $vende[0]->id }}/edit" ><button class="btn btn-success" >Editar</button></a>
+<a href="/vendedores/{{ $vende[0]->id }}/edit" class="btn btn-success" >Editar</a>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  Pagar
@@ -360,7 +360,7 @@ jQuery(document).ready(function($){
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Pagar</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close btn-lg" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -708,7 +708,7 @@ Nota de descuento
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel3" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
-        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button></span>
+        <span style="float: right; text-align: right;"><button type="button" class="btn-close btn-lg" data-dismiss="modal" aria-label="Close">X</button></span>
       </div>
       <div class="modal-body">
         <div class="row p-3 m-3" style="border: solid 1px;">

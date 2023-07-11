@@ -83,14 +83,17 @@
 <p></p>
 <hr>
 
-<table style="width:100%; text-align: right; ">
+<table style="width:100%;  ">
    
-<tr  >
+<tr >
+       <td style="width:80%; ">&nbsp;</td>
        
-       <td >  Descuento: &nbsp; &nbsp; &nbsp; $ {{ $descue}}&nbsp;</td>
+       <td >  Descuento: &nbsp; &nbsp; $ {{ $descue}}&nbsp;</td>
        
    </tr>
+
    <tr  >
+   <td>&nbsp;</td>
        
        <td >  Total Pagado:  $ {{ $total}}</td>
        

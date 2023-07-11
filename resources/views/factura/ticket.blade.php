@@ -81,14 +81,19 @@
 </table>
 <br>
 <hr>
-<div style="width:70%; text-align: right; " >
-    
-<span >  Descuento: &nbsp; &nbsp; </span>
-    <span>$ {{ $descue}} &nbsp;</span>
-<br>
-    <span >  Total Pagado:  </span>
-    <span>$ {{ $total}}</span>
-</div>
+<table style="width:90%;  ">
+<tbody>
+    <tr>
+        <td>Descuento:</td>
+        <td>$ {{ $descue}} </td>
+    </tr>
+    <tr>
+        <td>Total Pagado:</td>
+        <td>$ {{ $total}} </td>
+    </tr>
+</tbody>
+</table>
+
 <p></p>
 <p class="compro">
 Para reclamos, por favor presentar este comprobante 
