@@ -15,7 +15,7 @@
 <style>
 body {
   
-}
+} 
 
 input[type="date"]::-webkit-calendar-picker-indicator {
         display: block;
@@ -488,7 +488,7 @@ if(document.getElementById("flexs").checked)
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/material/24/null/business-network.png"/></span>
 </div>
-<select id="agenr" name="agenr" class="form-control">
+<select id="tipocon" name="tipocon" class="form-control">
        <option value="Pequeño">Pequeño</option>
        <option value="Mediano">Mediano</option>
        <option value="Grande">Grande</option>

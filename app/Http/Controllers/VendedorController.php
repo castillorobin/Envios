@@ -178,7 +178,7 @@ class VendedorController extends Controller
         $vendedor->whatsapp = $request->get('what');
         $vendedor->falta =  date('Y/m/d', strtotime($request->get('falta')));
         $vendedor->fbaja = date('Y/m/d', strtotime($request->get('fbaja')));
-        $vendedor->tipovende = $request->get('tvende');
+        $vendedor->tipovende = $request->get('tipoven');
         $vendedor->correo = $request->get('correo');
         $vendedor->estado = $request->get('estado');
         $vendedor->agencia = $request->get('agenr');
@@ -193,7 +193,7 @@ class VendedorController extends Controller
         $vendedor->dui = $request->get('dui');
         $vendedor->niva = $request->get('iva');
         $vendedor->nrc = $request->get('nrc');
-
+ 
         $vendedor->save();
         //return redirect('/vendedores');
         $vendedores = Vendedor::all();
