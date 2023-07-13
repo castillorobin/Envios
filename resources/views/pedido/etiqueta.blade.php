@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,49 +16,73 @@
             
         }
 
+        .titulos{
+            font-size: 24px;
+            font-weight: bolder;
+        }
+
     </style>
 
 </head>
 <body>
 <div class="principal ">
-  <table >
+  <table style="width:100%; padding:20px;">
     <tr >
         <td style="width: 250px; font-size: 20px;">
-        <strong> Melo Express </strong><br>
-        Metrogalerias local 3-9 <br>
-        San Salvador <br>
-        Telefono: 7457-6280 <br>
-        &nbsp; &nbsp; &nbsp;
+         <span class="titulos">Melo Express </span> 
+         <br>
+         <br>
+        Comercio / tienda: 
+        <br>
+        <span class="titulos">{{ $pedido->vendedor }}</span>
         </td>
-        <td>
-        <img src="vendor/adminlte/dist/img/logo.jpg" alt="" class="logop">
-        </td>
+        
     </tr>
-
+<hr style="border-top: dotted 1px;">
     <tr>
-    <td style=" " > 
-    <br>
-        <div>{!! DNS2D::getBarcodeHTML(" $pedido->id ", 'QRCODE') !!}</div>
+    
+    <td >
 
-        </td>
-    <td style=" font-size: 20px;">
+    Destinatario: 
+        <br>
+        <span class="titulos">{{ $pedido->destinatario }}</span>
+        <br>
+        <br>
+        Dirección:
+        <br>
+        <span class="titulos">{{ $pedido->direccion }}</span>
+        <br>
+        <br>
+        Teléfono:<span class="titulos"> {{ $pedido->telefono }}</span>
+        <br>
+        Whatsapp:<span class="titulos"> {{ $pedido->whatsapp }}</span>
+        
+      
+        <br>
+        <br>
+        Fecha de entrega:<span class="titulos"> {{  date('l d F Y',strtotime($pedido->fecha_entrega));}} </span>
 
-        <strong> Datos de Entrega: </strong><br>
-        Nombre: {{ $pedido->destinatario }}  <br>
-    Dirección: {{ $pedido->direccion }} <br>
-    Telefono: {{ $pedido->telefono }} <br>
-    Ruta : {{ $pedido->ruta }} 
+        <br>
+        <br>
+        <span class="titulos" style="float: right;"> Total: ${{  $pedido->total}} </span>
+        <br>
+        <br>
+        <hr style="border-top: dotted 1px;">
+        <br>
         </td>
        
         
     </tr>
-        <tr>
-            <td></td>
-            <td>  
-            <p></p>
+        <tr >
+            
+            <td style="text-align: center; width:100%; ">  
+            
+
+Tipo de envio: <span class="titulos">{{ $pedido->tipo }} </span>
 <br>
-Pedido: {{ $pedido->id }} 
-  <div>{!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!}</div></br>        
+<br>
+  <div style="padding-left: 170px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 170px;"> {{ $pedido->id }} </span></div>
+</br>        
         </td>
         </tr>
 

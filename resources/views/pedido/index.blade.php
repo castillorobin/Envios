@@ -162,7 +162,7 @@ input[type="date"]:valid::before {
     
  
     <div class="col-12">
-
+ 
         
 
 
@@ -264,6 +264,16 @@ input[type="date"]:valid::before {
     <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
 </form>
 </li>
+
+<div class="botones"> 
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" ><button style="background: none; border: 0;">Etiqueta</button></a></li> 
+    </div>  
+
+
 <li class="botones">
     <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
         @csrf

@@ -9,6 +9,7 @@ use App\Models\Repartidor;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
+use \PDF; 
 
 class PedidoController extends Controller
 {
@@ -22,6 +23,17 @@ class PedidoController extends Controller
         $pedidos = Pedido::all();
        // $repartidores = Repartidor::all();
         return view('pedido.index', compact('pedidos'));
+
+
+    }
+
+    public function etiqueta($id)
+    {
+        $pedido = Pedido::find($id);
+        $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+        
+        return $pdf->stream();
 
 
     }
@@ -117,7 +129,7 @@ class PedidoController extends Controller
             $ruta = public_path("imgs/fotos/");
             $imagen->move($ruta,$nombreimagen);
 
-        }
+        } 
         if($request->hasFile('foto2')){
             
             $imagen = $request->file("foto2");
