@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use \PDF; 
-
+ 
 class PedidoController extends Controller
 {
     /**
@@ -32,7 +32,67 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
         $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
+        $customPaper = array(0,0,283.80,283.80);
+        $pdf->setPaper($customPaper, 'landscape');
+        return $pdf->stream();
+
+
+    }
+
+    public function imprimire(Request $request)
+    {
+
+        $pedidos = new Pedido();
         
+        $pedidos->vendedor = $request->get('comer');
+        $pedidos->destinatario = $request->get('desti');
+        $pedidos->telefono = $request->get('telefono');
+        $pedidos->direccion = $request->get('direccion');
+        $pedidos->fecha_entrega = $request->get('fentrega');
+        $pedidos->precio = $request->get('precio');
+        $pedidos->envio = $request->get('envio');
+        $pedidos->total = $request->get('total');
+        $pedidos->estado = $request->get('estado');
+        $pedidos->pagado = $request->get('pagado');
+        $pedidos->servicio = $request->get('servicio');
+        $pedidos->tipo = $request->get('tenvio');
+        $pedidos->nota = $request->get('nota');
+        $pedidos->ingresado = $request->get('ingresado');
+        $pedidos->agencia = $request->get('agencia');
+        $pedidos->repartidor = $request->get('repartidor');
+        $pedidos->ruta = $request->get('ruta');
+        //$pedidos->foto = $request->get('foto');
+
+        if($request->hasFile('foto')){
+            
+            $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $pedidos->foto = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+
+        } 
+        if($request->hasFile('foto2')){
+            
+            $imagen = $request->file("foto2");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $pedidos->foto2 = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+
+        }
+
+
+
+        $pedidos->save();
+
+
+        #$pedido = Pedido::find($id);
+        $pedido = Pedido::latest()->first();
+        $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+        $customPaper = array(0,0,10,10);
+        $pdf->setPaper($customPaper);
         return $pdf->stream();
 
 

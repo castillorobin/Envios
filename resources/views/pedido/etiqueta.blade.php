@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+       @page {
+		margin-left: 10px;
+		margin-right: 10px;
+        margin-bottom: 0.2cm;
+        margin-top: 0.2cm;
+	}
         .principal{
            border:2px solid;
-           width: 500px;
-            
+           width: 355px;
+           font-size: 11px;
         }
         .logop{
             width: 190px;
@@ -17,31 +23,33 @@
         }
 
         .titulos{
-            font-size: 24px;
+            font-size: 8px;
             font-weight: bolder;
         }
 
     </style>
 
 </head>
-<body>
+<body style="padding: 0; ">
 <div class="principal ">
-  <table style="width:100%; padding:20px;">
+  <table style="width:100%; ">
     <tr >
-        <td style="width: 250px; font-size: 20px;">
+        <td style="width: 250px; ">
          <span class="titulos">Melo Express </span> 
          <br>
-         <br>
+         
         Comercio / tienda: 
         <br>
         <span class="titulos">{{ $pedido->vendedor }}</span>
+        
         </td>
         
+        </td>
     </tr>
 <hr style="border-top: dotted 1px;">
     <tr>
     
-    <td >
+    <td>
 
     Destinatario: 
         <br>
@@ -64,7 +72,7 @@
 
         <br>
         <br>
-        <span class="titulos" style="float: right;"> Total: ${{  $pedido->total}} </span>
+        <span class="titulos" style="float: right; font-size: 16px;"> Total: ${{  $pedido->total}} </span>
         <br>
         <br>
         <hr style="border-top: dotted 1px;">
@@ -81,7 +89,7 @@
 Tipo de envio: <span class="titulos">{{ $pedido->tipo }} </span>
 <br>
 <br>
-  <div style="padding-left: 170px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 170px;"> {{ $pedido->id }} </span></div>
+  <div style="padding-left: 115px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 100px;"> {{ $pedido->id }} </span></div>
 </br>        
         </td>
         </tr>

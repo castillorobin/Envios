@@ -51,3 +51,4 @@ Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 
 Route::get('factura/facturapdf/{pedidos}', [App\Http\Controllers\FacturacionController::class, 'facturapdf'] )->name('pedido.facturapdf') ;
 
 Route::get('pedidos/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiqueta'] )->name('pedido.etiqueta') ; 
+Route::get('pedidos/imprimire/', [App\Http\Controllers\PedidoController::class, 'imprimire'] )->name('imprimire') ; 
