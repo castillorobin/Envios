@@ -13,7 +13,7 @@
         margin-top: 0.2cm;
 	}
         .principal{
-           border:2px solid;
+           
            width: 355px;
            font-size: 11px;
         }
@@ -23,96 +23,69 @@
         }
 
         .titulos{
-            font-size: 8px;
+            font-size: 14px;
             font-weight: bolder;
         }
-
+body{
+    
+}
     </style>
 
 </head>
-<body style="padding: 0; ">
-<div class="principal ">
-  <table style="width:100%; ">
-    <tr >
-        <td style="width: 250px; ">
-         <span class="titulos">Melo Express </span> 
-         <br>
-         
-        Comercio / tienda: 
-        <br>
-        <span class="titulos">{{ $pedido->vendedor }}</span>
-        
-        </td>
-        
-        </td>
-    </tr>
-<hr style="border-top: dotted 1px;">
-    <tr>
-    
-    <td>
-
-    Destinatario: 
-        <br>
-        <span class="titulos">{{ $pedido->destinatario }}</span>
-        <br>
-        <br>
-        Dirección:
-        <br>
-        <span class="titulos">{{ $pedido->direccion }}</span>
-        <br>
-        <br>
-        Teléfono:<span class="titulos"> {{ $pedido->telefono }}</span>
-        <br>
-        Whatsapp:<span class="titulos"> {{ $pedido->whatsapp }}</span>
-        
-      
-        <br>
-        <br>
-        Fecha de entrega:<span class="titulos"> {{  date('l d F Y',strtotime($pedido->fecha_entrega));}} </span>
-
-        <br>
-        <br>
-        <span class="titulos" style="float: right; font-size: 16px;"> Total: ${{  $pedido->total}} </span>
-        <br>
-        <br>
-        <hr style="border-top: dotted 1px;">
-        <br>
-        </td>
-       
-        
-    </tr>
+<body>
+    <table style="width: 100%; border: 1px solid; height: 95%; ">
+        <tr>
+            <td colspan="2">
+            <span class="titulos" style="font-size:20px; ">Melo Express </span> 
+            </td>
+        </tr>
         <tr >
+            <td style="width: 60%; border-top: 1px solid;">
+            <br>
+            Comercio/tienda: 
+        <br>
+        <span class="titulos" style="font-size:18px; ">{{ $pedido->vendedor }}</span>
+            </td>
+            <td style=" border-top: 1px solid;">
+            <br>
+        Teléfono:<span class="titulos" style="font-size:16px; "> {{ $pedido->telefono }}</span>
+        <br>
+        Whatsapp:<span class="titulos" style="font-size:16px; "> {{ $pedido->whatsapp }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 60%; border-top: 1px solid;">
+            Destinatario: 
+        <br>
+        <span class="titulos" style="font-size:18px; ">{{ $pedido->destinatario }}</span>
+        <br>
+        <br>
             
-            <td style="text-align: center; width:100%; ">  
             
-
-Tipo de envio: <span class="titulos">{{ $pedido->tipo }} </span>
-<br>
-<br>
-  <div style="padding-left: 115px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 100px;"> {{ $pedido->id }} </span></div>
-</br>        
+            Dirección:
+        <br>
+        <span class="titulos" style="font-size:18px; ">{{ $pedido->direccion }}</span>
+        <br>
+            </td>
+            <td style="border-top: 1px solid; border-left: 1px solid;"> codigo Qr</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="width: 60%; border-top: 1px solid;">
+                Tipo de envio: 
+                <br>
+                <span class="titulos" style="font-size:18px; ">{{ $pedido->tipo }} </span>
+                <br>
         </td>
         </tr>
-
-
-  </table>
- 
-  
-    
-    
-</div>
-
-<script>
-
-window.print();
-setTimeout(saludos, 3000);
-
-function saludos(){
-    window.location.href = '/pedidos';
-}
-
-</script>
-
+        <tr>
+            <td colspan="2" style="width: 60%; border-top: 1px solid; text-align:center;">
+            Fecha de entrega:<span class="titulos" style="font-size:18px; "> {{  date('l d F Y',strtotime($pedido->fecha_entrega));}} </span>
+            <br>
+            <br>
+            <div style="padding-left: 115px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 100px;"> {{ $pedido->id }} </span></div>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
