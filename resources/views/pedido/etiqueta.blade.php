@@ -44,7 +44,7 @@ body{
         
         
             </td>
-            <td style="text-center;">Total: <span class="titulos" style="font-size:18px; ">${{ $pedido->total }}</span></td>
+            <td>TOTAL: <span class="titulos" style="font-size:18px; ">${{ $pedido->total }}</span></td>
         </tr>
         <tr >
             <td style="width: 60%; border-top: 1px solid;">
@@ -63,9 +63,9 @@ body{
             <td style="width: 60%; border-top: 1px solid;">
             Destinatario: 
         <br>
-        <span class="titulos" style="font-size:18px; ">{{ $pedido->destinatario }}</span>
+        <span class="titulos" style="font-size:18px; padding-bottom:15px;">{{ $pedido->destinatario }}</span>
         <br>
-        <br>
+       <br> 
             
             
             Dirección:
@@ -89,7 +89,7 @@ body{
             
             
             <br>
-            <br>
+       
             <div style="padding-left: 115px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 100px;"> {{ $pedido->id }} </span></div>
             </td>
         </tr>
