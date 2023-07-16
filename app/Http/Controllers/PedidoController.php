@@ -36,6 +36,35 @@ class PedidoController extends Controller
 
 
     }
+    public function cestado(Request $request)
+    {
+        
+        //$pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
+        //return view('pedido.repartir', compact('pedidos'));
+
+        $id = $request->get('proba') ;
+        
+
+        $pedido = Pedido::find($id);
+       
+        $pedido->estado = $request->get('estado');
+
+
+
+
+
+        $pedido->save();
+  
+        $pedidos = Pedido::all();
+        // $repartidores = Repartidor::all();
+         return view('pedido.repartir', compact('pedidos'));
+
+
+        
+
+
+    }
 
     public function etiqueta($id)
     {

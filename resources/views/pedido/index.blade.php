@@ -374,7 +374,7 @@ input[type="date"]:valid::before {
                     </td>
                       
                 </tr>
-
+ 
                 <tr class="headt">
                     <td width="230px">Fecha de creacion </td>
                     <td> <span ></span> <label for="" id="fecha"></label> </td>  

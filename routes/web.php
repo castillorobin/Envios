@@ -54,3 +54,4 @@ Route::get('pedidos/etiqueta/{id}', [App\Http\Controllers\PedidoController::clas
 Route::get('pedidos/imprimire', [App\Http\Controllers\PedidoController::class, 'imprimire'] )->name('imprimire'); 
 
 Route::get('pedido/estado', [App\Http\Controllers\PedidoController::class, 'estado'] )->name('estado') ;
+Route::get('pedido/cestado', [App\Http\Controllers\PedidoController::class, 'cestado'] )->name('cestado') ;

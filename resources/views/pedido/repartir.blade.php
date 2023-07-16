@@ -287,7 +287,8 @@ function jsFunction(){
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal2" style="background: none; border: 0;"><span style="font-size:14px;">Cambiar status</span></button>
+   
+    <button type="button" class="edit2" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal2" style="background: none; border: 0;"><span style="font-size:14px;">Cambiar status</span></button>
     </div>  
 	<li class="botones">
    
@@ -324,7 +325,8 @@ function jsFunction(){
 
 
 
-<!-- Modal -->
+<!-- Modal cambiar estatus-->
+<form action="/pedido/cestado" method="get">
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -347,6 +349,8 @@ function jsFunction(){
           <br>
         
 
+ <label hidden for="" id="prueba" name="prueba"></label> 
+ <input hidden type="text" id="proba" name="proba">
 
 <div class="col-12" id="flotante" style="display:none;">
 
@@ -369,7 +373,8 @@ function jsFunction(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Cambiar</button>
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+        </form>
       </div>
     </div>
   </div>
@@ -377,7 +382,7 @@ function jsFunction(){
 
 
 
-<!-- Inicio Modal -->
+<!-- Inicio Modal-->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog modal-lg">
@@ -575,6 +580,19 @@ function jsFunction(){
        
         
 $(document).ready(function(){
+
+    $(document).on('click', '.edit2', function(){
+        var id=$(this).val();
+		//var nomb=$('#nom'+id).text();
+
+        $('#edit2').modal('show');
+		$('#prueba').text(id);
+        //$('#prueb').value(id);
+        document.getElementById("proba").value = id;
+
+    });
+ 
+
 	$(document).on('click', '.edit', function(){
 		var id=$(this).val();
 		var nomb=$('#nom'+id).text();
