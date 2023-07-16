@@ -20,7 +20,12 @@
 <li>
     
     </li>
+    <li>
     
+     <a class="nav-link" href="/repartir">
+     <i class="fas fa-truck"></i><span>Repartidores</span>
+    </a>
+    </li>
     <li>
     
      <a class="nav-link" href="/facturas">

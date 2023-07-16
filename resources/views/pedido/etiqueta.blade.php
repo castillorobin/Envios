@@ -37,13 +37,14 @@ body{
 <body>
     <table style="width: 100%; border: 1px solid; height: 95%; ">
         <tr>
-            <td colspan="2" >
+            <td >
             
 
             <img src="../public/img/logogris2.jpg" alt="" width="130px" style="margin-top:5px; margin-bottom:5px;"> 
         
         
             </td>
+            <td style="text-center;">Total: <span class="titulos" style="font-size:18px; ">${{ $pedido->total }}</span></td>
         </tr>
         <tr >
             <td style="width: 60%; border-top: 1px solid;">
