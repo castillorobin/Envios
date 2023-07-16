@@ -254,7 +254,7 @@ input[type="date"]:valid::before {
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/" ><button style="background: none; border: 0;">Cambiar status</button></a></li> 
+    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal2" style="background: none; border: 0;"><span style="font-size:14px;">Cambiar status</span></button>
     </div>  
 	<li class="botones">
    
@@ -289,6 +289,35 @@ input[type="date"]:valid::before {
 </tbody>
 </table>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel2">Cambiar Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <select id="estado" name="estado" class="form-control" tabindex="9">
+            <option value="Creado" >Creado</option>
+            <option value="En ruta">En ruta</option>
+            <option value="Entregado">Entregado</option>
+            
+            <option value="Reprogramado">Reprogramado</option>
+            
+          </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Cambiar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
