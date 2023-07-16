@@ -30,8 +30,18 @@ class PedidoController extends Controller
     public function etiqueta($id)
     {
         $pedido = Pedido::find($id);
-        $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
+        $fecha= $pedido->fecha_entrega;
+        Carbon::setlocale('es');
+        Carbon::setUTF8(true);
+        setlocale(LC_TIME, 'es_ES');
+        //$fechal = date('l d F Y',strtotime($fecha));
+        //$fechal = strftime('%A %e de %B de %Y', $fecha);
+        $fecha = Carbon::parse($fecha);
+        $fechal = $fecha->format('l jS \\of F Y h:i:s A');
+
+        $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido, 'fechal'=>$fechal ]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
+
         $customPaper = array(0,0,283.80,283.80);
         $pdf->setPaper($customPaper, 'landscape');
         return $pdf->stream();

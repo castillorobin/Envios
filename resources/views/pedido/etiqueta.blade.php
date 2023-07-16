@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -48,9 +50,8 @@ body{
             </td>
             <td style=" border-top: 1px solid;">
             <br>
-        Teléfono:<span class="titulos" style="font-size:16px; "> {{ $pedido->telefono }}</span>
-        <br>
-        Whatsapp:<span class="titulos" style="font-size:16px; "> {{ $pedido->whatsapp }}</span>
+        Teléfono:<span class="titulos" style="font-size:16px; "> <br> {{ $pedido->telefono }}</span>
+        
             </td>
         </tr>
         <tr>
@@ -67,7 +68,7 @@ body{
         <span class="titulos" style="font-size:18px; ">{{ $pedido->direccion }}</span>
         <br>
             </td>
-            <td style="border-top: 1px solid; border-left: 1px solid;"> codigo Qr</td>
+            <td style="border-top: 1px solid; border-left: 1px solid; height: 60px !important; padding-left: 25px;"> <span> {!! DNS2D::getBarcodeHTML(" $pedido->id ", 'QRCODE' ,4,4) !!} </span></td>
         </tr>
         <tr>
             <td colspan="2" style="width: 60%; border-top: 1px solid;">
@@ -79,7 +80,7 @@ body{
         </tr>
         <tr>
             <td colspan="2" style="width: 60%; border-top: 1px solid; text-align:center;">
-            Fecha de entrega:<span class="titulos" style="font-size:18px; "> {{  date('l d F Y',strtotime($pedido->fecha_entrega));}} </span>
+            Fecha de entrega:<span class="titulos" style="font-size:18px; "> {{  $fechal}} </span>
             <br>
             <br>
             <div style="padding-left: 115px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 100px;"> {{ $pedido->id }} </span></div>
