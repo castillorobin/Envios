@@ -27,7 +27,7 @@ class PedidoController extends Controller
 
     }
 
-    public function reparti()
+    public function estado()
     {
         
         $pedidos = Pedido::all();

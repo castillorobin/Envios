@@ -53,4 +53,4 @@ Route::get('factura/facturapdf/{pedidos}', [App\Http\Controllers\FacturacionCont
 Route::get('pedidos/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiqueta'] )->name('pedido.etiqueta') ; 
 Route::get('pedidos/imprimire', [App\Http\Controllers\PedidoController::class, 'imprimire'] )->name('imprimire'); 
 
-Route::get('pedidos/repar', [App\Http\Controllers\PedidoController::class, 'reparti'])->name('reparti');
+Route::get('pedido/estado', [App\Http\Controllers\PedidoController::class, 'estado'] )->name('estado') ;
