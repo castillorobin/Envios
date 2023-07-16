@@ -222,7 +222,31 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
         $pedidos = Pedido::all();
-        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
+
+        if(isset($_POST['impri']))
+        {
+            $pedido = Pedido::latest('id')->first();
+        $fecha= $pedido->fecha_entrega;
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+$fecha = Carbon::parse($pedido->fecha_entrega);
+$mes = $meses[($fecha->format('n')) - 1];
+$fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
+        //$fechal = date('l d F Y',strtotime($fecha));
+        //$fechal = strftime('%A %e de %B de %Y', $fecha);
+        //$fecha = Carbon::parse($fecha);
+       // $fechal = $fecha->format('l jS F Y');
+
+        $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido, 'fechal'=>$fechal ]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
+
+        $customPaper = array(0,0,283.80,283.80);
+        $pdf->setPaper($customPaper, 'landscape');
+        return $pdf->stream();
+        }else{
+            return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
+        }
+
+        
        //return redirect('/pedido/etiqueta')->with('id', $pedidos->id);
     }
 

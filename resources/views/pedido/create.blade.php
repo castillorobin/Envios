@@ -648,7 +648,7 @@ $(document).ready(function() {
 <a href="/pedidos/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="/pedidos/imprimire" class="btn btn-primary">Guardar e Imprimir</a>
+        <a href="/pedidos/imprimire" ><button type="submit" name="impri" class="btn btn-primary">Guardar e Imprimir</button></a>
     </div>
 
   
