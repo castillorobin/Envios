@@ -49,6 +49,7 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
        
         $pedido->estado = $request->get('estado');
+        $pedido->nota = $request->get('fpago');
 
 
 
