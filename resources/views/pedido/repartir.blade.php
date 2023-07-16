@@ -153,6 +153,39 @@ input[type="date"]:valid::before {
 </style>
 <br>
  
+
+<script languague="javascript">
+       
+
+        function mostrando()
+{
+  
+}
+
+
+function jsFunction(){
+  var myselect = document.getElementById("estado");
+  //alert(myselect.options[myselect.selectedIndex].value);
+    var opcion = myselect.options[myselect.selectedIndex].value;
+  //var checkbox = document.getElementById('check2');
+  if (opcion == "Reprogramado" || opcion == "No retirado")
+  {
+               div = document.getElementById('flotante');
+            div.style.display = '';
+            div2 = document.getElementById('flotante2');
+            div2.style.display = '';
+
+  }else{
+    div = document.getElementById('flotante');
+            div.style.display = 'none';
+            div2 = document.getElementById('flotante2');
+            div2.style.display = 'none';
+
+  }
+}
+</script>
+
+
 <div class="row" style="background-color: white;" >
     <div class="  col-sm-12 py-3" >
         <h3 class="text-center">Repartidores</h3>
@@ -302,14 +335,37 @@ input[type="date"]:valid::before {
         </button>
       </div>
       <div class="modal-body">
-      <select id="estado" name="estado" class="form-control" tabindex="9">
-            <option value="Creado" >Creado</option>
+      <select id="estado" name="estado" class="form-control" tabindex="9" onChange="jsFunction()" id="estado">
+            <option value="Creado" onclick="jsFunction()">Creado</option>
             <option value="En ruta">En ruta</option>
             <option value="Entregado">Entregado</option>
-            
+            <option value="No retirado" >No retirado</option>            
             <option value="Reprogramado">Reprogramado</option>
             
           </select>
+
+          <br>
+        
+
+
+<div class="col-12" id="flotante" style="display:none;">
+
+<div class="input-group ">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> Nota: </span>
+</div>
+
+<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+
+</div>
+
+
+
+
+
+
+</div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
