@@ -37,19 +37,23 @@ body{
 <body>
     <table style="width: 100%; border: 1px solid; height: 95%; ">
         <tr>
-            <td colspan="2">
-            <span class="titulos" style="font-size:20px; ">Melo Express </span> 
+            <td colspan="2" >
+            
+
+            <img src="../public/img/logogris2.jpg" alt="" width="130px" style="margin-top:5px; margin-bottom:5px;"> 
+        
+        
             </td>
         </tr>
         <tr >
             <td style="width: 60%; border-top: 1px solid;">
-            <br>
+            
             Comercio/tienda: 
         <br>
         <span class="titulos" style="font-size:18px; ">{{ $pedido->vendedor }}</span>
             </td>
             <td style=" border-top: 1px solid;">
-            <br>
+            
         Teléfono:<span class="titulos" style="font-size:16px; "> <br> {{ $pedido->telefono }}</span>
         
             </td>
@@ -81,6 +85,8 @@ body{
         <tr>
             <td colspan="2" style="width: 60%; border-top: 1px solid; text-align:center;">
             Fecha de entrega:<span class="titulos" style="font-size:18px; "> {{  $fechal}} </span>
+            
+            
             <br>
             <br>
             <div style="padding-left: 115px;"> {!! DNS1D::getBarcodeHTML($pedido->id , 'C39') !!} <span style="padding-right: 100px;"> {{ $pedido->id }} </span></div>

@@ -31,13 +31,14 @@ class PedidoController extends Controller
     {
         $pedido = Pedido::find($id);
         $fecha= $pedido->fecha_entrega;
-        Carbon::setlocale('es');
-        Carbon::setUTF8(true);
-        setlocale(LC_TIME, 'es_ES');
+        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+$fecha = Carbon::parse($pedido->fecha_entrega);
+$mes = $meses[($fecha->format('n')) - 1];
+$fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         //$fechal = date('l d F Y',strtotime($fecha));
         //$fechal = strftime('%A %e de %B de %Y', $fecha);
-        $fecha = Carbon::parse($fecha);
-        $fechal = $fecha->format('l jS \\of F Y h:i:s A');
+        //$fecha = Carbon::parse($fecha);
+       // $fechal = $fecha->format('l jS F Y');
 
         $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido, 'fechal'=>$fechal ]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
