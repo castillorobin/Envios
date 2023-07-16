@@ -27,6 +27,16 @@ class PedidoController extends Controller
 
     }
 
+    public function reparti()
+    {
+        
+        $pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
+        return view('pedido.repartir', compact('pedidos'));
+
+
+    }
+
     public function etiqueta($id)
     {
         $pedido = Pedido::find($id);

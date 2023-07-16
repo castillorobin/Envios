@@ -22,7 +22,7 @@
     </li>
     <li>
     
-     <a class="nav-link" href="/repartir">
+     <a class="nav-link" href="/pedidos/repar">
      <i class="fas fa-truck"></i><span>Repartidores</span>
     </a>
     </li>
