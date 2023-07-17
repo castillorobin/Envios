@@ -21,6 +21,10 @@ class EstatusController extends Controller
     {
           //$pedidos = Pedido::all();
        // $repartidores = Repartidor::all();
+       $pedidosestado = Estatus::all();
+       foreach($pedidosestado as $estado){
+        $estado->delete();
+    }
        return view('estatus.index');
     }
 
@@ -29,11 +33,20 @@ class EstatusController extends Controller
 
         //$pedidos = Pedido::all();
        // $repartidores = Repartidor::all();
-      
        $id = $request->get('codigo') ;
+       $pedido = Pedido::find($id);
+       $pedidoesta = Estatus::find($id);
+       $pedidos = new Estatus();
        $pedidoadd = new Estatus(); 
-       $pedidos = new Estatus(); 
+       
+        if(Estatus::where('id', $id )->exists()){
+            $nota="Registro Duplicado";
+            $pedidos = Estatus::all();
+       
+            return view('estatus.cambiarestatus', compact('pedidos', 'nota'));
+        }else{
 
+            
        $pedido = Pedido::find($id);
        //$pedidos = collect([$pedido]);
        $pedidoadd->id = $pedido->id;
@@ -59,8 +72,15 @@ class EstatusController extends Controller
       //$pedidos->add($pedido);
       
         $pedidos = Estatus::all();
-       //return $pedidos;
-       return view('estatus.cambiarestatus', compact('pedidos'));
+        $nota=" ";
+       return view('estatus.cambiarestatus', compact('pedidos', 'nota'));
+
+        }
+
+
+       
+       
+
 
     }
 

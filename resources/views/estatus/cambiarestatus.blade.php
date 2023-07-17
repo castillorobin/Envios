@@ -167,7 +167,7 @@ input[type="date"]:valid::before {
 
 
             <div class="d-flex justify-content-end">
-    
+    <span style="font-size:18px; color: red;"> {{ $nota }}</span>
             <div >
 
             <form action="/pedido/listaestatus" method="get">
