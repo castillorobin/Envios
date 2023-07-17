@@ -36,7 +36,7 @@ class FacturacionController extends Controller
        return view('factura.inicio')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'vende'=>$vende  ]);
 
     }
-
+ 
     public function facturapdf(Request $request, $comercio)
     {
 
@@ -82,7 +82,7 @@ class FacturacionController extends Controller
         $pdf->setPaper('letter', 'landscape');
         return $pdf->stream();
        }else{
-        $total = 'no entro';
+        $total = 'No decuento';
        }
 
       

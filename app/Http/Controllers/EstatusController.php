@@ -100,6 +100,8 @@ class EstatusController extends Controller
 
 
         $pedidosestado = Estatus::all();
+        $pedidos = Estatus::all();
+        
         foreach($pedidosestado as $estado){
             $pedido = Pedido::find($estado->id);
             
@@ -117,20 +119,17 @@ class EstatusController extends Controller
             $estado->delete();
         }
         
-        //$pedido = Pedido::find($id);
+        if(isset($_GET['impri']))
+        {
+
+        $pdf = PDF::loadView('estatus.estatusimprimir', ['pedidos'=>$pedidos]);
        
-        //$pedido->estado = $request->get('estado');
-        //$pedido->nota = $request->get('fpago');
-
-
-
-
-
-        //$pedido->save();
-  
-        //DB::table('estatuses')->delete();
-        // $repartidores = Repartidor::all();
-        return view('estatus.index');
+        $pdf->setPaper('letter', 'landscape');
+        return $pdf->stream();
+        }else{
+            return view('estatus.index');
+        }
+        
 
     }
 

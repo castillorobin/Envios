@@ -392,7 +392,8 @@ input[type="date"]:valid::before {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Cambiar</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" name="impri" class="btn btn-primary">Actualizar e Imprimir</button>
         </form>
       </div>
     </div>
