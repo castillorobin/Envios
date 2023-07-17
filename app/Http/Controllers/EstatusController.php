@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Estatus;
 use App\Models\Pedido;
+use App\Models\Repartidor;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -70,10 +71,10 @@ class EstatusController extends Controller
 
        $pedidoadd->save();
       //$pedidos->add($pedido);
-      
+      $repartidores = Repartidor::all();
         $pedidos = Estatus::all();
         $nota=" ";
-       return view('estatus.cambiarestatus', compact('pedidos', 'nota'));
+       return view('estatus.cambiarestatus', compact('pedidos', 'nota','repartidores'));
 
         }
 
@@ -103,6 +104,10 @@ class EstatusController extends Controller
             $pedido = Pedido::find($estado->id);
             
             $pedido->estado = $request->get('estado');
+            if ($request->check2) {
+                // Do something
+                $pedido->repartidor = $request->get('repartidor');
+            }
             $pedido->save();
             //$estado->estado = $request->get('estado');
             //$estado->save();

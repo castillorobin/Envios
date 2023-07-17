@@ -2,6 +2,35 @@
 @extends('layouts.app')
 
 @section('content')
+<script languague="javascript">
+       
+
+        function mostrando()
+{
+  var checkbox = document.getElementById('check2');
+  if (checkbox.checked != true)
+  {
+    div = document.getElementById('flotante');
+            div.style.display = 'none';
+            //div2 = document.getElementById('flotante2');
+            //div2.style.display = 'none';
+            //var total = document.getElementById('preci2').textContent;
+            //var desc = document.getElementById('descu').value;
+            //document.getElementById('preci2').innerHTML = parseFloat(total) + parseFloat(desc) ; 
+            //document.getElementById('toti').value = parseFloat(total) + parseFloat(desc) ; 
+           // document.getElementById('descu').value = 0;
+
+  }else{
+    div = document.getElementById('flotante');
+            div.style.display = '';
+           // div2 = document.getElementById('flotante2');
+            //div2.style.display = '';
+  }
+}
+
+</script>
+
+
 
     <section class="section">
         <div class="section-header">
@@ -332,23 +361,34 @@ input[type="date"]:valid::before {
  <label hidden for="" id="prueba" name="prueba"></label> 
  <input hidden type="text" id="proba" name="proba">
 
-<div class="col-12" id="flotante" style="display:none;">
-
-<div class="input-group ">
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1"> Nota: </span>
-</div>
-
-<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
-
+ <div class="col-12">
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check2" name="check2" Onclick="javascript:mostrando();">
+            <label class="form-check-label" for="check2">Asignar repartidor</label>
+        </div>
 </div>
 
 
+<div class="col-6" id="flotante" style="display:none;">
 
+    <div class="input-group ">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> <i class="fas fa-truck"></i> </span>
+        </div>
 
+        <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+            <option value="">-Sin asignar-</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
 
+    </div>
 
 </div>
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

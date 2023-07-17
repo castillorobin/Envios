@@ -456,6 +456,7 @@ No. de comprobante
 <input type="checkbox" class="form-check-input" id="checkiva" Onclick="javascript:ivan();">
 <label class="form-check-label" for="check1">IVA</label>
 </div>
+
 <div class="form-group form-check">
 <input type="checkbox" class="form-check-input" id="check2" Onclick="javascript:mostrando();">
 <label class="form-check-label" for="check2">Hacer descuento</label>
