@@ -10,6 +10,7 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\RepartidorController;
 use App\Http\Controllers\VendedorController;
 use App\Http\Controllers\FacturacionController;
+use App\Http\Controllers\EstatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('repartidores', RepartidorController::class);
     Route::resource('vendedores', VendedorController::class);
     Route::resource('facturas', FacturacionController::class);
+    Route::resource('estatus', EstatusController::class);
     
 });
 
@@ -56,6 +58,7 @@ Route::get('pedidos/imprimire', [App\Http\Controllers\PedidoController::class, '
 Route::get('pedido/estado', [App\Http\Controllers\PedidoController::class, 'estado'] )->name('estado') ;
 Route::get('pedido/cestado', [App\Http\Controllers\PedidoController::class, 'cestado'] )->name('cestado') ;
 
-Route::get('pedido/listaestatus', [App\Http\Controllers\PedidoController::class, 'listaestatus'] )->name('listaestatus') ;
+Route::get('pedido/listaestatus', [App\Http\Controllers\EstatusController::class, 'listaestatus'] )->name('listaestatus') ;
+Route::get('pedido/cambiando', [App\Http\Controllers\EstatusController::class, 'cambiando'] )->name('cambiando') ;
 
-Route::get('pedido/cambiarestatus', [App\Http\Controllers\PedidoController::class, 'cambiarestatus'] )->name('cambiarestatus') ;
+Route::get('estatus/agregar', [App\Http\Controllers\EstatusController::class, 'agregar'] )->name('agregar') ;

@@ -17,7 +17,7 @@
 @page {
 size: landscape;
 }
-}
+} 
     /*
     .dropdown-menu-center {
   left: 2% !important;
@@ -170,7 +170,11 @@ input[type="date"]:valid::before {
     
             <div >
 
-<a href="/pedidos/" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar </a>
+            <form action="/pedido/listaestatus" method="get">
+                <input type="text" name="codigo">
+            <button type="submit" class="btn btn-primary">Agregar</button>
+
+</form>
 <br>
             </div>
    
@@ -186,7 +190,7 @@ input[type="date"]:valid::before {
 
 
 <br>
-<table id="tpedido" class="table table-striped mt-2">
+<table id="tpedido2" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
         <th style="color: #fff;">ID</th>
@@ -290,11 +294,70 @@ input[type="date"]:valid::before {
     </td>
     </tr>
     @endforeach
+  
 </tbody>
 </table>
+<tr>
+        <td colspan="12" style="width:100%">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5" style="float:right;">
+  Cambiar Estado en Lote
+</button>
+        </td>
+    </tr>
+
+<!-- Modal estatus en lote-->
+<form action="/pedido/cambiando" method="get">
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <select id="estado" name="estado" class="form-control" tabindex="9" onChange="jsFunction()" id="estado">
+            <option value="Creado" onclick="jsFunction()">Creado</option>
+            <option value="En ruta">En ruta</option>
+            <option value="Entregado">Entregado</option>
+            <option value="No retirado" >No retirado</option>            
+            <option value="Reprogramado">Reprogramado</option>
+            
+          </select>
+
+          <br>
+        
+
+ <label hidden for="" id="prueba" name="prueba"></label> 
+ <input hidden type="text" id="proba" name="proba">
+
+<div class="col-12" id="flotante" style="display:none;">
+
+<div class="input-group ">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1"> Nota: </span>
+</div>
+
+<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+
+</div>
 
 
 
+
+
+
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Cambiar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Inicio Modal -->
 
@@ -567,7 +630,7 @@ $(document).ready(function(){
     <script>
          
         $(document).ready(function () {
-    $('#tpedido').DataTable(
+    $('#tpedido2').DataTable(
         {
            
             language: {

@@ -169,13 +169,13 @@ input[type="date"]:valid::before {
             <div class="d-flex justify-content-end">
     
             <div >
-            <form action="/pedido/cambiarestatus" method="get">
+            <form action="/pedido/listaestatus" method="get">
                 <input type="text" name="codigo">
             <button type="submit" class="btn btn-primary">Agregar</button>
 
 </form>
 <br>
-            </div>
+             </div>
    
 
   

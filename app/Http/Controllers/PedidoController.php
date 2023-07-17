@@ -44,14 +44,16 @@ class PedidoController extends Controller
        // $repartidores = Repartidor::all();
        
        $id = $request->get('codigo') ;
-        
+       //$pedidos = new Pedido(); 
 
-       $pedidos = Pedido::find($id);
+       $pedido = Pedido::find($id);
+       //$pedidos = collect([$pedido]);
+       $pedidos = collect([$pedido]);
+      //$pedidos->add($pedido);
 
        //return $pedidos;
        return view('pedido.cambiarestatus', compact('pedidos'));
 
-        
 
     }
 
