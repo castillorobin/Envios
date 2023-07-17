@@ -32,9 +32,21 @@ body{
     
 }
     </style>
-
+<script type="text/javascript">
+     function printHTML() { 
+  if (window.print) { 
+    window.print();
+  }
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+  printHTML(); 
+});
+ </script>
 </head>
-<body>
+
+<body onLoad="window.print()">
+
+
     <table style="width: 100%; border: 1px solid; height: 95%; ">
         <tr>
             <td >
@@ -94,6 +106,9 @@ body{
             </td>
         </tr>
     </table>
+
+   
 </body>
+
 
 </html>

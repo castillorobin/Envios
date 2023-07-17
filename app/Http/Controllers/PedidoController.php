@@ -27,6 +27,34 @@ class PedidoController extends Controller
 
     }
 
+    public function listaestatus()
+    {
+
+        //$pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
+        return view('pedido.listaestatus');
+
+        
+
+    }
+    public function cambiarestatus(Request $request)
+    {
+
+        //$pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
+       
+       $id = $request->get('codigo') ;
+        
+
+       $pedidos = Pedido::find($id);
+
+       //return $pedidos;
+       return view('pedido.cambiarestatus', compact('pedidos'));
+
+        
+
+    }
+
     public function estado()
     {
         

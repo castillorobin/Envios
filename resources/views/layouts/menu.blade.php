@@ -22,6 +22,12 @@
     </li>
     <li>
     
+     <a class="nav-link" href="/pedido/listaestatus">
+     <i class="fas fa-truck"></i><span>Cambiar Estado</span>
+    </a>
+    </li>
+    <li>
+    
      <a class="nav-link" href="/pedido/estado">
      <i class="fas fa-truck"></i><span>Repartidores</span>
     </a>

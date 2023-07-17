@@ -55,3 +55,7 @@ Route::get('pedidos/imprimire', [App\Http\Controllers\PedidoController::class, '
 
 Route::get('pedido/estado', [App\Http\Controllers\PedidoController::class, 'estado'] )->name('estado') ;
 Route::get('pedido/cestado', [App\Http\Controllers\PedidoController::class, 'cestado'] )->name('cestado') ;
+
+Route::get('pedido/listaestatus', [App\Http\Controllers\PedidoController::class, 'listaestatus'] )->name('listaestatus') ;
+
+Route::get('pedido/cambiarestatus', [App\Http\Controllers\PedidoController::class, 'cambiarestatus'] )->name('cambiarestatus') ;
