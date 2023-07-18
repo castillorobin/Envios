@@ -306,7 +306,7 @@ ul li ul:hover {
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
-        <th style="color: #fff;">ID</th>
+<th style="color: #fff;">ID</th>
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Direccion</th>
@@ -314,10 +314,10 @@ ul li ul:hover {
         <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Agencia</th>
-        <th style="color: #fff;">Repartidor</th>
-        <th style="color: #fff;">Ruta</th>
-        <th style="color: #fff;">Nota</th>
+        <th style="color: #fff;">Precio</th>
+        <th style="color: #fff;">Envio</th>
+        <th style="color: #fff;">Total</th>
+        
         <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>

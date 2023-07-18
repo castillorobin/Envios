@@ -314,10 +314,10 @@ ul li ul:hover {
         <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Agencia</th>
-        <th style="color: #fff;">Repartidor</th>
-        <th style="color: #fff;">Ruta</th>
-        <th style="color: #fff;">Nota</th>
+        <th style="color: #fff;">Precio</th>
+        <th style="color: #fff;">Envio</th>
+        <th style="color: #fff;">Total</th>
+        
         <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
@@ -332,10 +332,10 @@ ul li ul:hover {
     <td>{{ $pedidos[$i]->tipo }}</td>
     <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
-    <td> {{ $pedidos[$i]->agencia }}</td>
-    <td> {{ $pedidos[$i]->repartidor }}</td>
-    <td> {{ $pedidos[$i]->ruta }}</td>
-    <td> {{ $pedidos[$i]->nota }}</td>
+    <td> ${{ $pedidos[$i]->precio }}</td>
+    <td>${{ $pedidos[$i]->envio }}</td>
+    <td> ${{ $pedidos[$i]->total }}</td>
+    
     <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
     <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
     <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
