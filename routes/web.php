@@ -63,4 +63,6 @@ Route::get('pedido/cambiando', [App\Http\Controllers\EstatusController::class, '
 
 Route::get('pedido/verpedido/{id}', [App\Http\Controllers\PedidoController::class, 'verpedido'] )->name('verpedido') ;
 
+Route::get('reportes', [App\Http\Controllers\PedidoController::class, 'reporte'] )->name('reporte') ;
+
 Route::get('estatus/agregar', [App\Http\Controllers\EstatusController::class, 'agregar'] )->name('agregar') ;

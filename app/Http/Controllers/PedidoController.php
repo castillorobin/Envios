@@ -38,6 +38,17 @@ class PedidoController extends Controller
 
     }
 
+    public function reporte()
+    {
+
+        $pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
+        return view('pedido.reportes', compact('pedidos'));
+
+        
+
+    }
+
     public function verpedido($id)
     {
 

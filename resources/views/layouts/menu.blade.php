@@ -40,6 +40,13 @@
     </li>
 
     <li>
+    
+     <a class="nav-link" href="/reportes">
+     <i class="fas fa-chart-line"></i><span>Reportes</span>
+    </a>
+    </li>
+
+    <li>
     @can('ver-rol')
      <a class="nav-link" href="/usuarios">
     <i class="fas fa-users"></i><span>Usuarios</span>

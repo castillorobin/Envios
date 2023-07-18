@@ -94,34 +94,50 @@
 
 <form action="/pedidos/{{$pedido->id}}" >
 
-<div class="row mx-5 mb-5" style="font-size:14px; background: white; border: 1px solid; ">
-   <div class="col-12" style="background:#d5d5d5">
+<div class="row mx-5 mb-5" style="font-size:10px; background: #ececec; border: 1px solid; ">
+   <div class="col-12" style="background:#ececec">
 <div class="row mx-1 text-center" >
-    <h5>Cambiar Status del envio</h5>
-      
+    <h5>Status del paquete</h5>
+      <p></p>
     </div>
     </div>
   <br>
   <div class="col-12">
 
 
-<div class="row mx-2" style=" background: white;"> <!--  Inicia el row general  -->
+<div class="row mx-2" style=" background: #ececec;"> <!--  Inicia el row general  -->
 <br>
-<div class="col-12 text-center"> <!--  Inicia la primera columna  -->
+<div class="col-12"> <!--  Inicia la primera columna  -->
 
 <div class="row" >
     <div class="col-12" >
+        <table>
+          <tr>
+            <td>Id:</td>
+            <td><strong> {{$pedido->id}}</strong></td>
+          </tr>
+
+          <tr>
+            <td>Destinatario: </td>
+            <td><strong>{{$pedido->destinatario}}</strong></td>
+          </tr>
+
+          <tr>
+            <td>Comercio: </td>
+            <td><strong>{{$pedido->vendedor}}</strong></td>
+          </tr>
+          <tr>
+            <td>Direccion: </td>
+            <td><strong>{{$pedido->direccion}}</strong></td>
+          </tr>
+          <tr>
+            <td>Total:</td>
+            <td><strong>{{$pedido->total}}</strong></td>
+          </tr>
+        </table>
         
-        <label for="inputEmail3" class="">Id: <strong> {{$pedido->id}}</strong></label>
-        <br>
-        <label for="inputEmail3" class="">Destinatario: <strong>{{$pedido->destinatario}}</strong></label>
-        <br>
-        <label for="inputEmail3" class="">Comercio: <strong>{{$pedido->vendedor}}</strong></label>
-        <br>
-        <label for="inputEmail3" class="">Direccion: <strong>{{$pedido->direccion}}</strong></label>
-        <br>
-        <label for="inputEmail3" class="">Total: <strong>${{$pedido->total}}</strong></label>
-        <br>
+        
+        
 
         <p></p>
         <a href="/pedidos" class="btn btn-primary btn-lg btn-block">Entregado</a> 
@@ -132,8 +148,12 @@
 <p></p>
 <a href="/pedidos" class="btn btn-primary btn-lg btn-block">No entregado</a> 
 <p></p>
+Nota:
+<input type="text" name="nota">
+<p></p>
     </div>
     
+
 </div>
 
 
