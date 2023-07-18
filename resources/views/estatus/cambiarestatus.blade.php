@@ -29,7 +29,17 @@
 }
 
 </script>
-
+<script>
+    function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    //Abrir URL que necesites
+    //window.location = "http://127.0.0.1:8000/estatus/";
+    window.location = "http://54.237.159.219/estatus/";
+};
+</script>
 
 
     <section class="section">
@@ -393,7 +403,7 @@ input[type="date"]:valid::before {
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Actualizar</button>
-        <button type="submit" name="impri" class="btn btn-primary">Actualizar e Imprimir</button>
+        <button type="submit" name="impri" class="btn btn-primary" formtarget="_blank" onclick="redireccionarPagina()">Actualizar e Imprimir</button>
         </form>
       </div>
     </div>
