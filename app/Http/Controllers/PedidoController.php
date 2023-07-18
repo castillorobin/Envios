@@ -59,6 +59,12 @@ class PedidoController extends Controller
         if(isset($_GET['entre']))
         {
             $pedido->estado="Entregado";
+        }elseif(isset($_GET['repro'])){
+            $pedido->estado="Reprogramado";
+            $pedido->nota=$request->get('nota');
+        }else{
+            $pedido->estado="No entregado";
+            $pedido->nota=$request->get('nota');
         }
 
         $pedido->save();

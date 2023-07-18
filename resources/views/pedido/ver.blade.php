@@ -146,7 +146,7 @@
         <br>
 
 <p></p>
-<button type="submit" class="btn btn-primary" style="border-radius: 8px; height:30px; width:100%">Reprogramado</button>           
+<button type="submit" name="repro" class="btn btn-primary" style="border-radius: 8px; height:30px; width:100%">Reprogramado</button>           
 <br>
 <p></p>
 <button type="submit" class="btn btn-primary" style="border-radius: 8px; height:30px; width:100%">No entregado</button>           
