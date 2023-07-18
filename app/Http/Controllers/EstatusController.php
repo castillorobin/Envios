@@ -46,7 +46,14 @@ class EstatusController extends Controller
             $repartidores = Repartidor::all();
             return view('estatus.cambiarestatus', compact('pedidos', 'nota','repartidores'));
 
-        }else{
+        }elseif(!$request->get('codigo')){
+            $nota="Código vacio";
+            $pedidos = Estatus::all();
+            $repartidores = Repartidor::all();
+            return view('estatus.cambiarestatus', compact('pedidos', 'nota','repartidores'));
+
+        }
+        else{
 
             
        $pedido = Pedido::find($id);
