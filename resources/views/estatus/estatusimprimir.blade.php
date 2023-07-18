@@ -34,7 +34,7 @@
    <hr>
    <span>Id:</span>
    <br>
-   <span>Cajero: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+   <span>Operario: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
    <br>
 <span>Comercio: {{ $pedidos[0]->vendedor}}</span>
 <br>
@@ -70,7 +70,7 @@
 
     <td>{{ $pedido->tipo }}</td>
     <td> {{ $pedido->estado }}</td>
-    <td> {{ $pedido->fecha_entrega }}</td>
+    <td> {{  date('d/m/Y', strtotime($pedido->fecha_entrega))}}</td>
     <td> {{ $pedido->total }}</td>
  
     

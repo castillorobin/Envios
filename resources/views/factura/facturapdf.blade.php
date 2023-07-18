@@ -70,7 +70,7 @@
 
     <td>{{ $pedido->tipo }}</td>
     <td> {{ $pedido->estado }}</td>
-    <td> {{ $pedido->fecha_entrega }}</td>
+    <td> {{  date('d/m/Y', strtotime($pedido->fecha_entrega))}}</td>
     <td> {{ $pedido->total }}</td>
  
     

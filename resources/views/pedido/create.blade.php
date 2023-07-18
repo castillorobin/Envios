@@ -2,6 +2,17 @@
 @extends('layouts.app')
 
 @section('content')
+<script>
+    function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    //Abrir URL que necesites
+    //window.location = "http://127.0.0.1:8000/pedidos";
+    window.location = "http://54.237.159.219/pedidos/";
+};
+</script>
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Crear Envio</h3>
@@ -648,7 +659,7 @@ $(document).ready(function() {
 <a href="/pedidos/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="/pedidos/imprimire" ><button type="submit" name="impri" class="btn btn-primary">Guardar e Imprimir</button></a>
+        <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank"><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
     </div>
 
   

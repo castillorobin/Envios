@@ -24,7 +24,7 @@
  <img src="../public/img/logo.jpg" alt="" width="10%">
             <h3 class="page__heading">Melo Express</h3>
             <div style="width:100%; text-align: right; " >
-   Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('H:i A')}}
+   Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('h:i A')}}
   
    </div>
         </div>
