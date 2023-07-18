@@ -37,6 +37,23 @@ class PedidoController extends Controller
         
 
     }
+
+    public function verpedido($id)
+    {
+
+        //$pedidos = Pedido::all();
+       // $repartidores = Repartidor::all();
+       $pedido = Pedido::find($id);
+
+        return view('pedido.ver', compact('pedido'));
+
+        
+
+    }
+
+
+
+
     public function cambiarestatus(Request $request)
     {
 

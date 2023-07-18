@@ -1,14 +1,8 @@
-
-@extends('adminlte::page')
-
-@section('title', 'Melo Express')
-
-@section('content_header')
-<h6 ><i class="fas fa-home"></i> Inicio / Almacen / Ver</h6>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-@stop
+@extends('layouts.app')
 
 @section('content')
+
+
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <style>
@@ -313,12 +307,12 @@
 
 <div class="col-6"> <!--  Inicia la segunda columna  -->
 
-<!-- Trigger the Modal -->
+<!-- Trigger the Modal 
 <img id="myImg" src="/imgs/fotos/{{$pedido->foto}}" style="width:100%;max-width:300px">
 <br> <p></p>
 <img id="myImg2" src="/imgs/fotos/{{$pedido->foto2}}"  style="width:100%;max-width:300px">
 <br><p></p>
-
+-->
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -346,7 +340,7 @@
   <div id="caption2"></div>
 </div>
 
-
+ 
 
 </div> <!--  Fin de la segunda columna  -->
 <div class="row">
@@ -415,15 +409,5 @@ span2.onclick = function() {
 </script>
 
 
-
-
-
-
 @endsection
 
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-@stop
