@@ -2,7 +2,17 @@
 @extends('layouts.app')
 
 @section('content')
-
+<script>
+    function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    //Abrir URL que necesites
+    window.location = "http://127.0.0.1:8000/reportes";
+    //window.location = "http://54.237.159.219/estatus/";
+};
+</script>
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
@@ -281,7 +291,7 @@ ul li ul:hover {
 
                         <td colspan="3">
                             <br>
-                     &nbsp; &nbsp; <button type="submit" class="btn btn-warning btn-lg " ><i class="fas fa-print"></i> Imprimir</button>      
+                     &nbsp; &nbsp; <a href="/printfiltro/{{$filtro}}/{{$ftipo}}" class="btn btn-warning btn-lg " onclick="redireccionarPagina()" target="_blank"> <i class="fas fa-print"></i> Imprimir </a>    
                         </td>
                     </tr>
                 </table>

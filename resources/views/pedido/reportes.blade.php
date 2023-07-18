@@ -281,7 +281,7 @@ ul li ul:hover {
 
                         <td colspan="3">
                             <br>
-                     &nbsp; &nbsp; <button type="submit" class="btn btn-warning btn-lg " ><i class="fas fa-print"></i> Imprimir</button>      
+                     &nbsp; &nbsp; <button type="submit" class="btn btn-warning btn-lg " disabled><i class="fas fa-print" ></i> Imprimir</button>      
                         </td>
                     </tr>
                 </table>
