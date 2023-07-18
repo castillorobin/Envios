@@ -96,8 +96,8 @@
 
 <div class="row mx-5 mb-5" style="font-size:20px; background: white; border: 1px solid; ">
    <div class="col-12" style="background:#d5d5d5">
-<div class="row mx-5" >
-    <h3>Detalle del envio</h3>
+<div class="row mx-1 text-center" >
+    <h5>Cambiar Status del envio</h5>
       
     </div>
     </div>
@@ -105,199 +105,25 @@
   <div class="col-12">
 
 
-<div class="row mx-5" style="font-size:20px; background: white;"> <!--  Inicia el row general  -->
+<div class="row mx-2" style=" background: white;"> <!--  Inicia el row general  -->
 <br>
-<div class="col-6"> <!--  Inicia la primera columna  -->
+<div class="col-12 text-center"> <!--  Inicia la primera columna  -->
 
 <div class="row" >
-    <div class="col-4"  >
-        <br>
-        <label for="inputEmail3" class="">Id de envio</label>
+    <div class="col-12" >
+        
+        <label for="inputEmail3" class="">Id: {{$pedido->id}}</label>
+        <p></p>
+        <a href="/pedidos" class="btn btn-primary btn-lg btn-block">Entregado</a> 
+<br>
+<p></p>
+<a href="/pedidos" class="btn btn-primary btn-lg btn-block">Reprogamado</a> 
+<br>
+<p></p>
+<a href="/pedidos" class="btn btn-primary btn-lg btn-block">No entregado</a> 
+<p></p>
     </div>
-    <div class="col-6">
-    <br>
-        <label for="inputEmail3" class="datos" >{{$pedido->id}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Nombre de comercio / Tienda</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->vendedor}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Destinatario </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->destinatario}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Telefono </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->telefono}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Direccion de entrega </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->direccion}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Fecha de creacion </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{  date('d/m/Y', strtotime($pedido->created_at))  }}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Fecha de entrega </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{  date('d/m/Y', strtotime($pedido->fecha_entrega))  }}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Tipo de servicio </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->servicio}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Tipo de envio </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->tipo}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Cobro del envio </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" ></label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Estado del envio </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->estado}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Estado del pago </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->pagado}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Precio del paquete </label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->precio}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Costo del envio</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->precio}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Total a cobrar</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->total}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Usuario que registra</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->ingresado}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Recepción agencia</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->agencia}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Repartidor</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->repartidor}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Ruta</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->ruta}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Nota</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->nota}}</label>
-    </div>
-</div>
-
-<div class="row" >
-    <div class="col-4"  >
-        <label for="inputEmail3" class="">Nota</label>
-    </div>
-    <div class="col-6">
-        <label for="inputEmail3" class="datos" >{{$pedido->nota}}</label>
-    </div>
+    
 </div>
 
 
@@ -305,54 +131,9 @@
 </div> <!--  Fin de la primera columna  -->
 
 
-<div class="col-6"> <!--  Inicia la segunda columna  -->
-
-<!-- Trigger the Modal 
-<img id="myImg" src="/imgs/fotos/{{$pedido->foto}}" style="width:100%;max-width:300px">
-<br> <p></p>
-<img id="myImg2" src="/imgs/fotos/{{$pedido->foto2}}"  style="width:100%;max-width:300px">
-<br><p></p>
--->
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01" >
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
-</div>
-
-<!-- The Modal 2-->
-<div id="myModal2" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close" id="close2">&times;</span>
-
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img02" >
-
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption2"></div>
-</div>
 
  
 
-</div> <!--  Fin de la segunda columna  -->
-<div class="row">
-
-<div class="modal-footer">
-        
-     
-<a href="/pedidos" class="btn btn-primary">Regresar</a> 
-        </div>
-
-    
-        </div>
 
 <br><p></p>
 </div>
@@ -364,49 +145,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
-<script>
-    // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-
-// Get the modal
-var modal2 = document.getElementById("myModal2");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img2 = document.getElementById("myImg2");
-var modalImg2 = document.getElementById("img02");
-var captionText2 = document.getElementById("caption2");
-img2.onclick = function(){
-  modal2.style.display = "block";
-  modalImg2.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-var span2 = document.getElementsById("close2")[0];
-
-// When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-  modal2.style.display = "none";
-}
-</script>
 
 
 @endsection
