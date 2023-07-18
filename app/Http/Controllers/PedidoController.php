@@ -63,28 +63,51 @@ class PedidoController extends Controller
 
         if($request->get('fecha')!=""){
             $pedidos = Pedido::where('fecha_entrega', $fecha)->get();
-        }elseif($request->get('fecha')!="estado"){
+            $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+
+        }
+
+        if($estado!="estado"){
             $pedidos = Pedido::where('estado', $estado)->get();
+            $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+
         }
         
         
         if($request->get('tipo')!="tipo"){
             $pedidos = Pedido::where('tipo', $tipo)->get();
-            //return $ruta;
-        }elseif($request->get('ruta')!="ruta"){
+            $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+
+            
+        }
+        
+        if($request->get('ruta')!="ruta"){
             $pedidos = Pedido::where('ruta', $ruta)->get();
+            $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+
         }
 
         if($request->get('repartidor')!="repartidor"){
             $pedidos = Pedido::where('repartidor', $repartidor)->get();
-            //return $ruta;
-        }elseif($request->get('total')!="total"){
+            $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+
+            
+        }
+        if($request->get('total')!="total"){
             $pedidos = Pedido::where('total', $total)->get();
+            $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+
         }
 
 
-        $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores'));
+       // $repartidores = Repartidor::all();
+        //return view('pedido.repofiltro', compact('pedidos','repartidores'));
 
         
 
