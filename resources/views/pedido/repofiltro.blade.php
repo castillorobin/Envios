@@ -322,7 +322,102 @@ ul li ul:hover {
     </tr>
 </thead>
 <tbody>
+    
+    @for ($i=0; $i< count($pedidos); $i++)
+    <tr >
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
+    <td>{{ $pedidos[$i]->direccion }}</td>
+    <td>{{ $pedidos[$i]->tipo }}</td>
+    <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
+    <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
+    <td> {{ $pedidos[$i]->agencia }}</td>
+    <td> {{ $pedidos[$i]->repartidor }}</td>
+    <td> {{ $pedidos[$i]->ruta }}</td>
+    <td> {{ $pedidos[$i]->nota }}</td>
+    <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
+    <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
+    <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
+    <span hidden id="dir{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->direccion}}</span>
+    <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
+    <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
+    <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
+    <span hidden id="este{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estado}}</span>
+    <span hidden id="estp{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->pagado}}</span>
+    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
+    <span hidden id="tot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->total}}</span>
+    <span hidden id="ing{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ingresado}}</span>
+    <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
+    <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
+    <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
+    <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
+    <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
+    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
+
+    <td class="opciones text-center" style="">
+    
+  
+  
+ 
+    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+
+    <i class="fas fa-list"></i></a>
+    <ul class="dropdown-menu" style="background-color: #ffffff;"> 
+     <div class="botones"> 
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    </div>  
+	<li class="botones">
    
+    &nbsp;
+    <i class="fas fa-eye"></i>
+    &nbsp;&nbsp;
+    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
+</form>
+</li>
+
+<div class="botones"> 
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" ><button style="background: none; border: 0;">Etiqueta</button></a></li> 
+    </div>  
+
+
+<li class="botones">
+    <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        &nbsp;
+        <i class="fas fa-trash-alt"></i> 
+        &nbsp;&nbsp;
+        <button style="background: none; border: 0;">Eliminar</button>
+        </form>
+        </li>
+    </ul>
+ 
+  <!--
+ <a class="btn btn-info" href="{{ route('pedidos.edit', $pedidos[$i]->id) }}">Editar</a>
+
+
+ <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger">Eliminar</button>
+        </form>
+
+-->
+
+    </td>
+    </tr>
+    @endfor
 </tbody>
 </table>
 
