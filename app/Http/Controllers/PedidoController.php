@@ -354,6 +354,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         //$fecha = Carbon::parse($fecha);
        // $fechal = $fecha->format('l jS F Y');
 
+       
         $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido, 'fechal'=>$fechal ]);
         //return view('pedido.etiqueta')->with('pedido', $pedido);
 
@@ -410,6 +411,10 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
 
 
         $pedidos->save();
+
+        //$pedido = Pedido::latest()->first();
+       // $pdf = PDF::loadView('pedido.etiqueta', ['pedido'=>$pedido]);
+        //return view('pedido.etiqueta')->with('pedido', $pedido);
 
 
         #$pedido = Pedido::find($id);

@@ -11,6 +11,7 @@
                     <div class="card"> 
                         <div class="card-body">
                             <h3 class="text-center">Administrar Usuarios</h3>
+
                             <a class="btn btn-warning" href="{{ route('usuarios.create') }}">Nuevo usuario</a>
 
                             <table class="table table-striped mt-2">
@@ -38,9 +39,9 @@
                                                 @endif
                                             </td>
                                             <td> 
-                                            @can('borrar-recolecta')
+                                            @can('editar-rol')
                                                 <a class="btn btn-info" href="{{ route('usuarios.edit', $usuario->id) }}">Editar</a>
-                                            @endif
+                                            @endcan
                                             </td>
                                         </tr>
 

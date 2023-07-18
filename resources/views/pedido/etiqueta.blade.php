@@ -15,7 +15,7 @@
         margin-top: 0.2cm;
 	}
         .principal{
-           
+            
            width: 355px;
            font-size: 11px;
         }
