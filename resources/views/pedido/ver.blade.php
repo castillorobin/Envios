@@ -92,15 +92,15 @@
 </style>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<form action="/pedidos/{{$pedido->id}}" >
+
 
 <div class="row mx-5 mb-5" style="font-size:10px; background: #ececec; border: 1px solid; ">
-   <div class="col-12" style="background:#ececec">
-<div class="row mx-1 text-center" >
+   <div class="col-12 text-center" style="background:#ececec">
+
     <h5>Status del paquete</h5>
       <p></p>
     </div>
-    </div>
+    
   <br>
   <div class="col-12">
 
@@ -111,28 +111,30 @@
 
 <div class="row" >
     <div class="col-12" >
+    <form action="/pedido/editrepa" method="get">
         <table>
           <tr>
             <td>Id:</td>
             <td><strong> {{$pedido->id}}</strong></td>
+            <input hidden type="text" name="idpe" value="{{$pedido->id}}">
           </tr>
-
+          <tr>
+            <td>Comercio: </td>
+            <td><strong>{{$pedido->vendedor}}</strong></td>
+          </tr>
           <tr>
             <td>Destinatario: </td>
             <td><strong>{{$pedido->destinatario}}</strong></td>
           </tr>
 
-          <tr>
-            <td>Comercio: </td>
-            <td><strong>{{$pedido->vendedor}}</strong></td>
-          </tr>
+          
           <tr>
             <td>Direccion: </td>
             <td><strong>{{$pedido->direccion}}</strong></td>
           </tr>
           <tr>
             <td>Total:</td>
-            <td><strong>{{$pedido->total}}</strong></td>
+            <td><strong>${{$pedido->total}}</strong></td>
           </tr>
         </table>
         
@@ -140,20 +142,23 @@
         
 
         <p></p>
-        <a href="/pedidos" class="btn btn-primary btn-lg btn-block">Entregado</a> 
+        <button type="submit" name="entre" class="btn btn-primary" style="border-radius: 8px; height:30px; width:100%">Entregado</button>           
+        <br>
+
+<p></p>
+<button type="submit" class="btn btn-primary" style="border-radius: 8px; height:30px; width:100%">Reprogramado</button>           
 <br>
 <p></p>
-<a href="/pedidos" class="btn btn-primary btn-lg btn-block">Reprogamado</a> 
+<button type="submit" class="btn btn-primary" style="border-radius: 8px; height:30px; width:100%">No entregado</button>           
+<p></p>
+  &nbsp; &nbsp;<strong>Nota:</strong> 
 <br>
-<p></p>
-<a href="/pedidos" class="btn btn-primary btn-lg btn-block">No entregado</a> 
-<p></p>
-Nota:
-<input type="text" name="nota">
+<br>
+<input type="text" name="nota" class="form-control">
 <p></p>
     </div>
     
-
+</form>
 </div>
 
 

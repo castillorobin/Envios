@@ -48,7 +48,27 @@ class PedidoController extends Controller
         
 
     }
+    
+    public function editrepa(Request $request)
+    {
 
+        $id = $request->get('idpe') ;
+
+        $pedido = Pedido::find($id);
+
+        if(isset($_GET['entre']))
+        {
+            $pedido->estado="Entregado";
+        }
+
+        $pedido->save();
+        return view('home');
+        //return $id;
+
+        
+
+    }
+    
     public function verpedido($id)
     {
 
