@@ -31,7 +31,7 @@ return new class extends Migration
             $table -> text    ('nota')->nullable();
             $table -> string  ('tipo_vehiculo',35)->nullable();
             $table -> string  ('asigno_unidad',5)->nullable();
-            $table -> string  ('num_placa',25);
+            $table -> string  ('num_placa',25)->nullable();
             $table -> string  ('num_tarjeta',25)->nullable();
             $table -> string  ('num_licencia',25)->nullable();
             $table -> string  ('correo',25)->nullable();

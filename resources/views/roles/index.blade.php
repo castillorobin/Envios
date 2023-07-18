@@ -29,8 +29,18 @@
                                             <td>
                                                 @can('editar-rol')
                                                 <a class="btn btn-info" href="{{ route('roles.edit', $role->id) }}">Editar</a>
-                                                    
-                                                @endif
+                                                
+                                                @endcan
+
+                                                @can('borrar-rol')
+                                                <form action="{{ route ('roles.destroy', $role->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                
+                                                <button type="submit" class="btn btn-danger">Borrar</button>
+                                                </form>
+                                                @endcan
+
                                             </td>
                                            
                                         </tr>
