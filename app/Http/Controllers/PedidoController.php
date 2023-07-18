@@ -57,6 +57,8 @@ class PedidoController extends Controller
         
         $pedidos = Pedido::where('estado', $filtro)->get();
         $total= 0;
+        $cant=0;
+        $tenvi=0;
         /*
         foreach($pedidos as $suma){
             $total = $total + $suma->total;
@@ -71,8 +73,11 @@ class PedidoController extends Controller
             
             foreach($pedidos as $suma){
                 $total = $total + $suma->total;
+                $tenvi = $tenvi + $suma->envio;
+                $cant = $cant + 1;
             }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
+
+            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
 
@@ -83,8 +88,10 @@ class PedidoController extends Controller
             
             foreach($pedidos as $suma){
                 $total = $total + $suma->total;
+                $tenvi = $tenvi + $suma->envio;
+                $cant = $cant + 1;
             }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
+            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
         }
@@ -95,8 +102,10 @@ class PedidoController extends Controller
 
             foreach($pedidos as $suma){
                 $total = $total + $suma->total;
+                $tenvi = $tenvi + $suma->envio;
+                $cant = $cant + 1;
             }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
+            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
 
@@ -108,8 +117,10 @@ class PedidoController extends Controller
 
             foreach($pedidos as $suma){
                 $total = $total + $suma->total;
+                $tenvi = $tenvi + $suma->envio;
+                $cant = $cant + 1;
             }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
+            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
 
@@ -121,8 +132,10 @@ class PedidoController extends Controller
             
             foreach($pedidos as $suma){
                 $total = $total + $suma->total;
+                $tenvi = $tenvi + $suma->envio;
+                $cant = $cant + 1;
             }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
+            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
             
@@ -132,8 +145,10 @@ class PedidoController extends Controller
             
             foreach($pedidos as $suma){
                 $total = $total + $suma->total;
+                $tenvi = $tenvi + $suma->envio;
+                $cant = $cant + 1;
             }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
+            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
             

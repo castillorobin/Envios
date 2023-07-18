@@ -270,7 +270,7 @@ input[type="date"]:valid::before {
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" ><button style="background: none; border: 0;">Etiqueta</button></a></li> 
+    <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" target="_blank"><button style="background: none; border: 0;" formtarget="_blank">Etiqueta</button></a></li> 
     </div>  
 
 

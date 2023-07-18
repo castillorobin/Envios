@@ -37,6 +37,8 @@
 <span>Repartidor: {{ $pedidos[0]->repartidor}}</span>
 <br>
 <span>Ruta: {{ $pedidos[0]->ruta}}</span>
+<br>
+<span>Cantidad: {{ $cant}}</span>
 <p></p>
 <p></p>
 
@@ -99,7 +101,10 @@
    <tr  >
    <td>&nbsp;</td>
        
-       <td >  Total Pagado:  ${{ $total }} </td>
+       <td >  Total Pagado:  ${{ $total }} 
+        <br>
+        Total de Envio: ${{ $tenvi }} 
+       </td>
        
    </tr>
   </table>   
