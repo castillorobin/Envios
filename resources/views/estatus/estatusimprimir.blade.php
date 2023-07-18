@@ -104,11 +104,7 @@
    </div>
 
   <p></p>
-<p class="compro">
-Para reclamos, por favor presentar este comprobante 
 
-</p>
-<p class="compro">Este documento no es un comprobante fiscal</p>
 
    
 
