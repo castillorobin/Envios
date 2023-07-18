@@ -42,8 +42,9 @@ class PedidoController extends Controller
     {
 
         $pedidos = Pedido::all();
-       // $repartidores = Repartidor::all();
-        return view('pedido.reportes', compact('pedidos'));
+
+       $repartidores = Repartidor::all();
+        return view('pedido.reportes', compact('pedidos','repartidores'));
 
         
 

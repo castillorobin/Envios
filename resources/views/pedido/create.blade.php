@@ -299,7 +299,7 @@ $(document).ready(function() {
   <div class="row mx-5 mt-4 " >
       <h4>Datos del paquete</h4>
   </div>
-
+ 
   <div class="row mx-5 border py-1" style="background-color: white; border-radius: 10px;">
   <div class="col-12">
     <div class="row " style="background-color: white; ">

@@ -96,37 +96,6 @@ ul li ul:hover {
     
 }
  
-input[type="date"]::-webkit-calendar-picker-indicator {
-        display: block;
-        background: transparent;
-        bottom: 0;
-        color: transparent;
-        cursor: pointer;
-        height: auto;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: auto;
-    }
-
-    input[type="date"]::before {
-	color: #999999;
-	content: attr(placeholder) !important;
-}
-input[type="date"] {
-	color: #ffffff;
-    
-}
-input[type="date"]:focus,
-input[type="date"]:valid {
-	color: #666666;
-    
-}
-input[type="date"]:focus::before,
-input[type="date"]:valid::before {
-	content: "" !important;
-}
 
 .dt-buttons button {
     background: #0275d8;
@@ -169,27 +138,149 @@ input[type="date"]:valid::before {
             <div class="">
                 <table>
                     <tr>
-                        <td>
-                        <div class="col-sm-6 ">
+                        <td style="width:400px;">
+                        <div class="col-sm-12 ">
        
         <div class="input-group ">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"> <i class="far fa-calendar-alt"></i> </span>
+            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
-          <input type="text" id="fecha" name="fecha" class="form-control" placeholder="MM/DD/YYYY" onfocus="(this.type='date')" >
+          <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+          <br>
+        
            
         </div>
       </div>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td> 
+                             <!-- estado del envio -->
+    <div class="col-12">
+      
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+          </div>
+          <select id="estado" name="estado" class="form-control" tabindex="9">
+            <option value="estado" >Estado del Envio</option>
+            <option value="Creado" >Creado</option>
+            <option value="En ruta">En ruta</option>
+            <option value="Entregado">Entregado</option>
+            <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
+            <option value="Reprogramado">Reprogramado</option>
+            <option value="Agencia San Salvador">Agencia San Salvador</option>
+            <option value="Agencia San Miguel">Agencia San Miguel</option>
+            <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+            <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+            <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+            <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+            <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+            <option value="Casillero San Salvador">Casillero San Salvador</option>
+            <option value="Casillero San Miguel">Casillero San Miguel</option>
+            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+          </select>
+           
+        </div>
+    </div>
+                        </td>
+                        <td>
+                             <!-- Ruta -->
+    <div class="col-sm-12">
+       
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
+          </div>
+          <select id="ruta" name="ruta" class="form-control" tabindex="16"> 
+          <option value="ruta">Ruta</option>
+          <option value="Ruta 1">Ruta 1</option>
+            <option value="Ruta 2">Ruta 2</option>
+            <option value="Ruta 3">Ruta 3</option>
+            <option value="Ruta 4">Ruta 4</option>
+            <option value="Ruta 5">Ruta 5</option>
+          </select>
+           
+        </div>
+    </div>
+                        </td>
+                        <td>
+   
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>
+                            <br>
+                                                     <!-- Tipo -->
+    <div class="col-12">
+        
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
+          </div>
+          <select id="tenvio" name="tenvio" class="form-control" tabindex="7">
+          <option value="tipo">Tipo de envio</option>
+            <option value="Personalizado">Personalizado</option>
+            <option value="Personalizado departamental">Personalizado departamental</option>
+            <option value="Punto fijo">Punto fijo</option>
+            <option value="Casillero departamental">Casillero departamental</option>
+            <option value="Casillero San Salvador">Casillero San Salvador</option>
+            <option value="Casillero San Miguel">Casillero San Miguel</option>
+            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+            <option value="Casillero centro logístico">Casillero centro logístico</option>
+          </select>
+          
+        </div>
+    </div>  
+                        </td>
+                        <td>
+                            <br>
+                            <!-- Repartidor -->
+  
+    
+    <div class="col-sm-12 ">
+        
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+          </div>
+          <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+            <option value="repartidor">Repartidor</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
+           
+        </div>
+    </div>
+                        </td>
+                        <td>
+                            <br>
+                            <!-- Total -->
+    <div class="col-sm-12 ">
+        
+        <div class="input-group ">
+          <div class="input-group-prepend" >
+            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="fas fa-dollar-sign" style="width:25px;"></i> </span>
+          </div>
+          <input type="text" id="total" name="total" class="form-control" placeholder="Total" aria-describedby="basic-addon1" >
+          
+        </div>
+    </div>
+                        </td>
+                        <td>
+                            <br>
+                        <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
+        <a href="/pedidos" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <br>
+                     &nbsp; &nbsp; <button type="submit" class="btn btn-warning btn-lg " ><i class="fas fa-print"></i> Imprimir</button>      
+                        </td>
                     </tr>
                 </table>
             <div >
