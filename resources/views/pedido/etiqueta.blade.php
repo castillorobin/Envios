@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         <span class="titulos" style="font-size:18px; ">{{ $pedido->direccion }}</span>
         <br>
             </td>
-            <td style="border-top: 1px solid; border-left: 1px solid; height: 60px !important; padding-left: 25px;"> <span> {!! DNS2D::getBarcodeHTML(" $pedido->id ", 'QRCODE' ,4,4) !!} </span></td>
+            <td style="border-top: 1px solid; border-left: 1px solid; height: 60px !important; padding-left: 25px;"> <span> {!! DNS2D::getBarcodeHTML("http://54.237.159.219/pedido/verpedido/$pedido->id ", 'QRCODE' ,4,4) !!} </span></td>
         </tr>
         <tr>
             <td colspan="2" style="width: 60%; border-top: 1px solid;">
