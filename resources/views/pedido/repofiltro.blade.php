@@ -134,7 +134,7 @@ ul li ul:hover {
  
         
 
-    <form action="/reposiltro" method="get">
+    <form action="/repofiltro" method="get">
             <div class="">
                 <table>
                     <tr>
@@ -294,7 +294,7 @@ ul li ul:hover {
 
   
             </div>
-
+           
 
 
 
@@ -391,29 +391,10 @@ ul li ul:hover {
     </div>  
 
 
-<li class="botones">
-    <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
-        @csrf
-        @method('DELETE')
-        &nbsp;
-        <i class="fas fa-trash-alt"></i> 
-        &nbsp;&nbsp;
-        <button style="background: none; border: 0;">Eliminar</button>
-        </form>
-        </li>
+
     </ul>
  
-  <!--
- <a class="btn btn-info" href="{{ route('pedidos.edit', $pedidos[$i]->id) }}">Editar</a>
-
-
- <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger">Eliminar</button>
-        </form>
-
--->
+ 
 
     </td>
     </tr>

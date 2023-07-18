@@ -53,11 +53,38 @@ class PedidoController extends Controller
     public function repofiltro(Request $request)
     {
 
+        //$pedidos = new Pedido();
+        $fecha = $request->get('fecha');
+        $estado = $request->get('estado');
+        $ruta = $request->get('ruta');
+        $tipo = $request->get('tipo');
+        $repartidor = $request->get('repartidor');
+        $total = $request->get('total');
 
-        $pedidos = Pedido::all();
+        if($request->get('fecha')!=""){
+            $pedidos = Pedido::where('fecha_entrega', $fecha)->get();
+        }elseif($request->get('fecha')!="estado"){
+            $pedidos = Pedido::where('estado', $estado)->get();
+        }
+        
+        
+        if($request->get('tipo')!="tipo"){
+            $pedidos = Pedido::where('tipo', $tipo)->get();
+            //return $ruta;
+        }elseif($request->get('ruta')!="ruta"){
+            $pedidos = Pedido::where('ruta', $ruta)->get();
+        }
 
-       $repartidores = Repartidor::all();
-        return view('pedido.reportes', compact('pedidos','repartidores'));
+        if($request->get('repartidor')!="repartidor"){
+            $pedidos = Pedido::where('repartidor', $repartidor)->get();
+            //return $ruta;
+        }elseif($request->get('total')!="total"){
+            $pedidos = Pedido::where('total', $total)->get();
+        }
+
+
+        $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores'));
 
         
 
