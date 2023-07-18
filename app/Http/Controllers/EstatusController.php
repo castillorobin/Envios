@@ -43,8 +43,9 @@ class EstatusController extends Controller
         if(Estatus::where('id', $id )->exists()){
             $nota="Registro Duplicado";
             $pedidos = Estatus::all();
-       
-            return view('estatus.cambiarestatus', compact('pedidos', 'nota'));
+            $repartidores = Repartidor::all();
+            return view('estatus.cambiarestatus', compact('pedidos', 'nota','repartidores'));
+
         }else{
 
             
