@@ -94,7 +94,7 @@
 
 <form action="/pedidos/{{$pedido->id}}" >
 
-<div class="row mx-5 mb-5" style="font-size:20px; background: white; border: 1px solid; ">
+<div class="row mx-5 mb-5" style="font-size:14px; background: white; border: 1px solid; ">
    <div class="col-12" style="background:#d5d5d5">
 <div class="row mx-1 text-center" >
     <h5>Cambiar Status del envio</h5>
@@ -112,7 +112,17 @@
 <div class="row" >
     <div class="col-12" >
         
-        <label for="inputEmail3" class="">Id: {{$pedido->id}}</label>
+        <label for="inputEmail3" class="">Id: <strong> {{$pedido->id}}</strong></label>
+        <br>
+        <label for="inputEmail3" class="">Destinatario: <strong>{{$pedido->destinatario}}</strong></label>
+        <br>
+        <label for="inputEmail3" class="">Comercio: <strong>{{$pedido->vendedor}}</strong></label>
+        <br>
+        <label for="inputEmail3" class="">Direccion: <strong>{{$pedido->direccion}}</strong></label>
+        <br>
+        <label for="inputEmail3" class="">Total: <strong>${{$pedido->total}}</strong></label>
+        <br>
+
         <p></p>
         <a href="/pedidos" class="btn btn-primary btn-lg btn-block">Entregado</a> 
 <br>
