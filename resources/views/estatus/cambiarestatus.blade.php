@@ -12,19 +12,29 @@
   {
     div = document.getElementById('flotante');
             div.style.display = 'none';
-            //div2 = document.getElementById('flotante2');
-            //div2.style.display = 'none';
-            //var total = document.getElementById('preci2').textContent;
-            //var desc = document.getElementById('descu').value;
-            //document.getElementById('preci2').innerHTML = parseFloat(total) + parseFloat(desc) ; 
-            //document.getElementById('toti').value = parseFloat(total) + parseFloat(desc) ; 
-           // document.getElementById('descu').value = 0;
+           
 
   }else{
     div = document.getElementById('flotante');
             div.style.display = '';
-           // div2 = document.getElementById('flotante2');
-            //div2.style.display = '';
+           
+  }
+}
+
+
+function mostrando2()
+{
+  var checkbox = document.getElementById('check3');
+  if (checkbox.checked != true)
+  {
+    div = document.getElementById('flotante2');
+            div.style.display = 'none';
+           
+
+  }else{
+    div = document.getElementById('flotante2');
+            div.style.display = '';
+           
   }
 }
 
@@ -350,7 +360,7 @@ input[type="date"]:valid::before {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cambiar Estado en Lote</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -406,6 +416,36 @@ input[type="date"]:valid::before {
     </div>
 
 </div>
+
+
+
+
+
+
+
+<div class="col-12">
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check3" name="check3" Onclick="javascript:mostrando2();">
+            <label class="form-check-label" for="check3">Caja o Estante</label>
+        </div>
+</div>
+
+
+<div class="col-6" id="flotante2" style="display:none;">
+
+    <div class="input-group ">
+        <div class="input-group-prepend">
+            
+        </div>
+
+        <input type="text" id="estante" name="estante">
+
+    </div>
+
+</div>
+
+
+
 
 
 

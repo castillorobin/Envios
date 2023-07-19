@@ -116,10 +116,17 @@ class EstatusController extends Controller
             
             $pedido->estado = $request->get('estado');
             $pedidoes->estado = $request->get('estado');
+
+
             if ($request->check2) {
                 // Do something
                 $pedido->repartidor = $request->get('repartidor');
                 $pedidoes->repartidor = $request->get('repartidor');
+            }
+            if ($request->check3) {
+                // Do something
+                $pedido->estante = $request->get('estante');
+                $pedidoes->estante = $request->get('estante');
             }
             $pedido->save();
             $pedidoes->save();
