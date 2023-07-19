@@ -387,6 +387,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedidos->agencia = $request->get('agencia');
         $pedidos->repartidor = $request->get('repartidor');
         $pedidos->ruta = $request->get('ruta');
+        $pedidos->estante = $request->get('estante');
         //$pedidos->foto = $request->get('foto');
 
         if($request->hasFile('foto')){
@@ -509,6 +510,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedido->agencia = $request->get('agencia');
         $pedido->repartidor = $request->get('repartidor');
         $pedido->ruta = $request->get('ruta');
+        $pedido->estante = $request->get('estante');
         //$pedidos->foto = $request->get('foto');
 
         if($request->hasFile('foto')){
@@ -633,7 +635,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedido->agencia = $request->get('agencia');
         $pedido->repartidor = $request->get('repartidor');
         $pedido->ruta = $request->get('ruta');
-
+        $pedido->estante = $request->get('estante');
       
 
         if($request->hasFile('foto')){
