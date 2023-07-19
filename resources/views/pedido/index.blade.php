@@ -236,6 +236,8 @@ input[type="date"]:valid::before {
     <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
     <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
     <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
+    <span hidden id="est{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estante}}</span>
+    <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}}</span>
     <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
     <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
     <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
@@ -437,6 +439,14 @@ input[type="date"]:valid::before {
                     <td width="230px">Nota </td>
                     <td> <span ></span> <label for="" id="nota1"></label> </td>  
                 </tr>
+                <tr class="headt">
+                    <td width="230px">Estante</td>
+                    <td> <span ></span> <label for="" id="estan"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Cobro de envio</td>
+                    <td> <span ></span> <label for="" id="cobro"></label> </td>  
+                </tr>
 
 
             </table>
@@ -524,6 +534,8 @@ $(document).ready(function(){
         var repa=$('#rep'+id).text();
         var ruta=$('#rut'+id).text();
         var nota=$('#not'+id).text();
+        var esta=$('#est'+id).text();
+        var cobr=$('#cob'+id).text();
         var foto=$('#fot'+id).text();
         var foto2=$('#fot2'+id).text();
         var foto3=$('#fot3'+id).text();
@@ -549,6 +561,8 @@ $(document).ready(function(){
         $('#repar').text(repa);
         $('#ruta1').text(ruta);
         $('#nota1').text(nota);
+        $('#estan').text(esta);
+        $('#cobro').text(cobr);
 
         $('#empresa').text(empre);
         $('#giro').text(gir);   
