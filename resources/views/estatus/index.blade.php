@@ -3,6 +3,41 @@
 
 @section('content')
 
+<script>
+  $(document).ready(function() {
+  $("input").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+
+$(document).ready(function() {
+  $("select").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+</script>
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
@@ -170,7 +205,8 @@ input[type="date"]:valid::before {
     
             <div >
             <form action="/pedido/listaestatus" method="get">
-                <input type="text" name="codigo">
+                <input type="text" name="codigo" required>
+                <div class="invalid-feedback">Debe de ingresar un ID</div>
             <button type="submit" class="btn btn-primary">Agregar</button>
 
 </form>

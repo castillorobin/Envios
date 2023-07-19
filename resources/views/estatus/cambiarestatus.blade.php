@@ -220,7 +220,7 @@ input[type="date"]:valid::before {
             <div >
 
             <form action="/pedido/listaestatus" method="get">
-                <input type="text" name="codigo">
+                <input type="text" name="codigo" required>
             <button type="submit" class="btn btn-primary">Agregar</button>
 
 </form>

@@ -9,8 +9,8 @@
     
 function abrirURL(){
     //Abrir URL que necesites
-    window.location = "http://127.0.0.1:8000/pedidos";
-    //window.location = "http://54.237.159.219/pedidos/";
+    //window.location = "http://127.0.0.1:8000/pedidos";
+    window.location = "http://54.237.159.219/pedidos/";
 };
 </script>
     <section class="section">
@@ -338,7 +338,7 @@ $(document).ready(function() {
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
               </div>
               <input type="date" id="fentrega" name="fentrega" tabindex="5" class="form-control" placeholder="Seleccionar Fecha" aria-label="Username" aria-describedby="basic-addon1" required>
-              <div class="invalid-feedback">Este campo es obligatorio.</div>
+              <div class="invalid-feedback">Este campo es obligatorio.</div> 
               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>                                       
             </div>
 
