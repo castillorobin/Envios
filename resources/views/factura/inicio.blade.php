@@ -83,7 +83,7 @@ jQuery(document).ready(function($){
     console.log(data.text);
    document.getElementById('mostrar').value = data.text;
    window.location = "http://54.237.159.219/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+  // window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -99,6 +99,18 @@ jQuery(document).ready(function($){
 
 
 
+</script>
+
+<script>
+    function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    //Abrir URL que necesites
+    //window.location = "http://127.0.0.1:8000/estatus/";
+    window.location = "http://54.237.159.219/facturas/";
+};
 </script>
     <section class="section">
         <div class="section-header">
@@ -420,11 +432,12 @@ Fecha de pago
     
 <div class="col-6">Tipo de comprobante
     <select name="comp" id="comp" class="form-control">
+    <option value="Sin comprobante" selected>Sin comprobante</option>
         <option value="Ticket">Ticket</option>
         <option value="Factura">Factura</option>
         <option value="Credito Fiscal">Crédito Fiscal</option>
         <option value="PDF">PDF</option>
-        <option value="Sin comprobante">Sin comprobante</option>
+        
         
     </select>
 
@@ -506,7 +519,7 @@ Nota de descuento
 <br>
 <div class="col-12 mb-3">
 
-<button type="submit" class="btn btn-lg btn-warning btn-block">PAGAR</button> 
+<button type="submit" class="btn btn-lg btn-warning btn-block" formtarget="_blank" onclick="redireccionarPagina()">PAGAR</button> 
 </div>
 
 </div> <!-- Termina cajero, pagos etc.  -->
