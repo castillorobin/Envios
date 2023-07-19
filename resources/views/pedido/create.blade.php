@@ -611,7 +611,7 @@ $(document).ready(function() {
       </div>
 
       <div class="col-sm-6">
-        <label for="" class="col-sm-8 col-form-label">Código de barra del estante</label>
+        <label for="" class="col-sm-8 col-form-label">Caja o estante</label>
         <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
