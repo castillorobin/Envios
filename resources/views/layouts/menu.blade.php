@@ -21,12 +21,12 @@
     
     </li>
     <li>
-    @can('editar-recolecta')
+    
      <a class="nav-link" href="/estatus">
      <i class="fas fa-truck"></i><span>Cambiar Estado</span>
     </a>
     </li>
-    @endcan
+    
     <li>
   
      <a class="nav-link" href="/pedido/estado">
@@ -34,19 +34,19 @@
     </a>
     </li>
     <li>
-    @can('ver-rol')
+    
      <a class="nav-link" href="/facturas">
      <i class="fas fa-file-invoice"></i><span>Facturación</span>
     </a>
     </li>
-    @endcan
+    
     <li>
-    @can('editar-recolecta')
+   
      <a class="nav-link" href="/reportes">
      <i class="fas fa-chart-line"></i><span>Reportes</span>
     </a>
     </li>
-    @endcan
+    
     <li>
     @can('ver-rol')
      <a class="nav-link" href="/usuarios">
