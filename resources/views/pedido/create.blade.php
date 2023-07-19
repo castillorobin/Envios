@@ -228,7 +228,7 @@ $(document).ready(function() {
         </div>
    
         <div class="col-sm-4 text-center">
-          <label for="inputEmail3" class="col-sm-8 col-form-label">Codigo de barras</label>
+          <label for="inputEmail3" class="col-sm-8 col-form-label"></label>
 
         </div>
 
@@ -294,7 +294,7 @@ $(document).ready(function() {
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
           </div>
-            <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="4" required>
+            <input type="text" maxlength="64" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="4" required>
             <div class="invalid-feedback">Este campo es obligatorio.</div>
             <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
         </div>

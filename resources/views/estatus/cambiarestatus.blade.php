@@ -360,8 +360,18 @@ input[type="date"]:valid::before {
             <option value="Creado" onclick="jsFunction()">Creado</option>
             <option value="En ruta">En ruta</option>
             <option value="Entregado">Entregado</option>
-            <option value="No retirado" >No retirado</option>            
+            <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
             <option value="Reprogramado">Reprogramado</option>
+            <option value="Agencia San Salvador">Agencia San Salvador</option>
+            <option value="Agencia San Miguel">Agencia San Miguel</option>
+            <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+            <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+            <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+            <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+            <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+            <option value="Casillero San Salvador">Casillero San Salvador</option>
+            <option value="Casillero San Miguel">Casillero San Miguel</option>
+            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
             
           </select>
 
