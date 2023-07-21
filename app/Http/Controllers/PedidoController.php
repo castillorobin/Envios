@@ -169,11 +169,42 @@ class PedidoController extends Controller
 
         //$pedidos = new Pedido();
         $fecha = $request->get('fecha');
+
         $estado = $request->get('estado');
+        if($estado=="estado"){
+            $estado= "";
+        }
         $ruta = $request->get('ruta');
+        if($ruta=="ruta"){
+            $ruta= "";
+        }
         $tipo = $request->get('tipo');
+        if($tipo=="tipo"){
+            $tipo= "";
+        }
         $repartidor = $request->get('repartidor');
+        if($repartidor=="repartidor"){
+            $repartidor= "";
+        }
         $total = $request->get('total');
+        
+        $filtro = $fecha;
+        $ftipo= 1;
+
+        $pedidos = Pedido::where('fecha_entrega', 'LIKE', "%{$fecha}%")->where('estado', 'LIKE', "%{$estado}%")
+        ->where('ruta', 'LIKE', "%{$ruta}%")
+        ->where('tipo', 'LIKE', "%{$tipo}%")
+        ->where('repartidor', 'LIKE', "%{$repartidor}%")->get();
+        $repartidores = Repartidor::all();
+        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
+
+        
+
+
+
+/*
+
+
 
         if($request->get('fecha')!=""){
             $pedidos = Pedido::where('fecha_entrega', $fecha)->get();
@@ -231,7 +262,7 @@ class PedidoController extends Controller
 
         }
 
-
+*/
        // $repartidores = Repartidor::all();
         //return view('pedido.repofiltro', compact('pedidos','repartidores'));
 
