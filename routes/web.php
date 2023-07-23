@@ -71,4 +71,6 @@ Route::get('printfiltro/{filtro}/{ftipo}', [App\Http\Controllers\PedidoControlle
 
 Route::get('pedido/editrepa', [App\Http\Controllers\PedidoController::class, 'editrepa'] )->name('editrepa') ;
 
+Route::get('pedido/camara', [App\Http\Controllers\PedidoController::class, 'camara'] )->name('camara') ;
+
 Route::get('estatus/agregar', [App\Http\Controllers\EstatusController::class, 'agregar'] )->name('agregar') ;

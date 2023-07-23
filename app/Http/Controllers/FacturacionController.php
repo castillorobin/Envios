@@ -26,6 +26,8 @@ class FacturacionController extends Controller
 
     }
 
+  
+
     public function filtro($comercio)
     {
         $pedidos = Pedido::where('vendedor', $comercio)->get();

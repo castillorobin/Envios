@@ -27,6 +27,13 @@ class PedidoController extends Controller
 
     }
 
+    public function camara()
+    {
+        
+       return view('pedido.camara');
+
+    }
+
     public function listaestatus()
     {
 
