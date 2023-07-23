@@ -9,7 +9,7 @@ use App\Models\Pedido;
 use App\Models\Vendedor;
 use Illuminate\Support\Str;
 use \PDF; 
-
+ 
 class FacturacionController extends Controller
 {
     /**
@@ -56,6 +56,12 @@ class FacturacionController extends Controller
         $checked = $request->input('checked');
         $pedidos = Pedido::query()->find($checked);
 
+        foreach($pedidos as $pedido){
+            $pedido->pagado = "Pagado";
+            $pedido->save();
+        }
+
+
         $pdf = PDF::loadView('factura.ticket', ['pedidos'=>$pedidos, 'total'=>$total, 'descue'=>$descue]);
        
         $pdf->setPaper('b6', 'portrait');
@@ -73,6 +79,10 @@ class FacturacionController extends Controller
             $descue= 0;
         }
         
+        foreach($pedidos as $pedido){
+            $pedido->pagado = "Pagado";
+            $pedido->save();
+        }
 
         $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos, 'total'=>$total, 'descue'=>$descue]);
         //$pdf = PDF::loadView('factura.facturapdf');  
