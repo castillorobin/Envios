@@ -26,7 +26,7 @@ class FacturacionController extends Controller
 
     }
 
-  
+   
 
     public function filtro($comercio)
     {
@@ -36,7 +36,7 @@ class FacturacionController extends Controller
         $vende = Vendedor::where('nombre', $comercio)->get();
        //$repartidores = Repartidor::all();
        return view('factura.inicio')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'vende'=>$vende  ]);
-
+ 
     }
  
     public function facturapdf(Request $request, $comercio)

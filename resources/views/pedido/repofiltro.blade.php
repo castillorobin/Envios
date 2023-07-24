@@ -291,7 +291,7 @@ ul li ul:hover {
 
                         <td colspan="3">
                             <br>
-                     &nbsp; &nbsp; <a href="/printfiltro/{{$filtro}}/{{$ftipo}}" class="btn btn-warning btn-lg " onclick="redireccionarPagina()" target="_blank"> <i class="fas fa-print"></i> Imprimir </a>    
+                    
                         </td>
                     </tr>
                 </table>
@@ -306,7 +306,7 @@ ul li ul:hover {
             </div>
            
 
-
+            <form action="/printfiltro/{{$filtro}}/{{$ftipo}}" method="get">
 
 <div class="table-responsive">
 
@@ -316,6 +316,7 @@ ul li ul:hover {
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
+        <th style="color: #fff;" hidden >ch</th>
         <th style="color: #fff;">ID</th>
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
@@ -335,6 +336,7 @@ ul li ul:hover {
     
     @for ($i=0; $i< count($pedidos); $i++)
     <tr >
+        <td hidden ><input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" checked></td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
@@ -409,9 +411,11 @@ ul li ul:hover {
     </td>
     </tr>
     @endfor
+    
 </tbody>
 </table>
-
+<br>
+<button type="submit" class="btn btn-lg btn-warning" formtarget="_blank" onclick="redireccionarPagina()">Imprimir</button>
 
 
 

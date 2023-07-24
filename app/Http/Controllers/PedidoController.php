@@ -58,22 +58,24 @@ class PedidoController extends Controller
 
     }
     
-    public function printfiltro($filtro,$ftipo)
+    public function printfiltro(Request $request,$filtro,$ftipo)
     {
 
         
-        $pedidos = Pedido::where('estado', $filtro)->get();
+        //$pedidos = Pedido::where('estado', $filtro)->get();
         $total= 0;
         $cant=0;
         $tenvi=0;
+
+        $checked = $request->input('checked');
+        $pedidos = Pedido::query()->find($checked);
+
+        $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
+            $pdf->setPaper('letter', 'landscape');
+            return $pdf->stream();
+    
+
         /*
-        foreach($pedidos as $suma){
-            $total = $total + $suma->total;
-        }
-        $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total]);
-        $pdf->setPaper('letter', 'landscape');
-        return $pdf->stream();
-      */
 
         if($ftipo==1){
             $pedidos = Pedido::where('fecha_entrega', $filtro)->get();
@@ -162,7 +164,7 @@ class PedidoController extends Controller
         
         }
 
-
+*/
 
 
 
@@ -230,90 +232,6 @@ class PedidoController extends Controller
        // ->where('ruta', 'LIKE', "%{$ruta}%")->where('tipo', 'LIKE', "%{$tipo}%")->where('repartidor', 'LIKE', "%{$repartidor}%")->get();
         $repartidores = Repartidor::all();
         return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-        
-        
-        
-
-
-
-
-
-
-
-        /*
-        $pedidos = Pedido::where('fecha_entrega', 'LIKE', "%{$fecha}%")->where('estado', 'LIKE', "%{$estado}%")
-        ->where('ruta', 'LIKE', "%{$ruta}%")->where('tipo', 'LIKE', "%{$tipo}%")->where('repartidor', 'LIKE', "%{$repartidor}%")->get();
-        $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-        */
-
-
-
-/*
-
-
-
-        if($request->get('fecha')!=""){
-            $pedidos = Pedido::where('fecha_entrega', $fecha)->get();
-            $filtro = $fecha;
-            $ftipo= 1;
-            $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-        }
-
-        if($estado!="estado"){
-            $pedidos = Pedido::where('estado', $estado)->get();
-            $filtro = $estado;
-            $ftipo= 2;
-            $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-        }
-        
-        
-        if($request->get('tipo')!="tipo"){
-            $pedidos = Pedido::where('tipo', $tipo)->get();
-            $filtro = $tipo;
-            $ftipo= 3;
-            $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores','filtro', 'ftipo'));
-
-            
-        }
-        
-        if($request->get('ruta')!="ruta"){
-            $pedidos = Pedido::where('ruta', $ruta)->get();
-            $filtro = $ruta;
-            $ftipo= 4;
-            $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-        }
-
-        if($request->get('repartidor')!="repartidor"){
-            $pedidos = Pedido::where('repartidor', $repartidor)->get();
-            $filtro = $repartidor;
-            $ftipo= 5;
-            $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-            
-        }
-        if($request->get('total')!="total"){
-            $pedidos = Pedido::where('total', $total)->get();
-            $filtro = $total;
-            $ftipo= 6;
-            $repartidores = Repartidor::all();
-        return view('pedido.repofiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
-
-        }
-
-*/
-       // $repartidores = Repartidor::all();
-        //return view('pedido.repofiltro', compact('pedidos','repartidores'));
 
         
 
