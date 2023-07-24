@@ -44,6 +44,7 @@ class FacturacionController extends Controller
 
        // $pedidos = Pedido::all();
        $total = (float)$request->get('toti');
+       $medio = $request->get('medios');
       
        if($request->get('comp')=='Ticket'){
         //$pedidos = Pedido::where('vendedor', $comercio)->get();
@@ -60,6 +61,7 @@ class FacturacionController extends Controller
 
         foreach($pedidos as $pedido){
             $pedido->pagado = "Pagado";
+            $pedido->medio = $medio;
             $pedido->save();
         }
 
@@ -85,6 +87,7 @@ class FacturacionController extends Controller
         
         foreach($pedidos as $pedido){
             $pedido->pagado = "Pagado";
+            $pedido->medio = $medio;
             $pedido->save();
         }
 
@@ -103,6 +106,7 @@ class FacturacionController extends Controller
        //$repartidores = Repartidor::all();
        foreach($pedidos as $pedido){
         $pedido->pagado = "Pagado";
+        $pedido->medio = $medio;
         $pedido->save();
     }
        return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);

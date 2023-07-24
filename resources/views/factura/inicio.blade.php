@@ -232,6 +232,7 @@ function abrirURL(){
     <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
     <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}} </span>
     <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
+    <span hidden id="med{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->medio}}</span>
     <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
     <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
     <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
@@ -395,7 +396,7 @@ Cajero
 <div class="row pt-2">
     
 <div class="col-6">Medio de pago
-    <select name="medio" id="medio" class="form-control">
+    <select name="medios" id="medios" class="form-control">
         <option value="Efectivo">Efectivo</option>
         <option value="Deposito">Deposito</option>
         <option value="Tigo Money">Tigo Money</option>
@@ -655,6 +656,10 @@ Nota de descuento
                 <tr class="headt">
                     <td width="230px">Cobro del envio </td>
                     <td> <span ></span> <label for="" id="cobro"></label> </td>  
+                </tr>
+                <tr class="headt">
+                    <td width="230px">Medio de pago</td>
+                    <td> <span ></span> <label for="" id="medio"></label> </td>  
                 </tr>
                
              
@@ -970,6 +975,7 @@ document.getElementById("toti").value = final;
                var cobr=$('#cob'+id).text();
                var ruta=$('#rut'+id).text();
                var nota=$('#not'+id).text();
+               var medi=$('#med'+id).text();
                var foto=$('#fot'+id).text();
                var foto2=$('#fot2'+id).text();
                var foto3=$('#fot3'+id).text();
@@ -996,6 +1002,7 @@ document.getElementById("toti").value = final;
                $('#repar').text(repa);
                $('#ruta1').text(ruta);
                $('#nota1').text(nota);
+               $('#medio').text(medi);
                $('#empresa').text(empre);
                $('#giro').text(gir); 
                $('#cobro').text(cobr);    
