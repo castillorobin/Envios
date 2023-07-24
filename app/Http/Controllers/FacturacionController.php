@@ -101,6 +101,10 @@ class FacturacionController extends Controller
         $pedidos = Pedido::all();
         $vendedores = Vendedor::all();
        //$repartidores = Repartidor::all();
+       foreach($pedidos as $pedido){
+        $pedido->pagado = "Pagado";
+        $pedido->save();
+    }
        return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
        }
 
