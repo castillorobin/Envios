@@ -69,7 +69,9 @@ class FacturacionController extends Controller
         $pdf->setPaper('b6', 'portrait');
         return $pdf->stream();
 
-       }elseif($request->get('comp')=='PDF'){
+       }
+       
+       if($request->get('comp')=='PDF'){
 
         //$pedidos = Pedido::where('vendedor', $comercio)->get();
         $checked = $request->input('checked');
@@ -93,8 +95,13 @@ class FacturacionController extends Controller
         //->setPaper('b7', 'portrait');
         $pdf->setPaper('letter', 'landscape');
         return $pdf->stream();
-       }else{
-        $total = 'No decuento';
+       }
+       
+       if($request->get('comp')!='PDF' && $request->get('comp')!='Ticket'){
+        $pedidos = Pedido::all();
+        $vendedores = Vendedor::all();
+       //$repartidores = Repartidor::all();
+       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
        }
 
       
