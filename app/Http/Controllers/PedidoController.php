@@ -69,6 +69,11 @@ class PedidoController extends Controller
 
         $checked = $request->input('checked');
         $pedidos = Pedido::query()->find($checked);
+        foreach($pedidos as $suma){
+            $total = $total + $suma->total;
+            $tenvi = $tenvi + $suma->envio;
+            $cant = $cant + 1;
+        }
 
         $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
