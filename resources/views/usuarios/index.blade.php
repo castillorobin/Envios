@@ -34,8 +34,16 @@
                                       @endif
                                     </td>
 
-                                    <td>                                  
+                                    <td style="display: flex; align-items: center;">                                  
                                       <a class="btn btn-info" href="{{ route('usuarios.edit',$usuario->id) }}">Editar</a>
+                                        &nbsp; &nbsp;
+                                      <form action="{{ route ('usuarios.destroy', $usuario->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                           
+                                            <button class="btn btn-danger" style="float:right;">Eliminar</button>
+                                        </form>
+
 
                                     </td>
                                   </tr>
