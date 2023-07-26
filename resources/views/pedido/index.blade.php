@@ -252,11 +252,13 @@ input[type="date"]:valid::before {
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;"> 
      <div class="botones"> 
+     @can('editar-envios')
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
     <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    @endcan
     </div>  
 	<li class="botones">
    
@@ -275,7 +277,7 @@ input[type="date"]:valid::before {
     <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" target="_blank"><button style="background: none; border: 0;" formtarget="_blank">Etiqueta</button></a></li> 
     </div>  
 
-
+    @can('crear-rol')
 <li class="botones">
     <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
         @csrf
@@ -286,6 +288,7 @@ input[type="date"]:valid::before {
         <button style="background: none; border: 0;">Eliminar</button>
         </form>
         </li>
+        @endcan
     </ul>
  
   <!--

@@ -263,6 +263,7 @@ function abrirURL(){
     <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal2" style="background: none; border: 0;">Ver</button>
 </form>
 </li>
+@can('crear-rol')
 <li class="botones">
     <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
         @csrf
@@ -273,6 +274,7 @@ function abrirURL(){
         <button style="background: none; border: 0;">Eliminar</button>
         </form>
         </li>
+        @endcan
     </ul>
  
   <!--

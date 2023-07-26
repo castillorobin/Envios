@@ -326,7 +326,7 @@ input[type="date"]:valid::before {
     <a href="/pedidos/etiqueta/{{ $pedido->id }}" ><button style="background: none; border: 0;">Etiqueta</button></a></li> 
     </div>  
 
-
+    @can('crear-rol')
 <li class="botones">
     <form action="{{ route ('pedidos.destroy', $pedido->id)}}" method="POST">
         @csrf
@@ -337,6 +337,7 @@ input[type="date"]:valid::before {
         <button style="background: none; border: 0;">Eliminar</button>
         </form>
         </li>
+        @endcan
     </ul>
  
 

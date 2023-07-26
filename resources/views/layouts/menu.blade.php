@@ -33,38 +33,37 @@
      <i class="fas fa-truck"></i><span>Repartidores</span>
     </a>
     </li>
+    @can('crear-empleados')
     <li>
     
      <a class="nav-link" href="/facturas">
      <i class="fas fa-file-invoice"></i><span>Facturación</span>
     </a>
     </li>
-    
+    @endcan
+    @can('crear-empleados')
     <li>
    
      <a class="nav-link" href="/reportes">
      <i class="fas fa-chart-line"></i><span>Reportes</span>
     </a>
     </li>
-    
+    @endcan
+    @can('crear-rol')
     <li>
     
      <a class="nav-link" href="/usuarios">
     <i class="fas fa-users"></i><span>Usuarios</span>
     </a>
     </li>
-    
+    @endcan
+    @can('crear-rol')
     <li>
- 
-    
     <a class="nav-link" href="/roles">
     <i class="fas fa-user-tag"></i><span>Roles</span>
     </a>
-    
-   
-
-</li>
-
+    </li>
+    @endcan
 
 
     
