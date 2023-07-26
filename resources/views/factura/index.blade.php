@@ -81,6 +81,7 @@ jQuery(document).ready(function($){
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
+
 <select class="form-control mi-selector" name="comer" id="comer">
     <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
@@ -99,6 +100,7 @@ jQuery(document).ready(function($){
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>
  Pagar
 </button>
+<span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                 </div> <!-- Termina div filtros  -->
 
 <div class="col-12 table-responsive " style="height:700px; " > <!-- div tabla  -->

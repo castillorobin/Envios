@@ -21,8 +21,9 @@ class FacturacionController extends Controller
     {
         $pedidos = Pedido::all();
         $vendedores = Vendedor::all();
+        $nota=" ";
        //$repartidores = Repartidor::all();
-       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
+       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'nota'=>$nota  ]);
 
     }
 
@@ -45,6 +46,28 @@ class FacturacionController extends Controller
        // $pedidos = Pedido::all();
        $total = (float)$request->get('toti');
        $medio = $request->get('medios');
+
+       $checked = $request->input('checked');
+       $pedidos = Pedido::query()->find($checked);
+
+       if($pedidos){
+        foreach($pedidos as $pedido){
+            $pedido->pagado = "Pagado";
+            $pedido->medio = $medio;
+            $pedido->save();
+            }
+       }else{
+        $nota="No se seleccionaron envios";
+        $pedidos = Pedido::all();
+        $vendedores = Vendedor::all();
+       //$repartidores = Repartidor::all();
+       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'nota'=>$nota  ]);
+       }
+
+
+       
+
+
       
        if($request->get('comp')=='Ticket'){
         //$pedidos = Pedido::where('vendedor', $comercio)->get();
@@ -56,14 +79,10 @@ class FacturacionController extends Controller
         }
 
 
-        $checked = $request->input('checked');
-        $pedidos = Pedido::query()->find($checked);
+        //$checked = $request->input('checked');
+        //$pedidos = Pedido::query()->find($checked);
 
-        foreach($pedidos as $pedido){
-            $pedido->pagado = "Pagado";
-            $pedido->medio = $medio;
-            $pedido->save();
-        }
+       
 
 
         $pdf = PDF::loadView('factura.ticket', ['pedidos'=>$pedidos, 'total'=>$total, 'descue'=>$descue]);
@@ -76,21 +95,21 @@ class FacturacionController extends Controller
        if($request->get('comp')=='PDF'){
 
         //$pedidos = Pedido::where('vendedor', $comercio)->get();
-        $checked = $request->input('checked');
-        $pedidos = Pedido::query()->find($checked);
+        //$checked = $request->input('checked');
+        //$pedidos = Pedido::query()->find($checked);
         $descuento = (float)$request->input('descu'); 
         if($descuento>0){
             $descue=$descuento;
         }else{
             $descue= 0;
         }
-        
+        /*
         foreach($pedidos as $pedido){
             $pedido->pagado = "Pagado";
             $pedido->medio = $medio;
             $pedido->save();
         }
-
+        */
         $pdf = PDF::loadView('factura.facturapdf', ['pedidos'=>$pedidos, 'total'=>$total, 'descue'=>$descue]);
         //$pdf = PDF::loadView('factura.facturapdf');  
         //return view('pedido.etiqueta')->with('pedido', $pedido);
@@ -101,14 +120,11 @@ class FacturacionController extends Controller
        }
        
        if($request->get('comp')!='PDF' && $request->get('comp')!='Ticket'){
-        $pedidos = Pedido::all();
+        //$pedidos = Pedido::all();
+       // $pedidos = Pedido::query()->find($checked);
         $vendedores = Vendedor::all();
        //$repartidores = Repartidor::all();
-       foreach($pedidos as $pedido){
-        $pedido->pagado = "Pagado";
-        $pedido->medio = $medio;
-        $pedido->save();
-    }
+       
        return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
        }
 
