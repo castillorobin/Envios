@@ -635,48 +635,6 @@ $(document).ready(function() {
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
 
-      <video id="video"></video>
-      
-   
-          
-           
-          <form method="POST" action="">
-              @csrf
-              <div class="row">
-                  <div class="col-md-6">
-                      <div id="my_camera"></div>
-                      <br/>
-                      <input type=button value="Tomar foto" onClick="take_snapshot()">
-                      <input type="hidden" name="image" class="image-tag">
-                  </div>
-                  <div class="col-md-6">
-                      <div id="results"></div>
-                  </div>
-                  <div class="col-md-12 text-center">
-                      <br/>
-                      
-                 
-              </div>
-          </form>
-      </div>
-          
-      <script language="JavaScript">
-          Webcam.set({
-              width: 490,
-              height: 350,
-              image_format: 'jpeg',
-              jpeg_quality: 90
-          });
-          
-          Webcam.attach( '#my_camera' );
-          
-          function take_snapshot() {
-              Webcam.snap( function(data_uri) {
-                  $(".image-tag").val(data_uri);
-                  document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
-              } );
-          }
-      </script>
       
       <div class="col-sm-6">
       <input type="file" name="foto" class="form-control" tabindex="19">
