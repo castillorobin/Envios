@@ -68,6 +68,9 @@ class PedidoController extends Controller
         $tenvi=0;
 
         $checked = $request->input('checked');
+        if($request->input('checked')){
+           //$cant = $cant + 1;
+        }
         $pedidos = Pedido::query()->find($checked);
         foreach($pedidos as $suma){
             $total = $total + $suma->total;
