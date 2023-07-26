@@ -122,10 +122,11 @@ class FacturacionController extends Controller
        if($request->get('comp')!='PDF' && $request->get('comp')!='Ticket'){
         //$pedidos = Pedido::all();
        // $pedidos = Pedido::query()->find($checked);
+       $nota="";
         $vendedores = Vendedor::all();
        //$repartidores = Repartidor::all();
        
-       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores  ]);
+       return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'nota'=>$nota  ]);
        }
 
       

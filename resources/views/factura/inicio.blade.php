@@ -108,7 +108,7 @@ jQuery(document).ready(function($){
     
 function abrirURL(){
     //Abrir URL que necesites
-    //window.location = "http://127.0.0.1:8000/estatus/";
+    //window.location = "http://127.0.0.1:8000/facturas/";
     window.location = "http://54.237.159.219/facturas/";
 };
 </script>
