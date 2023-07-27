@@ -81,7 +81,7 @@ class PedidoController extends Controller
         $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
-    
+        
 
         /*
 

@@ -115,13 +115,13 @@ ul li ul:hover {
 
 
             <div class="d-flex justify-content-end">
-    
+            @can('crear-comercios')
             <div >
                 
                 <a href="/vendedores/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Comercio</a>
                 <br>
             </div>
-
+            @endcan
 
 </div>
 

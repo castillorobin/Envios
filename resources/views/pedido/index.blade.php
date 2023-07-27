@@ -167,13 +167,13 @@ input[type="date"]:valid::before {
 
 
             <div class="d-flex justify-content-end">
-    
+            @can('crear-envios')
             <div >
 
 <a href="/pedidos/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Nuevo</a>
 <br>
             </div>
-   
+            @endcan
 
   
             </div>

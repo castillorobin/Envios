@@ -118,11 +118,12 @@ ul li ul:hover {
 
 
             <div class="d-flex justify-content-end">
-    
+            @can('crear-recolecta')
             <div >
                 <a href="/recolecta/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Recolecta</a>
                 <br>
             </div>
+            @endcan
 
 
 </div>
