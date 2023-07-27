@@ -204,7 +204,7 @@ input[type="date"]:valid::before {
  
 <div class="row" style="background-color: white;" >
     <div class="  col-sm-12 py-3" >
-        <h3 class="text-center">Reporte de envíos</h3>
+        <h3 class="text-center">Cambiar status</h3>
     </div>
             
           
@@ -303,11 +303,13 @@ input[type="date"]:valid::before {
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;"> 
      <div class="botones"> 
+     @can('crear-rol')
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
     <a href="/pedidos/{{ $pedido->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    @endcan
     </div>  
 	<li class="botones">
    
