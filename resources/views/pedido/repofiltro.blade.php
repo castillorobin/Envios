@@ -379,11 +379,13 @@ ul li ul:hover {
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;"> 
      <div class="botones"> 
+     @can('crear-rol')
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
     <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    @endcan
     </div>  
 	<li class="botones">
    

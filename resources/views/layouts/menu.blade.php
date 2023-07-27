@@ -41,7 +41,7 @@
     </a>
     </li>
     @endcan
-    @can('crear-rol')
+    @can('editar-comercios')
     <li>
    
      <a class="nav-link" href="/reportes">
