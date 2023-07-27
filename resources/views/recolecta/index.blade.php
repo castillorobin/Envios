@@ -186,7 +186,7 @@ ul li ul:hover {
 
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;">
-    @can('editar-recolecta')
+    @can('crear-rol')
     <div class="botones"> 
     
     <li class="botones">

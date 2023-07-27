@@ -198,7 +198,7 @@ ul li ul:hover {
 
     <td class="opciones text-center" style="">
     
-   
+    @can('crear-rol')
    
  
     <a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -206,13 +206,13 @@ ul li ul:hover {
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;">
      <div class="botones"> 
-     @can('editar-empleados')
+     
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
     <a href="/repartidores/{{ $repartidores[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
-    @endcan
+  
     </div>  
 	<li class="botones">
     <form >
@@ -225,7 +225,7 @@ ul li ul:hover {
     
     </form>
             </li>
-            @can('borrar-empleados')
+            
         <li class="botones">
     <form action="{{ route ('repartidores.destroy', $repartidores[$i]->id)}}" method="POST">
         @csrf

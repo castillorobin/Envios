@@ -33,7 +33,7 @@
      <i class="fas fa-truck"></i><span>Repartidores</span>
     </a>
     </li>
-    @can('crear-empleados')
+    @can('crear-rol')
     <li>
     
      <a class="nav-link" href="/facturas">
@@ -41,7 +41,7 @@
     </a>
     </li>
     @endcan
-    @can('crear-empleados')
+    @can('crear-rol')
     <li>
    
      <a class="nav-link" href="/reportes">

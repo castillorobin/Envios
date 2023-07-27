@@ -182,20 +182,20 @@ ul li ul:hover {
     <td class="opciones text-center" style="">
     
    
-   
+    @can('crear-rol')
  
     <a href="" class="dropdown-toggle" data-toggle="dropdown">
 
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;">
      <div class="botones"> 
-     @can('editar-comercios')
+     
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
     <a href="/vendedores/{{ $vendedores[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
-    @endcan
+    
     </div>  
 	<li class="botones">
     <form >
@@ -208,7 +208,7 @@ ul li ul:hover {
     
     </form>
             </li>
-            @can('crear-rol')
+            
         <li class="botones">
     <form action="{{ route ('vendedores.destroy', $vendedores[$i]->id)}}" method="POST">
         @csrf
@@ -219,9 +219,9 @@ ul li ul:hover {
         <button style="background: none; border: 0;">Eliminar</button>
         </form>
         </li>
-        @endcan
+        
     </ul>
- 
+    @endcan
    
         
     </td>
