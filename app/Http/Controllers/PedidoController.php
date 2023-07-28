@@ -69,6 +69,30 @@ class PedidoController extends Controller
         
 
     }
+    public function reporteganancia()
+    {
+
+
+        $pedidos = Pedido::all();
+
+       $repartidores = Repartidor::all();
+        return view('pedido.reporteganan', compact('pedidos','repartidores'));
+
+        
+
+    }
+    public function reportecobros()
+    {
+
+
+        $pedidos = Pedido::all();
+
+       $repartidores = Repartidor::all();
+        return view('pedido.reportecobro', compact('pedidos','repartidores'));
+
+        
+
+    }
     
     public function printfiltro(Request $request,$filtro,$ftipo)
     {

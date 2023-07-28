@@ -291,7 +291,7 @@ ul li ul:hover {
 <thead style="background-color:#6777ef;">
         
 
-        <th style="color: #fff;">Comercio/th>
+        <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Direccion</th>
         

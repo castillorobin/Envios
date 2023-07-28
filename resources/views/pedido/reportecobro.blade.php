@@ -4,22 +4,8 @@
 @section('content')
 
     <section class="section">
-        <div class="section-header" style="">
-            <h3 class="page__heading">Melo Express</h3>
-            <div style="width:80%;" style="float:right;">
-            &nbsp;  &nbsp;
-            <a href="/reportes/envio">
-            <button type="button" class="btn btn-primary" >Reporte de Envios</button>
-            </a>
-            &nbsp;  &nbsp;
-            <a href="/reportes/ganancia">
-            <button type="button" class="btn btn-primary" >Reporte de Ganacias</button>
-            </a>
-            &nbsp;  &nbsp;
-            <a href="/reportes/cobros">
-            <button type="button" class="btn btn-primary" >Reporte de Cobros</button>
-            </a>
-            </div>
+        <div class="section-header">
+            <h3 class="page__heading">Reporte de Cobros</h3>
         </div>
         <div class="section-body">
             <div class="row">
@@ -155,8 +141,9 @@ ul li ul:hover {
                         <td style="width:400px;">
                         <div class="col-sm-12 ">
        
-        <div class="input-group ">
+        <div class="input-group ">Desde: &nbsp;  &nbsp;
           <div class="input-group-prepend">
+            
             <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
           <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
@@ -167,66 +154,8 @@ ul li ul:hover {
       </div>
                         </td>
                         <td> 
-                             <!-- estado del envio -->
-    <div class="col-12">
-      
-        <div class="input-group">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
-          </div>
-          <select id="estado" name="estado" class="form-control" tabindex="9">
-            <option value="estado" >Estado del Envio</option>
-            <option value="Creado" >Creado</option>
-            <option value="En ruta">En ruta</option>
-            <option value="Entregado">Entregado</option>
-            <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
-            <option value="Reprogramado">Reprogramado</option>
-            <option value="Agencia San Salvador">Agencia San Salvador</option>
-            <option value="Agencia San Miguel">Agencia San Miguel</option>
-            <option value="Agencia Santa Ana">Agencia Santa Ana</option>
-            <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
-            <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
-            <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
-            <option value="No retirado Centro logístico">No retirado Centro logístico</option>
-            <option value="Casillero San Salvador">Casillero San Salvador</option>
-            <option value="Casillero San Miguel">Casillero San Miguel</option>
-            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
-          </select>
-           
-        </div>
-    </div>
-                        </td>
-                        <td>
-                             <!-- Ruta -->
-    <div class="col-sm-12">
-       
-        <div class="input-group">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
-          </div>
-          <select id="ruta" name="ruta" class="form-control" tabindex="16"> 
-          <option value="ruta">Ruta</option>
-          <option value="Ruta 1">Ruta 1</option>
-            <option value="Ruta 2">Ruta 2</option>
-            <option value="Ruta 3">Ruta 3</option>
-            <option value="Ruta 4">Ruta 4</option>
-            <option value="Ruta 5">Ruta 5</option>
-          </select>
-           
-        </div>
-    </div>
-                        </td>
-                        <td>
-   
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <br>
-                                                     <!-- Tipo -->
-    <div class="col-12">
+                             <!-- tipo del envio -->
+                             <div class="col-12">
         
         <div class="input-group">
 
@@ -249,11 +178,9 @@ ul li ul:hover {
     </div>  
                         </td>
                         <td>
-                            <br>
-                            <!-- Repartidor -->
-  
+                             <!-- Repartidor-->
     
-    <div class="col-sm-12 ">
+                             <div class="col-sm-12 ">
         
         <div class="input-group">
 
@@ -271,19 +198,62 @@ ul li ul:hover {
     </div>
                         </td>
                         <td>
-                            <br>
-                            <!-- Total -->
-    <div class="col-sm-12 ">
-        
-        <div class="input-group ">
-          <div class="input-group-prepend" >
-            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="fas fa-dollar-sign" style="width:25px;"></i> </span>
-          </div>
-          <input type="text" id="total" name="total" class="form-control" placeholder="Total" aria-describedby="basic-addon1" >
-          
-        </div>
-    </div>
+   
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+                                                     <!-- hasta-->
+                                                     <div class="col-sm-12 ">
+       
+       <div class="input-group ">Hasta: &nbsp;  &nbsp;
+         <div class="input-group-prepend">
+           
+           <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
+         </div>
+         <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+         <br>
+       
+           
+       </div>
+     </div>
+                        </td>
+                        <td>
+                            <br>
+                            <!-- estado del envio -->
+    <div class="col-12">
+      
+      <div class="input-group">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+        </div>
+        <select id="estado" name="estado" class="form-control" tabindex="9">
+          <option value="estado" >Estado del Envio</option>
+          <option value="Creado" >Creado</option>
+          <option value="En ruta">En ruta</option>
+          <option value="Entregado">Entregado</option>
+          <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
+          <option value="Reprogramado">Reprogramado</option>
+          <option value="Agencia San Salvador">Agencia San Salvador</option>
+          <option value="Agencia San Miguel">Agencia San Miguel</option>
+          <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+          <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+          <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+          <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+          <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+          <option value="Casillero San Salvador">Casillero San Salvador</option>
+          <option value="Casillero San Miguel">Casillero San Miguel</option>
+          <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+        </select>
+         
+      </div>
+  </div>
+                        </td>
+                        <td>
+                            <br>
+              </td>
                         <td>
                             <br>
                         <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
@@ -320,17 +290,14 @@ ul li ul:hover {
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
-<th style="color: #fff;">ID</th>
-        <th style="color: #fff;">Comercio</th>
-        <th style="color: #fff;">Destinatario</th>
-        <th style="color: #fff;">Direccion</th>
+
+        <th style="color: #fff;">Dia</th>
+        <th style="color: #fff;">Personalizado</th>
+        <th style="color: #fff;">Punto Fijo</th>
         
-        <th style="color: #fff;">Tipo</th>
-        <th style="color: #fff;">Estado del envio</th>
-        <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Precio</th>
-        <th style="color: #fff;">Envio</th>
-        <th style="color: #fff;">Total</th>
+        <th style="color: #fff;">Casillero</th>
+        <th style="color: #fff;">Casillero Departamental</th>
+        
         
         <th style="color: #fff;">Opciones</th>
     </tr>
