@@ -253,7 +253,7 @@ function abrirURL(){
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" >Editar</a></li> 
     </div>  
 	<li class="botones">
    
