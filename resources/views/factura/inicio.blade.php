@@ -261,7 +261,7 @@ function abrirURL(){
     <i class="fas fa-eye"></i>
     &nbsp;&nbsp;
     <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal2" style="background: none; border: 0;">Ver</button>
-</form>
+
 </li>
 @can('crear-rol')
 <li class="botones">
