@@ -1,5 +1,5 @@
 
-<li class="side-menus {{ Request::is('home') ? 'active' : '' }}">
+<li class="side-menus {{ Request::is('home') ? 'active' : '' }} ">
     <a class="nav-link" href="/home">
     <i class="fas fa-home"></i><span>Inicio</span>
     </a>
@@ -19,9 +19,7 @@
         </div>
       </li>
 
-<li>
-    
-    </li>
+
     <li>
     
      <a class="nav-link" href="/estatus">
@@ -43,14 +41,27 @@
     </a>
     </li>
     @endcan
-    @can('editar-comercios')
-    <li>
-   
-     <a class="nav-link" href="/reportes">
-     <i class="fas fa-chart-line"></i><span>Reportes</span>
-    </a>
-    </li>
-    @endcan
+    
+    @can('editar-rol')
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-building "></i> Reportes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/reportes"><i class="fas fa-calendar-alt"></i>Reporte diario</a>
+          <a class="dropdown-item" href="/reportes/envio"><i class="fas fa-archive"></i>Reporte de paqueterias</a>
+          <a class="dropdown-item" href="/reportes/ganancia"><i class="fas fa-money-bill-wave"></i>Reporte de ganancia</a>
+          
+          <a class="dropdown-item" href="/reportes/cobros"><i class="fas fa-money-check-alt"></i>Reporte de cobro</a>
+          
+        </div>
+      </li>
+
+      @endcan
+
+
+
     @can('crear-rol')
     <li>
     
