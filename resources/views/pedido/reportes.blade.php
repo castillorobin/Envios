@@ -4,22 +4,26 @@
 @section('content')
 
     <section class="section">
-        <div class="section-header" style="">
-            <h3 class="page__heading">Melo Express</h3>
-            <div style="width:80%;" style="float:right;">
-            &nbsp;  &nbsp;
-            <a href="/reportes/envio">
-            <button type="button" class="btn btn-primary" >Reporte de Envios</button>
-            </a>
-            &nbsp;  &nbsp;
-            <a href="/reportes/ganancia">
-            <button type="button" class="btn btn-primary" >Reporte de Ganacias</button>
-            </a>
-            &nbsp;  &nbsp;
-            <a href="/reportes/cobros">
-            <button type="button" class="btn btn-primary" >Reporte de Cobros</button>
-            </a>
+        <div class="section-header" >
+        <div style="width:100%">
+            <div style="float:left; width:60%;">
+                <h3 class="page__heading">Melo Express</h3>
             </div>
+            <div style="width:40%; float:right;" >
+             &nbsp;  &nbsp;
+                <a href="/reportes/envio">
+                <button type="button" class="btn btn-primary" >Reporte de Envios</button>
+                </a>
+             &nbsp;  &nbsp;
+             <a href="/reportes/ganancia">
+                <button type="button" class="btn btn-primary" >Reporte de Ganacias</button>
+                </a>
+             &nbsp;  &nbsp;
+                <a href="/reportes/cobros">
+                <button type="button" class="btn btn-primary" >Reporte de Cobros</button>
+                </a>
+            </div>
+        </div>
         </div>
         <div class="section-body">
             <div class="row">
