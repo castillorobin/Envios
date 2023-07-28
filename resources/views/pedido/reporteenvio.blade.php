@@ -5,7 +5,25 @@
 
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Melo Express</h3>
+        <div style="width:100%; ">
+            <div style="float:left; width:65%;">
+                <h3 class="page__heading">Reporte de Envios</h3>
+            </div>
+            <div style="width:35%; float:right;" >
+             &nbsp;  &nbsp;
+                <a href="/reportes/envio">
+                <button type="button" class="btn btn-primary" >Reporte de Envios</button>
+                </a>
+             &nbsp;  &nbsp;
+             <a href="/reportes/ganancia">
+                <button type="button" class="btn btn-primary" >Reporte de Ganancias</button>
+                </a>
+             &nbsp;  &nbsp;
+                <a href="/reportes/cobros">
+                <button type="button" class="btn btn-primary" >Reporte de Cobros</button>
+                </a>
+            </div>
+        </div>
         </div>
         <div class="section-body">
             <div class="row">
@@ -134,7 +152,7 @@ ul li ul:hover {
  
         
 
-    <form action="/repofiltro" method="get">
+    <form action="/reportes/enviofiltro" method="get">
             <div class="">
                 <table>
                     <tr>
@@ -146,7 +164,7 @@ ul li ul:hover {
             
             <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
-          <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+          <input type="date" id="fecha1" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
           <br>
         
             
@@ -212,7 +230,7 @@ ul li ul:hover {
            
            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
          </div>
-         <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+         <input type="date" id="fecha" name="hasta" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
          <br>
        
            
@@ -257,7 +275,7 @@ ul li ul:hover {
                         <td>
                             <br>
                         <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
-        <a href="/reportes" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
+        <a href="/reportes/envio" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
                         </td>
                     </tr>
                     <tr>

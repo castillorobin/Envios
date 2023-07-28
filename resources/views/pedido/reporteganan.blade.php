@@ -5,7 +5,25 @@
 
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Reporte de Ganancia</h3>
+        <div style="width:100%; ">
+            <div style="float:left; width:70%;">
+                <h3 class="page__heading">Reporte de Ganancias</h3>
+            </div>
+            <div style="width:30%; float:right;" >
+             &nbsp;  &nbsp;
+                <a href="/reportes/envio">
+                <button type="button" class="btn btn-primary" >Reporte de Envios</button>
+                </a>
+             &nbsp;  &nbsp;
+             <a href="/reportes/ganancia">
+                <button type="button" class="btn btn-primary" >Reporte de Ganancias</button>
+                </a>
+             &nbsp;  &nbsp;
+                <a href="/reportes/cobros">
+                <button type="button" class="btn btn-primary" >Reporte de Cobros</button>
+                </a>
+            </div>
+        </div>
         </div>
         <div class="section-body">
             <div class="row">

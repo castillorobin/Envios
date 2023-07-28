@@ -6,17 +6,17 @@
     <section class="section">
         <div class="section-header" >
         <div style="width:100%; ">
-            <div style="float:left; width:70%;">
+            <div style="float:left; width:65%;">
                 <h3 class="page__heading">Melo Express</h3>
             </div>
-            <div style="width:30%; float:right;" >
+            <div style="width:35%; float:right;" >
              &nbsp;  &nbsp;
                 <a href="/reportes/envio">
                 <button type="button" class="btn btn-primary" >Reporte de Envios</button>
                 </a>
              &nbsp;  &nbsp;
              <a href="/reportes/ganancia">
-                <button type="button" class="btn btn-primary" >Reporte de Ganacias</button>
+                <button type="button" class="btn btn-primary" >Reporte de Ganancias</button>
                 </a>
              &nbsp;  &nbsp;
                 <a href="/reportes/cobros">

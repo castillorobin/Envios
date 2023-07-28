@@ -2,24 +2,14 @@
 @extends('layouts.app')
 
 @section('content')
-<script>
-    function redireccionarPagina(){
-    window.setTimeout( abrirURL, 2000 ); // 3 segundos
-};
-    
-function abrirURL(){
-    //Abrir URL que necesites
-    //window.location = "http://127.0.0.1:8000/reportes";
-    window.location = "https://appmeloexpress.com/reportes/";
-};
-</script>
+
     <section class="section">
         <div class="section-header">
         <div style="width:100%; ">
-            <div style="float:left; width:70%;">
-                <h3 class="page__heading">Melo Express</h3>
+            <div style="float:left; width:65%;">
+                <h3 class="page__heading">Reporte de Envios</h3>
             </div>
-            <div style="width:30%; float:right;" >
+            <div style="width:35%; float:right;" >
              &nbsp;  &nbsp;
                 <a href="/reportes/envio">
                 <button type="button" class="btn btn-primary" >Reporte de Envios</button>
@@ -162,85 +152,28 @@ ul li ul:hover {
  
         
 
-    <form action="/repofiltro" method="get">
+    <form action="/reportes/enviofiltro" method="get">
             <div class="">
                 <table>
                     <tr>
                         <td style="width:400px;">
                         <div class="col-sm-12 ">
        
-        <div class="input-group ">
+        <div class="input-group ">Desde: &nbsp;  &nbsp;
           <div class="input-group-prepend">
+            
             <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
-          <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+          <input type="date" id="fecha1" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
           <br>
         
-           
+            
         </div>
       </div>
                         </td>
                         <td> 
-                             <!-- estado del envio -->
-    <div class="col-12">
-      
-        <div class="input-group">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
-          </div>
-          <select id="estado" name="estado" class="form-control" tabindex="9">
-            <option value="estado" >Estado del Envio</option>
-            <option value="Creado" >Creado</option>
-            <option value="En ruta">En ruta</option>
-            <option value="Entregado">Entregado</option>
-            <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
-            <option value="Reprogramado">Reprogramado</option>
-            <option value="Agencia San Salvador">Agencia San Salvador</option>
-            <option value="Agencia San Miguel">Agencia San Miguel</option>
-            <option value="Agencia Santa Ana">Agencia Santa Ana</option>
-            <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
-            <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
-            <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
-            <option value="No retirado Centro logístico">No retirado Centro logístico</option>
-            <option value="Casillero San Salvador">Casillero San Salvador</option>
-            <option value="Casillero San Miguel">Casillero San Miguel</option>
-            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
-          </select>
-           
-        </div>
-    </div>
-                        </td>
-                        <td>
-                             <!-- Ruta -->
-    <div class="col-sm-12">
-       
-        <div class="input-group">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
-          </div>
-          <select id="ruta" name="ruta" class="form-control" tabindex="16"> 
-          <option value="ruta">Ruta</option>
-          <option value="Ruta 1">Ruta 1</option>
-            <option value="Ruta 2">Ruta 2</option>
-            <option value="Ruta 3">Ruta 3</option>
-            <option value="Ruta 4">Ruta 4</option>
-            <option value="Ruta 5">Ruta 5</option>
-          </select>
-           
-        </div>
-    </div>
-                        </td>
-                        <td>
-   
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <br>
-                                                     <!-- Tipo -->
-    <div class="col-12">
+                             <!-- tipo del envio -->
+                             <div class="col-12">
         
         <div class="input-group">
 
@@ -263,11 +196,9 @@ ul li ul:hover {
     </div>  
                         </td>
                         <td>
-                            <br>
-                            <!-- Repartidor -->
-  
+                             <!-- Repartidor-->
     
-    <div class="col-sm-12 ">
+                             <div class="col-sm-12 ">
         
         <div class="input-group">
 
@@ -285,23 +216,66 @@ ul li ul:hover {
     </div>
                         </td>
                         <td>
+   
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <br>
-                            <!-- Total -->
-    <div class="col-sm-12 ">
-        
-        <div class="input-group ">
-          <div class="input-group-prepend" >
-            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="fas fa-dollar-sign" style="width:25px;"></i> </span>
-          </div>
-          <input type="text" id="total" name="total" class="form-control" placeholder="Total" aria-describedby="basic-addon1" >
-          
-        </div>
-    </div>
+                                                     <!-- hasta-->
+                                                     <div class="col-sm-12 ">
+       
+       <div class="input-group ">Hasta: &nbsp;  &nbsp;
+         <div class="input-group-prepend">
+           
+           <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
+         </div>
+         <input type="date" id="fecha" name="hasta" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+         <br>
+       
+           
+       </div>
+     </div>
                         </td>
                         <td>
                             <br>
+                            <!-- estado del envio -->
+    <div class="col-12">
+      
+      <div class="input-group">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+        </div>
+        <select id="estado" name="estado" class="form-control" tabindex="9">
+          <option value="estado" >Estado del Envio</option>
+          <option value="Creado" >Creado</option>
+          <option value="En ruta">En ruta</option>
+          <option value="Entregado">Entregado</option>
+          <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
+          <option value="Reprogramado">Reprogramado</option>
+          <option value="Agencia San Salvador">Agencia San Salvador</option>
+          <option value="Agencia San Miguel">Agencia San Miguel</option>
+          <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+          <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+          <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+          <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+          <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+          <option value="Casillero San Salvador">Casillero San Salvador</option>
+          <option value="Casillero San Miguel">Casillero San Miguel</option>
+          <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+        </select>
+         
+      </div>
+  </div>
+                        </td>
+                        <td>
+                            <br>
+              </td>
+                        <td>
+                            <br>
                         <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
-        <a href="/reportes" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
+        <a href="/reportes/envio" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
                         </td>
                     </tr>
                     <tr>
@@ -309,7 +283,7 @@ ul li ul:hover {
 
                         <td colspan="3">
                             <br>
-                    
+                     &nbsp; &nbsp; <button type="submit" class="btn btn-warning btn-lg " disabled><i class="fas fa-print" ></i> Imprimir</button>      
                         </td>
                     </tr>
                 </table>
@@ -322,9 +296,9 @@ ul li ul:hover {
 
   
             </div>
-           
 
-            <form action="/printfiltro/{{$filtro}}/{{$ftipo}}" method="get">
+
+
 
 <div class="table-responsive">
 
@@ -334,8 +308,7 @@ ul li ul:hover {
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
-        <th style="color: #fff;" hidden >ch</th>
-        <th style="color: #fff;">ID</th>
+
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Direccion</th>
@@ -343,28 +316,27 @@ ul li ul:hover {
         <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Precio</th>
-        <th style="color: #fff;">Envio</th>
-        <th style="color: #fff;">Total</th>
+        <th style="color: #fff;">Agencia</th>
+  
         
-        <th style="color: #fff;">Opciones</th>
+        
     </tr>
 </thead>
 <tbody>
-    
-    @for ($i=0; $i< count($pedidos); $i++)
+   
+@for ($i=0; $i< count($pedidos); $i++)
     <tr >
-        <td hidden ><input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" checked></td>
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
+        
+    
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     <td>{{ $pedidos[$i]->direccion }}</td>
     <td>{{ $pedidos[$i]->tipo }}</td>
+
     <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
-    <td> ${{ $pedidos[$i]->precio }}</td>
-    <td>${{ $pedidos[$i]->envio }}</td>
-    <td> ${{ $pedidos[$i]->total }}</td>
+    <td> ${{ $pedidos[$i]->agencia }}</td>
+   
     
     <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
     <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
@@ -386,56 +358,11 @@ ul li ul:hover {
     <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
     <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
     <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
-
-    <td class="opciones text-center" style="">
-    
-  
-  
- 
-    <a href="" class="dropdown-toggle" data-toggle="dropdown">
-
-    <i class="fas fa-list"></i></a>
-    <ul class="dropdown-menu" style="background-color: #ffffff;"> 
-     <div class="botones"> 
-     @can('crear-rol')
-    <li class="botones">
-    &nbsp;
-    <i class="fas fa-edit"></i>
-    &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
-    @endcan
-    </div>  
-	<li class="botones">
-   
-    &nbsp;
-    <i class="fas fa-eye"></i>
-    &nbsp;&nbsp;
-    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
-</form>
-</li>
-
-<div class="botones"> 
-    <li class="botones">
-    &nbsp;
-    <i class="fas fa-edit"></i>
-    &nbsp;&nbsp;
-    <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" ><button style="background: none; border: 0;">Etiqueta</button></a></li> 
-    </div>  
- 
-
-
-    </ul>
- 
- 
-
-    </td>
-    </tr>
+</tr >
     @endfor
-    
 </tbody>
 </table>
-<br>
-<button type="submit" class="btn btn-lg btn-warning" formtarget="_blank" onclick="redireccionarPagina()">Imprimir</button>
+
 
 
 
