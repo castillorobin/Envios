@@ -47,7 +47,7 @@ function mostrando2()
 function abrirURL(){
     //Abrir URL que necesites
     //window.location = "http://127.0.0.1:8000/estatus/";
-    window.location = "http://54.237.159.219/estatus/";
+    window.location = "https://appmeloexpress.com/estatus/";
 };
 </script>
 

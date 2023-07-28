@@ -10,7 +10,7 @@
 function abrirURL(){
     //Abrir URL que necesites
     //window.location = "http://127.0.0.1:8000/reportes";
-    window.location = "http://54.237.159.219/reportes/";
+    window.location = "https://appmeloexpress.com/reportes/";
 };
 </script>
     <section class="section">
