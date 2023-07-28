@@ -5,11 +5,11 @@
 
     <section class="section">
         <div class="section-header" >
-        <div style="width:100%">
-            <div style="float:left; width:60%;">
+        <div style="width:100%; ">
+            <div style="float:left; width:70%;">
                 <h3 class="page__heading">Melo Express</h3>
             </div>
-            <div style="width:40%; float:right;" >
+            <div style="width:30%; float:right;" >
              &nbsp;  &nbsp;
                 <a href="/reportes/envio">
                 <button type="button" class="btn btn-primary" >Reporte de Envios</button>
