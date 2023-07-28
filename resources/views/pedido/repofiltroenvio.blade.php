@@ -335,7 +335,7 @@ ul li ul:hover {
 
     <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
-    <td> ${{ $pedidos[$i]->agencia }}</td>
+    <td> {{ $pedidos[$i]->agencia }}</td>
    
     
     <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
