@@ -57,6 +57,18 @@ class PedidoController extends Controller
         
 
     }
+    public function reporteenvio()
+    {
+
+
+        $pedidos = Pedido::all();
+
+       $repartidores = Repartidor::all();
+        return view('pedido.reporteenvio', compact('pedidos','repartidores'));
+
+        
+
+    }
     
     public function printfiltro(Request $request,$filtro,$ftipo)
     {

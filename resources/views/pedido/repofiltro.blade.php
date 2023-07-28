@@ -16,6 +16,15 @@ function abrirURL(){
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
+            <div style="width:80%;" style="float:right;">
+            &nbsp;  &nbsp;
+            <button type="button" class="btn btn-primary" >Reporte de Envios</button>
+            &nbsp;  &nbsp;
+            <button type="button" class="btn btn-primary" >Reporte de Ganacias</button>
+            &nbsp;  &nbsp;
+            <button type="button" class="btn btn-primary" >Reporte de Cobros</button>
+            
+            </div>
         </div>
         <div class="section-body">
             <div class="row">
@@ -403,7 +412,7 @@ ul li ul:hover {
     &nbsp;&nbsp;
     <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" ><button style="background: none; border: 0;">Etiqueta</button></a></li> 
     </div>  
-
+ 
 
 
     </ul>
