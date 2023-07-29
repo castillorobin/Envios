@@ -105,6 +105,40 @@ class PedidoController extends Controller
         
 
     }
+
+
+    public function reportegananciaf(Request $request)
+    {
+
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
+
+        $tipo = $request->get('tipo');
+        if($tipo!="tipo"){
+            $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
+        }
+        $repartidor = $request->get('repartidor');
+        if($repartidor!="repartidor"){
+            $pedidos = $pedidos->intersect(Pedido::whereIn('repartidor', [$repartidor])->get());  
+        }
+        $estado = $request->get('estado');
+        if($estado != "estado"){     
+            $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
+        }
+
+
+       $repartidores = Repartidor::all();
+        return view('pedido.repofiltroganan', compact('pedidos','repartidores'));
+
+    }
+
+
+
+
+
+
+
     public function reporteganancia()
     {
 

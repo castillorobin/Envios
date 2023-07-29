@@ -50,7 +50,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/reportes"><i class="fas fa-calendar-alt"></i>Reporte diario</a>
-          <a class="dropdown-item" href="/reportes/envio"><i class="fas fa-archive"></i>Reporte de paqueterias</a>
+          
           <a class="dropdown-item" href="/reportes/ganancia"><i class="fas fa-money-bill-wave"></i>Reporte de ganancia</a>
           
           <a class="dropdown-item" href="/reportes/cobros"><i class="fas fa-money-check-alt"></i>Reporte de cobro</a>

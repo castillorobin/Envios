@@ -2,11 +2,11 @@
 @extends('layouts.app')
 
 @section('content')
- 
+
     <section class="section">
         <div class="section-header">
         <div style="width:100%; ">
-            <div>
+            <div >
                 <h3 class="page__heading">Reporte de Ganancias</h3>
             </div>
             
@@ -151,7 +151,7 @@ ul li ul:hover {
             
             <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
-          <input type="date" id="fecha" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+          <input type="date" id="fecha1" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
           <br>
         
             
@@ -294,21 +294,56 @@ ul li ul:hover {
 <br>
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
-        
-<tr>
-        <th style="color: #fff;">Dia</th>
+        <tr>
+<th style="color: #fff;">Dia</th>
         <th style="color: #fff;">Personalizado</th>
         <th style="color: #fff;">Punto Fijo</th>
         
         <th style="color: #fff;">Casillero</th>
         <th style="color: #fff;">Casillero Departamental</th>
+  
         
         
-       
     </tr>
 </thead>
 <tbody>
    
+@for ($i=0; $i< count($pedidos); $i++)
+    <tr >
+        
+    
+    <td style="font-weight: bolder; color: #484f55;">Dias</td>
+    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->agencia }}</td>
+    <td></td>
+    <td></td>
+
+  
+    <td> </td>
+   
+   
+    
+    <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
+    <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
+    <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
+    <span hidden id="dir{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->direccion}}</span>
+    <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
+    <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
+    <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
+    <span hidden id="este{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estado}}</span>
+    <span hidden id="estp{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->pagado}}</span>
+    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
+    <span hidden id="tot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->total}}</span>
+    <span hidden id="ing{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ingresado}}</span>
+    <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
+    <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
+    <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
+    <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
+    <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
+    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
+</tr >
+    @endfor
 </tbody>
 </table>
 
