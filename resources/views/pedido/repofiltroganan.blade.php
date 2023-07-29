@@ -312,13 +312,49 @@ ul li ul:hover {
     <tr >
         
     
-    <td style="font-weight: bolder; color: #484f55;">Dias</td>
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->agencia }}</td>
-    <td></td>
-    <td></td>
+    <td style="font-weight: bolder; color: #484f55;">
+    
+    <input hidden type="text" value=" {{$fecha= $pedidos[$i]->fecha_entrega}}">
+    
+    
+    <input hidden type="text" value=" {{ $fechaa = strtotime($pedidos[$i]->fecha_entrega)}}">
+    
+   
+    {{ strftime('%A %e de %B de %Y', $fechaa)}}
+    </td>
+    <td style="font-weight: bolder; color: #484f55;">
+        @if($pedidos[$i]->tipo=="Personalizado")
+        {{ $pedidos[$i]->suma }}
+        @else
+        0
+        @endif
+
+
+</td>
+    <td>  @if($pedidos[$i]->tipo=="Punto Fijo")
+        {{ $pedidos[$i]->suma }}
+        @else
+        0
+        @endif
+    </td>
+   
+        
+    <td>  @if($pedidos[$i]->tipo=="Casillero")
+        {{ $pedidos[$i]->suma }}
+        @else
+        0
+        @endif
+    </td>
 
   
-    <td> </td>
+    
+        
+    <td>  @if($pedidos[$i]->tipo=="Casillero Departamental")
+        {{ $pedidos[$i]->suma }}
+        @else
+        0
+        @endif
+    </td>
    
    
     

@@ -112,8 +112,14 @@ class PedidoController extends Controller
 
         $desde = $request->input('desde');
         $hasta = $request->input('hasta');
-        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
-
+        //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
+        
+        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
+        ->selectRaw('fecha_entrega,tipo, sum(envio) suma')
+        ->groupby('fecha_entrega', 'tipo')
+        ->get();
+        
+/*
         $tipo = $request->get('tipo');
         if($tipo!="tipo"){
             $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
@@ -126,7 +132,7 @@ class PedidoController extends Controller
         if($estado != "estado"){     
             $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
         }
-
+*/
 
        $repartidores = Repartidor::all();
         return view('pedido.repofiltroganan', compact('pedidos','repartidores'));
