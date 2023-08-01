@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('agencia')->nullable();
             $table->string('cobroenvio')->nullable();
             $table->string('estante')->nullable();
+            $table->string('medio')->nullable();
             $table->string('foto')->nullable();
             $table->string('foto2')->nullable();
             $table->string('foto3')->nullable();

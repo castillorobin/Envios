@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\Vendedor;
 use App\Models\Repartidor;
+use App\Models\Filtroganan;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -114,12 +115,47 @@ class PedidoController extends Controller
         $hasta = $request->input('hasta');
         //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
         
-        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
+        $pedidos1 = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
         ->selectRaw('fecha_entrega,tipo, sum(envio) suma')
         ->groupby('fecha_entrega', 'tipo')
         ->get();
+
+        //$pedidosga = Filtroganan::all();
         
+
+       foreach($pedidos1 as $ganancia){
+        $gananciare = new Filtroganan();
+        $gananciare->fecha_entrega = $ganancia->fecha_entrega;
+        if($ganancia->tipo == "Personalizado"){
+            $gananciare->Personalizado = $ganancia->suma ;
+        }
+        if($ganancia->tipo == "Punto fijo"){
+            $gananciare->Punto_fijo = $ganancia->suma ;
+        }
+        if($ganancia->tipo == "Casillero"){
+            $gananciare->Casillero = $ganancia->suma ;
+        }
+
+        if($ganancia->tipo == "Casillero departamental"){
+            $gananciare->Casillero_depa = $ganancia->suma ;
+        }
+        
+        $gananciare->save();
+    }
+
+
+       $pedidos = Filtroganan::orderBy('fecha_entrega', 'asc')->groupBy('fecha_entrega')->get();
+       //$pedidos = $pedidos::orderBy('fecha_entrega', 'ASC')->get();
 /*
+
+        $pedidos = Filtroganan::whereBetween('fecha_entrega', [$desde, $hasta])
+        ->selectRaw('fecha_entrega, Personalizado, Punto_fijo, Casillero, Casillero_depa')
+        ->groupby('fecha_entrega')
+        ->get();
+
+        
+
+
         $tipo = $request->get('tipo');
         if($tipo!="tipo"){
             $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
@@ -147,7 +183,10 @@ class PedidoController extends Controller
 
     public function reporteganancia()
     {
-
+        $pedidosga = Filtroganan::all();
+       foreach($pedidosga as $ganancia){
+        $ganancia->delete();
+    }
 
         $pedidos = Pedido::all();
 

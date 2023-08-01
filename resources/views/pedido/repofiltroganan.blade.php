@@ -9,7 +9,7 @@
             <div >
                 <h3 class="page__heading">Reporte de Ganancias</h3>
             </div>
-            
+             
         </div>
         </div>
         <div class="section-body">
@@ -323,61 +323,43 @@ ul li ul:hover {
     {{ strftime('%A %e de %B de %Y', $fechaa)}}
     </td>
     <td style="font-weight: bolder; color: #484f55;">
-        @if($pedidos[$i]->tipo=="Personalizado")
-        {{ $pedidos[$i]->suma }}
-        @else
-        0
-        @endif
-
-
+    
+    @if($pedidos[$i]->Personalizado>0)
+    {{ $pedidos[$i]->Personalizado }}
+    @else
+    0
+    @endif
 </td>
-    <td>  @if($pedidos[$i]->tipo=="Punto Fijo")
-        {{ $pedidos[$i]->suma }}
-        @else
-        0
-        @endif
+    <td>  
+    @if($pedidos[$i]->Punto_fijo>0)
+    {{ $pedidos[$i]->Punto_fijo }}
+    @else
+    0
+    @endif
     </td>
    
         
-    <td>  @if($pedidos[$i]->tipo=="Casillero")
-        {{ $pedidos[$i]->suma }}
-        @else
-        0
-        @endif
+    <td>  
+    @if($pedidos[$i]->Casillero>0)
+    {{ $pedidos[$i]->Casillero }}
+    @else
+    0
+    @endif
     </td>
 
   
     
         
-    <td>  @if($pedidos[$i]->tipo=="Casillero Departamental")
-        {{ $pedidos[$i]->suma }}
-        @else
-        0
-        @endif
+    <td>  
+    @if($pedidos[$i]->Casillero_depa>0)
+    {{ $pedidos[$i]->Casillero_depa }}
+    @else
+    0
+    @endif
     </td>
    
    
     
-    <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
-    <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
-    <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
-    <span hidden id="dir{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->direccion}}</span>
-    <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
-    <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
-    <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
-    <span hidden id="este{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estado}}</span>
-    <span hidden id="estp{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->pagado}}</span>
-    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
-    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
-    <span hidden id="tot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->total}}</span>
-    <span hidden id="ing{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ingresado}}</span>
-    <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
-    <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
-    <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
-    <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
-    <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
-    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
-    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
 </tr >
     @endfor
 </tbody>

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_estatus', function (Blueprint $table) {
+        Schema::create('estatuses', function (Blueprint $table) {
             $table->id();
             $table->string('vendedor');
             $table->string('direccion')->nullable();;
