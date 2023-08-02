@@ -13,7 +13,7 @@
           <a class="dropdown-item" href="/pedidos"><i class="fas fa-truck"></i> Envios</a>
           <a class="dropdown-item" href="/recolecta"><i class="fas fa-archive"></i>Recolectas</a>
           <a class="dropdown-item" href="/vendedores"><i class="fas fa-shopping-cart"></i> Comercios</a>
-          @can('editar-empleado')
+          @can('editar-empleados')
           <a class="dropdown-item" href="/repartidores"><i class="fas fa-user"></i> Empleados</a>
           @endcan
         </div>
