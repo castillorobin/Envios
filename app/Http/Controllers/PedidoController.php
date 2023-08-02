@@ -111,14 +111,28 @@ class PedidoController extends Controller
     public function reportegananciaf(Request $request)
     {
 
+        $pedidosga = Filtroganan::all();
+        foreach($pedidosga as $ganancia){
+         $ganancia->delete();
+     }
         $desde = $request->input('desde');
         $hasta = $request->input('hasta');
         //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
-        
         $pedidos1 = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
-        ->selectRaw('fecha_entrega,tipo, sum(envio) as suma')
+        ->selectRaw('fecha_entrega,tipo,estado, sum(envio) as suma')
         ->groupby('fecha_entrega', 'tipo')
         ->get();
+
+        $tipo = $request->get('estado');
+        if($tipo!="estado"){
+            $pedidos1 = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
+            ->where('estado', $tipo)
+        ->selectRaw('fecha_entrega,tipo,estado, sum(envio) as suma')
+        ->groupby('fecha_entrega', 'tipo')
+        ->get();
+           // $pedidos1 = $pedidos1->intersect(Pedido::whereIn('estado', [$tipo])->get());
+        }
+        
 
         //$pedidosga = Filtroganan::all();
         
