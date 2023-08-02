@@ -297,10 +297,11 @@ ul li ul:hover {
         <tr>
 <th style="color: #fff;">Dia</th>
         <th style="color: #fff;">Personalizado</th>
+        <th style="color: #fff;">Personalizado Departamental</th>
         <th style="color: #fff;">Punto Fijo</th>
         
         <th style="color: #fff;">Casillero</th>
-        <th style="color: #fff;">Casillero Departamental</th>
+        
   
         
         
@@ -324,15 +325,23 @@ ul li ul:hover {
     </td>
     <td style="font-weight: bolder; color: #484f55;">
     
-    @if($pedidos[$i]->Personalizado>0)
-    {{ $pedidos[$i]->Personalizado }}
+    @if($pedidos[$i]->sumap>0)
+    {{ $pedidos[$i]->sumap }}
     @else
     0
     @endif
 </td>
+
+<td>  
+    @if($pedidos[$i]->sumacd>0)
+    {{ $pedidos[$i]->sumacd }}
+    @else
+    0
+    @endif
+    </td>
     <td>  
-    @if($pedidos[$i]->Punto_fijo>0)
-    {{ $pedidos[$i]->Punto_fijo }}
+    @if($pedidos[$i]->sumapf>0)
+    {{ $pedidos[$i]->sumapf}}
     @else
     0
     @endif
@@ -340,23 +349,17 @@ ul li ul:hover {
    
         
     <td>  
-    @if($pedidos[$i]->Casillero>0)
-    {{ $pedidos[$i]->Casillero }}
+    @if($pedidos[$i]->sumac>0)
+    {{ $pedidos[$i]->sumac }}
     @else
     0
     @endif
     </td>
 
-  
+   
     
         
-    <td>  
-    @if($pedidos[$i]->Casillero_depa>0)
-    {{ $pedidos[$i]->Casillero_depa }}
-    @else
-    0
-    @endif
-    </td>
+  
    
    
     

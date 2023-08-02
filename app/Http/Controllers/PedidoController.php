@@ -116,7 +116,7 @@ class PedidoController extends Controller
         //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
         
         $pedidos1 = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
-        ->selectRaw('fecha_entrega,tipo, sum(envio) suma')
+        ->selectRaw('fecha_entrega,tipo, sum(envio) as suma')
         ->groupby('fecha_entrega', 'tipo')
         ->get();
 
@@ -136,7 +136,7 @@ class PedidoController extends Controller
             $gananciare->Casillero = $ganancia->suma ;
         }
 
-        if($ganancia->tipo == "Casillero departamental"){
+        if($ganancia->tipo == "Personalizado departamental"){
             $gananciare->Casillero_depa = $ganancia->suma ;
         }
         
@@ -144,8 +144,9 @@ class PedidoController extends Controller
     }
 
 
-       $pedidos = Filtroganan::orderBy('fecha_entrega', 'asc')->groupBy('fecha_entrega')->get();
-       //$pedidos = $pedidos::orderBy('fecha_entrega', 'ASC')->get();
+       //$pedidos = Filtroganan::orderBy('fecha_entrega', 'asc')->groupBy('fecha_entrega')->get();
+       $pedidos = Filtroganan::selectRaw('fecha_entrega, sum(Personalizado) as sumap, sum(Punto_fijo) as sumapf, sum(Casillero) as sumac, sum(Casillero_depa) as sumacd')
+       ->groupBy('fecha_entrega')->get();
 /*
 
         $pedidos = Filtroganan::whereBetween('fecha_entrega', [$desde, $hasta])
