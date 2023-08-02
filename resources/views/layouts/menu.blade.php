@@ -33,7 +33,7 @@
      <i class="fas fa-truck"></i><span>Repartidores</span>
     </a>
     </li>
-    @can('crear-rol')
+    @can('ver-factura')
     <li>
     
      <a class="nav-link" href="/facturas">
