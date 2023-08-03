@@ -892,6 +892,7 @@ $(document).ready(function(){
 //alert('hola mundo');
 
 var total = document.getElementById('preci2').textContent;
+
 //const preci = parseFloat(document.getElementById("precio").value);						                                                    
 const desc =parseFloat($(this).val()); 
 var final = total - desc ;
@@ -909,19 +910,23 @@ document.getElementById("toti").value = final;
 
 	$(document).on('click', '#check3', function(){
 		var id=$(this).val();
-		var prec=$('#tot'+id).text();
+		var prec=parseFloat($('#tot'+id).text());
         var envi=$('#env'+id).text();
         
         //alert("le diste click" + prec);
         var tota = $('#preci').text();
         var senvi = $('#sumas').text();
+        //var tota = parseFloat(tota, 10);
+
         if ($(this).prop('checked')) {
+
             var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
             var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
-        $('#preci').text(to3); 
+        $('#preci').text(parseFloat(to3, 10)); 
         $('#preci2').text(to3); 
         $('#toti').val(to3); 
         $('#sumas').text(tenv);  
+
         } else {
             var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
             var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
@@ -931,7 +936,7 @@ document.getElementById("toti").value = final;
         $('#sumas').text(tenv);  
         }
 
-
+    
 
        
        $('#ivat').text((parseFloat(tenv, 10) * 0.13).toFixed(2) ); 
