@@ -69,6 +69,7 @@ Route::get('reportes/ganancia', [App\Http\Controllers\PedidoController::class, '
 Route::get('reportes/cobros', [App\Http\Controllers\PedidoController::class, 'reportecobros'] )->name('reportecobros') ;
 Route::get('reportes/enviofiltro', [App\Http\Controllers\PedidoController::class, 'reporteenviof'] )->name('reporteenviof') ;
 Route::get('reportes/gananfiltro', [App\Http\Controllers\PedidoController::class, 'reportegananciaf'] )->name('reportegananciaf') ;
+Route::get('reportes/cobrofiltro', [App\Http\Controllers\PedidoController::class, 'reportecobrof'] )->name('reportecobrof') ;
 
 Route::get('repofiltro', [App\Http\Controllers\PedidoController::class, 'repofiltro'] )->name('repofiltro') ;
 

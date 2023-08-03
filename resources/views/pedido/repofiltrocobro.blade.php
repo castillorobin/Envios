@@ -2,14 +2,14 @@
 @extends('layouts.app')
 
 @section('content')
- 
+
     <section class="section">
         <div class="section-header">
         <div style="width:100%; ">
-            <div>
+            <div >
                 <h3 class="page__heading">Reporte de Cobros</h3>
             </div>
-            
+             
         </div>
         </div>
         <div class="section-body">
@@ -151,7 +151,7 @@ ul li ul:hover {
             
             <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
-          <input type="date" id="fecha" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+          <input type="date" id="fecha1" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
           <br>
         
             
@@ -159,7 +159,7 @@ ul li ul:hover {
       </div>
                         </td>
                         <td> 
-                             <!-- estado del envio -->
+                            <!-- estado del envio -->
     <div class="col-12">
       
       <div class="input-group">
@@ -188,15 +188,9 @@ ul li ul:hover {
          
       </div>
   </div>
-                             
                         </td>
                         <td>
-                             <!-- Repartidor-->
-    
-                             <div class="col-sm-12 ">
-        
-        
-    </div>
+                            
                         </td>
                         <td>
    
@@ -222,7 +216,7 @@ ul li ul:hover {
                         </td>
                         <td>
                             <br>
-                           
+                            
                         </td>
                         <td>
                             <br>
@@ -262,21 +256,77 @@ ul li ul:hover {
 <br>
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
-        
-<tr>
-        <th style="color: #fff;">Dia</th>
+        <tr>
+<th style="color: #fff;">Dia</th>
         <th style="color: #fff;">Personalizado</th>
+        <th style="color: #fff;">Personalizado Departamental</th>
         <th style="color: #fff;">Punto Fijo</th>
         
         <th style="color: #fff;">Casillero</th>
-        <th style="color: #fff;">Casillero Departamental</th>
+        
+  
         
         
-       
     </tr>
 </thead>
 <tbody>
    
+@for ($i=0; $i< count($pedidos); $i++)
+    <tr >
+        
+    
+    <td style="font-weight: bolder; color: #484f55;">
+    
+    <input hidden type="text" value=" {{$fecha= $pedidos[$i]->fecha_entrega}}">
+    
+    
+    <input hidden type="text" value=" {{ $fechaa = strtotime($pedidos[$i]->fecha_entrega)}}">
+    
+   
+    {{ strftime('%A %e de %B de %Y', $fechaa)}}
+    </td>
+    <td style="font-weight: bolder; color: #484f55;">
+    
+    @if($pedidos[$i]->sumap>0)
+    {{ $pedidos[$i]->sumap }}
+    @else
+    0
+    @endif
+</td>
+
+<td>  
+    @if($pedidos[$i]->sumacd>0)
+    {{ $pedidos[$i]->sumacd }}
+    @else
+    0
+    @endif
+    </td>
+    <td>  
+    @if($pedidos[$i]->sumapf>0)
+    {{ $pedidos[$i]->sumapf}}
+    @else
+    0
+    @endif
+    </td>
+   
+        
+    <td>  
+    @if($pedidos[$i]->sumac>0)
+    {{ $pedidos[$i]->sumac }}
+    @else
+    0
+    @endif
+    </td>
+
+   
+    
+        
+  
+   
+   
+    
+</tr >
+    @endfor
 </tbody>
 </table>
 

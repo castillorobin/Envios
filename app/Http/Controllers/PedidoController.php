@@ -161,29 +161,7 @@ class PedidoController extends Controller
        //$pedidos = Filtroganan::orderBy('fecha_entrega', 'asc')->groupBy('fecha_entrega')->get();
        $pedidos = Filtroganan::selectRaw('fecha_entrega, sum(Personalizado) as sumap, sum(Punto_fijo) as sumapf, sum(Casillero) as sumac, sum(Casillero_depa) as sumacd')
        ->groupBy('fecha_entrega')->get();
-/*
 
-        $pedidos = Filtroganan::whereBetween('fecha_entrega', [$desde, $hasta])
-        ->selectRaw('fecha_entrega, Personalizado, Punto_fijo, Casillero, Casillero_depa')
-        ->groupby('fecha_entrega')
-        ->get();
-
-        
-
-
-        $tipo = $request->get('tipo');
-        if($tipo!="tipo"){
-            $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
-        }
-        $repartidor = $request->get('repartidor');
-        if($repartidor!="repartidor"){
-            $pedidos = $pedidos->intersect(Pedido::whereIn('repartidor', [$repartidor])->get());  
-        }
-        $estado = $request->get('estado');
-        if($estado != "estado"){     
-            $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
-        }
-*/
 
        $repartidores = Repartidor::all();
         return view('pedido.repofiltroganan', compact('pedidos','repartidores'));
@@ -191,6 +169,66 @@ class PedidoController extends Controller
     }
 
 
+    
+    public function reportecobrof(Request $request)
+    {
+
+        $pedidosga = Filtroganan::all();
+        foreach($pedidosga as $ganancia){
+         $ganancia->delete();
+     }
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
+        $pedidos1 = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
+        ->selectRaw('fecha_entrega,tipo,estado, sum(total) as suma')
+        ->groupby('fecha_entrega', 'tipo')
+        ->get();
+
+        $tipo = $request->get('estado');
+        if($tipo!="estado"){
+            $pedidos1 = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
+            ->where('estado', $tipo)
+        ->selectRaw('fecha_entrega,tipo,estado, sum(total) as suma')
+        ->groupby('fecha_entrega', 'tipo')
+        ->get();
+           // $pedidos1 = $pedidos1->intersect(Pedido::whereIn('estado', [$tipo])->get());
+        }
+        
+
+        //$pedidosga = Filtroganan::all();
+        
+
+       foreach($pedidos1 as $ganancia){
+        $gananciare = new Filtroganan();
+        $gananciare->fecha_entrega = $ganancia->fecha_entrega;
+        if($ganancia->tipo == "Personalizado"){
+            $gananciare->Personalizado = $ganancia->suma ;
+        }
+        if($ganancia->tipo == "Punto fijo"){
+            $gananciare->Punto_fijo = $ganancia->suma ;
+        }
+        if($ganancia->tipo == "Casillero"){
+            $gananciare->Casillero = $ganancia->suma ;
+        }
+
+        if($ganancia->tipo == "Personalizado departamental"){
+            $gananciare->Casillero_depa = $ganancia->suma ;
+        }
+        
+        $gananciare->save();
+    }
+
+
+       //$pedidos = Filtroganan::orderBy('fecha_entrega', 'asc')->groupBy('fecha_entrega')->get();
+       $pedidos = Filtroganan::selectRaw('fecha_entrega, sum(Personalizado) as sumap, sum(Punto_fijo) as sumapf, sum(Casillero) as sumac, sum(Casillero_depa) as sumacd')
+       ->groupBy('fecha_entrega')->get();
+
+
+       $repartidores = Repartidor::all();
+        return view('pedido.repofiltrocobro', compact('pedidos','repartidores'));
+
+    }
 
 
 

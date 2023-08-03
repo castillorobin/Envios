@@ -157,8 +157,9 @@ function abrirURL(){
 <div class="col-6 mt-4">  <!-- div filtrros  -->
 
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal3" >Ver</button>
+@can('editar-rol')
 <a href="/vendedores/{{ $vende[0]->id }}/edit" class="btn btn-success" >Editar</a>
-
+@endcan
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  Pagar
 </button>
@@ -248,13 +249,16 @@ function abrirURL(){
 
     <i class="fas fa-list"></i></a>
     <ul class="dropdown-menu" style="background-color: #ffffff;"> 
+    @can('editar-rol')
      <div class="botones"> 
+
     <li class="botones">
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
     <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" >Editar</a></li> 
     </div>  
+    @endcan
 	<li class="botones">
    
     &nbsp;
