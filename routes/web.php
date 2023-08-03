@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('facturas', FacturacionController::class);
     Route::resource('estatus', EstatusController::class);
     
-});
+}); 
 
 Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, 'desdeenvio'] )->name('desdeenvio') ;
 

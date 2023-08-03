@@ -520,7 +520,7 @@ if(document.getElementById("flexs").checked)
 <!-- termina fila  -->
 
 <div class="modal-footer px-4">
-        
+       
 <a href="/pedidos" class="btn btn-primary">Cerrar</a>
         &nbsp; &nbsp;
         

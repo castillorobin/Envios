@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use App\Models\Pedido;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Repartidor;
 class VendedorController extends Controller
 {
     /**
@@ -127,15 +129,24 @@ class VendedorController extends Controller
                 
         $vendedor->save();
 
-        $vendedores = Vendedor::all();
+        //$vendedores = Vendedor::all();
         
-        setlocale(LC_TIME, "spanish");
-        $date = Carbon::today();
+        //setlocale(LC_TIME, "spanish");
+        //$date = Carbon::today();
         //$date = $date->format('l jS F Y');
-        $date = strftime("%A %d de %B %Y");
+       // $date = strftime("%A %d de %B %Y");
         //return view('pedido.create')->with(['vendedores'=>$vendedores, 'date'=>$date]);
 
-        return redirect('/pedidos');
+        //return redirect('/pedidos/create');
+        $usuarios = User::all();
+        $last = Pedido::latest('id')->first();
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        $repartidores = Repartidor::all();
+        $fecha = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $fecha = strftime("%A %d de %B %Y");
+        return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
     }
     public function show($id)
     {
