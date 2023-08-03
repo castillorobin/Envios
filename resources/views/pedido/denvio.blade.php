@@ -252,7 +252,7 @@ if(document.getElementById("flexs").checked)
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/metro/25/null/email.png"/></span>
   </div>
-  <input type="text" id="correo" name="correo" class="form-control" placeholder="Ingrese telefono" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" id="correo" name="correo" class="form-control" placeholder="Ingrese el correo" aria-label="Username" aria-describedby="basic-addon1">
   <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
 </div>
     </div>
