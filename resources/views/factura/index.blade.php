@@ -96,7 +96,9 @@ jQuery(document).ready(function($){
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
 <button type="button" class="btn btn-warning" disabled>Ver</button>
+@can('editar-rol')
 <button type="button" class="btn btn-success" disabled>Editar</button>
+@endcan
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>
  Pagar
 </button>
