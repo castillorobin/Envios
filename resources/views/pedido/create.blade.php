@@ -634,8 +634,11 @@ $(document).ready(function() {
     
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
 
-
-      
+      <button id="start-camera">Usar cámara</button>
+<video id="video" width="320" height="240" autoplay></video>
+<button id="click-photo">Tomar Foto</button>
+<canvas id="canvas" width="320" height="240"></canvas>
+    
       <div class="col-sm-6">
       <input type="file" name="foto" class="form-control" tabindex="19">
       </div>
@@ -689,43 +692,29 @@ $(document).ready(function() {
 <br>
 <p></p>
 
-<!--
-<script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-</script>
-
--->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
 
-
-   
- 
 <script>
-  $(document).ready(function(){
-  
- /* $(":input").inputmask();*/
- Inputmask().mask(document.querySelectorAll("input"));
+ 
+ let camera_button = document.querySelector("#start-camera");
+let video = document.querySelector("#video");
+let click_button = document.querySelector("#click-photo");
+let canvas = document.querySelector("#canvas");
+
+camera_button.addEventListener('click', async function() {
+   	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+	video.srcObject = stream;
 });
+
+click_button.addEventListener('click', function() {
+   	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+   	let image_data_url = canvas.toDataURL('image/jpeg');
+
+   	// data url of the image
+   	console.log(image_data_url);
+});
+
 </script>
 </div>
                     </div>
