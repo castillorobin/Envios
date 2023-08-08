@@ -1,10 +1,11 @@
 
 @extends('layouts.app')
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    
+    
+   
 <script>
     function redireccionarPagina(){
     window.setTimeout( abrirURL, 2000 ); // 3 segundos
@@ -16,6 +17,7 @@ function abrirURL(){
     window.location = "https://appmeloexpress.com/pedidos/";
 };
 </script>
+
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Crear Envio</h3>
@@ -237,7 +239,7 @@ $(document).ready(function() {
 
         </div>
 
-      </div>
+      </div> 
 
       <div class="col-12">
         <div class="row py-1" style="background-color: white;" >
@@ -633,17 +635,30 @@ $(document).ready(function() {
   <div class="row" style="background-color: white;">
     
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
-
+<!--
       <button id="start-camera">Usar cámara</button>
 <video id="video" width="320" height="240" autoplay></video>
 <button id="click-photo">Tomar Foto</button>
 <canvas id="canvas" width="320" height="240"></canvas>
-    
-      <div class="col-sm-6">
-      <input type="file" name="foto" class="form-control" tabindex="19">
+-->
+<br/>
+<div class="col-md-6 ">
+                <div id="my_camera" ></div>
+                <br/>
+                <input type="button" value="Tomar foto" onClick="take_snapshot()" class="btn-success " style="margin-left: 200px;">
+                <input type="hidden" name="foto" class="image-tag">
+            </div>
+            <div class="col-md-6">
+                <div id="results">Esperando foto...</div>
+            </div>
+
+<br>
+<p></p>
+      <div class="col-sm-6" style="margin-top: 50px;">
+      <input type="file" name="foto2" class="form-control" tabindex="19">
       </div>
-      <div class="col-sm-6">
-      <input type="file" name="foto2" class="form-control" tabindex="20">
+      <div class="col-sm-6" style="margin-top: 50px;">
+      <input type="file" name="foto3" class="form-control" tabindex="20">
       </div>
       
       <br>
@@ -696,7 +711,7 @@ $(document).ready(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
 
 <script>
- 
+ /*
  let camera_button = document.querySelector("#start-camera");
 let video = document.querySelector("#video");
 let click_button = document.querySelector("#click-photo");
@@ -714,6 +729,24 @@ click_button.addEventListener('click', function() {
    	// data url of the image
    	console.log(image_data_url);
 });
+*/
+
+Webcam.set({
+        width: 490,
+        height: 350,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+    
+   
+    Webcam.attach( '#my_camera' );
+    
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
 
 </script>
 </div>
