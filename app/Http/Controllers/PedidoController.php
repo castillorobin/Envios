@@ -11,6 +11,9 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use \PDF; 
+use Illuminate\Support\Facades\Response;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
  
 class PedidoController extends Controller
 {
@@ -27,6 +30,49 @@ class PedidoController extends Controller
 
 
     }
+
+
+    public function descargarRespaldo()
+{
+    // Configuración de la base de datos
+    $servername = config('database.connections.mysql.host');
+    $username = config('database.connections.mysql.username');
+    $password = config('database.connections.mysql.password');
+    $database = config('database.connections.mysql.database');
+
+    // Nombre del archivo de respaldo
+    $backupFilename = 'respaldo.sql';
+
+    // Comando mysqldump
+    $command = [
+        'mysqldump',
+        '--opt',
+        "-h$servername",
+        "-u$username",
+        "-p$password",
+        $database,
+    ];
+
+    try {
+        // Ejecutar el comando
+        $process = new Process($command);
+        $process->mustRun();
+        $backupContent = $process->getOutput();
+
+        // Configurar las cabeceras para la descarga
+        return Response::make($backupContent, 200, [
+            'Content-Type' => 'application/octet-stream',
+            'Content-Disposition' => 'attachment; filename="' . $backupFilename . '"',
+        ]);
+    } catch (ProcessFailedException $exception) {
+       // return response()->json(['message' => 'Error al crear el respaldo'], 500);
+       return response()->json(['message' => 'Error al crear el respaldo: ' . $exception->getMessage()], 500);
+    }
+}
+
+
+
+
 
     public function camara()
     {

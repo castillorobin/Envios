@@ -71,6 +71,8 @@ Route::get('reportes/enviofiltro', [App\Http\Controllers\PedidoController::class
 Route::get('reportes/gananfiltro', [App\Http\Controllers\PedidoController::class, 'reportegananciaf'] )->name('reportegananciaf') ;
 Route::get('reportes/cobrofiltro', [App\Http\Controllers\PedidoController::class, 'reportecobrof'] )->name('reportecobrof') ;
 
+Route::get('descargar-respaldo', [App\Http\Controllers\PedidoController::class, 'descargarRespaldo'] )->name('descargarRespaldo') ; 
+
 Route::get('repofiltro', [App\Http\Controllers\PedidoController::class, 'repofiltro'] )->name('repofiltro') ;
 
 Route::get('printfiltro/{filtro}/{ftipo}', [App\Http\Controllers\PedidoController::class, 'printfiltro'] )->name('printfiltro') ;
