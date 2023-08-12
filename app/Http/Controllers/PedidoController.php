@@ -784,7 +784,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
             $image_base64 = base64_decode($image_parts[1]);
            // $fileName = uniqid() . '.png';
             
-            $file = $ruta . $fileName;
+            $file = $ruta . $nombreimagen;
             Storage::put($file, $image_base64);
 
             //$imagen->move($ruta,$nombreimagen);
