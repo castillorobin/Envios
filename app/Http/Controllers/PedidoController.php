@@ -14,7 +14,8 @@ use \PDF;
 use Illuminate\Support\Facades\Response;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
- 
+use Illuminate\Support\Facades\Storage;
+
 class PedidoController extends Controller
 {
     /**
@@ -769,15 +770,37 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedido->estante = $request->get('estante');
         //$pedidos->foto = $request->get('foto');
 
-        if($request->hasFile('foto')){
+       // if($request->hasFile('foto')){
             
-            $imagen = $request->file("foto");
-            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $imagen = $request->foto;
+           // $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $nombreimagen = uniqid() . '.png';
             $pedido->foto = $nombreimagen;
-            $ruta = public_path("imgs/fotos/");
-            $imagen->move($ruta,$nombreimagen);
+            $ruta = "imgs/fotos/";
+            $image_parts = explode(";base64,", $imagen);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            
+            $image_base64 = base64_decode($image_parts[1]);
+            $fileName = uniqid() . '.png';
+            
+            $file = $ruta . $fileName;
+            Storage::put($file, $image_base64);
 
-        } 
+            //$imagen->move($ruta,$nombreimagen);
+
+
+            //$folderPath = "uploads/";
+        /*
+        $image_parts = explode(";base64,", $img);
+      
+
+*/
+
+
+
+
+       // } 
         if($request->hasFile('foto2')){
             
             $imagen = $request->file("foto2");
