@@ -782,7 +782,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
             $image_type = $image_type_aux[1];
             
             $image_base64 = base64_decode($image_parts[1]);
-            $fileName = uniqid() . '.png';
+           // $fileName = uniqid() . '.png';
             
             $file = $ruta . $fileName;
             Storage::put($file, $image_base64);
