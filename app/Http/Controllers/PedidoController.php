@@ -771,7 +771,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         //$pedidos->foto = $request->get('foto');
 
        // if($request->hasFile('foto')){
-            
+        if($request->foto){
             $imagen = $request->foto;
            // $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
             $nombreimagen = uniqid() . '.png';
@@ -789,7 +789,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
 
             //$imagen->move($ruta,$nombreimagen);
 
-
+        }
             //$folderPath = "uploads/";
         /*
         $image_parts = explode(";base64,", $img);

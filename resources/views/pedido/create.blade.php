@@ -812,6 +812,8 @@ Webcam.set({
             $(".image-tag").val(data_uri);
             document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
         } );
+        div = document.getElementById('flotante');
+            div.style.display = 'none';
     }
 
 </script>
