@@ -486,10 +486,6 @@ No. de comprobante
 
 
 
-
-
-
-
 <div class="col-6" id="flotante" style="display:none;">
 
 <div class="input-group ">
