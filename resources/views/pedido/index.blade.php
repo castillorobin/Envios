@@ -184,9 +184,7 @@ input[type="date"]:valid::before {
 <div class="table-responsive">
 
 
-
 <br>
-
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
@@ -239,7 +237,7 @@ input[type="date"]:valid::before {
     <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
     <span hidden id="est{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estante}}</span>
     <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}}</span>
-    <span hidden id="fot{{ $pedidos[$i]->id }}">  /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot{{ $pedidos[$i]->id }}">  /storage/app/imgs/fotos/{{ $pedidos[$i]->foto}}</span>
     <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
     <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
 

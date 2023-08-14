@@ -1,12 +1,62 @@
 
 @extends('layouts.app')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+
 @section('content')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     
     
    
 <script>
+
+function mostrando()
+{
+  
+
+
+
+
+  //inicia archivo webcam
+
+  
+
+
+  // finalizo archivo webcam
+
+
+
+
+
+
+ 
+  
+
+
+
+
+
+
+
+
+
+  var checkbox = document.getElementById('check2');
+  if (checkbox.checked != true)
+  {
+    div = document.getElementById('flotante');
+            div.style.display = 'none';
+            div2 = document.getElementById('flotante2');
+            div2.style.display = 'none';
+            
+
+  }else{
+    div = document.getElementById('flotante');
+            div.style.display = '';
+            div2 = document.getElementById('flotante2');
+            div2.style.display = '';
+  }
+}
+
+
     function redireccionarPagina(){
     window.setTimeout( abrirURL, 2000 ); // 3 segundos
 };
@@ -635,22 +685,38 @@ $(document).ready(function() {
   <div class="row" style="background-color: white;">
     
       <label for="inputEmail3" class="col-sm-12 col-form-label">Fotos del paquete</label>
-<!--
-      <button id="start-camera">Usar cámara</button>
-<video id="video" width="320" height="240" autoplay></video>
-<button id="click-photo">Tomar Foto</button>
-<canvas id="canvas" width="320" height="240"></canvas>
--->
+
 <br/>
-<div class="col-md-6 ">
-                <div id="my_camera" ></div>
+
+
+<div class="form-group form-check col-md-12">
+&nbsp;  &nbsp;   &nbsp; <input type="checkbox" class="form-check-input" id="check2" Onclick="javascript:mostrando();">
+
+<label class="form-check-label" for="check2">Capturar Foto</label>
+</div>
+
+
+
+
+<div class="col-md-6 " id="flotante" style="display:none;">
+                <div id="my_camera"  ></div>
                 <br/>
                 <input type="button" value="Tomar foto" onClick="take_snapshot()" class="btn-success " style="margin-left: 200px;">
                 <input type="hidden" name="foto" class="image-tag">
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-6" id="flotante2" style="display:none;">
                 <div id="results">Esperando foto...</div>
             </div>
+
+            
+
+
+
+
+
+
+
 
 <br>
 <p></p>
