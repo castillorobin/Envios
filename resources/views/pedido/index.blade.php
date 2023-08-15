@@ -237,9 +237,9 @@ input[type="date"]:valid::before {
     <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
     <span hidden id="est{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estante}}</span>
     <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}}</span>
-    <span hidden id="fot{{ $pedidos[$i]->id }}">  /storage/app/imgs/fotos/{{ $pedidos[$i]->foto}}</span>
-    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
-    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
+    <span hidden id="fott{{ $pedidos[$i]->id }}"> /storage/{{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /storage/{{ $pedidos[$i]->foto2}}</span>
+    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /storage/{{ $pedidos[$i]->foto3}}</span>
 
     <td class="opciones text-center" style="">
     
@@ -334,14 +334,14 @@ input[type="date"]:valid::before {
                 <tr class="headt">
                     <td width="230px">Nombre de comercio / Tienda </td>
                     <td> <span ></span> <label for="" id="nombre"></label> </td>
-                    <td rowspan="15"><span ></span> <label for="" > </label> <img alt="" class=" img-thumbnail" id="fotos" width="250"> 
+                    <td rowspan="22"><span ></span> <img alt="Foto1" class=" img-thumbnail" id="fotoss" width="250">
                     <br> <img alt="" id="fotos2" width="250">
                     <br> <img alt="" id="fotos3" width="250"></td>
                 </tr>
 
                 <tr class="headt">
                     <td width="230px">Dirección </td>
-                    <td> <span ></span> <label for="" id="dire"></label> </td>
+                    <td> <span ></span> </td>
                     
                 </tr>
                 
@@ -538,7 +538,7 @@ $(document).ready(function(){
         var nota=$('#not'+id).text();
         var esta=$('#est'+id).text();
         var cobr=$('#cob'+id).text();
-        var foto=$('#fot'+id).text();
+        var fotoo=$('#fott'+id).text();
         var foto2=$('#fot2'+id).text();
         var foto3=$('#fot3'+id).text();
         //foti= '/imgs/fotos/';
@@ -566,15 +566,13 @@ $(document).ready(function(){
         $('#estan').text(esta);
         $('#cobro').text(cobr);
 
-        $('#empresa').text(empre);
-        $('#giro').text(gir);   
- 
-        $('#nrc').text(nr);
-        //$('#fotos').src(fot);
-        var ide = '/repartidor/imprimir/'+id ;
-		$('#fotos').attr("src", foto);
+
+        $('#fotoss').attr("src", fotoo);
         $('#fotos2').attr("src", foto2);
         $('#fotos3').attr("src", foto3);
+        //$('#fotos').src(fot);
+        var ide = '/repartidor/imprimir/'+id ;
+		
 
         //$('#impri a').prop("href", ide);
         //$('.paginacion a').prop('href','http://nuevaUrl.com');

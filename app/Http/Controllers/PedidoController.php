@@ -776,7 +776,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
            // $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
             $nombreimagen = uniqid() . '.png';
             $pedido->foto = $nombreimagen;
-            $ruta = "imgs/fotos/";
+            $ruta = "/";
             $image_parts = explode(";base64,", $imagen);
             $image_type_aux = explode("image/", $image_parts[0]);
             $image_type = $image_type_aux[1];
@@ -806,7 +806,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
             $imagen = $request->file("foto2");
             $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
             $pedido->foto2 = $nombreimagen;
-            $ruta = public_path("imgs/fotos/");
+            $ruta = public_path("/");
             $imagen->move($ruta,$nombreimagen);
 
         }
