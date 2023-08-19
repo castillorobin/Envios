@@ -40,6 +40,13 @@ text-align: left;
   background:#b2b2b2;
 }
 
+.grande{
+    margin-top: 50px;
+}
+.grande:hover{
+    width: 700px;
+}
+
 .opciones ul li ul {
   visibility: hidden;
   opacity: 0;
@@ -334,7 +341,7 @@ input[type="date"]:valid::before {
                 <tr class="headt">
                     <td width="230px">Nombre de comercio / Tienda </td>
                     <td> <span ></span> <label for="" id="nombre"></label> </td>
-                    <td rowspan="22"><span ></span> <img alt="Foto1" class=" img-thumbnail" id="fotoss" width="250">
+                    <td rowspan="22"><span ></span> <img alt="Foto1" class="grande " id="fotoss" width="250" > 
                     <br> <img alt="" id="fotos2" width="250">
                     <br> <img alt="" id="fotos3" width="250"></td>
                 </tr>
