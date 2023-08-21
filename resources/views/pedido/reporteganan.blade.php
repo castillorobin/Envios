@@ -263,16 +263,20 @@ ul li ul:hover {
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;">
         
-<tr>
-        <th style="color: #fff;">Dia</th>
-        <th style="color: #fff;">Personalizado</th>
-        <th style="color: #fff;">Punto Fijo</th>
-        
-        <th style="color: #fff;">Casillero</th>
-        <th style="color: #fff;">Casillero Departamental</th>
-        
-        
-       
+<tr >
+        <th>*</th>
+        <th style="color: #fff;">Comercio</th>
+        <th style="color: #fff;">Destinatario</th>
+        <th style="color: #fff;">Dirección</th>
+        <th style="color: #fff;">Tipo</th>
+        <th style="color: #fff;">Estado del envio</th>
+        <th style="color: #fff;">Fecha de entrega</th>
+        <th style="color: #fff;">Estado del pago</th>
+        <th style="color: #fff;">Precio del paquete</th>
+        <th style="color: #fff;">Precio del envio</th>
+        <th style="color: #fff;">Total</th>
+        <th style="color: #fff;">Agencia</th>
+        <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
 <tbody>
