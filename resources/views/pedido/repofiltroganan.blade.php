@@ -12,7 +12,7 @@
              
         </div>
         </div>
-        <div class="section-body">
+        <div class="section-body"> 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card"> 
@@ -236,6 +236,9 @@ ul li ul:hover {
                         </td>
                     </tr>
                 </table>
+
+
+
             <div >
 
 
@@ -255,78 +258,196 @@ ul li ul:hover {
 
 <br>
 <table id="tpedido" class="table table-striped mt-2">
+
 <thead style="background-color:#6777ef;">
-        <tr>
-<th style="color: #fff;">Dia</th>
-        <th style="color: #fff;">Personalizado</th>
-        <th style="color: #fff;">Personalizado Departamental</th>
-        <th style="color: #fff;">Punto Fijo</th>
-        
-        <th style="color: #fff;">Casillero</th>
-        
-  
-        
-        
+
+<tr >
+        <th>*</th>
+        <th style="color: #fff;">Comercio</th>
+        <th style="color: #fff;">Destinatario</th>
+        <th style="color: #fff;">Dirección</th>
+        <th style="color: #fff;">Tipo</th>
+        <th style="color: #fff;">Estado del envio</th>
+        <th style="color: #fff;">Fecha de entrega</th>
+        <th style="color: #fff;">Estado del pago</th>
+        <th style="color: #fff;">Precio del paquete</th>
+        <th style="color: #fff;">Precio del envio</th>
+        <th style="color: #fff;">Total</th>
+        <th style="color: #fff;">Agencia</th>
+        <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
-<tbody>
-   
-@for ($i=0; $i< count($pedidos); $i++)
-    <tr >
-        
-    
-    <td style="font-weight: bolder; color: #484f55;">
-    
-    <input hidden type="text" value=" {{$fecha= $pedidos[$i]->fecha_entrega}}">
-    
-    
-    <input hidden type="text" value=" {{ $fechaa = strtotime($pedidos[$i]->fecha_entrega)}}">
-    
-   
-    {{ strftime('%A %e de %B de %Y', $fechaa)}}
-    </td>
-    <td style="font-weight: bolder; color: #484f55;">
-    
-    @if($pedidos[$i]->sumap>0)
-    {{ $pedidos[$i]->sumap }}
-    @else
-    0
-    @endif
-</td>
+<tbody> 
+</tbody> 
+@for($i=0;  $i< count($pedidos); $i++ )
+<tr>
+                    <td >
+                    <div class="form-group form-check" style="width: 5px;">
+                     <input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" >
+                     
+                    </div>
+                    </td>
+                    <td>{{ $pedidos[$i]->vendedor }} </td>
+                    <td>{{ $pedidos[$i]->destinatario }} </td>
+                    <td>{{ $pedidos[$i]->direccion }} </td>
+                    <td>{{ $pedidos[$i]->tipo }}</td>  
+                    <td>{{ $pedidos[$i]->estado }} </td>
+                    <td>{{ $pedidos[$i]->fecha_entrega }} </td>
 
-<td>  
-    @if($pedidos[$i]->sumacd>0)
-    {{ $pedidos[$i]->sumacd }}
-    @else
-    0
-    @endif
-    </td>
-    <td>  
-    @if($pedidos[$i]->sumapf>0)
-    {{ $pedidos[$i]->sumapf}}
-    @else
-    0
-    @endif
-    </td>
-   
-        
-    <td>  
-    @if($pedidos[$i]->sumac>0)
-    {{ $pedidos[$i]->sumac }}
-    @else
-    0
-    @endif
-    </td>
+                    @if($pedidos[$i]->pagado=='Pagado')
+                    <td class="text-center"><h5><span class="badge badge-success ">{{ $pedidos[$i]->pagado }} </span></h5></td>
+                    @else
+                    <td class="text-center"><h5><span class="badge badge-danger ">{{ $pedidos[$i]->pagado }} </span></h5></td>
+                    @endif
 
-   
+                   
+                    <td>{{ $pedidos[$i]->precio }}  </td>
+                    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+                    <td>{{ $pedidos[$i]->envio }} </td>
+                    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
+                    <td>{{ $pedidos[$i]->total }} </td>
+                    <td>{{ $pedidos[$i]->agencia }} </td>
+                    
+    <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
+    <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
+    <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
+    <span hidden id="dir{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->direccion}}</span>
+    <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
+    <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
+    <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
+    <span hidden id="este{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estado}}</span>
+    <span hidden id="estp{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->pagado}}</span>
+    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
+    <span hidden id="tot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->total}}</span>
+    <span hidden id="ing{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ingresado}}</span>
+    <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
+    <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
+    <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
+    <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}} </span>
+    <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
+    <span hidden id="med{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->medio}}</span>
+    <span hidden id="fot{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto}}</span>
+    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto2}}</span>
+    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /imgs/fotos/{{ $pedidos[$i]->foto3}}</span>
     
-        
+
+
+                    <td class="opciones text-center" style="">
+    
   
+  
+ 
+    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+
+    <i class="fas fa-list"></i></a>
+    <ul class="dropdown-menu" style="background-color: #ffffff;"> 
+    @can('editar-rol')
+     <div class="botones"> 
+
+    <li class="botones">
+    &nbsp;
+    <i class="fas fa-edit"></i>
+    &nbsp;&nbsp;
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" >Editar</a></li> 
+    </div>  
+    @endcan
+	<li class="botones">
    
-   
+    &nbsp;
+    <i class="fas fa-eye"></i>
+    &nbsp;&nbsp;
+    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal2" style="background: none; border: 0;">Ver</button>
+
+</li>
+@can('crear-rol')
+<li class="botones">
+    <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        &nbsp;
+        <i class="fas fa-trash-alt"></i> 
+        &nbsp;&nbsp;
+        <button style="background: none; border: 0;">Eliminar</button>
+        </form>
+        </li>
+        @endcan
+    </ul>
+ 
+  <!--
+ <a class="btn btn-info" href="{{ route('pedidos.edit', $pedidos[$i]->id) }}">Editar</a>
+
+
+ <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-danger">Eliminar</button>
+        </form>
+
+-->
+
+    </td>
+
+
+
+
+                    </tr>
+                        @endfor
+<tr>
+<td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ></td>
+</tr>
+
+
+
+<tr class="text-center" style="background-color:#6777ef; height:5px;">
     
-</tr >
-    @endfor
+    <td style="color: #fff; height:5px;" colspan="2">CANTIDAD</td>
+    <td style="color: #fff; height:5px;"> </td>
+    <td  style="color: #fff; height:5px;"></td>
+    <td  style="color: #fff; height:5px;" > </td>
+    <td  style="color: #fff; height:5px;" ></td>
+    <td  style="color: #fff; height:5px;" ></td>
+    <td style="color: #fff; height:5px;"></td>
+    <td style="color: #fff; height:5px;">TOTAL PRECIO</td>
+    <td style="color: #fff; height:5px;">TOTAL ENVIO</td>
+    <td style="color: #fff; height:5px;">TOTAL</td>
+    <td style="color: #fff; height:5px;"></td>
+    <td style="color: #fff; height:5px;"></td>
+    
+    
+    
+     
+    
+   
+</tr>
+
+<tr class="text-center">    
+<td colspan="2"><label for="" id="sumas"></label></td>
+    <td><label for="" id="ivat"></label></td>
+    <td > <label for="" id="stotal"></label></td>
+    <td  ></td>
+    <td  ></td>
+    <td  ><label for="" id="atotal"></label></td>
+    <td >  </td>
+    <td> </td>
+   <td></td>
+   <td></td>
+   <td></td>
+   <td></td>
+
+</tr>
 </tbody>
 </table>
 

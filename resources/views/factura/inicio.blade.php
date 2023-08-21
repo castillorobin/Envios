@@ -168,6 +168,7 @@ function abrirURL(){
 <div class="col-12 table-responsive " style="height:700px; " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
+
     <tr >
         <th>*</th>
         <th style="color: #fff;">Comercio</th>
@@ -361,7 +362,7 @@ function abrirURL(){
     &nbsp;
     <p></p>
     </div>
-
+ 
                 </div> <!-- Termina columna 12 -->
      
                 </div>  <!-- Termina columna 8  -->
