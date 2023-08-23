@@ -142,7 +142,7 @@ ul li ul:hover {
     <form action="/reportes/gananfiltro" method="get">
             <div class="">
                 <table>
-                    <tr>
+                <tr>
                         <td style="width:400px;">
                         <div class="col-sm-12 ">
        
@@ -151,7 +151,7 @@ ul li ul:hover {
             
             <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
           </div>
-          <input type="date" id="fecha1" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+          <input type="date" id="fecha" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
           <br>
         
             
@@ -159,7 +159,7 @@ ul li ul:hover {
       </div>
                         </td>
                         <td> 
-                            <!-- estado del envio -->
+                             <!-- estado del envio -->
     <div class="col-12">
       
       <div class="input-group">
@@ -187,13 +187,30 @@ ul li ul:hover {
         </select>
          
       </div>
-  </div>
+    </div>
+                             
                         </td>
                         <td>
-                            
+                        <div class="col-sm-12 ">
+        
+    <div class="input-group">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+          </div>
+          <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+            <option value="repartidor">Repartidor</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        </div>
+    </div>
                         </td>
                         <td>
    
+
                         </td>
                     </tr>
                     <tr>
@@ -202,7 +219,7 @@ ul li ul:hover {
                                                      <!-- hasta-->
                                                      <div class="col-sm-12 ">
        
-       <div class="input-group ">Hasta: &nbsp;  &nbsp;
+    <div class="input-group ">Hasta: &nbsp;  &nbsp;
          <div class="input-group-prepend">
            
            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
@@ -212,11 +229,37 @@ ul li ul:hover {
        
            
        </div>
-     </div>
+    </div>
                         </td>
                         <td>
                             <br>
-                            
+                            <!-- estado del tipo -->
+   
+    <div class="col-12">
+        
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
+          </div>
+          <select id="tenvio" name="tenvio" class="form-control" tabindex="7">
+          <option value="tipor">Tipo de envio</option>
+            <option value="Personalizado">Personalizado</option>
+            <option value="Personalizado departamental">Personalizado departamental</option>
+            <option value="Punto fijo">Punto fijo</option>
+            <option value="Casillero departamental">Casillero departamental</option>
+            <option value="Casillero San Salvador">Casillero San Salvador</option>
+            <option value="Casillero San Miguel">Casillero San Miguel</option>
+            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+            <option value="Casillero centro logístico">Casillero centro logístico</option>
+          </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
+        </div>
+      </div>                                      
+    
+    </div>
+ 
+                           
                         </td>
                         <td>
                             <br>
