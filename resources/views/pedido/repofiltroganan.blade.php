@@ -242,8 +242,8 @@ ul li ul:hover {
           <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
           </div>
-          <select id="tenvio" name="tenvio" class="form-control" tabindex="7">
-          <option value="tipor">Tipo de envio</option>
+          <select id="tipo" name="tipo" class="form-control" tabindex="7">
+          <option value="tipo">Tipo de envio</option>
             <option value="Personalizado">Personalizado</option>
             <option value="Personalizado departamental">Personalizado departamental</option>
             <option value="Punto fijo">Punto fijo</option>

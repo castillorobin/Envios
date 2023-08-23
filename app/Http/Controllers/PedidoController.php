@@ -165,6 +165,28 @@ class PedidoController extends Controller
         $tprecio = 0;
         $tenvio = 0;
         $total = 0;
+
+        $estado = $request->get('estado');
+        if($estado != "estado"){
+
+            
+            $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
+
+        }
+        $tipo = $request->get('tipo');
+        if($tipo!="tipo"){
+            $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
+        }
+
+        $repartidor = $request->get('repartidor');
+        if($repartidor!="repartidor"){
+            $pedidos = $pedidos->intersect(Pedido::whereIn('repartidor', [$repartidor])->get());
+           
+        }
+
+
+
+
         foreach($pedidos as $pedido){
             $cantidad =  $cantidad +1;
             $tprecio = $tprecio + $pedido->precio;
@@ -180,7 +202,7 @@ class PedidoController extends Controller
     }
 
     public function reportegananciaf(Request $request)
-    {
+{
 
         $pedidosga = Filtroganan::all();
         foreach($pedidosga as $ganancia){
@@ -237,12 +259,10 @@ class PedidoController extends Controller
        $repartidores = Repartidor::all();
         return view('pedido.repofiltroganan', compact('pedidos','repartidores'));
 
-    }
+}
 
-
-    
     public function reportecobrof(Request $request)
-    {
+{
 
         $pedidosga = Filtroganan::all();
         foreach($pedidosga as $ganancia){
@@ -299,14 +319,10 @@ class PedidoController extends Controller
        $repartidores = Repartidor::all();
         return view('pedido.repofiltrocobro', compact('pedidos','repartidores'));
 
-    }
-
-
-
-
+}
 
     public function reporteganancia()
-    {
+{
         $pedidosga = Filtroganan::all();
        foreach($pedidosga as $ganancia){
         $ganancia->delete();
@@ -319,7 +335,7 @@ class PedidoController extends Controller
 
         
 
-    }
+}
     public function reportecobros()
     {
 
