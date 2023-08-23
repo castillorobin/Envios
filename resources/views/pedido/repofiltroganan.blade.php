@@ -262,7 +262,7 @@ ul li ul:hover {
 <thead style="background-color:#6777ef;">
 
 <tr >
-        <th>*</th>
+        
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Dirección</th>
@@ -278,15 +278,10 @@ ul li ul:hover {
     </tr>
 </thead>
 <tbody> 
-</tbody> 
+
 @for($i=0;  $i< count($pedidos); $i++ )
 <tr>
-                    <td >
-                    <div class="form-group form-check" style="width: 5px;">
-                     <input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" >
-                     
-                    </div>
-                    </td>
+                    
                     <td>{{ $pedidos[$i]->vendedor }} </td>
                     <td>{{ $pedidos[$i]->destinatario }} </td>
                     <td>{{ $pedidos[$i]->direccion }} </td>
@@ -393,6 +388,7 @@ ul li ul:hover {
 
                     </tr>
                         @endfor
+                        </tbody>
 <tr>
 <td  ></td>
     <td  ></td>
@@ -419,10 +415,10 @@ ul li ul:hover {
     <td  style="color: #fff; height:5px;" > </td>
     <td  style="color: #fff; height:5px;" ></td>
     <td  style="color: #fff; height:5px;" ></td>
-    <td style="color: #fff; height:5px;"></td>
     <td style="color: #fff; height:5px;">TOTAL PRECIO</td>
     <td style="color: #fff; height:5px;">TOTAL ENVIO</td>
     <td style="color: #fff; height:5px;">TOTAL</td>
+    <td style="color: #fff; height:5px;"></td>
     <td style="color: #fff; height:5px;"></td>
     <td style="color: #fff; height:5px;"></td>
     
@@ -434,21 +430,21 @@ ul li ul:hover {
 </tr>
 
 <tr class="text-center">    
-<td colspan="2"><label for="" id="sumas"></label></td>
+<td colspan="2"><label for="" id="sumas">{{ $cantidad}}</label></td>
     <td><label for="" id="ivat"></label></td>
     <td > <label for="" id="stotal"></label></td>
     <td  ></td>
     <td  ></td>
     <td  ><label for="" id="atotal"></label></td>
-    <td >  </td>
-    <td> </td>
-   <td></td>
+    <td > {{ $tprecio}}  </td>
+    <td>{{ $tenvio}}</td>
+   <td>{{ $total}}</td>
    <td></td>
    <td></td>
    <td></td>
 
 </tr>
-</tbody>
+
 </table>
 
 

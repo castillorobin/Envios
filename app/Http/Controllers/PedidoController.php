@@ -153,7 +153,31 @@ class PedidoController extends Controller
         
 
     }
+    public function reportegananciaff(Request $request)
+    {
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
+        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
+      
+        ->get();
+        $cantidad = 0;
+        $tprecio = 0;
+        $tenvio = 0;
+        $total = 0;
+        foreach($pedidos as $pedido){
+            $cantidad =  $cantidad +1;
+            $tprecio = $tprecio + $pedido->precio;
+            $tenvio = $tenvio + $pedido->envio;
+            $total = $total + $pedido->total;
+        }
 
+        $repartidores = Repartidor::all();
+        return view('pedido.repofiltroganan', compact('pedidos','repartidores', 'cantidad', 'tprecio','tenvio', 'total'));
+
+        
+
+    }
 
     public function reportegananciaf(Request $request)
     {
