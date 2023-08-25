@@ -19,12 +19,16 @@
     text-align: center;
 }
 
+
+
+
     </style>
+    {{date_default_timezone_set('America/El_Salvador') }}
     <div>
  <img src="../public/img/logo.jpg" alt="" width="10%">
             <h3 class="page__heading">Melo Express</h3>
             <div style="width:100%; text-align: right; " >
-   Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ now()->Format('h:i A')}}
+   Fechaaaa: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}}
   
    </div>
         </div>
