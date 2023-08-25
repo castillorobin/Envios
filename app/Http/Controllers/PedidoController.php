@@ -805,6 +805,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedido->servicio = $request->get('servicio');
         $pedido->tipo = $request->get('tenvio');
         $pedido->nota = $request->get('nota');
+        $pedido->cobroenvio = $request->get('cenvio');
         $pedido->ingresado = $request->get('ingresado');
         $pedido->agencia = $request->get('agencia');
         $pedido->repartidor = $request->get('repartidor');
