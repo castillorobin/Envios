@@ -484,6 +484,7 @@ $(document).ready(function() {
             <option value="Agencia San Salvador">Agencia San Salvador</option>
             <option value="Agencia San Miguel">Agencia San Miguel</option>
             <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+            <option value="No retirado">No retirado</option>
             <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
             <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
             <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
