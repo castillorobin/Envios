@@ -403,7 +403,7 @@ ul li ul:hover {
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
+    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><span style="background: none; border: 0;">Editar</span></a></li> 
     @endcan
     </div>  
 	<li class="botones">
