@@ -98,23 +98,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         top: 0;
         width: auto;
     }
-
-    input[type="date"]::before {
-	color: #999999;
-	content: attr(placeholder);
-}
-input[type="date"] {
-	color: #ffffff;
-}
-input[type="date"]:focus,
-input[type="date"]:valid {
-	color: #666666;
-}
-input[type="date"]:focus::before,
-input[type="date"]:valid::before {
-	content: "" !important;
-}
-
 .select2-selection{
   height: 35px !important;
  
@@ -390,7 +373,7 @@ $(document).ready(function() {
               <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
               </div>
-              <input type="date" id="fentrega" name="fentrega" tabindex="5" class="form-control" value="2017-11-31" aria-label="Username" aria-describedby="basic-addon1" required>
+              <input type="date" id="fentrega" name="fentrega" tabindex="5" class="form-control" value="{{ now()->Format('Y-m-d') }}" aria-label="Username" aria-describedby="basic-addon1" required>
               <div class="invalid-feedback">Este campo es obligatorio.</div> 
               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>                                       
             </div>
