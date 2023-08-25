@@ -720,10 +720,10 @@ $(document).ready(function() {
 <br>
 <p></p>
       <div class="col-sm-6" style="margin-top: 50px;">
-      <input type="file" name="foto2" class="form-control" tabindex="19">
+      <input type="file" name="foto2" class="form-control" >
       </div>
       <div class="col-sm-6" style="margin-top: 50px;">
-      <input type="file" name="foto3" class="form-control" tabindex="20">
+      <input type="file" name="foto3" class="form-control" >
       </div>
       
       <br>
@@ -746,7 +746,7 @@ $(document).ready(function() {
 -->
 <a href="/pedidos/create" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" tabindex="19">Guardar</button>
         <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank"><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
     </div>
 
