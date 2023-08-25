@@ -357,6 +357,7 @@ class PedidoController extends Controller
         $total= 0;
         $cant=0;
         $tenvi=0;
+        $cobrado=0;
 
         $checked = $request->input('checked');
         if($request->input('checked')){
@@ -364,12 +365,13 @@ class PedidoController extends Controller
         }
         $pedidos = Pedido::query()->find($checked);
         foreach($pedidos as $suma){
+            $cobrado = $cobrado + $suma->precio;
             $total = $total + $suma->total;
             $tenvi = $tenvi + $suma->envio;
             $cant = $cant + 1;
         }
 
-        $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
+        $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi, 'cobrado'=>$cobrado]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
         

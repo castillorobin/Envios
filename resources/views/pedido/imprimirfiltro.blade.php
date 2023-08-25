@@ -104,8 +104,11 @@
 
    <tr  >
    <td>&nbsp;</td>
-       
-       <td >  Total Cobrado:  ${{ $total }} 
+   
+       <td >  
+       Total Cobrado:  ${{ $cobrado }} 
+       <br>
+       Total sin envio:  ${{ $total }} 
         <br>
         Total de Envio: ${{ $tenvi }} 
        </td>
