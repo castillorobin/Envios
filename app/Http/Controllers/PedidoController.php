@@ -26,7 +26,8 @@ class PedidoController extends Controller
     public function index()
     {
         $pedidos = Pedido::all();
-       // $repartidores = Repartidor::all();
+        $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+               // $repartidores = Repartidor::all();
         return view('pedido.index', compact('pedidos'));
 
 
