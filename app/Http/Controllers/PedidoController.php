@@ -466,11 +466,7 @@ class PedidoController extends Controller
         }
 
 */
-
-
-
-
-        
+       
 
     }
     
@@ -886,7 +882,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pdf->setPaper($customPaper, 'landscape');
         return $pdf->stream();
         }else{
-            return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
+            return view('/pedido/create')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
         }
 
         
