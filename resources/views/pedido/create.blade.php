@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{date_default_timezone_set('America/El_Salvador') }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
     
@@ -351,16 +352,16 @@ $(document).ready(function() {
   <div class="col-12">
     <div class="row " style="background-color: white; ">
 
-      
+    
         <div class="col-6 ">
           <label for="" class="col-sm-6 col-form-label">Fecha de creacion</label>
 
           <div class="input-group ">
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-            </div>
-  
-            <input type="text" class="form-control" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+            </div> 
+           
+            <input type="text" class="form-control" value="{{ date('d/m/Y h:i:s') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
             <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   
           </div>
         
