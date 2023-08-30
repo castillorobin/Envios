@@ -600,8 +600,9 @@ class PedidoController extends Controller
     public function estado()
     {
         
-        $pedidos = Pedido::all();
+        //$pedidos = Pedido::all();
        // $repartidores = Repartidor::all();
+       $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
         return view('pedido.repartir', compact('pedidos'));
 
 
