@@ -25,7 +25,7 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::all();
+        //$pedidos = Pedido::all();
         $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
                // $repartidores = Repartidor::all();
         return view('pedido.index', compact('pedidos'));
@@ -1003,9 +1003,10 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $date = strftime("%A %d de %B %Y");
         $vendedores = Vendedor::all();
         $repartidores = Repartidor::all();
-        $pedidos = Pedido::all();
-        //return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
-        return view('pedido.index', compact('pedidos'));
+        //$pedidos = Pedido::all();
+        $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
+        //return view('pedido.index', compact('pedidos'));
     }
 
     /**
