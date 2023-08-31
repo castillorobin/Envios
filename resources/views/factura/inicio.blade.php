@@ -300,7 +300,7 @@ function abrirURL(){
 </div>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12 table-responsive " style="height:600px; " ><!-- div tabla  -->
+<div class="col-12 table-responsive " style="height:400px; " ><!-- div tabla  -->
 
 
 
@@ -339,7 +339,7 @@ function abrirURL(){
                     <td>{{ $pedidos[$i]->direccion }} </td>
                     <td>{{ $pedidos[$i]->tipo }}</td>  
                     <td style="background: #e3e8e7; text-align:center; font-size: 15px;"><span class="badge badge-dark">{{ $pedidos[$i]->estado }} </span></td>
-                    <td>{{ $pedidos[$i]->fecha_entrega }} </td>
+                    <td>{{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}} </td>
 
                     @if($pedidos[$i]->pagado=='Pagado')
                     <td class="text-center"><h5><span class="badge badge-success ">{{ $pedidos[$i]->pagado }} </span></h5></td>
