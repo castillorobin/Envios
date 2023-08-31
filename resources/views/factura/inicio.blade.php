@@ -316,6 +316,7 @@ Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
         <th style="color: #fff;">Precio del envio</th>
         <th style="color: #fff;">Total</th>
         <th style="color: #fff;">Agencia</th>
+        <th style="color: #fff;">Nota</th>
         <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
@@ -349,7 +350,7 @@ Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
                     <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
                     <td>{{ $pedidos[$i]->total }} </td>
                     <td>{{ $pedidos[$i]->agencia }} </td>
-                    
+                    <td>{{ $pedidos[$i]->nota }} </td>
     <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
     <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
     <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
