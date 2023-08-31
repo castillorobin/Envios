@@ -1097,7 +1097,7 @@ document.getElementById("toti").value = final;
          }
      },
  
-         dom: '<"cambiar" f><"cambiar2"l>tri',
+         //dom: '<"cambiar" f><"cambiar2"l>tri',
          
          
         
