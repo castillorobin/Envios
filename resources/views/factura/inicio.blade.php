@@ -213,7 +213,7 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
    //document.getElementById('mostrar').value = data.text;
-    window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
+   window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
@@ -239,8 +239,8 @@ jQuery(document).ready(function($){
     
 function abrirURL(){
     //Abrir URL que necesites
-    //window.location = "http://127.0.0.1:8000/facturas/";
-    window.location = "https://appmeloexpress.com/facturas/";
+    window.location = "http://127.0.0.1:8000/facturas/";
+    //window.location = "https://appmeloexpress.com/facturas/";
 };
 </script>
     <section class="section">
@@ -294,11 +294,15 @@ function abrirURL(){
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  Pagar
 </button>
+<div style="float:right;">
+
+<input id="searchTerm" class="form-control" placeholder="Buscar" type="text" onkeyup="doSearch()" />
+</div>
                 </div> <!-- Termina div filtros  -->
 
 <div class="col-12 table-responsive " style="height:600px; " ><!-- div tabla  -->
 
-Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
+
 
 <table id="datos" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;"> 
