@@ -213,7 +213,7 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
    //document.getElementById('mostrar').value = data.text;
-   window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
+    window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
@@ -392,7 +392,7 @@ Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
     &nbsp;
     <i class="fas fa-edit"></i>
     &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" >Editar</a></li> 
+    <a href="/pedido/editando/{{ $pedidos[$i]->id }}" >Editar</a></li> 
     </div>  
     @endcan
 	<li class="botones">

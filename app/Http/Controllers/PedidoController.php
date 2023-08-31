@@ -915,6 +915,13 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedido = Pedido::find($id);
         return view('pedido.edit')->with(['pedido'=>$pedido, 'vendedores'=>$vendedores, 'repartidores'=>$repartidores]);
     }
+    public function editando($id)
+    {
+        $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
+        $pedido = Pedido::find($id);
+        return view('pedido.editarlo')->with(['pedido'=>$pedido, 'vendedores'=>$vendedores, 'repartidores'=>$repartidores]);
+    }
  
     /**
      * Update the specified resource in storage.
@@ -1007,6 +1014,94 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         //$pedidos = Pedido::all();
         $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
         return view('/pedido/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf]);
+        //return view('pedido.index', compact('pedidos'));
+    }
+
+    public function editarlo(Request $request, $id)
+    {
+        $last = Pedido::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        $pedido = Pedido::find($id);
+        $rutaf='seleccionar';
+        $pedidof='1970-01-01';
+        $repaf='';
+        $pedido->vendedor = $request->get('comer');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
+        $pedido->precio = $request->get('precio');
+        $pedido->envio = $request->get('envio');
+        $pedido->cobroenvio = $request->get('cenvio');
+        $pedido->total = $request->get('total');
+        $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
+        $pedido->nota = $request->get('nota');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        $pedido->estante = $request->get('estante');
+      
+
+        if($request->hasFile('foto')){
+           
+            if($pedido->foto==''){
+                $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $pedido->foto = $nombreimagen;
+            $ruta = public_path("imgs/fotos/");
+            $imagen->move($ruta,$nombreimagen);
+            }elseif($pedido->foto2==''){
+                $imagen = $request->file("foto");
+                $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+                $pedido->foto2 = $nombreimagen;
+                $ruta = public_path("imgs/fotos/");
+                $imagen->move($ruta,$nombreimagen);
+            }elseif($pedido->foto3==''){
+                $imagen = $request->file("foto");
+                $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+                $pedido->foto3 = $nombreimagen;
+                $ruta = public_path("imgs/fotos/");
+                $imagen->move($ruta,$nombreimagen);
+            }elseif($pedido->foto4==''){
+                $imagen = $request->file("foto");
+                $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+                $pedido->foto4 = $nombreimagen;
+                $ruta = public_path("imgs/fotos/");
+                $imagen->move($ruta,$nombreimagen);
+            }
+            
+            
+            
+            
+
+        }
+
+
+
+
+
+        $pedido->save();
+  
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        $vendedores = Vendedor::all();
+        //$repartidores = Repartidor::all();
+        //$pedidos = Pedido::all();
+        $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        $nota=" ";
+        return view('/factura/index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'nota'=>$nota]);
         //return view('pedido.index', compact('pedidos'));
     }
 
