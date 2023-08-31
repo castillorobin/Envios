@@ -1,6 +1,102 @@
 @extends('layouts.app')
 
+
+
 @section('content')
+<script>
+        function doSearch()
+
+{
+
+    const tableReg = document.getElementById('datos');
+
+    const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+    let total = 0;
+
+
+
+    // Recorremos todas las filas con contenido de la tabla
+
+    for (let i = 1; i < tableReg.rows.length; i++) {
+
+        // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+        if (tableReg.rows[i].classList.contains("noSearch")) {
+
+            continue;
+
+        }
+
+
+
+        let found = false;
+
+        const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+        // Recorremos todas las celdas
+
+        for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+            const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+            // Buscamos el texto en el contenido de la celda
+
+            if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+                found = true;
+
+                total++;
+
+            }
+
+        }
+
+        if (found) {
+
+            tableReg.rows[i].style.display = '';
+
+        } else {
+
+            // si no ha encontrado ninguna coincidencia, esconde la
+
+            // fila de la tabla
+
+            tableReg.rows[i].style.display = 'none';
+
+        }
+
+    }
+
+
+
+    // mostramos las coincidencias
+
+    const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+    const td=lastTR.querySelector("td");
+
+    lastTR.classList.remove("hide", "red");
+
+    if (searchText == "") {
+
+        lastTR.classList.add("hide");
+
+    } else if (total) {
+
+        td.innerHTML="Se ha encontrado "+total+" coincidencia"+((total>1)?"s":"");
+
+    } else {
+
+        lastTR.classList.add("red");
+
+        td.innerHTML="No se han encontrado coincidencias";
+
+    }
+
+}
+</script>
+
 <style>
     .modal-backdrop {
   z-index: 0;
@@ -46,6 +142,8 @@
  font-size: 14px;
  background: #ffffff;
 }
+
+
 </style>
 <script languague="javascript">
        
@@ -198,8 +296,11 @@ function abrirURL(){
 </button>
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12 table-responsive " style="height:700px; " > <!-- div tabla  -->
-<table id="tvendedor" class="table table-striped " style="  ">
+<div class="col-12 table-responsive " style="height:600px; " ><!-- div tabla  -->
+
+Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
+
+<table id="datos" class="table table-striped mt-2">
 <thead style="background-color:#6777ef;"> 
 
     <tr >
@@ -381,6 +482,11 @@ function abrirURL(){
    <td></td>
 
 </tr>
+<tr class='noSearch hide'>
+
+                <td colspan="13"></td>
+
+            </tr>
 
 
 </table>
@@ -912,7 +1018,18 @@ Nota de descuento
             </div>
         </div>
     </section>    
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    
+
+               
+
+
+
+
+
+    
          <script>
         
 $(document).ready(function(){
@@ -1060,54 +1177,9 @@ document.getElementById("toti").value = final;
            });
        });
         
-       
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
+      </script>
 
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
 
-             
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js" defer></script>
-       
-       
-<script>
-         
-         $(document).ready(function () {
-     $('#tvendedor').DataTable(
-         {
-            
-             language: {
-         "decimal": "",
-         "emptyTable": "No hay información",
-         "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-         "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-         "infoPostFix": "",
-         "thousands": ",",
-         "lengthMenu": "Mostrar _MENU_ Entradas",
-         "loadingRecords": "Cargando...",
-         "processing": "Procesando...",
-         "search": "Buscar:",
-         "zeroRecords": "Sin resultados encontrados",
-         "paginate": {
-             "first": "Primero",
-             "last": "Ultimo",
-             "next": "Siguiente",
-             "previous": "Anterior"
-         }
-     },
- 
-         //dom: '<"cambiar" f><"cambiar2"l>tri',
-         
-         
-        
-        
- 
-         } 
-     );
- }); 
-     </script>
-       
-       
-           </script>
+
+           
 @endsection
