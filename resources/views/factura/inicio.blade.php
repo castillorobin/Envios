@@ -450,9 +450,19 @@ Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
     <td  ></td>
     <td  ></td>
 </tr>
+<tr class='noSearch hide'>
+
+                <td colspan="13"></td>
+
+            </tr>
 
 
 
+
+</table>
+
+<table class="table table-striped mt-2">
+    
 <tr class="text-center" style="background-color:#6777ef; height:5px;">
     
     <td style="color: #fff; height:5px;" colspan="2">SUMAS</td>
@@ -470,6 +480,8 @@ Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
    
 </tr>
 
+
+
 <tr class="text-center">    
 <td colspan="2">$<label for="" id="sumas">0</label></td>
     <td>$<label for="" id="ivat">0</label></td>
@@ -482,12 +494,6 @@ Buscar: <input id="searchTerm" type="text" onkeyup="doSearch()" />
    <td></td>
 
 </tr>
-<tr class='noSearch hide'>
-
-                <td colspan="13"></td>
-
-            </tr>
-
 
 </table>
 
