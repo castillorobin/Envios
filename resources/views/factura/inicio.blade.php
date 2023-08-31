@@ -338,7 +338,7 @@ function abrirURL(){
                     <td>{{ $pedidos[$i]->destinatario }} </td>
                     <td>{{ $pedidos[$i]->direccion }} </td>
                     <td>{{ $pedidos[$i]->tipo }}</td>  
-                    <td style="background: #e3e8e7; text-align:center;"><h6><span class="badge badge-dark">{{ $pedidos[$i]->estado }} </span></h6></td>
+                    <td style="background: #e3e8e7; text-align:center; font-size: 15px;"><span class="badge badge-dark">{{ $pedidos[$i]->estado }} </span></td>
                     <td>{{ $pedidos[$i]->fecha_entrega }} </td>
 
                     @if($pedidos[$i]->pagado=='Pagado')
