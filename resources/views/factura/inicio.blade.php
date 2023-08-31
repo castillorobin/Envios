@@ -6,6 +6,39 @@
   z-index: 0;
 }
 
+.cambiar {
+   
+   float: left;
+     
+   }
+
+.cambiar2 {
+   float: right;
+   margin-right: 20px;
+ 
+}
+
+.pagina1{
+   margin-bottom: 30px;
+   margin-top: -30px;
+   
+}
+.pagina2{
+   
+   margin-bottom: -25px;
+   padding-top: 10px;
+   
+}
+.pagina3{
+   margin-bottom: 0px;
+   margin-top: 0px;
+   
+}
+.dataTables_paginate a:hover {
+   color: white !important;
+   background:#0d6efd !important;
+   
+}
 
 .headt td {
   height: 15px !important;
@@ -1028,9 +1061,52 @@ document.getElementById("toti").value = final;
        });
         
        
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
+
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
+
+             
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
+<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js" defer></script>
        
        
-       
+<script>
+         
+         $(document).ready(function () {
+     $('#tvendedor').DataTable(
+         {
+            
+             language: {
+         "decimal": "",
+         "emptyTable": "No hay información",
+         "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+         "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+         "infoPostFix": "",
+         "thousands": ",",
+         "lengthMenu": "Mostrar _MENU_ Entradas",
+         "loadingRecords": "Cargando...",
+         "processing": "Procesando...",
+         "search": "Buscar:",
+         "zeroRecords": "Sin resultados encontrados",
+         "paginate": {
+             "first": "Primero",
+             "last": "Ultimo",
+             "next": "Siguiente",
+             "previous": "Anterior"
+         }
+     },
+ 
+         dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+         
+         
+        
+        
+ 
+         } 
+     );
+ }); 
+     </script>
        
        
            </script>
