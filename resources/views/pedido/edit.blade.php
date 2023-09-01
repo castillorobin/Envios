@@ -379,7 +379,7 @@ if(preci3=="Pagado")
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
             </div>
               <select id="cenvio" name="cenvio" class="form-control">
-
+              <option value="{{$pedido->cobroenvio}}" selected >{{$pedido->cobroenvio}}</option>
                 <option value="Pendiente">Pendiente</option>
                 <option value="Pagado">Pagado</option>
                 <option value="Casillero pendiente">Casillero pendiente</option>
