@@ -28,7 +28,21 @@ class PedidoController extends Controller
         //$pedidos = Pedido::all();
         $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
                // $repartidores = Repartidor::all();
-        return view('pedido.index', compact('pedidos'));
+        $vendedores = Vendedor::all();
+        $nota= ' ';
+        return view('pedido.index', compact('pedidos','vendedores','nota'));
+
+
+    }
+
+    public function indexfiltro($comercio)
+    {
+        //$pedidos = Pedido::all();
+        //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        $vendedores = Vendedor::all();
+        $nota= ' ';
+        return view('pedido.indexfiltro', compact('pedidos','vendedores','nota'));
 
 
     }

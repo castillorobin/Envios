@@ -50,6 +50,8 @@ Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, '
 Route::get('pedido/editando/{id}', [App\Http\Controllers\PedidoController::class, 'editando'] )->name('editando') ;
 Route::get('pedido/editarlo/{id}', [App\Http\Controllers\PedidoController::class, 'editarlo'] )->name('editarlo') ;
 
+Route::get('pedido/indexfiltro/{id}', [App\Http\Controllers\PedidoController::class, 'indexfiltro'] )->name('indexfiltro') ;
+
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;
 
 Route::get('factura/facturapdf/{pedidos}', [App\Http\Controllers\FacturacionController::class, 'facturapdf'] )->name('pedido.facturapdf') ;

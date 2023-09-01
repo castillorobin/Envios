@@ -25,7 +25,7 @@ class FacturacionController extends Controller
        //$repartidores = Repartidor::all();
        return view('factura.index')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'nota'=>$nota  ]);
 
-    }
+    } 
     public function listado()
     {
         //$pedidos = Pedido::all();
