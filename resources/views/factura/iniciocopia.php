@@ -3,7 +3,99 @@
 
 
 @section('content')
+<script>
+        function doSearch()
 
+{
+
+    const tableReg = document.getElementById('datos');
+
+    const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+    let total = 0;
+
+
+
+    // Recorremos todas las filas con contenido de la tabla
+
+    for (let i = 1; i < tableReg.rows.length; i++) {
+
+        // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+        if (tableReg.rows[i].classList.contains("noSearch")) {
+
+            continue;
+
+        }
+
+
+
+        let found = false;
+
+        const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+        // Recorremos todas las celdas
+
+        for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+            const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+            // Buscamos el texto en el contenido de la celda
+
+            if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+                found = true;
+
+                total++;
+
+            }
+
+        }
+
+        if (found) {
+
+            tableReg.rows[i].style.display = '';
+
+        } else {
+
+            // si no ha encontrado ninguna coincidencia, esconde la
+
+            // fila de la tabla
+
+            tableReg.rows[i].style.display = 'none';
+
+        }
+
+    }
+
+
+
+    // mostramos las coincidencias
+
+    const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+    const td=lastTR.querySelector("td");
+
+    lastTR.classList.remove("hide", "red");
+
+    if (searchText == "") {
+
+        lastTR.classList.add("hide");
+
+    } else if (total) {
+
+        td.innerHTML="Se ha encontrado "+total+" coincidencia"+((total>1)?"s":"");
+
+    } else {
+
+        lastTR.classList.add("red");
+
+        td.innerHTML="No se han encontrado coincidencias";
+
+    }
+
+}
+</script>
 
 <style>
     .modal-backdrop {
@@ -121,8 +213,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
    //document.getElementById('mostrar').value = data.text;
-   window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -147,8 +239,8 @@ jQuery(document).ready(function($){
     
 function abrirURL(){
     //Abrir URL que necesites
-    //window.location = "http://127.0.0.1:8000/facturas/";
-    window.location = "https://appmeloexpress.com/facturas/";
+    window.location = "http://127.0.0.1:8000/facturas/";
+    //window.location = "https://appmeloexpress.com/facturas/";
 };
 </script>
     <section class="section">
@@ -210,7 +302,7 @@ function abrirURL(){
 
 <div style="float:right;">
 
-
+<input id="searchTerm" class="form-control" placeholder="Buscar" type="text" onkeyup="doSearch()" />
 </div>
                 </div> <!-- Termina div filtros  -->
 
@@ -239,7 +331,7 @@ function abrirURL(){
     </tr>
 </thead>
 <tbody> 
- 
+</tbody> 
 @for($i=0;  $i< count($pedidos); $i++ )
 <tr>
                     <td >
@@ -368,12 +460,15 @@ function abrirURL(){
     <td  ></td>
     <td  ></td>
     <td  ></td>
-    <td  ></td>
 </tr>
+<tr class='noSearch hide'>
+
+                <td colspan="13"></td>
+
+            </tr>
 
 
 
-            </tbody>
 
 </table>
 
@@ -945,24 +1040,7 @@ Nota de descuento
 
     
 
-          
-   
-<script src="https://kit.fontawesome.com/b64093b700.js" crossorigin="anonymous"></script> 
-
-
-
-
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
-
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
-
-                 
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
-     
+               
 
 
 
@@ -1116,45 +1194,6 @@ document.getElementById("toti").value = final;
            });
        });
         
-
-
-             
-$(document).ready(function() {
-
-$('#datos').DataTable( {
-  language: {
-      "decimal": "",
-      "emptyTable": "No hay información",
-      "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-      "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-      "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-      "infoPostFix": "",
-      "thousands": ",",
-      "lengthMenu": "Mostrar _MENU_ Entradas",
-      "loadingRecords": "Cargando...",
-      "processing": "Procesando...",
-      "search": "Buscar:",
-      "zeroRecords": "Sin resultados encontrados",
-      "paginate": {
-          "first": "Primero",
-          "last": "Ultimo",
-          "next": "Siguiente",
-          "previous": "Anterior"
-      }
-  },
-      
-      dom: '<"cambiar"f><"pagina2"p><"cambiar2"l>tri<"pagina1"p>',
-         
-
-  //responsive: true
-
-
-
-} );
-
-
-
-} );
       </script>
 
 
