@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('facturacion', function (Blueprint $table) {
             $table->id();
+            $table->string('cajero');
+            $table->string('medio');
+            $table->date('fechapago');
+            $table->string('tipo')->nullable();
+            $table->string('numerocompro')->nullable();
+            $table->double('descuento')->nullable();
+            $table->string('nota')->nullable();
             $table->timestamps();
         });
     }

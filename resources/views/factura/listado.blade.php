@@ -6,28 +6,7 @@
   z-index: 0;
 }
 </style>
-<script languague="javascript">
-       
 
-        function mostrando()
-{
-  var checkbox = document.getElementById('check2');
-  if (checkbox.checked != true)
-  {
-    div = document.getElementById('flotante');
-            div.style.display = 'none';
-            div2 = document.getElementById('flotante2');
-            div2.style.display = 'none';
-
-  }else{
-    div = document.getElementById('flotante');
-            div.style.display = '';
-            div2 = document.getElementById('flotante2');
-            div2.style.display = '';
-  }
-}
-
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>  
@@ -40,8 +19,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
-    //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+    window.location = "https://appmeloexpress.com/listadofiltro/" + data.text; 
+    //window.location = "http://127.0.0.1:8000/factura/listadofiltro/" + data.text;
         });
 
     });
@@ -62,13 +41,10 @@ jQuery(document).ready(function($){
                     <div class="card"> 
                         <div class="card-body">
 
-                            <h3 class="text-center">Facturación</h3>
+                            <h3 class="text-center">Listado de Pagos</h3>
                         
             <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
-            <div class="col-12 text-center pt-3 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
-<H1>Total $ <label for="" id="preci">0</label></H1>
-
-</div> <!-- Termina columna total  -->
+           
 
                 <div class="col-12">   <!-- Inicia columna 8  -->
                 
@@ -95,25 +71,17 @@ jQuery(document).ready(function($){
 
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
-<button type="button" class="btn btn-warning" disabled>Ver</button>
-@can('editar-rol')
-<button type="button" class="btn btn-success" disabled>Editar</button>
-@endcan
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" disabled>
- Pagar
-</button>
+
+
 <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-<a href="/factura/listado">
-<button type="button" class="btn btn-warning"  style="float:right">
- Ver Pagos
-</button></a>
+
                 </div> <!-- Termina div filtros  -->
 
-<div class="col-12 table-responsive " style="height:700px; " > <!-- div tabla  -->
+<div class="col-12 table-responsive " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
-        <th>*</th>
+       
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Dirección</th>
@@ -132,7 +100,7 @@ jQuery(document).ready(function($){
 </tbody> 
 
 <tr>
-<td  ></td>
+
     <td  ></td>
     <td  ></td>
     <td  ></td>
@@ -149,49 +117,12 @@ jQuery(document).ready(function($){
 
 
 
-<tr class="text-center" style="background-color:#6777ef; height:5px;">
-    
-    <td style="color: #fff; height:5px;" colspan="2">SUMAS</td>
-    <td style="color: #fff; height:5px;">IVA </td>
-    <td  style="color: #fff; height:5px;">SUBTOTAL</td>
-    <td  style="color: #fff; height:5px;" colspan="2">VENTA NO SUJETA </td>
-    <td  style="color: #fff; height:5px;" colspan="2">VENTA EXCENTA </td>
-    <td  style="color: #fff; height:5px;" colspan="2">TOTAL</td>
-    <td style="color: #fff; height:5px;"></td>
-    <td style="color: #fff; height:5px;"></td>
-    <td style="color: #fff; height:5px;"></td>
-    
-     
-    
-   
-</tr>
-
-<tr class="text-center">    
-<td colspan="2">$000.00</td>
-    <td>$000.00</td>
-    <td > $000.00</td>
-    <td  colspan="2">$000.00</td>
-    <td  colspan="2">$000.00</td>
-    <td  colspan="2">$000.00</td>
-    <td >  </td>
-    <td> </td>
-   <td></td>
-
-</tr>
 
 
 </table>
 
 </div><!-- termina div tabla  -->
-<div class="col-6 my-4">
-&nbsp; &nbsp;
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Pagar</button> 
-  &nbsp;  &nbsp; <a href="/facturas" class="btn btn-danger">Cancelar</a>
-    <br>
-    <p></p>
-    &nbsp;
-    <p></p>
-    </div>
+
 
                 </div> <!-- Termina columna 12 -->
      

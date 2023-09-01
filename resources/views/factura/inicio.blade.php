@@ -294,6 +294,12 @@ function abrirURL(){
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  Pagar
 </button>
+
+<a href="/factura/listado" >
+<button type="button" class="btn btn-warning"  >
+ Ir a Pagos
+</button></a>
+
 <div style="float:right;">
 
 <input id="searchTerm" class="form-control" placeholder="Buscar" type="text" onkeyup="doSearch()" />
@@ -571,7 +577,7 @@ Fecha de pago
 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
 </div>
 
-<input type="text" class="form-control" name="fpago" id="fpago" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
+<input type="text" class="form-control" name="fpago" id="fpago" value="{{ date('Y/m/d') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
 
 </div>
 
@@ -610,7 +616,7 @@ No. de comprobante
 
 </div>
 
-<input type="text" class="form-control" name="fpago" id="fpago" aria-label="Username" aria-describedby="basic-addon1" >
+<input type="text" class="form-control" name="ncompro" id="ncompro" aria-label="Username" aria-describedby="basic-addon1" >
 
 </div>
 
@@ -659,7 +665,7 @@ No. de comprobante
 <br>
 <div class="col-12" id="flotante2" style="display:none;">
 Nota de descuento
-<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+<input type="text" class="form-control" name="ndescu" id="ndescu"  aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 
