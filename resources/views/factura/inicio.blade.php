@@ -263,6 +263,7 @@ function abrirURL(){
 
     <tr >
         <th>*</th>
+        <th style="color: #fff;">ID</th>
         <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Destinatario</th>
         <th style="color: #fff;">Dirección</th>
@@ -288,6 +289,7 @@ function abrirURL(){
                      
                     </div>
                     </td>
+                    <td>{{ $pedidos[$i]->id }} </td>
                     <td>{{ $pedidos[$i]->vendedor }} </td>
                     <td>{{ $pedidos[$i]->destinatario }} </td>
                     <td>{{ $pedidos[$i]->direccion }} </td>
@@ -396,6 +398,7 @@ function abrirURL(){
                         @endfor
 <tr>
 <td  ></td>
+    <td  ></td>
     <td  ></td>
     <td  ></td>
     <td  ></td>
