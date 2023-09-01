@@ -13,7 +13,45 @@
 .cambiar {
    
    float: left;
+
+
+
      
+   }
+
+   .cambiar input{
+   
+ 
+    
+    word-wrap: break-word;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: inherit;
+    overflow: visible;
+    
+
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    background-color: #fdfdff;
+    border-color: #e4e6fc;
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 42px;
+    
+     
+   }
+
+   .cambiar input:focus{
+    color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
    }
 
 .cambiar2 {
@@ -212,6 +250,8 @@ function abrirURL(){
 
 
 </div>
+
+
                 </div> <!-- Termina div filtros  -->
 
 <div class="col-12 table-responsive " style="height:400px; " ><!-- div tabla  -->
