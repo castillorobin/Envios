@@ -48,7 +48,7 @@ jQuery(document).ready(function($){
                     <div class="card"> 
                         <div class="card-body">
 
-                            <h3 class="text-center">Listado de Pagos</h3>
+                            <h3 class="text-center">Detalles de Pagos</h3>
                         
             <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
            
@@ -78,7 +78,7 @@ jQuery(document).ready(function($){
 
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
-
+<a href="/facturas" class="btn btn-danger" style="float:right;">Cerrar</a>
 
 <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
 

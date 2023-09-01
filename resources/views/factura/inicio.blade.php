@@ -297,7 +297,7 @@ function abrirURL(){
 
 <a href="/factura/listado" >
 <button type="button" class="btn btn-warning"  >
- Ir a Pagos
+ Detalles de Pago
 </button></a>
 
 <div style="float:right;">

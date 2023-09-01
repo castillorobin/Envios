@@ -105,7 +105,7 @@ jQuery(document).ready(function($){
 <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
 <a href="/factura/listado">
 <button type="button" class="btn btn-warning"  style="float:right">
- Ver Pagos
+ Detalles de pago
 </button></a>
                 </div> <!-- Termina div filtros  -->
 
