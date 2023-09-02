@@ -13,7 +13,7 @@
 
                             <h3 class="text-center"></h3>
 
-                            <a href="#" class="btn btn-warning" style="color:white;"><i class="fas fa-truck"></i> Ver mis envios</a>
+                            <a href="/comercio/listado" class="btn btn-warning" style="color:white;"><i class="fas fa-truck"></i> Ver mis envios</a>
 
                             
                         </div>

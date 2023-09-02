@@ -25,6 +25,7 @@ class VendedorController extends Controller
         //return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
         return view('vendedor.index', compact('vendedores'));
     }
+
     public function filtrado($comercio)
     {
         $vendedores = Vendedor::where('nombre', $comercio)->get();
@@ -35,6 +36,17 @@ class VendedorController extends Controller
         $date = strftime("%A %d de %B %Y");
         //return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
         return view('vendedor.inicio', compact('vendedores', 'vendedorestotal'));
+    }
+
+    public function comercios()
+    {
+        //$vendedores = Vendedor::where('nombre', $comercio)->get();
+        setlocale(LC_TIME, "spanish");
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+        //return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
+        return view('vendedor.comercio');
     }
 
     /**
