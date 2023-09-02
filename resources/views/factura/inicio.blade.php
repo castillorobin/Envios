@@ -1257,6 +1257,7 @@ document.getElementById("toti").value = final;
 $(document).ready(function() {
 
 $('#datos').DataTable( {
+    paging: false,
   language: {
       "decimal": "",
       "emptyTable": "No hay información",
@@ -1278,7 +1279,7 @@ $('#datos').DataTable( {
       }
   },
       
-      dom: '<"pagina2"p><"cambiar2"l>tri<"pagina1"p>',
+      dom: '<"cambiar2"l>tri',
          
 
   //responsive: true

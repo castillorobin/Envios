@@ -11,7 +11,9 @@
                     <div class="card"> 
                         <div class="card-body">
 
-                            <h3 class="text-center">Melo Express</h3>
+                            <h3 class="text-center"></h3>
+
+                            <a href="#" class="btn btn-warning" style="color:white;"><i class="fas fa-truck"></i> Ver mis envios</a>
 
                             
                         </div>
