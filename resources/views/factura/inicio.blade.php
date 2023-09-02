@@ -3,7 +3,99 @@
 
 
 @section('content')
+<script>
+        function doSearch()
 
+{
+
+    const tableReg = document.getElementById('datos');
+
+    const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+    let total = 0;
+
+
+
+    // Recorremos todas las filas con contenido de la tabla
+
+    for (let i = 1; i < tableReg.rows.length; i++) {
+
+        // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+        if (tableReg.rows[i].classList.contains("noSearch")) {
+
+            continue;
+
+        }
+
+
+
+        let found = false;
+
+        const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+        // Recorremos todas las celdas
+
+        for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+            const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+            // Buscamos el texto en el contenido de la celda
+
+            if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+                found = true;
+
+                total++;
+
+            }
+
+        }
+
+        if (found) {
+
+            tableReg.rows[i].style.display = '';
+
+        } else {
+
+            // si no ha encontrado ninguna coincidencia, esconde la
+
+            // fila de la tabla
+
+            tableReg.rows[i].style.display = 'none';
+
+        }
+
+    }
+
+
+
+    // mostramos las coincidencias
+
+    const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+    const td=lastTR.querySelector("td");
+
+    lastTR.classList.remove("hide", "red");
+
+    if (searchText == "") {
+
+        lastTR.classList.add("hide");
+
+    } else if (total) {
+
+        td.innerHTML="Se ha encontrado "+total+" coincidencia"+((total>1)?"s":"");
+
+    } else {
+
+        lastTR.classList.add("red");
+
+        td.innerHTML="No se han encontrado coincidencias";
+
+    }
+
+}
+</script>
 
 <style>
     .modal-backdrop {
@@ -159,8 +251,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
    //document.getElementById('mostrar').value = data.text;
-   window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   //window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -185,8 +277,8 @@ jQuery(document).ready(function($){
     
 function abrirURL(){
     //Abrir URL que necesites
-    //window.location = "http://127.0.0.1:8000/facturas/";
-    window.location = "https://appmeloexpress.com/facturas/";
+    window.location = "http://127.0.0.1:8000/facturas/";
+    //window.location = "https://appmeloexpress.com/facturas/";
 };
 </script>
     <section class="section">
@@ -240,15 +332,15 @@ function abrirURL(){
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  Pagar
 </button>
-
+<!--
 <a href="/factura/listado" >
 <button type="button" class="btn btn-warning"  >
  Detalles de Pago
 </button></a>
-
+-->
 <div style="float:right;">
 
-
+<input id="searchTerm" class="form-control" placeholder="Buscar" type="text" onkeyup="doSearch()" />
 </div>
 
 
@@ -1186,7 +1278,7 @@ $('#datos').DataTable( {
       }
   },
       
-      dom: '<"cambiar"f><"pagina2"p><"cambiar2"l>tri<"pagina1"p>',
+      dom: '<"pagina2"p><"cambiar2"l>tri<"pagina1"p>',
          
 
   //responsive: true

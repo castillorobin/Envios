@@ -34,12 +34,21 @@
     </a>
     </li>
     @can('ver-factura')
-    <li>
-    
-     <a class="nav-link" href="/facturas">
-     <i class="fas fa-file-invoice"></i><span>Facturación</span>
-    </a>
-    </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-money-bill-wave"></i> Facturación
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/facturas"><i class="fas fa-money-bill-wave"></i>Pagos</a>
+          
+          <a class="dropdown-item" href="/factura/listado"><i class="fas fa-file-invoice"></i>Detalles de Pago</a>
+          
+        </div>
+      </li>
+
+
+
     @endcan
     
     @can('editar-rol')
