@@ -251,8 +251,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     console.log(data.text);
    //document.getElementById('mostrar').value = data.text;
-   //window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
-   window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
+   window.location = "https://appmeloexpress.com/facturasfiltro/" + data.text; 
+   //window.location = "http://127.0.0.1:8000/facturasfiltro/" + data.text;
 
         });
 
@@ -277,8 +277,8 @@ jQuery(document).ready(function($){
     
 function abrirURL(){
     //Abrir URL que necesites
-    window.location = "http://127.0.0.1:8000/facturas/";
-    //window.location = "https://appmeloexpress.com/facturas/";
+    //window.location = "http://127.0.0.1:8000/facturas/";
+    window.location = "https://appmeloexpress.com/facturas/";
 };
 </script>
     <section class="section">
