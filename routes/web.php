@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, 'desdeenvio'] )->name('desdeenvio') ;
 Route::get('pedido/editando/{id}', [App\Http\Controllers\PedidoController::class, 'editando'] )->name('editando') ;
 Route::get('pedido/editarlo/{id}', [App\Http\Controllers\PedidoController::class, 'editarlo'] )->name('editarlo') ;
+Route::get('comercio/filtrado/{id}', [App\Http\Controllers\VendedorController::class, 'filtrado'] )->name('filtrado') ;
 
 Route::get('pedido/indexfiltro/{id}', [App\Http\Controllers\PedidoController::class, 'indexfiltro'] )->name('indexfiltro') ;
 
