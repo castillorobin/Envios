@@ -84,13 +84,13 @@
 
     } else if (total) {
 
-        td.innerHTML="Se ha encontrado "+total+" coincidencia"+((total>1)?"s":"");
+        td.innerHTML="";
 
     } else {
 
         lastTR.classList.add("red");
 
-        td.innerHTML="No se han encontrado coincidencias";
+        td.innerHTML="";
 
     }
 
