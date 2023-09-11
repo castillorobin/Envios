@@ -27,7 +27,7 @@
         }
 
         .titulos{
-            font-size: 14px;
+            
             font-weight: bolder;
         }
 body{
@@ -78,26 +78,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
             </td>
         </tr>
-        <tr style="font-size:8px; line-height : 15px;">
+        <tr style="font-size:10px; line-height : 15px;">
             <td style="border-top: 1px solid;">
 
-            Id: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->id }}</span>
+            Id: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="titulos" >{{ $pedido->id }}</span>
         <br>
-            Destinatario: <span class="titulos" style="font-size:8px; ">{{ $pedido->destinatario }}</span>
+            Destinatario: <span class="titulos" >{{ $pedido->destinatario }}</span>
         <br>            
-            Dirección:&nbsp; &nbsp; &nbsp;<span class="titulos" style="font-size:8px; ">{{ $pedido->direccion }}</span>
+            Dirección:&nbsp; &nbsp; &nbsp;<span class="titulos" >{{ $pedido->direccion }}</span>
         
         <br>            
-            Telefono:&nbsp; &nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->telefono }}</span>
+            Telefono:&nbsp; &nbsp; &nbsp; <span class="titulos" >{{ $pedido->telefono }}</span>
         <br>
                
-            Whatsapp:&nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->whatsapp }}</span>
+            Whatsapp:&nbsp; &nbsp; <span class="titulos" >{{ $pedido->whatsapp }}</span>
         <br>
                
-        Repartidor:&nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->repartidor }}</span>
+        Repartidor:&nbsp; &nbsp; <span class="titulos" >{{ $pedido->repartidor }}</span>
         <br>
                
-        Nota:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="titulos" style="font-size:8px; ">{{ $pedido->nota }}</span>
+        Nota:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="titulos" >{{ $pedido->nota }}</span>
         <br>
 
 
