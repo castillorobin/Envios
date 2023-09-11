@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etiqueta</title>
+    
+    
     <style>
        @page {
 		margin-left: 10px;
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   printHTML(); 
 });
  </script>
+ 
 </head>
 
 <body onLoad="window.print()">
@@ -56,7 +59,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
         
             </td>
-            <td>TOTAL: <span class="titulos" style="font-size:18px; ">${{ $pedido->total }}</span></td>
+            <td style="text-align:right">
+            2556-4494
+            <br>
+            7457-6280
+            </td>
         </tr>
         <tr >
             <td style="width: 60%; border-top: 1px solid;">
@@ -65,25 +72,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
         <br>
         <span class="titulos" style="font-size:18px; ">{{ $pedido->vendedor }}</span>
             </td>
-            <td style=" border-top: 1px solid;">
+            <td style=" border-top: 1px solid; text-align:center;">
             
-        Teléfono:<span class="titulos" style="font-size:16px; "> <br> {{ $pedido->telefono }}</span>
+            Total a cobrar: <br><span class="titulos" style="font-size:18px;">${{ $pedido->total }}</span>
         
             </td>
         </tr>
-        <tr>
-            <td style="width: 60%; border-top: 1px solid;">
-            Destinatario: 
+        <tr style="font-size:10px;">
+            <td style="border-top: 1px solid;">
+
+            Id:<span class="titulos" style="font-size:10px; ">{{ $pedido->id }}</span>
         <br>
-        <span class="titulos" style="font-size:18px; padding-bottom:15px;">{{ $pedido->destinatario }}</span>
+            Destinatario: <span class="titulos" style="font-size:10px; ">{{ $pedido->destinatario }}</span>
+        <br>            
+            Dirección:<span class="titulos" style="font-size:10px; ">{{ $pedido->direccion }}</span>
+        
+        <br>            
+            Telefono:<span class="titulos" style="font-size:10px; ">{{ $pedido->telefono }}</span>
         <br>
-       <br> 
-            
-            
-            Dirección:
+               
+            Whatsapp:<span class="titulos" style="font-size:10px; ">{{ $pedido->whatsapp }}</span>
         <br>
-        <span class="titulos" style="font-size:18px; ">{{ $pedido->direccion }}</span>
+               
+        Repartidor:<span class="titulos" style="font-size:10px; ">{{ $pedido->repartidor }}</span>
         <br>
+               
+        Nota:<span class="titulos" style="font-size:10px; ">{{ $pedido->nota }}</span>
+        <br>
+
+
             </td>
             <td style="border-top: 1px solid; border-left: 1px solid; height: 60px !important; padding-left: 25px;"> <span> {!! DNS2D::getBarcodeHTML("http://54.237.159.219/pedido/verpedido/$pedido->id ", 'QRCODE' ,4,4) !!} </span></td>
         </tr>
