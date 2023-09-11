@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
             </td>
         </tr>
-        <tr style="font-size:10px;">
+        <tr style="font-size:10px; line-height : 15px;">
             <td style="border-top: 1px solid;">
 
             Id:<span class="titulos" style="font-size:10px; ">{{ $pedido->id }}</span>
