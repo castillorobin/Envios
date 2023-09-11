@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
             </td>
             <td style="text-align:right">
-            2556-4494
+            <img src="../public/img/tele.jpg" alt="" width="12px" style="margin-top:5px; "> 2556-4494
             <br>
-            7457-6280
+            <img src="../public/img/whats.jpg" alt="" width="12px" > 7457-6280
             </td>
         </tr>
         <tr >
@@ -78,26 +78,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
             </td>
         </tr>
-        <tr style="font-size:10px; line-height : 15px;">
+        <tr style="font-size:8px; line-height : 15px;">
             <td style="border-top: 1px solid;">
 
-            Id:<span class="titulos" style="font-size:10px; ">{{ $pedido->id }}</span>
+            Id: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->id }}</span>
         <br>
-            Destinatario: <span class="titulos" style="font-size:10px; ">{{ $pedido->destinatario }}</span>
+            Destinatario: <span class="titulos" style="font-size:8px; ">{{ $pedido->destinatario }}</span>
         <br>            
-            Dirección:<span class="titulos" style="font-size:10px; ">{{ $pedido->direccion }}</span>
+            Dirección:&nbsp; &nbsp; &nbsp;<span class="titulos" style="font-size:8px; ">{{ $pedido->direccion }}</span>
         
         <br>            
-            Telefono:<span class="titulos" style="font-size:10px; ">{{ $pedido->telefono }}</span>
+            Telefono:&nbsp; &nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->telefono }}</span>
         <br>
                
-            Whatsapp:<span class="titulos" style="font-size:10px; ">{{ $pedido->whatsapp }}</span>
+            Whatsapp:&nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->whatsapp }}</span>
         <br>
                
-        Repartidor:<span class="titulos" style="font-size:10px; ">{{ $pedido->repartidor }}</span>
+        Repartidor:&nbsp; &nbsp; <span class="titulos" style="font-size:8px; ">{{ $pedido->repartidor }}</span>
         <br>
                
-        Nota:<span class="titulos" style="font-size:10px; ">{{ $pedido->nota }}</span>
+        Nota:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="titulos" style="font-size:8px; ">{{ $pedido->nota }}</span>
         <br>
 
 
