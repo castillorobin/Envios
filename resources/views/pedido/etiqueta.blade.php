@@ -66,15 +66,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
             </td>
         </tr>
         <tr >
-            <td style="width: 60%; border-top: 1px solid;">
+            <td style="width: 60%; border-top: 1px solid; font-size:12px;">
             
             Comercio/tienda: 
         <br>
-        <span class="titulos" style="font-size:14px; ">{{ $pedido->vendedor }}</span>
+        <span class="titulos" style="font-size:12px; ">{{ $pedido->vendedor }}</span>
             </td>
-            <td style=" border-top: 1px solid; text-align:center;">
+            <td style=" border-top: 1px solid; text-align:center; font-size:12px;">
             
-            Total a cobrar: <br><span class="titulos" style="font-size:14px;">${{ $pedido->total }}</span>
+            Total a cobrar: <br><span class="titulos" style="font-size:12px;">${{ $pedido->total }}</span>
         
             </td>
         </tr>
