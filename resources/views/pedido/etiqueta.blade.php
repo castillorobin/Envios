@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
             Comercio/tienda: 
         <br>
-        <span class="titulos" style="font-size:18px; ">{{ $pedido->vendedor }}</span>
+        <span class="titulos" style="font-size:14px; ">{{ $pedido->vendedor }}</span>
             </td>
             <td style=" border-top: 1px solid; text-align:center;">
             
-            Total a cobrar: <br><span class="titulos" style="font-size:18px;">${{ $pedido->total }}</span>
+            Total a cobrar: <br><span class="titulos" style="font-size:14px;">${{ $pedido->total }}</span>
         
             </td>
         </tr>
