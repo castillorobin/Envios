@@ -11,6 +11,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/pedidos"><i class="fas fa-truck"></i> Envios</a>
+          <a class="dropdown-item" href="/pedido/crearp"><i class="fas fa-truck"></i> Crear Personalizado</a>
           <a class="dropdown-item" href="/recolecta"><i class="fas fa-archive"></i>Recolectas</a>
           <a class="dropdown-item" href="/vendedores"><i class="fas fa-shopping-cart"></i> Comercios</a>
           @can('editar-empleados')

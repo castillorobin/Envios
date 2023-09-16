@@ -66,7 +66,7 @@ function abrirURL(){
     window.location = "https://appmeloexpress.com/pedidos/create";
 };
 </script>
-
+ 
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Crear Envio</h3>
@@ -279,7 +279,7 @@ $(document).ready(function() {
         <div class="col-10">
           <label for="" class="col-10 col-form-label">Nombre de comercio / Tienda *</label>
    
-          <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Please select..." required tabindex="1">
+          <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Seleccionar..." required tabindex="1">
             <option value="">-Seleccionar comercio-</option>
      
             @foreach($vendedores as $vendedor)
@@ -451,7 +451,7 @@ $(document).ready(function() {
           <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
         </div>
       </div>
-
+      
       <div class="col-4">
         <label for="" class="col-8 col-form-label">Estado del envio</label>
         <div class="input-group">

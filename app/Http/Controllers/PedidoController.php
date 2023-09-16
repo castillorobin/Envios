@@ -757,6 +757,18 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $fecha = strftime("%A %d de %B %Y");
         return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
     }
+    public function crearp()
+    {
+        $usuarios = User::all();
+        $last = Pedido::latest('id')->first();
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        $repartidores = Repartidor::all();
+        $fecha = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $fecha = strftime("%A %d de %B %Y");
+        return view('pedido.personalizado')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
+    }
 
     public function desdeenvio()
     {
