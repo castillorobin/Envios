@@ -493,9 +493,60 @@ Parte 2
                     </div>
             </div>
 
+            <div class="row">
+            <div class="col-6 ">
+      <label for="" class="col-6 col-form-label">Usuario que registra</label>
+      <div class="input-group">
 
+        <div class="input-group-prepend">
+         <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-itim2101-lineal-itim2101/25/null/external-operator-logistics-and-delivery-itim2101-lineal-itim2101.png"/></span>
+        </div>
+        <input type="text" id="ingresado" name="ingresado" value ="{{\Illuminate\Support\Facades\Auth::user()->name}}" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
+        
+        </div>
+        
+    </div>
+    
+    <div class="col-sm-6">
+      <label for="" class="col-sm-6 col-form-label">Recepción agencia</label>
+      <div class="input-group">
 
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/ios-filled/25/null/online-store.png"/></span>
+        </div>
+        <select id="agencia" name="agencia" class="form-control" tabindex="14">
+          <option value="San Salvador">San Salvador</option>
+            <option value="San Miguel">San Miguel</option>
+          <option value="Santa Ana">Santa Ana</option>
+        </select>
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+      </div>
+    </div>
+            </div>
 
+        <div class="row">
+        <div class="col-sm-6 ">
+        <label for="" class="col-sm-6 col-form-label">Nota</label>
+        <div class="input-group ">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> <i class="fas fa-file-alt"></i> </span>
+          </div>
+          <input type="text" id="nota" name="nota" class="form-control" placeholder="Ingresar nota" aria-describedby="basic-addon1" tabindex="17">
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="" class="col-sm-8 col-form-label">Caja o estante</label>
+        <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
+        </div>
+        <input type="text" id="estante" name="estante" class="form-control" placeholder="..." aria-label="Username" aria-describedby="basic-addon1" tabindex="18">
+        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        </div>
+      </div>
+        </div>
 
 
 
