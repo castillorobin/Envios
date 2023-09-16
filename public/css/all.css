@@ -1185,6 +1185,7 @@ header {
 
 .header-top .header-top-nav ul .header-top-nav-search .open {
     display: block;
+    
 }
 
 .header-top .header-top-nav ul .header-top-nav-search form {
@@ -1245,6 +1246,7 @@ header {
 
 .header-nav ul > li > a {
     padding-bottom: 36px;
+    
 }
 
 .header-nav ul li {

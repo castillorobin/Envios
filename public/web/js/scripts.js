@@ -188,7 +188,7 @@ $(function() {
         var body = $('body'),
             w = $(window);
 
-        if (w.outerWidth() <= 1024) {
+        if (w.outerWidth() <= 2048) {
             body.removeClass('search-show search-gone');
             if (body.hasClass('sidebar-gone')) {
                 body.removeClass('sidebar-gone');
@@ -224,7 +224,7 @@ $(function() {
       });
     }
 
-    if(w.outerWidth() <= 1024) {
+    if(w.outerWidth() <= 2048) {
       if($('body').hasClass('sidebar-mini')) {
         toggle_sidebar_mini(false);
         $('.main-sidebar').niceScroll(sidebar_nicescroll_opts);

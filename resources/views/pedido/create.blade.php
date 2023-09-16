@@ -63,7 +63,7 @@ function mostrando()
 function abrirURL(){
     //Abrir URL que necesites
     //window.location = "http://127.0.0.1:8000/pedidos";
-    window.location = "https://appmeloexpress.com/pedidos/";
+    window.location = "https://appmeloexpress.com/pedidos/create";
 };
 </script>
 

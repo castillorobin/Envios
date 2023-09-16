@@ -1449,6 +1449,7 @@ table tr:hover .table-links {
 .nav .nav-item .nav-link .ion, .nav .nav-item .nav-link .fas, .nav .nav-item .nav-link .far, .nav .nav-item .nav-link .fab, .nav .nav-item .nav-link .fal {
     margin-right: 3px;
     font-size: 12px;
+    
 }
 
 /* 3.10 Pagination */
@@ -2369,7 +2370,7 @@ h6 .badge {
         display: block;
     }
 }
-
+/*
 @media (min-width: 768px) and (max-width: 991.98px) {
     .collapse {
         position: relative;
@@ -2379,10 +2380,11 @@ h6 .badge {
         position: absolute;
     }
 }
+*/
 
-@media (max-width: 1024px) {
+@media (max-width: 2048px) {
     .nav-collapse {
-        position: relative;
+        position: absolute;
     }
 
     .nav-collapse .navbar-nav {
@@ -3399,7 +3401,7 @@ pre {
 /* 4.4 Layout */
 .main-sidebar {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
-    position: fixed;
+    position: absolute;
     top: 0;
     height: 100%;
     width: 250px;
@@ -3884,7 +3886,7 @@ body.layout-3 .main-footer {
 }
 
 .main-sidebar .sidebar-menu li a:hover {
-    background-color: #f8fafb;
+    background-color: #789eb1;
 }
 
 .main-sidebar .sidebar-menu li.active a {
@@ -4025,7 +4027,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
     background-color: #fff;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 2048px) {
     .sidebar-gone-hide {
         display: none !important;
     }
