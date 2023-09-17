@@ -50,6 +50,7 @@ Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, '
 Route::get('pedido/editando/{id}', [App\Http\Controllers\PedidoController::class, 'editando'] )->name('editando') ;
 Route::get('pedido/editarlo/{id}', [App\Http\Controllers\PedidoController::class, 'editarlo'] )->name('editarlo') ;
 Route::get('pedido/crearp', [App\Http\Controllers\PedidoController::class, 'crearp'] )->name('crearp') ;
+Route::get('pedido/crearpf', [App\Http\Controllers\PedidoController::class, 'crearpf'] )->name('crearpf') ;
 
 Route::get('comercio/filtrado/{id}', [App\Http\Controllers\VendedorController::class, 'filtrado'] )->name('filtrado') ;
 Route::get('comercio/listado', [App\Http\Controllers\VendedorController::class, 'comercios'] )->name('comercios') ;
