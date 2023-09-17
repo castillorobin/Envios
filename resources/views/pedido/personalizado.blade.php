@@ -258,7 +258,7 @@ Parte 1
 
         <div class="row">
             <div class="col-8">
-            <label for="" class="col-8 col-form-label">Direccion *</label>
+            <label for="" class="col-12 col-form-label">Direccion *</label>
             <div class="input-group mb-3">
 
             <div class="input-group-prepend">
@@ -281,7 +281,7 @@ Parte 1
 
         <div class="row">
             <div class="col-4">
-          <label for="" class="col-8 col-form-label">Precio del paquete</label>
+          <label for="" class="col-12 col-form-label">Precio del paquete</label>
     
              <div class="input-group">
 
@@ -294,7 +294,7 @@ Parte 1
             </div>
 
             <div class="col-sm-4">
-          <label for="" class="col-sm-8 col-form-label">Costo del envio</label>
+          <label for="" class="col-sm-12 col-form-label">Costo del envio</label>
           <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
@@ -306,7 +306,7 @@ Parte 1
 
 
             <div class="col-sm-4">
-          <label for="" class="col-sm-8 col-form-label">Total a cobrar</label>
+          <label for="" class="col-sm-12 col-form-label">Total a cobrar</label>
           <div class="input-group mb-3">
 
             <div class="input-group-prepend">
@@ -414,7 +414,7 @@ Parte 2
             <div class="row">
 
                 <div class="col-6 ">
-                <label for="" class="col-sm-6 col-form-label">Fecha de creacion</label>
+                <label for="" class="col-sm-12 col-form-label">Fecha de creacion</label>
 
                 <div class="input-group ">
                  <div class="input-group-prepend">
@@ -428,7 +428,7 @@ Parte 2
                     </div>
     
                      <div class="col-sm-6">
-                    <label for="" class="col-sm-6 col-form-label">Fecha de entrega *</label>
+                    <label for="" class="col-sm-12 col-form-label">Fecha de entrega *</label>
                         <div class="input-group ">
 
                      <div class="input-group-prepend">
@@ -445,7 +445,7 @@ Parte 2
             <div class="row">
                         
                     <div class="col-6">
-                    <label for="" class="col-8 col-form-label">Estado del envio</label>
+                    <label for="" class="col-12 col-form-label">Estado del envio</label>
                 <div class="input-group">
 
                     <div class="input-group-prepend">
@@ -475,7 +475,7 @@ Parte 2
 
 
                  <div class="col-6">
-                <label for="" class="col-8 col-form-label">Estado del pago</label>
+                <label for="" class="col-12 col-form-label">Estado del pago</label>
                 <div class="input-group">
 
                     <div class="input-group-prepend">
@@ -495,7 +495,7 @@ Parte 2
 
             <div class="row">
             <div class="col-6 ">
-      <label for="" class="col-6 col-form-label">Usuario que registra</label>
+      <label for="" class="col-12 col-form-label">Usuario que registra</label>
       <div class="input-group">
 
         <div class="input-group-prepend">
@@ -508,7 +508,7 @@ Parte 2
     </div>
     
     <div class="col-sm-6">
-      <label for="" class="col-sm-6 col-form-label">Recepción agencia</label>
+      <label for="" class="col-sm-12 col-form-label">Agencia</label>
       <div class="input-group">
 
         <div class="input-group-prepend">
@@ -537,7 +537,7 @@ Parte 2
       </div>
 
       <div class="col-sm-6">
-        <label for="" class="col-sm-8 col-form-label">Caja o estante</label>
+        <label for="" class="col-sm-12 col-form-label">Caja o estante</label>
         <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1"> <i class="fas fa-barcode"></i> </span>
@@ -619,8 +619,8 @@ Terminad nuevo formulario
 
 
 Webcam.set({
-        width: 290,
-        height: 250,
+        width: 230,
+        height: 200,
         image_format: 'jpeg',
         jpeg_quality: 90
     });
