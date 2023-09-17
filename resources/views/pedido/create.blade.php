@@ -523,7 +523,7 @@ $(document).ready(function() {
       </div>
 
       <div class="col-sm-4">
-          <label for="" class="col-sm-8 col-form-label">Costo del envio</label>
+          <label for="" class="col-sm-8 col-form-label">Precio del envio</label>
           <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
@@ -722,7 +722,7 @@ $(document).ready(function() {
 
     <div class="modal-footer">
 
-    
+
         <a href="/pedidos" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
         <!--

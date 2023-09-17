@@ -295,7 +295,7 @@ Parte 1
             </div>
 
             <div class="col-4">
-                <label for="" class="col-12 col-form-label">Costo del envio</label>
+                <label for="" class="col-12 col-form-label">Precio del envio</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
