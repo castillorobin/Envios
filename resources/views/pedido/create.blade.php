@@ -722,7 +722,7 @@ $(document).ready(function() {
 
     <div class="modal-footer">
 
-
+    
         <a href="/pedidos" class="btn btn-primary">Cancelar</a>
         &nbsp; &nbsp;
         <!--
