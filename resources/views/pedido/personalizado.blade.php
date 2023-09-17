@@ -231,7 +231,7 @@ Parte 1
             <div class="col-10 ">
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
    
-                <select id="comer" name="comer" class="form-control mi-selector" data-placeholder="Seleccionar..." required tabindex="1">
+                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required >
                 <option value="">-Seleccionar comercio-</option>
      
                 @foreach($vendedores as $vendedor)
@@ -258,69 +258,86 @@ Parte 1
 
         <div class="row">
             <div class="col-8">
-            <label for="" class="col-12 col-form-label">Direccion *</label>
-            <div class="input-group mb-3">
+              <label for="" class="col-12 col-form-label">Direccion *</label>
+            <div class="input-group">
 
             <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
+                <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/glyph-neue/25/null/order-delivered.png"/></span>
             </div>
-            <input type="text" maxlength="64" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" required>
-            <div class="invalid-feedback">Este campo es obligatorio.</div>
-            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
+                <input type="text" maxlength="64" id="direccion" name="direccion" class="form-control" placeholder="Ingrese la dirección de entrega del destinatario" aria-label="Username" aria-describedby="basic-addon1" tabindex="3" required>
+                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
             </div>
             </div>
 
             <div class="col-4">
-            <label for="inputEmail3" class="col-6 col-form-label">Telefono</label>
-            <input type="text" id="telefono" name="telefono" class="form-control" tabindex="4" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
+              <label for="inputEmail3" class="col-6 col-form-label">Telefono</label>
+               <input type="text" id="telefono" name="telefono" class="form-control" tabindex="4" aria-describedby="basic-addon1" data-inputmask="'mask': '9999-9999'">
      
-            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>    
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>    
             </div>
 
         </div>
+        
 
         <div class="row">
             <div class="col-4">
-          <label for="" class="col-12 col-form-label">Precio del paquete</label>
+                <label for="" class="col-12 col-form-label">Precio del paquete</label>
     
              <div class="input-group">
 
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+              <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
           </div>
            <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="5">
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
             </div>
 
-            <div class="col-sm-4">
-          <label for="" class="col-sm-12 col-form-label">Costo del envio</label>
-          <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-          </div>
-            <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="6">
-            <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
-          </div>
+            <div class="col-4">
+                <label for="" class="col-12 col-form-label">Costo del envio</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+              </div>
+                <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="6">
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+          </div> 
             </div>
 
 
-            <div class="col-sm-4">
-          <label for="" class="col-sm-12 col-form-label">Total a cobrar</label>
-          <div class="input-group mb-3">
+            <div class="col-4">
+              <label for="" class="col-12 col-form-label">Total a cobrar</label>
+            <div class="input-group">
 
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-            </div>
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+              </div>
             <input type="text" id="total" name="total" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
           </div>
             </div>
+
         </div>
 
 
         <div class="row">
-            <div class="col-sm-6 ">
-            <label for="" class="col-sm-6 col-form-label">Repartidor</label>
+        <div class="col-4">
+        <label for="" class="col-12 col-form-label">Cobro del envio</label>
+        <div class="input-group ">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+          </div>
+          <select id="cenvio" name="cenvio" class="form-control" tabindex="8">
+          <option value="Pendiente">Pendiente</option>
+          <option value="Pagado">Pagado</option>
+          </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        </div>
+      </div>
+
+            <div class="col-4 ">
+            <label for="" class="col-12 col-form-label">Repartidor</label>
             <div class="input-group">
 
           <div class="input-group-prepend">
@@ -336,22 +353,22 @@ Parte 1
             </div>
             </div>
     
-            <div class="col-sm-6">
-            <label for="" class="col-sm-6 col-form-label">Ruta</label>
+            <div class="col-4">
+                <label for="" class="col-12 col-form-label">Ruta</label>
             <div class="input-group">
 
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
-          </div>
-          <select id="ruta" name="ruta" class="form-control" tabindex="8"> 
-          <option value="Ruta 1">Sin asignar</option>
-          <option value="Ruta 1">Ruta 1</option>
-            <option value="Ruta 2">Ruta 2</option>
-            <option value="Ruta 3">Ruta 3</option>
-            <option value="Ruta 4">Ruta 4</option>
-            <option value="Ruta 5">Ruta 5</option>
-          </select>
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
+              </div>
+                <select id="ruta" name="ruta" class="form-control" tabindex="8"> 
+                  <option value="Ruta 1">Sin asignar</option>
+                  <option value="Ruta 1">Ruta 1</option>
+                  <option value="Ruta 2">Ruta 2</option>
+                  <option value="Ruta 3">Ruta 3</option>
+                  <option value="Ruta 4">Ruta 4</option>
+                  <option value="Ruta 5">Ruta 5</option>
+                </select>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
             </div>
         </div>
@@ -369,7 +386,7 @@ Parte 2
             
             <div class="row">
                 
-                    <div class="col-6 ">
+                    <div class="col-6">
                         <label for="" class="col col-form-label">Tipo de servicio</label>
                     <div class="input-group">
 
@@ -386,7 +403,7 @@ Parte 2
                     </div>
                     </div>
      
-                <div class="col-6 p-0">
+                <div class="col-6 ">
                     <label for="" class="col col-form-label">Tipo de envio</label>
                         <div class="input-group">
 
