@@ -40,7 +40,7 @@ function mostrando()
 function abrirURL(){
     //Abrir URL que necesites
     //window.location = "http://127.0.0.1:8000/pedidos";
-    window.location = "https://appmeloexpress.com/pedidos/create";
+    window.location = "https://appmeloexpress.com/pedido/crearpf";
 };
 </script>
 
@@ -554,18 +554,6 @@ Parte 2
         </div>
 
 
-        <div class="row mt-5 ml-3">
-          
-        <a href="/pedidos" class="btn btn-primary">Cancelar</a>
-        &nbsp; &nbsp;
-        <!--
-      <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
--->
-<a href="/pedidos/create" class="btn btn-primary">Limpiar</a>
-      &nbsp; &nbsp;
-        <button type="submit" class="btn btn-primary" tabindex="19">Guardar</button> &nbsp; &nbsp;
-        <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank"><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
-        </div>
 
 
         </div>
@@ -585,7 +573,28 @@ Parte 3
                 <div id="results">Esperando foto...</div>
             </div>
 
+
+        
+            
+
+
+
         </div>
+        <div class="row mt-5 ml-2 mb-2">
+            <div class="col-12" style="float:right;" >
+          <a href="/pedidos" class="btn btn-primary">Cancelar</a>
+          &nbsp; &nbsp;
+          <!--
+        <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
+  -->
+  <a href="/pedido/crearpf" class="btn btn-primary">Limpiar</a>
+        &nbsp; &nbsp;
+          <button type="submit" class="btn btn-primary" tabindex="19">Guardar</button> &nbsp; &nbsp;
+          <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank"><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
+          </div>
+          </div>
+
+
 
     </div>
 
