@@ -153,7 +153,9 @@ function myFunction() {
 <script>  
 jQuery(document).ready(function($){
     $(document).ready(function() {
-        $('.mi-selector').select2();
+        $('.mi-selector').select2({
+          maximumSelectionLength: 1
+        });
     });
 });
 </script>
@@ -232,7 +234,7 @@ Parte 1
             <input type="text"  hidden >
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
       
-                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required >
+                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required multiple="multiple">
                 
      
                 @foreach($vendedores as $vendedor)
@@ -305,7 +307,7 @@ Parte 1
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
-          <select id="repartidor" name="repartidor" class="form-control mi-selector" tabindex="6">
+          <select id="repartidor" name="repartidor" class="form-control mi-selector" tabindex="6" multiple="multiple">
             <option value="">-Sin asignar-</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
@@ -322,7 +324,7 @@ Parte 1
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
               </div>
-                <select id="ruta" name="ruta" class="form-control" tabindex="7"> 
+                <select id="ruta" name="ruta" class="form-control mi-selector" tabindex="7" multiple="multiple"> 
                   <option value="Ruta 1">Sin asignar</option>
                   <option value="Ruta 1">Ruta 1</option>
                   <option value="Ruta 2">Ruta 2</option>
@@ -472,9 +474,9 @@ Parte 2
                   <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
                 </div>
                     <select id="estado" name="estado" class="form-control" tabindex="12">
-                <option value="Creado" >Creado</option>
+                    <option value="Entregado">Entregado</option>
+                    <option value="Creado" >Creado</option>
                 <option value="En ruta">En ruta</option>
-                <option value="Entregado">Entregado</option>
                 <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
                 <option value="Reprogramado">Reprogramado</option>
                 <option value="Agencia San Salvador">Agencia San Salvador</option>
