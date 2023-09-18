@@ -230,7 +230,7 @@ Parte 1
         <div class="row">
             <div class="col-10 ">
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
-   
+      <input type="text" tabindex="1" hidden >
                 <select id="comer" name="comer" class="form-control mi-selector"  data-placeholder="Seleccionar..." required >
                 <option value="">-Seleccionar comercio-</option>
      
@@ -242,7 +242,7 @@ Parte 1
                 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
 
-            <div class="col-2 pt-4" style="display: flex; align-items: center;" tabindex="1">
+            <div class="col-2 pt-4" style="display: flex; align-items: center;" >
                 <a href="/pedido/desdeenvio">+ Crear</a>
             </div>
         </div>
