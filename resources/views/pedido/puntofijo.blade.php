@@ -306,7 +306,7 @@ Parte 1
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
-          <select id="repartidor" name="repartidor" class="form-control" tabindex="6">
+          <select id="repartidor" name="repartidor" class="form-control mi-selector" tabindex="6">
             <option value="">-Sin asignar-</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
