@@ -595,7 +595,7 @@ Parte 3
   -->
   <a href="/pedido/crearpf" class="btn btn-primary">Limpiar</a>
         &nbsp; &nbsp;
-          <button type="submit" class="btn btn-primary" tabindex="19">Guardar</button> &nbsp; &nbsp;
+          <button type="submit" name="puntof" class="btn btn-primary" tabindex="19">Guardar</button> &nbsp; &nbsp;
           <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank"><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
           </div>
           </div>

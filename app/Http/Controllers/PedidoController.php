@@ -769,7 +769,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $fecha = strftime("%A %d de %B %Y");
         return view('pedido.personalizado')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
     }
-
+  
     public function crearpf()
     {
         $usuarios = User::all();
@@ -935,7 +935,15 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $customPaper = array(0,0,283.80,283.80);
         $pdf->setPaper($customPaper, 'landscape');
         return $pdf->stream();
-        }else{
+        }elseif(isset($_POST['personali'])){
+            return view('/pedido/personalizado')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
+        }elseif(isset($_POST['puntof'])){
+            return view('/pedido/puntofijo')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
+        }elseif(isset($_POST['casi'])){
+            return view('/pedido/casillero')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
+        }
+        
+        else{
             return view('/pedido/create')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
         }
 
