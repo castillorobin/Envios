@@ -40,7 +40,7 @@ function mostrando()
 function abrirURL(){
     //Abrir URL que necesites
     //window.location = "http://127.0.0.1:8000/pedidos";
-    window.location = "https://appmeloexpress.com/pedidos/create";
+    window.location = "https://appmeloexpress.com/pedido/crearp";
 };
 </script>
 
@@ -231,7 +231,7 @@ Parte 1
             <div class="col-10 ">
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
    
-                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required >
+                <select id="comer" name="comer" class="form-control mi-selector"  data-placeholder="Seleccionar..." required >
                 <option value="">-Seleccionar comercio-</option>
      
                 @foreach($vendedores as $vendedor)
@@ -242,7 +242,7 @@ Parte 1
                 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
 
-            <div class="col-2 pt-4" style="display: flex; align-items: center;">
+            <div class="col-2 pt-4" style="display: flex; align-items: center;" tabindex="1">
                 <a href="/pedido/desdeenvio">+ Crear</a>
             </div>
         </div>
@@ -280,6 +280,61 @@ Parte 1
         </div>
         
 
+        
+        <div class="row">
+        <div class="col-4">
+        <label for="" class="col-12 col-form-label">Cobro del envio</label>
+        <div class="input-group ">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
+          </div>
+          <select id="cenvio" name="cenvio" class="form-control" tabindex="5">
+          <option value="Pendiente">Pendiente</option>
+          <option value="Pagado">Pagado</option>
+          </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+        </div>
+      </div>
+
+            <div class="col-4 ">
+            <label for="" class="col-12 col-form-label">Repartidor</label>
+            <div class="input-group">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+          </div>
+          <select id="repartidor" name="repartidor" class="form-control mi-selector" tabindex="6">
+            <option value="">-Sin asignar-</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
+          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+            </div>
+            </div>
+    
+            <div class="col-4">
+                <label for="" class="col-12 col-form-label">Ruta</label>
+            <div class="input-group">
+
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
+              </div>
+                <select id="ruta" name="ruta" class="form-control" tabindex="7"> 
+                  <option value="Ruta 1">Sin asignar</option>
+                  <option value="Ruta 1">Ruta 1</option>
+                  <option value="Ruta 2">Ruta 2</option>
+                  <option value="Ruta 3">Ruta 3</option>
+                  <option value="Ruta 4">Ruta 4</option>
+                  <option value="Ruta 5">Ruta 5</option>
+                </select>
+              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
+            </div>
+            </div>
+        </div>
+
+
         <div class="row">
             <div class="col-4">
                 <label for="" class="col-12 col-form-label">Precio del paquete</label>
@@ -289,7 +344,7 @@ Parte 1
           <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
           </div>
-           <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="5">
+           <input type="text" id="precio" name="precio" class="form-control" placeholder="Precio"  value="0" tabindex="8">
               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
             </div>
@@ -300,7 +355,7 @@ Parte 1
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
               </div>
-                <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="6">
+                <input type="text" id="envio" name="envio" class="form-control" placeholder="Envio" aria-label="Username" value="0" tabindex="9">
                 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
           </div> 
             </div>
@@ -319,60 +374,7 @@ Parte 1
 
         </div>
 
-
-        <div class="row">
-        <div class="col-4">
-        <label for="" class="col-12 col-form-label">Cobro del envio</label>
-        <div class="input-group ">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/cheap-2.png"/></span>
-          </div>
-          <select id="cenvio" name="cenvio" class="form-control" tabindex="8">
-          <option value="Pendiente">Pendiente</option>
-          <option value="Pagado">Pagado</option>
-          </select>
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
-        </div>
-      </div>
-
-            <div class="col-4 ">
-            <label for="" class="col-12 col-form-label">Repartidor</label>
-            <div class="input-group">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
-          </div>
-          <select id="repartidor" name="repartidor" class="form-control" tabindex="7">
-            <option value="">-Sin asignar-</option>
-            @foreach($repartidores as $repartidor)
-            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
-            @endforeach
-          </select>
-          <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
-            </div>
-            </div>
-    
-            <div class="col-4">
-                <label for="" class="col-12 col-form-label">Ruta</label>
-            <div class="input-group">
-
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
-              </div>
-                <select id="ruta" name="ruta" class="form-control" tabindex="8"> 
-                  <option value="Ruta 1">Sin asignar</option>
-                  <option value="Ruta 1">Ruta 1</option>
-                  <option value="Ruta 2">Ruta 2</option>
-                  <option value="Ruta 3">Ruta 3</option>
-                  <option value="Ruta 4">Ruta 4</option>
-                  <option value="Ruta 5">Ruta 5</option>
-                </select>
-              <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
-            </div>
-            </div>
-        </div>
-
+      
 
 
 
@@ -566,18 +568,7 @@ Parte 2
         </div>
 
 
-        <div class="row mt-5 ml-3">
-          
-        <a href="/pedidos" class="btn btn-primary">Cancelar</a>
-        &nbsp; &nbsp;
-        <!--
-      <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
--->
-<a href="/pedidos/create" class="btn btn-primary">Limpiar</a>
-      &nbsp; &nbsp;
-        <button type="submit" class="btn btn-primary" tabindex="19">Guardar</button> &nbsp; &nbsp;
-        <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank"><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
-        </div>
+        
 
 
         </div>
@@ -597,11 +588,32 @@ Parte 3
                 <div id="results">Esperando foto...</div>
             </div>
 
-        </div>
+
+            
+        
+
+
+          </div>
+
+          <div class="row mt-5 ml-2 mb-2" >
+          <div class="col-12" style="float:right;" >
+          <a href="/pedidos" class="btn btn-primary" >Cancelar</a>
+          &nbsp; &nbsp;
+          <!--
+        <input type="button" class="btn btn-primary" onclick="myFunction()" value="Limpiar">
+  -->
+  <a href="/pedido/crearp" class="btn btn-primary" >Limpiar</a>
+        &nbsp; &nbsp;
+          <button type="submit" class="btn btn-primary" tabindex="19">Guardar</button> &nbsp; &nbsp;
+          <a href="/pedidos/imprimire" onclick="redireccionarPagina()" target="_blank" ><button type="submit" formtarget="_blank" name="impri" class="btn btn-primary" >Guardar e Imprimir</button></a>
+          </div>
+
+          </div>
+      
 
     </div>
 
-
+    
 
 
 

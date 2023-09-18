@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('estatus', EstatusController::class);
     
 }); 
-
+ 
 Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, 'desdeenvio'] )->name('desdeenvio') ;
 Route::get('pedido/editando/{id}', [App\Http\Controllers\PedidoController::class, 'editando'] )->name('editando') ;
 Route::get('pedido/editarlo/{id}', [App\Http\Controllers\PedidoController::class, 'editarlo'] )->name('editarlo') ;
