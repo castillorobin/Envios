@@ -237,7 +237,7 @@ Parte 1
             <input type="text"  hidden >
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
       
-                <select id="comer" name="comer" class="js-states form-control mi-selector1" tabindex="1" required multiple="multiple" >
+                <select id="comer" name="comer" class="js-states form-control mi-selector1"  autofocus tabindex="1" required multiple="multiple" >
                 
      
                 @foreach($vendedores as $vendedor)
