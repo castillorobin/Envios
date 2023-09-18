@@ -229,11 +229,11 @@ Parte 1
         <div class="col-5 p-2" style="width=100%;">
         <div class="row">
             <div class="col-10 ">
-            <input type="text" tabindex="1" hidden >
+            <input type="text" hidden >
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
    
-                <select id="comer" name="comer" class="form-control mi-selector" tabindex="2" data-placeholder="Seleccionar..." required >
-                <option value="">-Seleccionar comercio-</option>
+                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required >
+               
      
                 @foreach($vendedores as $vendedor)
                 <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
@@ -251,7 +251,7 @@ Parte 1
         <div class="row">
             <div class="col-12 ">
             <label for="inputEmail3" class="col-6 col-form-label">Destinatario *</label>
-            <input type="text" id="desti" name="desti" class="form-control" tabindex="3" placeholder="Ingrese el nombre del destinatario" required>
+            <input type="text" id="desti" name="desti" class="form-control" tabindex="2" placeholder="Ingrese el nombre del destinatario" required>
             <div class="invalid-feedback">Este campo es obligatorio.</div>
             <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>      
             </div>

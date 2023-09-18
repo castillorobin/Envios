@@ -229,10 +229,11 @@ Parte 1
         <div class="col-5 p-2" style="width=100%;">
         <div class="row">
             <div class="col-10 ">
+            <input type="text"  hidden >
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
-      <input type="text" tabindex="1" hidden >
-                <select id="comer" name="comer" class="form-control mi-selector"  data-placeholder="Seleccionar..." required >
-                <option value="">-Seleccionar comercio-</option>
+      
+                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required >
+                
      
                 @foreach($vendedores as $vendedor)
                 <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
