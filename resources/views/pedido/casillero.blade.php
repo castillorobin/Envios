@@ -242,7 +242,7 @@ Parte 1
                 <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
                 @endforeach
                 </select>
-                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                
                 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
 
