@@ -149,7 +149,7 @@ function myFunction() {
   
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>  
 jQuery(document).ready(function($){
     $(document).ready(function() {
@@ -235,7 +235,7 @@ Parte 1
             <input type="text" hidden >
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
    
-                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required multiple="multiple">
+                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" required multiple="multiple">
                
      
                 @foreach($vendedores as $vendedor)

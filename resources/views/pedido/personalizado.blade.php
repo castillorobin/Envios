@@ -5,9 +5,8 @@
 {{date_default_timezone_set('America/El_Salvador') }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
-    
-    
-   
+
+
 <script>
 
 function mostrando()
@@ -149,13 +148,17 @@ function myFunction() {
   
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>  
 jQuery(document).ready(function($){
     $(document).ready(function() {
         $('.mi-selector').select2({
           maximumSelectionLength: 1
         });
+        $('.mi-selector1').select2({
+          maximumSelectionLength: 1
+        });
+        
     });
 });
 </script>
@@ -234,7 +237,7 @@ Parte 1
             <input type="text"  hidden >
                 <label for="" class="col-10 col-form-label">Comercio / Tienda *</label>
       
-                <select id="comer" name="comer" class="form-control mi-selector" tabindex="1" data-placeholder="Seleccionar..." required multiple="multiple">
+                <select id="comer" name="comer" class="js-states form-control mi-selector1" tabindex="1" required multiple="multiple" >
                 
      
                 @foreach($vendedores as $vendedor)
@@ -244,6 +247,14 @@ Parte 1
                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                 <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
             </div>
+            <br>
+
+
+
+
+
+
+
 
             <div class="col-2 pt-4" style="display: flex; align-items: center;" >
                 <a href="/pedido/desdeenvio">+ Crear</a>
