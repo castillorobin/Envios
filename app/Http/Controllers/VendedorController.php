@@ -37,7 +37,7 @@ class VendedorController extends Controller
         //return view('vendedor.index')->with(['vendedores'=>$vendedores, 'date'=>$date]);
         return view('vendedor.inicio', compact('vendedores', 'vendedorestotal'));
     }
-
+ 
     public function comercios()
     {
         //$vendedores = Vendedor::where('nombre', $comercio)->get();
@@ -169,7 +169,20 @@ class VendedorController extends Controller
         $fecha = Carbon::today();
         //$date = $date->format('l jS F Y');
         $fecha = strftime("%A %d de %B %Y");
-        return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
+        if(isset($_POST['person']))
+        {
+            return view('pedido.personalizado')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
+        }elseif(isset($_POST['pfijo']))
+        {
+        return view('pedido.puntofijo')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
+        }elseif(isset($_POST['casi']))
+        {
+        return view('pedido.casillero')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
+        }else{
+            return view('pedido.create')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
+        }
+
+        
     }
     public function show($id)
     {

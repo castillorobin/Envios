@@ -810,13 +810,86 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $vendedores = Vendedor::all();
         
         
+        $repartidores = Repartidor::all();
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+
+       
+        return view('pedido.denvio')->with(['vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+
+        //return view('pedido.create')->with('vendedores', $vendedores);
+    }
+    public function comerperso()
+    {
+        $last = Pedido::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        
         
         $repartidores = Repartidor::all();
         $date = Carbon::today();
         //$date = $date->format('l jS F Y');
         $date = strftime("%A %d de %B %Y");
 
-        return view('pedido.denvio')->with(['vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+       
+        return view('pedido.guardarpe')->with(['vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+
+        //return view('pedido.create')->with('vendedores', $vendedores);
+    }
+
+    public function comerpfijo()
+    {
+        $last = Pedido::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        
+        
+        $repartidores = Repartidor::all();
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+
+       
+        return view('pedido.guardarfijo')->with(['vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
+
+        //return view('pedido.create')->with('vendedores', $vendedores);
+    }
+    public function comercasi()
+    {
+        $last = Pedido::latest('id')->first();
+        $lastid = $last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+        
+        
+        $repartidores = Repartidor::all();
+        $date = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $date = strftime("%A %d de %B %Y");
+
+       
+        return view('pedido.guardarcasi')->with(['vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid]);
 
         //return view('pedido.create')->with('vendedores', $vendedores);
     }

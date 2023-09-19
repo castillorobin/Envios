@@ -247,7 +247,7 @@ Parte 1
             </div>
 
             <div class="col-2 pt-4" style="display: flex; align-items: center;">
-                <a href="/pedido/desdeenvio">+ Crear</a>
+                <a href="/pedido/comercasi">+ Crear</a>
             </div>
         </div>
 

@@ -521,12 +521,12 @@ if(document.getElementById("flexs").checked)
 
 <div class="modal-footer px-4">
        
-<a href="/pedidos" class="btn btn-primary">Cerrar</a>
+<a href="/pedido/crearp" class="btn btn-primary">Cerrar</a>
         &nbsp; &nbsp;
         
-        <a href="/pedido/desdeenvio" class="btn btn-primary">Limpiar</a>
+        <a href="/pedido/comerperso" class="btn btn-primary">Limpiar</a>
       &nbsp; &nbsp;
-        <button type="submit" class="btn btn-primary">Guardar y cerrar</button>
+        <button type="submit" class="btn btn-primary" name="person">Guardar y cerrar</button>
       </div>
 
 
