@@ -34,7 +34,17 @@ class PedidoController extends Controller
 
 
     }
+    public function indexdigitado()
+    {
+        //$pedidos = Pedido::all();
+        $pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+               // $repartidores = Repartidor::all();
+        $vendedores = Vendedor::all();
+        $nota= ' ';
+        return view('pedido.indexdigitado', compact('pedidos','vendedores','nota'));
 
+
+    }
     public function indexfiltro($comercio)
     {
         //$pedidos = Pedido::all();
@@ -43,6 +53,18 @@ class PedidoController extends Controller
         $vendedores = Vendedor::all();
         $nota= ' ';
         return view('pedido.indexfiltro', compact('pedidos','vendedores','nota'));
+
+
+    }
+
+    public function indexdigitadofiltro($comercio)
+    {
+        //$pedidos = Pedido::all();
+        //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        $pedidos = Pedido::where('vendedor', $comercio)->get();
+        $vendedores = Vendedor::all();
+        $nota= ' ';
+        return view('pedido.indexdigitadofiltro', compact('pedidos','vendedores','nota'));
 
 
     }

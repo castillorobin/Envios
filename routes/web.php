@@ -62,6 +62,9 @@ Route::get('comercio/listado', [App\Http\Controllers\VendedorController::class, 
 
 Route::get('pedido/indexfiltro/{id}', [App\Http\Controllers\PedidoController::class, 'indexfiltro'] )->name('indexfiltro') ;
 
+Route::get('pedido/indexdigitadofiltro/{id}', [App\Http\Controllers\PedidoController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
+Route::get('pedido/indexdigitado/', [App\Http\Controllers\PedidoController::class, 'indexdigitado'] )->name('indexdigitado') ;
+
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;
 
 Route::get('factura/facturapdf/{pedidos}', [App\Http\Controllers\FacturacionController::class, 'facturapdf'] )->name('pedido.facturapdf') ;

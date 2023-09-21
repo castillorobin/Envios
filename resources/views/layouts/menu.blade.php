@@ -27,7 +27,7 @@
         <i class="fas fa-keyboard"></i> Digitado
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          
+        <a class="dropdown-item" href="/pedido/indexdigitado"><i class="fas fa-list-ul"></i>Listado</a>
           <a class="dropdown-item" href="/pedido/crearp"><i class="fas fa-dolly"></i>Personalizado</a>
           <a class="dropdown-item" href="/pedido/crearpf"><i class="fas fa-dolly"></i>Punto Fijo</a>
           <a class="dropdown-item" href="/pedido/crearcas"><i class="fas fa-dolly"></i>Casillero</a>
