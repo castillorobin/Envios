@@ -36,13 +36,23 @@
       </li>
       @endcan
 
-    <li>
     
-     <a class="nav-link" href="/estatus">
-     <i class="fas fa-truck"></i><span>Cambiar Estado</span>
-    </a>
-    </li>
-    
+      @can('ver-envios')
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-keyboard"></i> Estados
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/estatus"><i class="fas fa-list-ul"></i>Cambiar Estado</a>
+          <a class="dropdown-item" href="/estado/estadomanual"><i class="fas fa-dolly"></i>Estado Manual</a>
+       
+         
+        </div>
+      </li>
+      @endcan
+
+  
+     
     <li>
   
      <a class="nav-link" href="/pedido/estado">

@@ -29,6 +29,46 @@ class EstatusController extends Controller
        return view('estatus.index');
     }
 
+    public function emanual()
+    {
+         
+        $repartidores = Repartidor::all();
+       $pedidosestado = Estatus::all();
+       foreach($pedidosestado as $estado){
+        $estado->delete();
+    }
+       return view('estatus.estadomanual', compact('repartidores') );
+    }
+
+    public function manualfiltro(Request $request)
+    {
+        $filtro = 1;
+        $ftipo= 1;
+        $pedidos = new Pedido();
+        $pedidosall = new Pedido();
+        $pedidosall = Pedido::all();
+        $pedidosf = collect([$pedidosall]) ;
+        $fecha = $request->get('fecha');
+        $pedidos = $pedidosall;
+        if($fecha != ""){
+
+            
+            $pedidos = $pedidosall->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+
+        }else{
+            $pedidos = $pedidosall;
+           
+      
+        }
+
+        $repartidores = Repartidor::all();
+        return view('estatus.estadomanualfiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
+
+    }
+
+
+
+
     public function listaestatus(Request $request)
     {
 

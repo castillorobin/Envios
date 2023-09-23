@@ -153,7 +153,7 @@ ul li ul:hover {
           <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
           <br>
         
-            
+             
         </div>
       </div>
                         </td>

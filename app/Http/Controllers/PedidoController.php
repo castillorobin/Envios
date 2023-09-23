@@ -109,9 +109,6 @@ class PedidoController extends Controller
 }
 
 
-
-
-
     public function camara()
     {
         

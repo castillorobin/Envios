@@ -61,6 +61,7 @@ function abrirURL(){
                 <div class="col-lg-12">
                     <div class="card"> 
                         <div class="card-body">
+                            
 <style>
     @media print{
 @page {
@@ -655,7 +656,7 @@ input[type="date"]:valid::before {
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
 -->
 
-
+ 
 
 <script>
        
