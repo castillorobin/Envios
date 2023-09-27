@@ -44,6 +44,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/estatus"><i class="fas fa-list-ul"></i>Cambiar Estado</a>
+        <a class="dropdown-item" href="/estado/estadolote"><i class="fas fa-list-ul"></i>Cambiar en Lote</a>
           <a class="dropdown-item" href="/estado/estadomanual"><i class="fas fa-dolly"></i>Estado Manual</a>
        
          

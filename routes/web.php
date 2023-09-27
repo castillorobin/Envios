@@ -73,7 +73,9 @@ Route::get('factura/listadofiltro/{comercio}', [App\Http\Controllers\Facturacion
 
 Route::get('estado/estadomanual', [App\Http\Controllers\EstatusController::class, 'emanual'] )->name('estado.emanual') ;
 Route::get('estado/manualfiltro', [App\Http\Controllers\EstatusController::class, 'manualfiltro'] )->name('estado.manualfiltro') ;
-
+ 
+Route::get('estado/estadolote', [App\Http\Controllers\EstatusController::class, 'elote'] )->name('estado.elote') ;
+Route::get('estado/lotefiltro', [App\Http\Controllers\EstatusController::class, 'lotefiltro'] )->name('estado.lotefiltro');
 
 
 Route::get('pedidos/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiqueta'] )->name('pedido.etiqueta') ; 

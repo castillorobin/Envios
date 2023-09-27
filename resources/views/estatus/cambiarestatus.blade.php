@@ -348,7 +348,7 @@ input[type="date"]:valid::before {
     </tr>
     @endforeach
   
-</tbody>
+</tbody> 
 </table>
 <tr>
         <td colspan="12" style="width:100%">
