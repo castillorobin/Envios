@@ -376,7 +376,7 @@ jQuery(document).ready(function($){
                     <td>{{ $pedidos[$i]->total }} </td>
                     <td>{{ $pedidos[$i]->agencia }} </td>
                    
-   
+    
 
     
 

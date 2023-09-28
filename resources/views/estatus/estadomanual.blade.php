@@ -98,7 +98,7 @@ jQuery(document).ready(function($){
                             <div class="col-12">
       
       <div class="input-group">
-
+ 
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
         </div>
@@ -138,7 +138,7 @@ jQuery(document).ready(function($){
 
 
 <div class="col-4 mt-4">  <!-- div filtrros  -->
-<a href="/facturas" class="btn btn-danger" style="float:right;">Cerrar</a>
+
 
 <span style="font-size:18px; color: red;">  &nbsp; </span>
 

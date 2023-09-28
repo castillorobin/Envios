@@ -9,7 +9,7 @@
 @page {
 size: landscape;
 }
-} 
+}  
     /*
     .dropdown-menu-center {
   left: 2% !important;
@@ -180,6 +180,48 @@ jQuery(document).ready(function($){
 
 
 </script>
+
+
+<script languague="javascript">
+       
+
+        function mostrando()
+{
+  var checkbox = document.getElementById('check2');
+  if (checkbox.checked != true)
+  {
+    div = document.getElementById('flotante');
+            div.style.display = 'none';
+           
+
+  }else{
+    div = document.getElementById('flotante');
+            div.style.display = '';
+           
+  }
+}
+
+
+function mostrando2()
+{
+  var checkbox = document.getElementById('check4');
+  if (checkbox.checked != true)
+  {
+    div = document.getElementById('flotante2');
+            div.style.display = 'none';
+           
+
+  }else{
+    div = document.getElementById('flotante2');
+            div.style.display = '';
+           
+  }
+}
+
+</script>
+
+
+
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
@@ -277,7 +319,7 @@ jQuery(document).ready(function($){
 
 
 <div class="col-4 mt-4">  <!-- div filtrros  -->
-<a href="/facturas" class="btn btn-danger" style="float:right;">Cerrar</a>
+
 
 <span style="font-size:18px; color: red;">  &nbsp; </span>
 
@@ -295,6 +337,7 @@ jQuery(document).ready(function($){
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
         <th style="color: #fff;">Estado del pago</th>
+        <th style="color: #fff;">Repartidor</th>
         <th style="color: #fff;">Precio del paquete</th>
         <th style="color: #fff;">Precio del envio</th>
         <th style="color: #fff;">Total</th>
@@ -323,7 +366,7 @@ jQuery(document).ready(function($){
                     <td class="text-center"><h5><span class="badge badge-danger ">{{ $pedidos[$i]->pagado }} </span></h5></td>
                     @endif
 
-                   
+                    <td >{{ $pedidos[$i]->repartidor }}</td>
                     <td>{{ $pedidos[$i]->precio }}  </td>
                    
                     <td>{{ $pedidos[$i]->envio }} </td>
@@ -340,7 +383,7 @@ jQuery(document).ready(function($){
 
   
 
-<button type="button" class="edit btn btn-warning" data-toggle="modal" value="{{ $pedidos[$i]->detallep }}" data-target="#exampleMo" >Cambiar</button>
+<button type="button"  class="edit btn btn-warning" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal5" >Cambiar</button>
   <!--
  
     <a href="" class="dropdown-toggle" data-toggle="dropdown">
@@ -404,144 +447,74 @@ jQuery(document).ready(function($){
             </div> <!-- Termina fila General -->
                             
          
-            
-            
+                 
             <!-- Empieza Modal -->
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal estatus en lote-->
+<form action="/estado/cestadomanual/" method="get">
+<div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pagar</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cambiar Estado</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+      <select id="estado" name="estado" class="form-control" tabindex="9" onChange="jsFunction()" id="estado">
+            <option value="Creado" onclick="jsFunction()">Creado</option>
+            <option value="En ruta">En ruta</option>
+            <option value="Entregado">Entregado</option>
+            <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
+            <option value="Reprogramado">Reprogramado</option>
+            <option value="Agencia San Salvador">Agencia San Salvador</option>
+            <option value="Agencia San Miguel">Agencia San Miguel</option>
+            <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+            <option value="No retirado">No retirado</option>
+            <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+            <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+            <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+            <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+            <option value="Casillero San Salvador">Casillero San Salvador</option>
+            <option value="Casillero San Miguel">Casillero San Miguel</option>
+            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+            
+          </select>
+
+          <br>
         
 
-      <div class="col-12 border px-0 mt-1">  <!-- Inicia columna 4  -->
-      <div class="col-12 text-center pt-2 mb-3" style="background-color:#e85f24; color:white; height:75px;">  <!-- Inicia columna total  -->
-<H1>Total $ <label for="" id="preci">0</label></H1>
+ <label hidden for="" id="prueba" name="prueba"></label> 
+ <input hidden type="text" id="proba" name="proba">
+ <input hidden type="text" id="fecham" name="fecham" value="{{ $fecha }}">
+ 
 
-</div> <!-- Termina columna total  -->
-<div class="col-12">  <!-- Inicia cajero, pagos etc. -->
-
-Cajero
-<input type="text" class="form-control" name="cajero" id="cajero" value="" readonly>
-<br>
-<div class="row pt-2">
-    
-<div class="col-6">Medio de pago
-    <select name="medio" id="medio" class="form-control">
-        <option value="Efectivo">Efectivo</option>
-        <option value="Deposito">Deposito</option>
-        <option value="Tigo Money">Tigo Money</option>
-        <option value="Chivo">Chivo</option>
-    </select>
-
+ <div class="col-12">
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check2" name="check2" Onclick="javascript:mostrando();">
+            <label class="form-check-label" for="check2">Asignar repartidor</label>
+        </div>
 </div>
-<div class="col-6">
-    
-
-Fecha de pago
-
-<div class="input-group ">
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/tear-off-calendar.png"/></span>
-</div>
-
-<input type="text" class="form-control" name="fpago" id="fpago" value="{{ date('d/m/Y') }}" aria-label="Username" aria-describedby="basic-addon1" readonly>
-
-</div>
-
-
-
-
-
-</div>
-</div>
-
-
-
-<br>
-
-<div class="row pt-2">
-    
-<div class="col-6">Tipo de comprobante
-    <select name="medio" id="medio" class="form-control">
-        <option value="Efectivo">Ticket</option>
-        <option value="Deposito">Factura</option>
-        <option value="Tigo Money">Crédito Fiscal</option>
-        <option value="Tigo Money">PDF</option>
-        
-    </select>
-
-</div>
-<div class="col-6">
-    
-
-No. de comprobante
-
-<div class="input-group ">
-<div class="input-group-prepend">
-
-</div>
-
-<input type="text" class="form-control" name="fpago" id="fpago" aria-label="Username" aria-describedby="basic-addon1" >
-
-</div>
-
-
-
-
-
-</div>
-</div>
-<br>
-
-<div class="col-12">
-<div class="form-group form-check">
-<input type="checkbox" class="form-check-input" id="check1">
-<label class="form-check-label" for="check1">IVA</label>
-</div>
-<div class="form-group form-check">
-<input type="checkbox" class="form-check-input" id="check2" Onclick="javascript:mostrando();">
-<label class="form-check-label" for="check2">Hacer descuento</label>
-</div>
-
-</div>
-
-
-
-
-
 
 
 <div class="col-6" id="flotante" style="display:none;">
 
-<div class="input-group ">
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1"> <i class="far fa-money-bill-alt"></i> </span>
-</div>
+    <div class="input-group ">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"> <i class="fas fa-truck"></i> </span>
+        </div>
 
-<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
+        <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+            <option value="">-Sin asignar-</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
 
-</div>
+    </div>
 
-
-
-
-
-
-</div>
-</div>
-
-<br>
-<div class="col-12" id="flotante2" style="display:none;">
-Nota de descuento
-<input type="text" class="form-control" name="fpago" id="fpago"  aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
 
@@ -550,30 +523,47 @@ Nota de descuento
 
 
 
-
-
-<br>
-<div class="col-12 mb-3">
-<button type="button" class="btn btn-lg btn-warning btn-block">PAGAR</button>
+<div class="col-12">
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="check4" name="check4" Onclick="javascript:mostrando2();">
+            <label class="form-check-label" for="check4">Caja o Estante</label>
+        </div>
 </div>
 
-</div> <!-- Termina cajero, pagos etc.  -->
-</div> <!-- Termina columna 4  -->
+
+<div class="col-6" id="flotante2" style="display:none;">
+
+    <div class="input-group ">
+        <div class="input-group-prepend">
+            
+        </div>
+
+        <input type="text" id="estante" name="estante">
+
+    </div>
+
+</div>
+
+
+
 
 
 
       </div>
-      <div class="modal-footer " style="background-color:white;">
+      <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        
+        </form>
       </div>
     </div>
   </div>
 </div>
 
-
             <!-- Termina Modal -->
 
+
+      
 
 
 
@@ -605,6 +595,35 @@ Nota de descuento
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
+
+
+
+
+<script>
+       
+        
+$(document).ready(function(){
+	$(document).on('click', '.edit', function(){
+		var id=$(this).val();
+        
+  
+        $('#edit').modal('show');
+        $('#prueba').text(id);
+        //$('#proba').value(id);
+      
+
+
+        document.getElementById("proba").value = id;
+	});
+});
+ 
+
+
+
+
+
+
+    </script>
 
 
     
@@ -645,4 +664,6 @@ Nota de descuento
     );
 }); 
     </script>
+
+
 @endsection
