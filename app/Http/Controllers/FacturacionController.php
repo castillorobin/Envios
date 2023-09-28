@@ -66,7 +66,7 @@ class FacturacionController extends Controller
  
     public function facturapdf(Request $request, $comercio)
     {
-
+ 
        // $pedidos = Pedido::all();
        $total = (float)$request->get('toti');
        $medio = $request->get('medios');

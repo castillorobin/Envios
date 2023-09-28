@@ -86,18 +86,42 @@ class EstatusController extends Controller
         $pedidosall = Pedido::all();
         $pedidosf = collect([$pedidosall]) ;
         $fecha = $request->get('fecha');
-        $pedidos = $pedidosall;
-        if($fecha != ""){
-
-            
-            $pedidos = $pedidosall->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
-
-        }else{
-            $pedidos = $pedidosall;
-           
-      
+        //$pedidos = $pedidosall;
+        
+        $estado = $request->estado;
+        $repartidor = $request->repartidor;
+        if(!$request->repartidor && $request->estado){      
+            $pedidos = Pedido::wherein('estado', $estado)->get();
+        }else if ($request->repartidor && !$request->estado){
+            $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
+        }else if ($request->repartidor && $request->estado){
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
         }
 
+
+        //$pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+        
+        $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+        
+
+       
+        /*
+         if($fecha != ""){      
+            $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+        }
+
+
+         $estado = $request->estado;
+
+        $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
+        if(!$request->estado){
+
+            
+            $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
+
+        }
+
+*/
         $repartidores = Repartidor::all();
         return view('estatus.estadolotefiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
 

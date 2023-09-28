@@ -258,7 +258,7 @@ jQuery(document).ready(function($){
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
-          <select id="repartidor" name="repartidor[]"  class="form-control mi-selector1" multiple="multiple">
+          <select id="repartidor" name="repartidor"  class="form-control mi-selector1" multiple="multiple">
             
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
@@ -278,7 +278,7 @@ jQuery(document).ready(function($){
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
         </div>
-        <select id="estado" name="estado[]" class="form-control mi-selector2" multiple="multiple">
+        <select id="estado" name="estado" class="form-control mi-selector2" multiple="multiple">
           <option value="estado" >Estado del Envio</option>
           <option value="Creado" >Creado</option>
           <option value="En ruta">En ruta</option>
@@ -333,6 +333,7 @@ jQuery(document).ready(function($){
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
         <th style="color: #fff;">Estado del pago</th>
+        <th style="color: #fff;">Repartidor</th>
         <th style="color: #fff;">Precio del paquete</th>
         <th style="color: #fff;">Precio del envio</th>
         <th style="color: #fff;">Total</th>
@@ -366,7 +367,7 @@ jQuery(document).ready(function($){
                     @else
                     <td class="text-center"><h5><span class="badge badge-danger ">{{ $pedidos[$i]->pagado }} </span></h5></td>
                     @endif
-
+                    <td >{{ $pedidos[$i]->repartidor }}</td>  
                    
                     <td>{{ $pedidos[$i]->precio }}  </td>
                    
