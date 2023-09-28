@@ -242,8 +242,9 @@ class EstatusController extends Controller
         $pedido->nota = $request->get('fpago');
 
         $pedido->save();
-        $pedidosall = Pedido::all();
-        $pedidos = $pedidosall;
+        return redirect()->back();
+       // $pedidosall = Pedido::all();
+        //$pedidos = $pedidosall;
         /*
         //$estado = $request->estadom;
         //$repartidor2 = $request->repartidorm;
@@ -258,9 +259,9 @@ class EstatusController extends Controller
 
         //$pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
         */
-        $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
-        $repartidores = Repartidor::all();
-        return view('estatus.estadomanualfiltro', compact('pedidos','repartidores', 'fecha'));
+        //$pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+        //$repartidores = Repartidor::all();
+        //return view('estatus.estadomanualfiltro', compact('pedidos','repartidores', 'fecha'));
 
        
         // $repartidores = Repartidor::all();

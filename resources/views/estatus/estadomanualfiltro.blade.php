@@ -3,7 +3,18 @@
 @section('content')
 {{date_default_timezone_set('America/El_Salvador') }}
 
-
+<script>
+    function actualizar(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    //Abrir URL que necesites
+    //window.location = "http://127.0.0.1:8000/facturas/";
+    //window.location = "https://appmeloexpress.com/facturas/";
+    location.reload();
+};
+</script>
 <style>
     @media print{
 @page {
@@ -552,7 +563,7 @@ function mostrando2()
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary" >Actualizar</button>
         
         </form>
       </div>
