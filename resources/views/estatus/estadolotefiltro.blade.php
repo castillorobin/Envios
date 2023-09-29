@@ -38,7 +38,7 @@ function mostrando2()
            
   }
 }
-
+ 
 </script>
 
 <style>
@@ -319,7 +319,8 @@ jQuery(document).ready(function($){
 <span style="font-size:18px; color: red;">  &nbsp; </span>
 
                 </div> <!-- Termina div filtros  -->
-
+                <form action="/estado/cestadolote" method="get">
+                  
 <div class="col-12 table-responsive " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
@@ -416,7 +417,7 @@ jQuery(document).ready(function($){
 
             <!-- Modal -->
 <!-- Modal estatus en lote-->
-<form action="/estado/estadolote" method="get">
+
 <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -427,7 +428,7 @@ jQuery(document).ready(function($){
         </button>
       </div>
       <div class="modal-body">
-      <select id="estado" name="estado" class="form-control" tabindex="9" onChange="jsFunction()" id="estado">
+      <select id="estadom" name="estadom" class="form-control" tabindex="9" onChange="jsFunction()">
             <option value="Creado" onclick="jsFunction()">Creado</option>
             <option value="En ruta">En ruta</option>
             <option value="Entregado">Entregado</option>
@@ -467,7 +468,7 @@ jQuery(document).ready(function($){
             <span class="input-group-text" id="basic-addon1"> <i class="fas fa-truck"></i> </span>
         </div>
 
-        <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+        <select id="repartidorm" name="repartidorm" class="form-control" tabindex="15">
             <option value="">-Sin asignar-</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
@@ -514,7 +515,7 @@ jQuery(document).ready(function($){
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Actualizar</button>
-        <button type="submit" name="impri" class="btn btn-primary" formtarget="_blank" onclick="">Actualizar e Imprimir</button>
+        
         </form>
       </div>
     </div>

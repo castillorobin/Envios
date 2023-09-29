@@ -63,7 +63,7 @@ class FacturacionController extends Controller
        return view('factura.inicio')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'vende'=>$vende  ]);
  
     }
- 
+  
     public function facturapdf(Request $request, $comercio)
     {
  

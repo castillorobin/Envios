@@ -77,6 +77,7 @@ Route::get('estado/cestadomanual/', [App\Http\Controllers\EstatusController::cla
  
 Route::get('estado/estadolote', [App\Http\Controllers\EstatusController::class, 'elote'] )->name('estado.elote') ;
 Route::get('estado/lotefiltro', [App\Http\Controllers\EstatusController::class, 'lotefiltro'] )->name('estado.lotefiltro');
+Route::get('estado/cestadolote', [App\Http\Controllers\EstatusController::class, 'cestadolote'] )->name('estado.cestadolote') ;
 
 
 Route::get('pedidos/etiqueta/{id}', [App\Http\Controllers\PedidoController::class, 'etiqueta'] )->name('pedido.etiqueta') ; 
