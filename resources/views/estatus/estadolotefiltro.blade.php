@@ -223,20 +223,20 @@ jQuery(document).ready(function($){
         </div>
         <div class="section-body">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-12">
                     <div class="card"> 
                         <div class="card-body">
 
                             <h3 class="text-center">Cambiar Estado en Lote</h3>
                         
-            <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
+            <div class="row py-2" style="background-color: white;" >   <!-- Inicia fila General -->
            
 
                 <div class="col-12 ">   <!-- Inicia columna 8  -->
                 
                 <div class="row mt-1 border mr-1 ">   
                 
-                <div class="col-sm-8 mt-4 mb-4"> <!-- div buscar -->
+                <div class="col-12 mt-4 mb-4"> <!-- div buscar -->
                 <form action="/estado/lotefiltro/" method="get">
                     <table>
                         <tr>
@@ -251,7 +251,7 @@ jQuery(document).ready(function($){
                             </td>
                             <td>
                                  
-    <div class="col-sm-12 ">
+    <div class="col-12 ">
         
         <div class="input-group">
 
@@ -310,18 +310,10 @@ jQuery(document).ready(function($){
                         </tr>
                         </form>
                     </table>
-                </div> <!-- Termina div buscar  -->
+               
 
-
-<div class="col-4 mt-4">  <!-- div filtrros  -->
-
-
-<span style="font-size:18px; color: red;">  &nbsp; </span>
-
-                </div> <!-- Termina div filtros  -->
                 <form action="/estado/cestadolote" method="get">
-                  
-<div class="col-12 table-responsive " > <!-- div tabla  -->
+<div class="col-12 table-responsive mt-4" > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
