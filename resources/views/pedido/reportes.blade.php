@@ -283,7 +283,7 @@ ul li ul:hover {
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
             @endforeach
           </select>
-           
+            
         </div>
     </div>
                         </td>

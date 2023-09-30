@@ -185,17 +185,37 @@ class PedidoController extends Controller
     }
     public function reportegananciaff(Request $request)
     {
+
+        $estado = $request->estado;
+        $repartidor = $request->repartidor;
+        if(!$request->repartidor && $request->estado){      
+            $pedidos = Pedido::wherein('estado', $estado)->get();
+        }else if ($request->repartidor && !$request->estado){
+            $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
+        }else if ($request->repartidor && $request->estado){
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+        }
+
+
         $desde = $request->input('desde');
         $hasta = $request->input('hasta');
+        
+        if($desde != ""){
+            $pedidos = $pedidos->intersect(Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get());
+
+        }
+        
         //$pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
-        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])
-      
-        ->get();
         $cantidad = 0;
         $tprecio = 0;
         $tenvio = 0;
         $total = 0;
 
+
+
+
+
+        /*
         $estado = $request->get('estado');
         if($estado != "estado"){
 
@@ -203,16 +223,21 @@ class PedidoController extends Controller
             $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
 
         }
-        $tipo = $request->get('tipo');
-        if($tipo!="tipo"){
-            $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
-        }
 
         $repartidor = $request->get('repartidor');
         if($repartidor!="repartidor"){
             $pedidos = $pedidos->intersect(Pedido::whereIn('repartidor', [$repartidor])->get());
            
         }
+        */
+
+
+        $tipo = $request->get('tipo');
+        if($tipo!="tipo"){
+            $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
+        }
+
+       
 
 
 
@@ -356,7 +381,7 @@ class PedidoController extends Controller
         $pedidosga = Filtroganan::all();
        foreach($pedidosga as $ganancia){
         $ganancia->delete();
-    }
+        }
 
         $pedidos = Pedido::all();
 
@@ -589,7 +614,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
 
 
     }
-
+ 
     public function imprimire(Request $request)
     {
 

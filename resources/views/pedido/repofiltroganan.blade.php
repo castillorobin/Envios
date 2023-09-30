@@ -3,6 +3,31 @@
 
 @section('content')
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>  
+jQuery(document).ready(function($){
+    $(document).ready(function() {
+       $('.mi-selector').select2({
+        placeholder: "Estado"
+       });
+
+       $('.mi-selector1').select2({
+        placeholder: "Repartidor"
+       });
+       
+      
+
+    });
+   
+   
+});
+
+
+
+</script>
+ 
+
     <section class="section">
         <div class="section-header">
         <div style="width:100%; ">
@@ -22,7 +47,7 @@
 @page {
 size: landscape;
 }
-}
+} 
     /*
     .dropdown-menu-center {
   left: 2% !important;
@@ -167,7 +192,7 @@ ul li ul:hover {
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
         </div>
-        <select id="estado" name="estado" class="form-control" tabindex="9">
+        <select id="estado" name="estado[]" class="form-control mi-selector" multiple="multiple">
           <option value="estado" >Estado del Envio</option>
           <option value="Creado" >Creado</option>
           <option value="En ruta">En ruta</option>
@@ -198,7 +223,7 @@ ul li ul:hover {
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
-          <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+          <select id="repartidor" name="repartidor[]" class="form-control mi-selector1" multiple="multiple">
             <option value="repartidor">Repartidor</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
