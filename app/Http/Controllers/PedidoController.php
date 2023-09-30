@@ -168,11 +168,7 @@ class PedidoController extends Controller
             $pedidos = $pedidos->intersect(Pedido::whereIn('repartidor', [$repartidor])->get());
            
         }
-
-
-
-
-        
+  
         $estado = $request->get('estado');
         if($estado != "estado"){
 
@@ -410,97 +406,6 @@ class PedidoController extends Controller
             return $pdf->stream();
         
 
-        /*
-
-        if($ftipo==1){
-            $pedidos = Pedido::where('fecha_entrega', $filtro)->get();
-            
-            foreach($pedidos as $suma){
-                $total = $total + $suma->total;
-                $tenvi = $tenvi + $suma->envio;
-                $cant = $cant + 1;
-            }
-
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
-            $pdf->setPaper('letter', 'landscape');
-            return $pdf->stream();
-
-        }
-
-        if($ftipo==2){
-            $pedidos = Pedido::where('estado', $filtro)->get();
-            
-            foreach($pedidos as $suma){
-                $total = $total + $suma->total;
-                $tenvi = $tenvi + $suma->envio;
-                $cant = $cant + 1;
-            }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
-            $pdf->setPaper('letter', 'landscape');
-            return $pdf->stream();
-        }
-        
-        
-        if($ftipo==3){
-            $pedidos = Pedido::where('tipo', $filtro)->get();
-
-            foreach($pedidos as $suma){
-                $total = $total + $suma->total;
-                $tenvi = $tenvi + $suma->envio;
-                $cant = $cant + 1;
-            }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
-            $pdf->setPaper('letter', 'landscape');
-            return $pdf->stream();
-
-            
-        }
-        
-        if($ftipo==4){
-            $pedidos = Pedido::where('ruta', $filtro)->get();
-
-            foreach($pedidos as $suma){
-                $total = $total + $suma->total;
-                $tenvi = $tenvi + $suma->envio;
-                $cant = $cant + 1;
-            }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
-            $pdf->setPaper('letter', 'landscape');
-            return $pdf->stream();
-
-
-        }
-
-        if($ftipo==5){
-            $pedidos = Pedido::where('repartidor', $filtro)->get();
-            
-            foreach($pedidos as $suma){
-                $total = $total + $suma->total;
-                $tenvi = $tenvi + $suma->envio;
-                $cant = $cant + 1;
-            }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
-            $pdf->setPaper('letter', 'landscape');
-            return $pdf->stream();
-            
-        }
-        if($ftipo==6){
-            $pedidos = Pedido::where('total', $filtro)->get();
-            
-            foreach($pedidos as $suma){
-                $total = $total + $suma->total;
-                $tenvi = $tenvi + $suma->envio;
-                $cant = $cant + 1;
-            }
-            $pdf = PDF::loadView('pedido.imprimirfiltro', ['pedidos'=>$pedidos, 'total'=>$total, 'cant'=>$cant, 'tenvi'=>$tenvi]);
-            $pdf->setPaper('letter', 'landscape');
-            return $pdf->stream();
-            
-        
-        }
-
-*/
-       
 
     }
     
@@ -513,11 +418,20 @@ class PedidoController extends Controller
         $pedidosall = Pedido::all();
         $pedidosf = collect([$pedidosall]) ;
         $fecha = $request->get('fecha');
-        $pedidos = $pedidosall;
+        //$pedidos = $pedidosall;
+       
+        $estado = $request->estado;
+        $repartidor = $request->repartidor;
+        if(!$request->repartidor && $request->estado){      
+            $pedidos = Pedido::wherein('estado', $estado)->get();
+        }else if ($request->repartidor && !$request->estado){
+            $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
+        }else if ($request->repartidor && $request->estado){
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+        }
+        
         if($fecha != ""){
-
-            
-            $pedidos = $pedidosall->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+            $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
 
         }else{
             $pedidos = $pedidosall;
@@ -525,13 +439,6 @@ class PedidoController extends Controller
       
         }
 
-        $estado = $request->get('estado');
-        if($estado != "estado"){
-
-            
-            $pedidos = $pedidos->intersect(Pedido::whereIn('estado', [$estado])->get());
-
-        }
 
         $ruta = $request->get('ruta');
         if($ruta!="ruta"){
@@ -543,20 +450,11 @@ class PedidoController extends Controller
             $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
         }
 
-        $repartidor = $request->get('repartidor');
-        if($repartidor!="repartidor"){
-            $pedidos = $pedidos->intersect(Pedido::whereIn('repartidor', [$repartidor])->get());
-           
-        }
+        
 
         $total = $request->get('total');
 
         /*
-        
-       
-
-        
-        
         
 */
        // $pedidos = Pedido::where('fecha_entrega', 'LIKE', "%{$fecha}%")->where('estado', 'LIKE', "%{$estado}%")
@@ -606,9 +504,6 @@ class PedidoController extends Controller
         
 
     }
-
-
-
 
     public function cambiarestatus(Request $request)
     {
@@ -788,7 +683,7 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $fecha = strftime("%A %d de %B %Y");
         return view('pedido.personalizado')->with(['vendedores'=>$vendedores, 'fecha'=>$fecha, 'repartidores'=>$repartidores, 'last'=>$last, 'usuarios'=>$usuarios]);
     }
-  
+   
     public function crearpf()
     {
         $usuarios = User::all();

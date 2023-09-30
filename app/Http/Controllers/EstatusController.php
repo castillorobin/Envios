@@ -140,7 +140,7 @@ class EstatusController extends Controller
             $pedidos = Estatus::all();
             $repartidores = Repartidor::all();
             return view('estatus.cambiarestatus', compact('pedidos', 'nota','repartidores'));
-
+ 
         } 
         else{
 
