@@ -19,8 +19,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    //window.location = "https://appmeloexpress.com/factura/listadopagosfiltro/" + data.text; 
-    window.location = "http://127.0.0.1:8000/factura/listadopagosfiltro/" + data.text;
+    window.location = "https://appmeloexpress.com/factura/listadopagosfiltro/" + data.text; 
+    //window.location = "http://127.0.0.1:8000/factura/listadopagosfiltro/" + data.text;
         });
 
     });

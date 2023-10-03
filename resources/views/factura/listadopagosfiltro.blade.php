@@ -63,8 +63,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    //window.location = "https://appmeloexpress.com/factura/listadopagosfiltro/" + data.text; 
-    window.location = "http://127.0.0.1:8000/factura/listadopagosfiltro/" + data.text;
+    window.location = "https://appmeloexpress.com/factura/listadopagosfiltro/" + data.text; 
+    //window.location = "http://127.0.0.1:8000/factura/listadopagosfiltro/" + data.text;
         });
 
     });
@@ -146,7 +146,7 @@ jQuery(document).ready(function($){
                     
                     <td>{{ $facturas[$i]->cajero }} </td>
                     <td>{{ $facturas[$i]->medio }} </td>
-                    <td>{{ $facturas[$i]->fechapago }} </td>
+                    <td>{{  date('d/m/Y', strtotime($facturas[$i]->fechapago))  }}</td>
                     <td>{{ $facturas[$i]->tipo }} </td>
                     <td>{{ $facturas[$i]->numerocompro }} </td>
                     <td>{{ $facturas[$i]->descuento }} </td>
