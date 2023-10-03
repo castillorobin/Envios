@@ -59,9 +59,15 @@ class FacturacionController extends Controller
 
     }
 
-    public function listadopagosfiltro($cajero)
+    public function listadopagosfiltro(Request $request)
     {
-        $facturas = Facturacion::where('cajero', $cajero)->get();
+
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        $cajero = $request->input('usuario');
+        $facturas = Facturacion::whereBetween('fechapago', [$desde, $hasta])->get();
+        $facturas = $facturas->intersect(Facturacion::whereIn('cajero', [$cajero])->get());
+        //$facturas = Facturacion::where('cajero', $cajero)->get();
         $usuarios = User::all();
         //$facturas = Facturacion::all();
         $nota=" ";

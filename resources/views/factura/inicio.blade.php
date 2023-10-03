@@ -58,9 +58,7 @@
 
         } else {
 
-            // si no ha encontrado ninguna coincidencia, esconde la
-
-            // fila de la tabla
+           
 
             tableReg.rows[i].style.display = 'none';
 

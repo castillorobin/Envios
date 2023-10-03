@@ -9,7 +9,8 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>  
+<script> 
+
 jQuery(document).ready(function($){
     $(document).ready(function() {
         $('.mi-selector').select2();
@@ -19,7 +20,7 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    window.location = "https://appmeloexpress.com/factura/listadopagosfiltro/" + data.text; 
+    //window.location = "https://appmeloexpress.com/factura/listadopagosfiltro/" + data.text; 
     //window.location = "http://127.0.0.1:8000/factura/listadopagosfiltro/" + data.text;
         });
 
@@ -41,24 +42,47 @@ jQuery(document).ready(function($){
                     <div class="card"> 
                         <div class="card-body">
 
-                            <h3 class="text-center">Listado     de Pagos</h3>
+                            <h3 class="text-center">Listado de Pagos</h3>
                         
-            <div class="row  py-2" style="background-color: white;" >   <!-- Inicia fila General -->
+            <div class="row py-2" style="background-color: white;" >   <!-- Inicia fila General -->
            
 
-                <div class="col-12">   <!-- Inicia columna 8  -->
-                
-                <div class="row mt-1 border mr-1">   
-                
-                <div class="col-sm-6 mt-4"> <!-- div buscar -->
+            
+ 
+    <div class="col-12">
+ 
+        
 
-<div class="input-group mb-3 ">
+ <form action="/factura/listadopagosfiltro" method="get">
+         <div class="">
+             <table>
+                 <tr>
+                     <td style="width:400px;">
+                     <div class="col-sm-12 ">
+    
+     <div class="input-group ">Desde: &nbsp;  &nbsp;
+       <div class="input-group-prepend">
+         
+         <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
+       </div>
+       <input type="date" id="fecha1" name="desde" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+       <br>
+     
+         
+     </div>
+   </div>
+                     </td>
+                     <td> 
+                         <!-- estado del envio -->
+ <div class="col-12">
+   
+ <div class="input-group ">
 
 <div class="input-group-prepend">
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
 
-<select class="form-control mi-selector" name="comer" id="comer">
+<select class="form-control mi-selector" name="usuario" id="comer">
     <option value="">Buscar Cajero</option>
     @for($i=0;  $i< count($usuarios); $i++ )
                     <option value="{{$usuarios[$i]->name}}">{{ $usuarios[$i]->name }} </option>
@@ -67,33 +91,83 @@ jQuery(document).ready(function($){
 </select>
 
 </div>
+</div>
+                     </td>
+                     <td>
+                         
+                     </td>
+                     <td>
+                     
+                     <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
+     <a href="/factura/listadopagos" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
+                     </td>
+                 </tr>
+                 <tr>
+                     <td>
+                         <br>
+                                                  <!-- hasta-->
+                                                  <div class="col-sm-12 ">
+    
+    <div class="input-group ">Hasta: &nbsp;  &nbsp;
+      <div class="input-group-prepend">
+        
+        <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
+      </div>
+      <input type="date" id="fecha" name="hasta" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
+      <br>
+    
+        
+    </div>
+  </div>
+                     </td>
+                     <td>
+                         <br>
+                         
+                     </td>
+                     <td>
+                         <br>
+           </td>
+                     <td>
+                        
+                     </td>
+                 </tr>
+                 
+</form>
+
+                     
+             </table>
+         <div >
+
+
+<br>
+         </div>
+
+
+
+         </div>
+
+
+
+
+
+
+
 </div> <!-- Termina div buscar  -->
 
 
-<div class="col-6 mt-4">  <!-- div filtrros  -->
-
-
-<span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-
-                </div> <!-- Termina div filtros  -->
 
 <div class="col-12 table-responsive " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
 <thead style="background-color:#6777ef;"> 
     <tr >
        
-        <th style="color: #fff;">Comercio</th>
-        <th style="color: #fff;">Destinatario</th>
-        <th style="color: #fff;">Dirección</th>
+    <th style="color: #fff;">Cajero</th>
+        <th style="color: #fff;">Medio</th>
+        <th style="color: #fff;">Fecha de pago</th>
         <th style="color: #fff;">Tipo</th>
-        <th style="color: #fff;">Estado del envio</th>
-        <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Estado del pago</th>
-        <th style="color: #fff;">Precio del paquete</th>
-        <th style="color: #fff;">Precio del envio</th>
-        <th style="color: #fff;">Total</th>
-        <th style="color: #fff;">Agencia</th>
-        <th style="color: #fff;">Opciones</th>
+        <th style="color: #fff;">Comprobante</th>
+        <th style="color: #fff;">Descuento</th>
+        <th style="color: #fff;">Nota</th>
     </tr>
 </thead>
 <tbody> 
@@ -101,12 +175,7 @@ jQuery(document).ready(function($){
 
 <tr>
 
-    <td  ></td>
-    <td  ></td>
-    <td  ></td>
-    <td  ></td>
-    <td  ></td>
-    <td  ></td>
+<td  ></td>
     <td  ></td>
     <td  ></td>
     <td  ></td>
