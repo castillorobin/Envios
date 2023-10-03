@@ -87,6 +87,7 @@ class EstatusController extends Controller
     {
         $filtro = 1;
         $ftipo= 1;
+       
         $pedidos = new Pedido();
         $pedidosall = new Pedido();
         $pedidosall = Pedido::all();
@@ -109,6 +110,10 @@ class EstatusController extends Controller
         
         $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
         $repartidores = Repartidor::all();
+       /* $fecha = ' ';
+        $estado = ' ';
+        $repartidor = ' ';
+        */
         return view('estatus.estadolotefiltro', compact('pedidos','repartidores', 'filtro', 'ftipo'));
 
        

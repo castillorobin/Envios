@@ -60,7 +60,7 @@ jQuery(document).ready(function($){
                 
                 <div class="row mt-1 border mr-1 ">   
                 
-                <div class="col-sm-8 mt-4 mb-4"> <!-- div buscar -->
+                <div class="col-sm-12 mt-4 mb-4"> <!-- div buscar -->
                 <form action="/estado/lotefiltro/" method="get">
                     <table>
                         <tr>
@@ -80,7 +80,7 @@ jQuery(document).ready(function($){
         <div class="input-group">
 
           <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/15/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
           <select id="repartidor" name="repartidor[]"  class="form-control mi-selector1" multiple="multiple">
             
@@ -100,7 +100,7 @@ jQuery(document).ready(function($){
       <div class="input-group">
 
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/25/null/deliver-food.png"/></span>
+          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/ios-filled/15/null/deliver-food.png"/></span>
         </div>
         <select id="estado" name="estado[]" class="form-control mi-selector2" multiple="multiple">
           <option value="estado" >Estado del Envio</option>
@@ -137,12 +137,7 @@ jQuery(document).ready(function($){
                 </div> <!-- Termina div buscar  -->
 
 
-<div class="col-4 mt-4">  <!-- div filtrros  -->
-<a href="/facturas" class="btn btn-danger" style="float:right;">Cerrar</a>
-
-<span style="font-size:18px; color: red;">  &nbsp; </span>
-
-                </div> <!-- Termina div filtros  -->
+ <!-- Termina div filtros  -->
 
 <div class="col-12 table-responsive " > <!-- div tabla  -->
 <table id="tvendedor" class="table table-striped " style="  ">
