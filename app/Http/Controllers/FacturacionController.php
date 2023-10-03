@@ -30,7 +30,7 @@ class FacturacionController extends Controller
     {
         //$pedidos = Pedido::all();
         $vendedores = Vendedor::all();
-        $nota=" ";
+        $nota=" "; 
        //$repartidores = Repartidor::all();
        return view('factura.listado')->with(['vendedores'=>$vendedores, 'nota'=>$nota  ]);
 
@@ -49,7 +49,26 @@ class FacturacionController extends Controller
 
     }
 
+    public function listadopagos()
+    {
+        //$pedidos = Pedido::all();
+        $usuarios = User::all();
+        $nota=" "; 
+       //$repartidores = Repartidor::all();
+       return view('factura.listadopagos')->with(['usuarios'=>$usuarios, 'nota'=>$nota  ]);
 
+    }
+
+    public function listadopagosfiltro($cajero)
+    {
+        $facturas = Facturacion::where('cajero', $cajero)->get();
+        $usuarios = User::all();
+        //$facturas = Facturacion::all();
+        $nota=" ";
+       //$repartidores = Repartidor::all();
+       return view('factura.listadopagosfiltro')->with(['usuarios'=>$usuarios, 'nota'=>$nota, 'facturas'=>$facturas  ]);
+
+    }
 
     
 
@@ -66,7 +85,7 @@ class FacturacionController extends Controller
   
     public function facturapdf(Request $request, $comercio)
     {
- 
+  
        // $pedidos = Pedido::all();
        $total = (float)$request->get('toti');
        $medio = $request->get('medios');

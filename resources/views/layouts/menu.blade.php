@@ -45,7 +45,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/estatus"><i class="fas fa-list-ul"></i>Cambiar Estado</a>
         <a class="dropdown-item" href="/estado/estadolote"><i class="fas fa-list-ul"></i>Cambiar en Lote</a>
-          <a class="dropdown-item" href="/estado/estadomanual"><i class="fas fa-dolly"></i>Estado Manual</a>
+        <a class="dropdown-item" href="/estado/estadomanual"><i class="fas fa-dolly"></i>Estado Manual</a>
        
          
         </div>
@@ -70,6 +70,8 @@
           <a class="dropdown-item" href="/facturas"><i class="fas fa-money-bill-wave"></i>Pagos</a>
           
           <a class="dropdown-item" href="/factura/listado"><i class="fas fa-file-invoice"></i>Detalles de Pago</a>
+
+          <a class="dropdown-item" href="/factura/listadopagos"><i class="fas fa-file-invoice"></i>Listado de Pagos</a>
           
         </div>
       </li>
