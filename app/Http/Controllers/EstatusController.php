@@ -199,7 +199,6 @@ class EstatusController extends Controller
     public function cestadomanual(Request $request)
     {
         
-      
        // $repartidores = Repartidor::all();
         //return view('pedido.repartir', compact('pedidos'));
 
@@ -210,8 +209,16 @@ class EstatusController extends Controller
 
         $pedido = Pedido::find($id);
        
-        $pedido->estado = $request->get('estado');
-        $pedido->nota = $request->get('fpago');
+        $pedido->estado = $request->get('estadom');
+        if($request->get('repartidorm')){
+            $pedido->repartidor = $request->get('repartidorm');
+        }
+        if($request->get('estante')){
+            $pedido->estante = $request->get('estante');
+        }
+        if($request->get('nota')){
+            $pedido->nota = $request->get('nota');
+        }
 
         $pedido->save();
         return redirect()->back();
@@ -240,7 +247,10 @@ class EstatusController extends Controller
                 $pedido->repartidor = $request->get('repartidorm');
             }
             if($request->get('estante')){
-                $pedido->nota = $request->get('estante');
+                $pedido->estante = $request->get('estante');
+            }
+            if($request->get('nota')){
+                $pedido->nota = $request->get('nota');
             }
             
             

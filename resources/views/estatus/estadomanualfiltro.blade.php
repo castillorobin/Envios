@@ -474,7 +474,7 @@ function mostrando2()
         </button>
       </div>
       <div class="modal-body">
-      <select id="estado" name="estado" class="form-control" tabindex="9" onChange="jsFunction()" id="estado">
+      <select id="estadom" name="estadom" class="form-control" tabindex="9" onChange="jsFunction()" id="estado">
             <option value="Creado" onclick="jsFunction()">Creado</option>
             <option value="En ruta">En ruta</option>
             <option value="Entregado">Entregado</option>
@@ -517,7 +517,7 @@ function mostrando2()
             <span class="input-group-text" id="basic-addon1"> <i class="fas fa-truck"></i> </span>
         </div>
 
-        <select id="repartidor" name="repartidor" class="form-control" tabindex="15">
+        <select id="repartidorm" name="repartidorm" class="form-control" tabindex="15">
             <option value="">-Sin asignar-</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
@@ -555,6 +555,19 @@ function mostrando2()
 
 </div>
 
+
+<div class="form-group form-check">
+            
+            <label class="form-check-label" for="check4">Nota</label>
+        </div>
+<div class="input-group ">
+        <div class="input-group-prepend">
+            
+        </div>
+
+        <input class="form-control" type="text" id="nota" name="nota">
+
+    </div>
 
 
 
