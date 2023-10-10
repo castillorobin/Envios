@@ -499,7 +499,18 @@ jQuery(document).ready(function($){
 </div>
 
 
+<div class="form-group form-check">
+            
+            <label class="form-check-label" for="check4">Nota</label>
+        </div>
+<div class="input-group ">
+        <div class="input-group-prepend">
+            
+        </div>
 
+        <input class="form-control" type="text" id="nota" name="nota">
+
+    </div>
 
 
 
