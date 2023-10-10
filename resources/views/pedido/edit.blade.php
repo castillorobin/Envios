@@ -401,6 +401,7 @@ if(preci3=="Pagado")
                 <option value="Creado" >Creado</option>
                 <option value="En ruta">En ruta</option>
                 <option value="Entregado">Entregado</option>
+                <option value="Nr devuelto alcomercio">Nr devuelto alcomercio</option>
                 <option value="Reprogramado">Reprogramado</option>
                 <option value="Agencia San Salvador">Agencia San Salvador</option>
                 <option value="Agencia San Miguel">Agencia San Miguel</option>
