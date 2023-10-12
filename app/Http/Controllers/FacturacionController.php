@@ -118,7 +118,8 @@ class FacturacionController extends Controller
         $factura->numerocompro = $request->input('ncompro');
         $factura->descuento = $request->input('descu');
         $factura->nota = $request->input('ndescu');
-
+        $factura->total = $total;
+        $factura->comercio = $comercio;
 
         $factura->save();
         

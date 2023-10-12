@@ -205,10 +205,12 @@ jQuery(document).ready(function($){
         
         <th style="color: #fff;">Cajero</th>
         <th style="color: #fff;">Medio</th>
+        <th style="color: #fff;">Comercio</th>
         <th style="color: #fff;">Fecha de pago</th>
         <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Comprobante</th>
         <th style="color: #fff;">Descuento</th>
+        <th style="color: #fff;">Total</th>
         <th style="color: #fff;">Nota</th>
         <th style="color: #fff;">Opciones</th>
         
@@ -224,10 +226,12 @@ jQuery(document).ready(function($){
                     
                     <td>{{ $facturas[$i]->cajero }} </td>
                     <td>{{ $facturas[$i]->medio }} </td>
+                    <td>{{ $facturas[$i]->comercio }} </td>
                     <td>{{  date('d/m/Y', strtotime($facturas[$i]->fechapago))  }}</td>
                     <td>{{ $facturas[$i]->tipo }} </td>
                     <td>{{ $facturas[$i]->numerocompro }} </td>
                     <td>{{ $facturas[$i]->descuento }} </td>
+                    <td>{{ $facturas[$i]->total }} </td>
                     <td>{{ $facturas[$i]->nota }} </td>
                    
                    
