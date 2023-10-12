@@ -75,7 +75,16 @@ class FacturacionController extends Controller
        return view('factura.listadopagosfiltro')->with(['usuarios'=>$usuarios, 'nota'=>$nota, 'facturas'=>$facturas  ]);
 
     }
-
+    public function detalles($id)
+    {
+        $pedidos = Pedido::where('detallep', $id)->get();
+        //$pedidos = Pedido::all();
+        //$vendedores = Vendedor::all();
+        //$vende = Vendedor::where('nombre', $comercio)->get();
+       //$repartidores = Repartidor::all();
+       return view('factura.detallespago')->with(['pedidos'=>$pedidos]);
+ 
+    }
     
 
     public function filtro($comercio)
@@ -109,8 +118,10 @@ class FacturacionController extends Controller
         $factura->numerocompro = $request->input('ncompro');
         $factura->descuento = $request->input('descu');
         $factura->nota = $request->input('ndescu');
-        $factura->save();
 
+
+        $factura->save();
+        
         
 
        }else{

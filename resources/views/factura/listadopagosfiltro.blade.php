@@ -210,6 +210,7 @@ jQuery(document).ready(function($){
         <th style="color: #fff;">Comprobante</th>
         <th style="color: #fff;">Descuento</th>
         <th style="color: #fff;">Nota</th>
+        <th style="color: #fff;">Opciones</th>
         
      
        
@@ -231,7 +232,10 @@ jQuery(document).ready(function($){
                    
                    
     
-
+                    <td>
+                    <a href="/factura/detalles/{{ $facturas[$i]->id }}" class="edit btn btn-warning" target="_blank">Detalles</a></li> 
+                    
+                    </td>
 
 
 

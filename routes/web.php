@@ -73,7 +73,8 @@ Route::get('factura/listadofiltro/{comercio}', [App\Http\Controllers\Facturacion
 
 Route::get('factura/listadopagos', [App\Http\Controllers\FacturacionController::class, 'listadopagos'] )->name('factura.listadopagos') ;
 Route::get('factura/listadopagosfiltro/', [App\Http\Controllers\FacturacionController::class, 'listadopagosfiltro'] )->name('factura.listadopagosfiltro') ;
- 
+Route::get('factura/detalles/{id}', [App\Http\Controllers\FacturacionController::class, 'detalles'] )->name('factura.detalles') ;
+
 Route::get('estado/estadomanual', [App\Http\Controllers\EstatusController::class, 'emanual'] )->name('estado.emanual') ;
 Route::get('estado/manualfiltro', [App\Http\Controllers\EstatusController::class, 'manualfiltro'] )->name('estado.manualfiltro') ;
 Route::get('estado/cestadomanual/', [App\Http\Controllers\EstatusController::class, 'cestadomanual'] )->name('estado.cestadomanual') ;
