@@ -254,8 +254,9 @@ jQuery(document).ready(function($){
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
         <th style="color: #fff;">Agencia</th>
-        <th style="color: #fff;">Repartidor</th>
-        <th style="color: #fff;">Ruta</th>
+        <th style="color: #fff;">Precio del paquete</th>
+        <th style="color: #fff;">Precio del envio</th>
+        <th style="color: #fff;">Total</th>
         <th style="color: #fff;">Nota</th>
         <th style="color: #fff;">Opciones</th>
     </tr>
@@ -272,8 +273,11 @@ jQuery(document).ready(function($){
     <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
     <td> {{ $pedidos[$i]->agencia }}</td>
-    <td> {{ $pedidos[$i]->repartidor }}</td>
-    <td> {{ $pedidos[$i]->ruta }}</td>
+    <td>${{ $pedidos[$i]->precio }}  </td>
+                    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
+                    <td>${{ $pedidos[$i]->envio }} </td>
+                    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
+                    <td>${{ $pedidos[$i]->total }} </td>
     <td> {{ $pedidos[$i]->nota }}</td>
     <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
     <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
