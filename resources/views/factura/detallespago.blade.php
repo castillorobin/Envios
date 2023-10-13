@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+{{date_default_timezone_set('America/El_Salvador') }}
     <section class="section">
         <div class="section-header">
             <h3 class="page__heading">Melo Express</h3>
