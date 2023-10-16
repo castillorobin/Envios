@@ -3,7 +3,9 @@
 
 @section('content')
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>  
 jQuery(document).ready(function($){
@@ -108,6 +110,17 @@ ul li ul:hover {
     float: left;
       
     }
+    .botonexcel {
+        margin-left: 20px;
+        
+   float: left;
+   
+   }
+   .dt-buttons button {
+    background-color: #ffc107 !important; 
+   
+     
+   }
 
 .cambiar2 {
     float: right;
@@ -615,36 +628,6 @@ ul li ul:hover {
 </div>
 </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
-
-
-	
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-
-
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
-
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
-
-                 
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" defer></script>
-
-    
-    
-                 
-
-    <!--
- <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
--->
-
 
 
 <script>
@@ -725,8 +708,10 @@ $(document).ready(function(){
          
         $(document).ready(function () {
     $('#tpedido').DataTable(
+
         {
-           
+            
+
             language: {
         "decimal": "",
         "emptyTable": "No hay información",
@@ -747,12 +732,15 @@ $(document).ready(function(){
             "previous": "Anterior"
         }
     },
-
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-        
-        
-       
-       
+    dom: '<"cambiar" f> <"botonexcel" B><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+            buttons: [
+                {
+                extend: 'excel',
+                exportOptions: {
+                    columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+                }
+            }
+            ]
 
         } 
     );

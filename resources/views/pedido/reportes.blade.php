@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
         <div class="section-header" >
         <div style="width:100%; ">
             <div>
-                <h3 class="page__heading">Melo Expres</h3>
+                <h3 class="page__heading">Melo Express</h3>
             </div>
              
         </div>
@@ -657,6 +657,7 @@ $(document).ready(function(){
 
         dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
         
+       
         
        
        
