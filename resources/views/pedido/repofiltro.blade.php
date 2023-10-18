@@ -739,11 +739,12 @@ $(document).ready(function(){
                 title: 'Melo Express - Reporte diario',
                 exportOptions: {
                     columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+                    page: 'all',
                    
                 }
             }
             ]
-
+ 
         } 
     );
 }); 
