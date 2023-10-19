@@ -2,7 +2,10 @@
 @extends('layouts.app')
 
 @section('content')
-
+<span hidden>
+{{ $nor = 0}}
+{{ $nretito = 0}}
+</span>
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 
@@ -385,6 +388,7 @@ ul li ul:hover {
         {{ $total = 0}}
             {{  $tenvi = 0}}
 -->
+
     @for ($i=0; $i< count($pedidos); $i++)
     <tr >
         <td hidden ><input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" checked></td>
@@ -465,6 +469,12 @@ ul li ul:hover {
     </tr>
     
    
+    @if ($pedidos[$i]->estado == 'No retirado')
+<span hidden>
+{{ $nor++}}
+{{ $nretito = $nretito + $pedidos[$i]->precio}}
+</span>
+@endif
             
 
 
@@ -477,8 +487,6 @@ ul li ul:hover {
 </tbody>
 </table>
 <br>
-
-
 
 
 <!-- Inicio Modal 
@@ -769,10 +777,10 @@ $(document).ready(function(){
             [
                 {
                 extend: 'pdfHtml5',
-                  messageTop: 'Operario: {{\Illuminate\Support\Facades\Auth::user()->name}} \n Repartidor: {{ $pedidos[0]->repartidor}} \n Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}} \n Ruta: {{ $pedidos[0]->ruta}} \n Cantidad: {{ count($pedidos)}}',
+                  messageTop: 'Operario: {{\Illuminate\Support\Facades\Auth::user()->name}} \n Repartidor: {{ $pedidos[0]->repartidor}} \n Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}} \n Ruta: {{ $pedidos[0]->ruta}} \n Cantidad: {{ count($pedidos)}} \n No retirados: {{ $nor++}}',
                   title: 'Melo Express - Reporte diario',
                   orientation: 'landscape',
-                  "messageBottom": '\n Total cobrado: ${{ $cobrado = $pedidos->sum('precio') }} \n Total sin envio: ${{ $cobrado = $pedidos->sum('total') }} \n Total de envio: ${{ $cobrado = $pedidos->sum('envio') }}',
+                  "messageBottom": '\n Total cobrado: ${{ $cobrado = $pedidos->sum('precio') }} \n Total sin envio: ${{ $cobrado = $pedidos->sum('total') }} \n Total de envio: ${{ $cobrado = $pedidos->sum('envio') }} \n \n Total: ${{ $cobrado = $pedidos->sum('precio') }} \n Total no retirado: ${{ $nretito }} \n Total a cobrar: ${{ $cobrado - $nretito }}',
                 exportOptions: {
                     columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
                     
