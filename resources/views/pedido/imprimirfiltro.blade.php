@@ -33,7 +33,7 @@
    </div>
         </div>
        
-
+ 
    
    <hr>
       <span>Operario: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>

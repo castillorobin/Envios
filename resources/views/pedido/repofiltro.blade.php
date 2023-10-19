@@ -31,6 +31,7 @@ jQuery(document).ready(function($){
 
 
 <script>
+    /*
     function redireccionarPagina(){
     window.setTimeout( abrirURL, 2000 ); // 3 segundos
 };
@@ -40,6 +41,7 @@ function abrirURL(){
     //window.location = "http://127.0.0.1:8000/reportes";
     window.location = "https://appmeloexpress.com/reportes/";
 };
+*/
 </script>
     <section class="section">
         <div class="section-header">
@@ -462,7 +464,7 @@ ul li ul:hover {
 </tbody>
 </table>
 <br>
-<button type="submit" class="btn btn-lg btn-warning" formtarget="_blank" onclick="redireccionarPagina()">Imprimir</button>
+
 
 
 
@@ -628,7 +630,7 @@ ul li ul:hover {
 </div>
 </div>
 </div>
-
+{{date_default_timezone_set('America/El_Salvador') }}
 
 <script>
        
@@ -741,7 +743,25 @@ $(document).ready(function(){
                     columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
                    
                 }
-            }
+            },
+            
+            [
+                {
+                extend: 'pdfHtml5',
+                  messageTop: 'Operario: {{\Illuminate\Support\Facades\Auth::user()->name}} \n Repartidor: {{ $pedidos[0]->repartidor}} \n Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}} \n Ruta: {{ $pedidos[0]->ruta}} \n Cantidad: {{ count($pedidos)}}',
+                  title: 'Melo Express - Reporte diario',
+                  orientation: 'landscape',
+                exportOptions: {
+                    columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+                    
+                }
+            
+                
+              }
+                    
+              
+              
+              ],
             ]
 
         } 
@@ -755,4 +775,5 @@ $(document).ready(function(){
             </div>
         </div>
     </section>    
+    
 @endsection

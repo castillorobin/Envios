@@ -3,6 +3,8 @@
 
 @section('content')
 
+<meta charset='utf-8'>
+{{date_default_timezone_set('America/El_Salvador') }}
     <section class="section">
         <div class="section-header">
         <div style="width:100%; ">
@@ -72,6 +74,19 @@ ul li ul:hover {
     float: left;
       
     }
+
+    
+    .botonexcel {
+        margin-left: 20px;
+        
+   float: left;
+   
+   }
+   .dt-buttons button {
+    background-color: #ffc107 !important; 
+   
+     
+   }
 
 .cambiar2 {
     float: right;
@@ -628,9 +643,18 @@ $(document).ready(function(){
         }
     },
 
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        dom: '<"cambiar" f><"botonexcel" B><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
         
-        
+        buttons: [
+                {
+                extend: 'excel',
+                title: 'Melo Express - Reporte de Cobros',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4 ],
+                   
+                }
+            }
+            ]
        
        
 

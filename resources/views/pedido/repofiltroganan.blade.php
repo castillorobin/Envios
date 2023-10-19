@@ -98,6 +98,18 @@ ul li ul:hover {
       
     }
 
+    .botonexcel {
+        margin-left: 20px;
+        
+   float: left;
+   
+   }
+   .dt-buttons button {
+    background-color: #ffc107 !important; 
+   
+     
+   }
+
 .cambiar2 {
     float: right;
     margin-right: 20px;
@@ -813,10 +825,19 @@ $(document).ready(function(){
         }
     },
 
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        dom: '<"cambiar" f><"botonexcel" B><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        buttons: [
+                {
+                extend: 'excel',
+                title: 'Melo Express - Reporte de Ganancias',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+                   
+                }
+            }
+            ]
         
         
-       
        
 
         } 
