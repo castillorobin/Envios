@@ -380,7 +380,11 @@ ul li ul:hover {
     </tr>
 </thead>
 <tbody>
-    
+<!--
+{{$cobrado = 0  }}
+        {{ $total = 0}}
+            {{  $tenvi = 0}}
+-->
     @for ($i=0; $i< count($pedidos); $i++)
     <tr >
         <td hidden ><input type="checkbox" value="{{ $pedidos[$i]->id }}" class="form-check-input" id="check3" name="checked[]" checked></td>
@@ -459,7 +463,16 @@ ul li ul:hover {
 
     </td>
     </tr>
+    
+   
+            
+
+
+
     @endfor
+
+    
+    
     
 </tbody>
 </table>
@@ -468,7 +481,9 @@ ul li ul:hover {
 
 
 
-<!-- Inicio Modal -->
+<!-- Inicio Modal 
+
+-->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div class="modal-dialog modal-lg">
@@ -618,13 +633,18 @@ ul li ul:hover {
 </div>
 
 
-<!-- Termina Modal -->
+<!-- Termina Modal 
 
 
 
+foreach($pedidos as $suma){
+            $cobrado = $cobrado + $suma->precio;
+            $total = $total + $suma->total;
+            $tenvi = $tenvi + $suma->envio;
+            $cant = $cant + 1;
+        }
 
-
-
+-->
 
 
 </div>
@@ -752,6 +772,7 @@ $(document).ready(function(){
                   messageTop: 'Operario: {{\Illuminate\Support\Facades\Auth::user()->name}} \n Repartidor: {{ $pedidos[0]->repartidor}} \n Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}} \n Ruta: {{ $pedidos[0]->ruta}} \n Cantidad: {{ count($pedidos)}}',
                   title: 'Melo Express - Reporte diario',
                   orientation: 'landscape',
+                  "messageBottom": '\n Total cobrado: ${{ $cobrado = $pedidos->sum('precio') }} \n Total sin envio: ${{ $cobrado = $pedidos->sum('total') }} \n Total de envio: ${{ $cobrado = $pedidos->sum('envio') }}',
                 exportOptions: {
                     columns: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
                     
