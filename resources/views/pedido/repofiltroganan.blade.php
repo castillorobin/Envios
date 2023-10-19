@@ -825,19 +825,10 @@ $(document).ready(function(){
         }
     },
 
-        dom: '<"cambiar" f><"botonexcel" B><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
-        buttons: [
-                {
-                extend: 'excel',
-                title: 'Melo Express - Reporte de Ganancias',
-                exportOptions: {
-                    columns: [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-                   
-                }
-            }
-            ]
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
         
         
+       
        
 
         } 
