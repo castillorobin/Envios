@@ -44,6 +44,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="/estatus"><i class="fas fa-list-ul"></i>Cambiar Estado</a>
+        <a class="dropdown-item" href="/reportes/repobodega"><i class="fas fa-calendar-alt"></i>Cambiar Estado Bodega</a>
         <a class="dropdown-item" href="/estado/estadolote"><i class="fas fa-list-ul"></i>Cambiar en Lote</a>
         <a class="dropdown-item" href="/estado/estadomanual"><i class="fas fa-dolly"></i>Estado Manual</a>
        
@@ -88,6 +89,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/reportes"><i class="fas fa-calendar-alt"></i>Reporte diario</a>
+
+         
           
           <a class="dropdown-item" href="/reportes/ganancia"><i class="fas fa-money-bill-wave"></i>Reporte de ganancia</a>
           

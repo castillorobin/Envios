@@ -228,7 +228,7 @@ class EstatusController extends Controller
     }
     public function cestadolote(Request $request)
     {
-        
+         
       
        // $repartidores = Repartidor::all();
         //return view('pedido.repartir', compact('pedidos'));

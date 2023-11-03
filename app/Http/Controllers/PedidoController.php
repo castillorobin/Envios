@@ -130,13 +130,10 @@ class PedidoController extends Controller
     public function reporte()
     {
 
-
         $pedidos = Pedido::all();
 
        $repartidores = Repartidor::all();
         return view('pedido.reportes', compact('pedidos','repartidores'));
-
-        
 
     }
     public function reporteenvio()
@@ -490,7 +487,84 @@ class PedidoController extends Controller
         
 
     }
+
+    public function repobodega()
+    {
+
+        //$pedidos = Pedido::all();
+
+       $repartidores = Repartidor::all();
+        return view('pedido.reportebodega', compact('repartidores'));
+
+    }
+
+    public function repofiltrobodega(Request $request)
+    {
+        $filtro = 1;
+        $ftipo= 1;
+        $pedidos = new Pedido();
+        $pedidosall = new Pedido();
+        $pedidosall = Pedido::all();
+        $pedidosf = collect([$pedidosall]) ;
+        //$fecha = $request->get('fecha');
+        //$pedidos = $pedidosall;
+       
+        $estado = $request->estado;
+        $repartidor = $request->repartidor;
+        if(!$request->repartidor && $request->estado){      
+            $pedidos = Pedido::wherein('estado', $estado)->get();
+        }else if ($request->repartidor && !$request->estado){
+            $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
+        }else if ($request->repartidor && $request->estado){
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+        }
+        /*
+        if($fecha != ""){
+            $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+
+        }else{
+            $pedidos = $pedidosall;
+           
+      
+        }
+                */
+
+       // $pedidos = Pedido::where('fecha_entrega', 'LIKE', "%{$fecha}%")->where('estado', 'LIKE', "%{$estado}%")
+       // ->where('ruta', 'LIKE', "%{$ruta}%")->where('tipo', 'LIKE', "%{$tipo}%")->where('repartidor', 'LIKE', "%{$repartidor}%")->get();
+        $repartidores = Repartidor::all();
+        return view('pedido.repofiltrobodega', compact('pedidos','repartidores', 'filtro', 'ftipo'));
+
+        
+
+    }
     
+    public function cambiarbodega()
+    {
+
+        $id = $request->get('proba') ;
+        //$fecha = $request->get('fecham') ;
+        $estado = $request->estadom ;
+        //$repartidor2 = $request->repartidorm ;
+
+        $pedido = Pedido::find($id);
+       
+        $pedido->estado = $estado;
+        /*
+        if($request->get('repartidorm')){
+            $pedido->repartidor = $request->get('repartidorm');
+        }
+        if($request->get('estante')){
+            $pedido->estante = $request->get('estante');
+        }
+        if($request->get('nota')){
+            $pedido->nota = $request->get('nota');
+        }
+*/
+        $pedido->save();
+        return redirect()->back();
+
+    }
+
     public function editrepa(Request $request)
     {
 

@@ -164,23 +164,30 @@ ul li ul:hover {
  
         
 
-    <form action="/repofiltro" method="get">
+    <form action="/reportes/repofiltrobodega" method="get">
             <div class="">
                 <table>
                     <tr>
                         <td style="width:400px;">
-                        <div class="col-sm-12 ">
-       
-        <div class="input-group ">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="far fa-calendar-alt"></i> </span>
-          </div>
-          <input type="date" id="fecha" name="fecha" class="form-control" placeholder="Fecha" value="" min="1997-01-01" max="2030-12-31">
-          <br>
+                        <!-- Repartidor -->
+  
+    
+    <div class="col-sm-12 ">
         
-             
+        <div class="input-group">
+
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
+          </div>
+          <select id="repartidor" name="repartidor[]" class="form-control mi-selector1" multiple="multiple">
+            <option value="repartidor">Repartidor</option>
+            @foreach($repartidores as $repartidor)
+            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
+            @endforeach
+          </select>
+            
         </div>
-      </div>
+    </div>
                         </td>
                         <td> 
                              <!-- estado del envio -->
@@ -215,98 +222,15 @@ ul li ul:hover {
     </div>
                         </td>
                         <td>
-                             <!-- Ruta -->
-    <div class="col-sm-12">
-       
-        <div class="input-group">
 
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"> <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/25/null/external-map-logistics-wanicon-lineal-wanicon.png"/></span>
-          </div>
-          <select id="ruta" name="ruta" class="form-control" tabindex="16"> 
-          <option value="ruta">Ruta</option>
-          <option value="Ruta 1">Ruta 1</option>
-            <option value="Ruta 2">Ruta 2</option>
-            <option value="Ruta 3">Ruta 3</option>
-            <option value="Ruta 4">Ruta 4</option>
-            <option value="Ruta 5">Ruta 5</option>
-          </select>
-           
-        </div>
-    </div>
-                        </td>
-                        <td>
-   
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <br>
-                                                     <!-- Tipo -->
-    <div class="col-12">
-        
-        <div class="input-group">
-
-          <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/25/null/external-delivery-logistic-delivery-kiranshastry-solid-kiranshastry.png"/></span>
-          </div>
-          <select id="tipo" name="tipo" class="form-control" tabindex="7">
-          <option value="tipo">Tipo de envio</option>
-            <option value="Personalizado">Personalizado</option>
-            <option value="Personalizado departamental">Personalizado departamental</option>
-            <option value="Punto fijo">Punto fijo</option>
-            <option value="Casillero departamental">Casillero departamental</option>
-            <option value="Casillero San Salvador">Casillero San Salvador</option>
-            <option value="Casillero San Miguel">Casillero San Miguel</option>
-            <option value="Casillero Santa Ana">Casillero Santa Ana</option>
-            <option value="Casillero centro logístico">Casillero centro logístico</option>
-          </select>
-          
-        </div>
-    </div>  
-                        </td>
-                        <td>
-                            <br>
-                            <!-- Repartidor -->
-  
-    
-    <div class="col-sm-12 ">
-        
-        <div class="input-group">
-
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
-          </div>
-          <select id="repartidor" name="repartidor[]" class="form-control mi-selector1" multiple="multiple">
-            <option value="repartidor">Repartidor</option>
-            @foreach($repartidores as $repartidor)
-            <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
-            @endforeach
-          </select>
-            
-        </div>
-    </div>
-                        </td>
-                        <td>
-                            <br>
-                            <!-- Total -->
-    <div class="col-sm-12 ">
-        
-        <div class="input-group ">
-          <div class="input-group-prepend" >
-            <span class="input-group-text" id="basic-addon1" style="width:55px;"> <i class="fas fa-dollar-sign" style="width:25px;"></i> </span>
-          </div>
-          <input type="text" id="total" name="total" class="form-control" placeholder="Total" aria-describedby="basic-addon1" >
-          
-        </div>
-    </div>
-                        </td>
-                        <td>
-                            <br>
                         <button type="submit" class="btn btn-primary " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-search"></i></button>      
-        <a href="/reportes" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
+        <a href="/reportes/repobodega" class="btn btn-danger " style="width:45px; height:40px; border-radius: 5px;" > <i class="fas fa-times" style="color: #ffffff;"></i></a>
+
+    
                         </td>
+                        
                     </tr>
+                   
                     <tr>
 </form>
  
@@ -345,9 +269,7 @@ ul li ul:hover {
         <th style="color: #fff;">Tipo</th>
         <th style="color: #fff;">Estado del envio</th>
         <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Precio</th>
-        <th style="color: #fff;">Envio</th>
-        <th style="color: #fff;">Total</th>
+        
         
         <th style="color: #fff;">Opciones</th>
     </tr>
