@@ -493,7 +493,7 @@ class PedidoController extends Controller
 
         //$pedidos = Pedido::all();
 
-       $repartidores = Repartidor::all();
+       $repartidores = Vendedor::all();
         return view('pedido.reportebodega', compact('repartidores'));
 
     }
@@ -514,9 +514,9 @@ class PedidoController extends Controller
         if(!$request->repartidor && $request->estado){      
             $pedidos = Pedido::wherein('estado', $estado)->get();
         }else if ($request->repartidor && !$request->estado){
-            $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
+            $pedidos = Pedido::wherein('vendedor', $repartidor)->get();
         }else if ($request->repartidor && $request->estado){
-            $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('vendedor', $repartidor)->get();
         }
         /*
         if($fecha != ""){
@@ -531,14 +531,14 @@ class PedidoController extends Controller
 
        // $pedidos = Pedido::where('fecha_entrega', 'LIKE', "%{$fecha}%")->where('estado', 'LIKE', "%{$estado}%")
        // ->where('ruta', 'LIKE', "%{$ruta}%")->where('tipo', 'LIKE', "%{$tipo}%")->where('repartidor', 'LIKE', "%{$repartidor}%")->get();
-        $repartidores = Repartidor::all();
+        $repartidores = Vendedor::all();
         return view('pedido.repofiltrobodega', compact('pedidos','repartidores', 'filtro', 'ftipo'));
 
         
 
     }
     
-    public function cambiarbodega()
+    public function cambiarbodega(Request $request)
     {
 
         $id = $request->get('proba') ;
@@ -549,7 +549,7 @@ class PedidoController extends Controller
         $pedido = Pedido::find($id);
        
         $pedido->estado = $estado;
-        /*
+        
         if($request->get('repartidorm')){
             $pedido->repartidor = $request->get('repartidorm');
         }
@@ -559,7 +559,7 @@ class PedidoController extends Controller
         if($request->get('nota')){
             $pedido->nota = $request->get('nota');
         }
-*/
+
         $pedido->save();
         return redirect()->back();
 

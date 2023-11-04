@@ -12,9 +12,9 @@ jQuery(document).ready(function($){
        $('.mi-selector').select2({
         placeholder: "Estado"
        });
-
+ 
        $('.mi-selector1').select2({
-        placeholder: "Repartidor"
+        placeholder: "Comercio"
        });
        
       
@@ -180,7 +180,7 @@ ul li ul:hover {
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
           <select id="repartidor" name="repartidor[]" class="form-control mi-selector1" multiple="multiple">
-            <option value="repartidor">Repartidor</option>
+            <option value="repartidor">Comercio</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
             @endforeach

@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
        });
 
        $('.mi-selector1').select2({
-        placeholder: "Repartidor"
+        placeholder: "Comercio"
        });
        
       
@@ -222,7 +222,7 @@ ul li ul:hover {
             <span class="input-group-text" id="basic-addon1">  <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/25/null/external-delivery-man-logistics-delivery-kmg-design-detailed-outline-kmg-design-2.png"/></span>
           </div>
           <select id="repartidor" name="repartidor[]" class="form-control mi-selector1" multiple="multiple">
-            <option value="repartidor">Repartidor</option>
+            <option value="repartidor">Comercio</option>
             @foreach($repartidores as $repartidor)
             <option value="{{ $repartidor->nombre }}">{{ $repartidor->nombre }}</option>
             @endforeach
@@ -534,69 +534,21 @@ ul li ul:hover {
 
 <script>
        
-        
-$(document).ready(function(){
+       $(document).ready(function(){
 	$(document).on('click', '.edit', function(){
 		var id=$(this).val();
-		var nomb=$('#nom'+id).text();
-        var dest=$('#des'+id).text();
-        var tele=$('#tel'+id).text();
-        var dire=$('#dir'+id).text();
-        var fech=$('#fec'+id).text();
-        var feche=$('#fece'+id).text();
-        var tipo=$('#tip'+id).text();
-        var est=$('#este'+id).text();
-        var esp=$('#estp'+id).text();
-        var prec=$('#pre'+id).text();
-        var envi=$('#env'+id).text();
-        var tota=$('#tot'+id).text();
-        var ingr=$('#ing'+id).text();
-        var ange=$('#ang'+id).text();
-        var repa=$('#rep'+id).text();
-        var ruta=$('#rut'+id).text();
-        var nota=$('#not'+id).text();
-        var foto=$('#fot'+id).text();
-        var foto2=$('#fot2'+id).text();
-        var foto3=$('#fot3'+id).text();
-        //foti= '/imgs/fotos/';
+        
+  
+        $('#edit').modal('show');
+        $('#prueba').text(id);
+        //$('#proba').value(id);
+      
 
-		
-	
-		$('#edit').modal('show');
-		$('#nombre').text(nomb);
-        $('#desti').text(dest);
-        $('#telef').text(tele);
-        $('#direc').text(dire);
-        $('#fecha').text(fech);
-        $('#fechen').text(feche);
-        $('#tipoe').text(tipo);
-        $('#este').text(est);
-        $('#estp').text(esp);
-        $('#preci').text(prec);  
-        $('#envio').text(envi);
-        $('#total').text(tota);
-        $('#ingre').text(ingr);
-        $('#agen').text(ange);
-        $('#repar').text(repa);
-        $('#ruta1').text(ruta);
-        $('#nota1').text(nota);
 
-        $('#empresa').text(empre);
-        $('#giro').text(gir);   
- 
-        $('#nrc').text(nr);
-        //$('#fotos').src(fot);
-        var ide = '/repartidor/imprimir/'+id ;
-		$('#fotos').attr("src", foto);
-        $('#fotos2').attr("src", foto2);
-        $('#fotos3').attr("src", foto3);
-
-        //$('#impri a').prop("href", ide);
-        //$('.paginacion a').prop('href','http://nuevaUrl.com');
-
-        document.getElementById("impri").href = ide;
+        document.getElementById("proba").value = id;
 	});
 });
+ 
  
 
 
