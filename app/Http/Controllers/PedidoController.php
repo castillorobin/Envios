@@ -518,19 +518,7 @@ class PedidoController extends Controller
         }else if ($request->repartidor && $request->estado){
             $pedidos = Pedido::wherein('estado', $estado)->wherein('vendedor', $repartidor)->get();
         }
-        /*
-        if($fecha != ""){
-            $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
-
-        }else{
-            $pedidos = $pedidosall;
-           
-      
-        }
-                */
-
-       // $pedidos = Pedido::where('fecha_entrega', 'LIKE', "%{$fecha}%")->where('estado', 'LIKE', "%{$estado}%")
-       // ->where('ruta', 'LIKE', "%{$ruta}%")->where('tipo', 'LIKE', "%{$tipo}%")->where('repartidor', 'LIKE', "%{$repartidor}%")->get();
+        
         $repartidores = Vendedor::all();
         return view('pedido.repofiltrobodega', compact('pedidos','repartidores', 'filtro', 'ftipo'));
 
@@ -562,6 +550,52 @@ class PedidoController extends Controller
 
         $pedido->save();
         return redirect()->back();
+
+    }
+
+
+    public function repobodegafecha()
+    {
+
+        //$pedidos = Pedido::all();
+
+       $repartidores = Vendedor::all();
+        return view('pedido.reportebodegafecha', compact('repartidores'));
+
+    }
+
+    public function repofiltrobodegafecha(Request $request)
+    {
+        $filtro = 1;
+        $ftipo= 1;
+        //$pedidos = new Pedido();
+        $pedidosall = new Pedido();
+        $pedidosall = Pedido::all();
+        $pedidosf = collect([$pedidosall]) ;
+        //$fecha = $request->get('fecha');
+        //$pedidos = $pedidosall;
+
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+       // $cajero = $request->input('usuario');
+        $pedidos = Pedido::whereBetween('fecha_entrega', [$desde, $hasta])->get();
+
+
+       
+        $estado = $request->estado;
+        $repartidor = $request->repartidor;
+        if(!$request->repartidor && $request->estado){      
+            $pedidos = Pedido::wherein('estado', $estado)->get();
+        }else if ($request->repartidor && !$request->estado){
+            $pedidos = Pedido::wherein('vendedor', $repartidor)->get();
+        }else if ($request->repartidor && $request->estado){
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('vendedor', $repartidor)->get();
+        }
+        
+        $repartidores = Vendedor::all();
+        return view('pedido.repofiltrobodegafecha', compact('pedidos','repartidores', 'filtro', 'ftipo'));
+
+        
 
     }
 

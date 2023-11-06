@@ -107,6 +107,10 @@ Route::get('reportes/repobodega', [App\Http\Controllers\PedidoController::class,
 Route::get('reportes/repofiltrobodega', [App\Http\Controllers\PedidoController::class, 'repofiltrobodega'] )->name('repofiltrobodega') ;
 Route::get('reportes/cambiarbodega', [App\Http\Controllers\PedidoController::class, 'cambiarbodega'] )->name('cambiarbodega') ;
 
+Route::get('reportes/repobodegafecha', [App\Http\Controllers\PedidoController::class, 'repobodegafecha'] )->name('repobodegafecha') ;
+Route::get('reportes/repofiltrobodegafecha', [App\Http\Controllers\PedidoController::class, 'repofiltrobodegafecha'] )->name('repofiltrobodegafecha') ;
+
+
 
 Route::get('descargar-respaldo', [App\Http\Controllers\PedidoController::class, 'descargarRespaldo'] )->name('descargarRespaldo') ; 
 
