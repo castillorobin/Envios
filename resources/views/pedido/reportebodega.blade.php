@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
         placeholder: "Comercio"
        });
        
-      
+       
 
     });
    

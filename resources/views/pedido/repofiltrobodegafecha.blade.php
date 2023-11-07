@@ -168,9 +168,15 @@ ul li ul:hover {
     
 }
  
+.botonexcel {
+        margin-left: 20px;
+        
+   float: left;
+   
+   }
 
 .dt-buttons button {
-    background: #0275d8;
+    background: #ffc107;
     color: white;
     border-radius: 5px;
     font-size: 16px;
@@ -623,9 +629,42 @@ ul li ul:hover {
         }
     },
 
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+      //  dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
         
+        
+      dom: '<"cambiar" f> <"botonexcel" B><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+            buttons: [
+                {
+                extend: 'excel',
+                title: 'Melo Express',
+                exportOptions: {
+                    columns: [ 1, 2, 3, 4, 5, 6, 7, 8],
+                    page: 'all',
+                   
+                }
+            },
+            
+            [
+                {
+                extend: 'pdfHtml5',
+                
+                  title: 'Melo Express',
+                  orientation: 'landscape',
+                 
+                exportOptions: {
+                    columns: [ 1, 2, 3, 4, 5, 6, 7, 8],
+                    
+                }
+            
+                
+              }
+                    
+              
+              
+              ],
+            ]
        
+        
         
        
        
