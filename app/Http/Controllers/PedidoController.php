@@ -452,7 +452,9 @@ class PedidoController extends Controller
         }else if ($request->repartidor && $request->estado){
             $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
         }
-        
+
+        $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
+        /*
         if($fecha != ""){
             $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
 
@@ -461,20 +463,21 @@ class PedidoController extends Controller
            
       
         }
+*/
+         //$tipo = $request->get('tipo');
+         $tipo = $request->tipo;
 
+         if($tipo!="tipo"){
+             $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
+         }
+ 
 
         $ruta = $request->get('ruta');
         if($ruta!="ruta"){
             $pedidos = $pedidos->intersect(Pedido::whereIn('ruta', [$ruta])->get());
         }
 
-        //$tipo = $request->get('tipo');
-        $tipo = $request->tipo;
-
-        if($tipo!="tipo"){
-            $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
-        }
-
+       
         
 
         $total = $request->get('total');
