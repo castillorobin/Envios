@@ -437,9 +437,9 @@ class PedidoController extends Controller
         $ftipo= 1;
         $pedidos = new Pedido();
         
-        $pedidosall = new Pedido();
-        $pedidosall = Pedido::all();
-        $pedidosf = collect([$pedidosall]) ;
+        //$pedidosall = new Pedido();
+        //$pedidosall = Pedido::all();
+        //$pedidosf = collect([$pedidosall]) ;
         $fecha = $request->get('fecha');
         //$pedidos = $pedidosall;
        
