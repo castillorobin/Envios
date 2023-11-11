@@ -777,7 +777,7 @@ $(document).ready(function(){
             [
                 {
                 extend: 'pdfHtml5',
-                  messageTop: 'Operario: {{\Illuminate\Support\Facades\Auth::user()->name}} \n Repartidor: {{ $pedidos[0]->repartidor}} \n Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}} \n Ruta: {{ $pedidos[0]->ruta}} \n Cantidad: {{ count($pedidos)}} \n No retirados: {{ $nor++}}',
+                 // messageTop: 'Operario: {{\Illuminate\Support\Facades\Auth::user()->name}} \n Repartidor: {{ $pedidos[0]->repartidor}} \n Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}} \n Ruta: {{ $pedidos[0]->ruta}} \n Cantidad: {{ count($pedidos)}} \n No retirados: {{ $nor++}}',
                   title: 'Melo Express - Reporte diario',
                   orientation: 'landscape',
                   "messageBottom": '\n Total cobrado: ${{ $cobrado = $pedidos->sum('precio') }} \n Total sin envio: ${{ $cobrado = $pedidos->sum('total') }} \n Total de envio: ${{ $cobrado = $pedidos->sum('envio') }} \n \n Total: ${{ $cobrado = $pedidos->sum('precio') }} \n Total no retirado: ${{ $nretito }} \n Total a cobrar: ${{ $cobrado - $nretito }}',
