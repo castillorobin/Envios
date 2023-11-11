@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('estatus', EstatusController::class);
     
 }); 
- 
+Route::group(['middleware' => ['auth']], function() {
 Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, 'desdeenvio'] )->name('desdeenvio') ;
 Route::get('pedido/comerperso', [App\Http\Controllers\PedidoController::class, 'comerperso'] )->name('comerperso') ;
 Route::get('pedido/comerpfijo', [App\Http\Controllers\PedidoController::class, 'comerpfijo'] )->name('comerpfijo') ;
@@ -95,7 +95,7 @@ Route::get('pedido/cambiando', [App\Http\Controllers\EstatusController::class, '
  
 Route::get('pedido/verpedido/{id}', [App\Http\Controllers\PedidoController::class, 'verpedido'] )->name('verpedido') ;
 
-Route::get('reportes', [App\Http\Controllers\PedidoController::class, 'reporte'] )->name('reporte') ;
+Route::get('reportes', [App\Http\Controllers\PedidoController::class, 'reporte'] )->name('reporte')->middleware('auth') ;
 Route::get('reportes/envio', [App\Http\Controllers\PedidoController::class, 'reporteenvio'] )->name('reporteenvio') ;
 Route::get('reportes/ganancia', [App\Http\Controllers\PedidoController::class, 'reporteganancia'] )->name('reporteganancia') ;
 Route::get('reportes/cobros', [App\Http\Controllers\PedidoController::class, 'reportecobros'] )->name('reportecobros') ;
@@ -104,7 +104,7 @@ Route::get('reportes/gananfiltro', [App\Http\Controllers\PedidoController::class
 Route::get('reportes/cobrofiltro', [App\Http\Controllers\PedidoController::class, 'reportecobrof'] )->name('reportecobrof') ;
 
 Route::get('reportes/repobodega', [App\Http\Controllers\PedidoController::class, 'repobodega'] )->name('repobodega') ;
-Route::get('reportes/repofiltrobodega', [App\Http\Controllers\PedidoController::class, 'repofiltrobodega'] )->name('repofiltrobodega') ;
+Route::get('reportes/repofiltrobodega', [App\Http\Controllers\PedidoController::class, 'repofiltrobodega'] )->name('repofiltrobodega')->middleware('auth') ;
 Route::get('reportes/cambiarbodega', [App\Http\Controllers\PedidoController::class, 'cambiarbodega'] )->name('cambiarbodega') ;
 
 Route::get('reportes/repobodegafecha', [App\Http\Controllers\PedidoController::class, 'repobodegafecha'] )->name('repobodegafecha') ;
@@ -123,3 +123,5 @@ Route::get('pedido/editrepa', [App\Http\Controllers\PedidoController::class, 'ed
 Route::get('pedido/camara', [App\Http\Controllers\PedidoController::class, 'camara'] )->name('camara') ;
 
 Route::get('estatus/agregar', [App\Http\Controllers\EstatusController::class, 'agregar'] )->name('agregar') ;
+
+}); 
