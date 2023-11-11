@@ -467,7 +467,9 @@ class PedidoController extends Controller
             $pedidos = $pedidos->intersect(Pedido::whereIn('ruta', [$ruta])->get());
         }
 
-        $tipo = $request->get('tipo');
+        //$tipo = $request->get('tipo');
+        $tipo = $request->tipo;
+
         if($tipo!="tipo"){
             $pedidos = $pedidos->intersect(Pedido::whereIn('tipo', [$tipo])->get());
         }
