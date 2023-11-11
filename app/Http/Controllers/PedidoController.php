@@ -436,6 +436,7 @@ class PedidoController extends Controller
         $filtro = 1;
         $ftipo= 1;
         $pedidos = new Pedido();
+        $pedidos = Pedido::all();
         $pedidosall = new Pedido();
         $pedidosall = Pedido::all();
         $pedidosf = collect([$pedidosall]) ;
