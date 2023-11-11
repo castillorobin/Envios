@@ -436,7 +436,7 @@ class PedidoController extends Controller
         $filtro = 1;
         $ftipo= 1;
         $pedidos = new Pedido();
-        $pedidos = Pedido::all();
+        
         $pedidosall = new Pedido();
         $pedidosall = Pedido::all();
         $pedidosf = collect([$pedidosall]) ;
@@ -451,8 +451,22 @@ class PedidoController extends Controller
             $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
         }else if ($request->repartidor && $request->estado){
             $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+        }else{
+            $pedidos = Pedido::all();
         }
+        
 
+        /*
+        $estado = $request->estado;
+        $repartidor = $request->repartidor;
+        if(!$request->repartidor && $request->estado){      
+            $pedidos = Pedido::wherein('estado', $estado)->get();
+        }else if ($request->repartidor && !$request->estado){
+            $pedidos = Pedido::wherein('repartidor', $repartidor)->get();
+        }else if ($request->repartidor && $request->estado){
+            $pedidos = Pedido::wherein('estado', $estado)->wherein('repartidor', $repartidor)->get();
+        }
+*/
         $pedidos = $pedidos->intersect(Pedido::whereIn('fecha_entrega', [$fecha])->get());
         /*
         if($fecha != ""){
