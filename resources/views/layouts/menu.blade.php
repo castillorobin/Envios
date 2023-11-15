@@ -127,16 +127,17 @@
     <i class="fas fa-users"></i><span>Backup</span>
     </a>
     </li>
-    @endcan
-
-    @endcan
-
     <li>
     
      <a class="nav-link" href="/comercio/listado">
      <i class="fas fa-truck"></i><span>Ver mis envios</span>
     </a>
     </li>
+    @endcan
+
+    @endcan
+
+    
 
 
     <!--
@@ -148,13 +149,38 @@ Empieza menu de Operario
     <i class="fas fa-building "></i> Listas
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/pedidos"><i class="fas fa-truck"></i> Envios</a>
-       
-          <a class="dropdown-item" href="/recolecta"><i class="fas fa-archive"></i>Recolectas</a>
-          <a class="dropdown-item" href="/vendedores"><i class="fas fa-shopping-cart"></i> Comercios</a>
+          <a class="dropdown-item" href="/pedidos"><i class="fas fa-truck"></i> Lista envios</a>
+          
+          <a class="dropdown-item" href="/vendedores"><i class="fas fa-shopping-cart"></i> Lista comercios</a>
           
           <a class="dropdown-item" href="/repartidores"><i class="fas fa-user"></i> Empleados</a>
           
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-keyboard"></i> Cambiar Estados
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/estatus"><i class="fas fa-list-ul"></i>Cambiar con scanner</a>
+        <a class="dropdown-item" href="/reportes/repobodega"><i class="fas fa-calendar-alt"></i>Cambiar por comercio</a>
+        <a class="dropdown-item" href="/reportes/repobodegafecha"><i class="fas fa-calendar-alt"></i>Cambiar por Fechas</a>
+        <a class="dropdown-item" href="/estado/estadolote"><i class="fas fa-list-ul"></i>Cambiar por lote manual por dia</a>
+        <a class="dropdown-item" href="/estado/estadomanual"><i class="fas fa-dolly"></i>Estado Manual por dia</a>
+       
+         
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-keyboard"></i> Registro
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/pedidos/create"><i class="fas fa-list-ul"></i>Formulario de envios</a>
+        <a class="dropdown-item" href="/vendedores/create"><i class="fas fa-calendar-alt"></i>Formulario de comercios</a>
+     
+         
         </div>
       </li>
 
