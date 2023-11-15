@@ -139,4 +139,23 @@
     </li>
 
 
-    
+    <!--
+Empieza menu de Operario
+-->
+@can('ver-operario')
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-building "></i> Listas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/pedidos"><i class="fas fa-truck"></i> Envios</a>
+       
+          <a class="dropdown-item" href="/recolecta"><i class="fas fa-archive"></i>Recolectas</a>
+          <a class="dropdown-item" href="/vendedores"><i class="fas fa-shopping-cart"></i> Comercios</a>
+          
+          <a class="dropdown-item" href="/repartidores"><i class="fas fa-user"></i> Empleados</a>
+          
+        </div>
+      </li>
+
+    @endcan
