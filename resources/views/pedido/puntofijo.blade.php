@@ -423,7 +423,7 @@ Parte 2
             </div>
 
             <div class="row">
-
+ 
                 <div class="col-6 ">
                 <label for="" class="col-sm-12 col-form-label">Fecha de creacion</label>
 

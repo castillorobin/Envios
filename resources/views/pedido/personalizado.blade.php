@@ -222,7 +222,7 @@ Inicia nuevo formulario
   <div class="border p-3 rounded">
 
 
-                  
+                   
                         
                     <div class="col-xl-12">
             <form class="row g-3 mb-12">
@@ -256,26 +256,26 @@ Inicia nuevo formulario
              
               <div class="col-md-6 gy-6">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <input class="form-control" id="costo" type="text" placeholder="Project title">
                   <label for="floatingInputGrid">Costo del envio </label>
                 </div>
               </div>
               <div class="col-md-6 gy-6">
                 <div class="form-floating">
-                  <input class="form-control" id="floatingInputBudget" type="text" placeholder="Budget">
+                  <input class="form-control" id="precio" type="text" placeholder="Budget">
                   <label for="floatingInputBudget">Precio del paquete</label>
                 </div>
               </div>
               
               <div class="col-md-6 gy-6">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
-                  <label for="floatingInputGrid">Costo del envio </label>
+                  <input class="form-control" id="envio" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">precio del envio </label>
                 </div>
               </div>
               <div class="col-md-6 gy-6">
                 <div class="form-floating">
-                  <input class="form-control" id="floatingInputBudget" type="text" placeholder="Budget">
+                  <input class="form-control" id="total" type="text" placeholder="Budget">
                   <label for="floatingInputBudget">Total a pagar</label>
                 </div>
               </div>
@@ -310,6 +310,19 @@ Inicia nuevo formulario
                 </div>
               </div>
 
+              <div class="col-sm-6 col-md-6">
+                <div class="form-floating">
+                <select id="pagado" name="pagado" class="form-select" id="floatingSelectAdmin">
+                    <option value="Por pagar">Por pagar</option>
+                    <option value="Pagado">Pagado</option>
+                    <option value="Trans. a la empresa">Trans. a la empresa</option>
+                    <option value="Trans. al comercio">Trans. al comercio</option>
+            
+                      </select>
+                  <label for="floatingInputBudget">Estado del pago</label>
+                </div>
+              </div>
+
              
 
              
@@ -335,11 +348,9 @@ Inicia nuevo formulario
   <div class="border p-3 rounded">
 
 
-                  
-                        
-                    <div class="col-xl-12">
+  <div class="col-xl-12">
             <form class="row g-3 mb-12">
-            <h1>Punto Fijo</h1>
+              <h1>Personalizado</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
                   <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
@@ -369,26 +380,26 @@ Inicia nuevo formulario
              
               <div class="col-md-6 gy-6">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <input class="form-control" id="costo" type="text" placeholder="Project title">
                   <label for="floatingInputGrid">Costo del envio </label>
                 </div>
               </div>
               <div class="col-md-6 gy-6">
                 <div class="form-floating">
-                  <input class="form-control" id="floatingInputBudget" type="text" placeholder="Budget">
+                  <input class="form-control" id="precio" type="text" placeholder="Budget">
                   <label for="floatingInputBudget">Precio del paquete</label>
                 </div>
               </div>
               
               <div class="col-md-6 gy-6">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
-                  <label for="floatingInputGrid">Costo del envio </label>
+                  <input class="form-control" id="envio" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">precio del envio </label>
                 </div>
               </div>
               <div class="col-md-6 gy-6">
                 <div class="form-floating">
-                  <input class="form-control" id="floatingInputBudget" type="text" placeholder="Budget">
+                  <input class="form-control" id="total" type="text" placeholder="Budget">
                   <label for="floatingInputBudget">Total a pagar</label>
                 </div>
               </div>
@@ -420,6 +431,19 @@ Inicia nuevo formulario
 
                   </select>
                   <label for="floatingSelectAdmin">Estado del envio</label>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-6">
+                <div class="form-floating">
+                <select id="pagado" name="pagado" class="form-select" id="floatingSelectAdmin">
+                    <option value="Por pagar">Por pagar</option>
+                    <option value="Pagado">Pagado</option>
+                    <option value="Trans. a la empresa">Trans. a la empresa</option>
+                    <option value="Trans. al comercio">Trans. al comercio</option>
+            
+                      </select>
+                  <label for="floatingInputBudget">Estado del pago</label>
                 </div>
               </div>
 
