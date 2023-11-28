@@ -102,6 +102,8 @@
 <script src="{{ asset('assets/js/phoenix.js') }}"></script>
 <script src="{{ asset('assets/js/config.js') }}"></script>
 <script src="{{ asset('assets/js/scripts.js') }}"></script>
+<script src="{{ asset('assets/js/showcase.js') }}"></script>
+
 @yield('page_js')
 
 
@@ -127,7 +129,12 @@
     
 </script>
 
-
+<script>
+          var navbarStyle = window.config.config.phoenixNavbarStyle;
+          if (navbarStyle && navbarStyle !== 'transparent') {
+            document.querySelector('body').classList.add(`navbar-${navbarStyle}`);
+          }
+        </script>
 
 
 
