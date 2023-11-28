@@ -350,7 +350,7 @@ Inicia nuevo formulario
 
   <div class="col-xl-12">
             <form class="row g-3 mb-12">
-              <h1>Personalizado</h1>
+              <h1>Punto fijo</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
                   <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
