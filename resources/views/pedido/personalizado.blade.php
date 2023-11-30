@@ -202,7 +202,7 @@ $(document).ready(function() {
 Inicia nuevo formulario
 -->
 
-<section class="section">
+
     <div class="section-header">
         <h3 class="page__heading">Crear Envio</h3>
     </div>
