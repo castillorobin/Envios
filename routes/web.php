@@ -50,7 +50,7 @@ Route::get('pedido/desdeenvio', [App\Http\Controllers\PedidoController::class, '
 Route::get('pedido/comerperso', [App\Http\Controllers\PedidoController::class, 'comerperso'] )->name('comerperso') ;
 Route::get('pedido/comerpfijo', [App\Http\Controllers\PedidoController::class, 'comerpfijo'] )->name('comerpfijo') ;
 Route::get('pedido/comercasi', [App\Http\Controllers\PedidoController::class, 'comercasi'] )->name('comercasi') ;
-
+ 
 Route::get('pedido/editando/{id}', [App\Http\Controllers\PedidoController::class, 'editando'] )->name('editando') ;
 Route::get('pedido/editarlo/{id}', [App\Http\Controllers\PedidoController::class, 'editarlo'] )->name('editarlo') ;
 Route::get('pedido/crearp', [App\Http\Controllers\PedidoController::class, 'crearp'] )->name('crearp') ;

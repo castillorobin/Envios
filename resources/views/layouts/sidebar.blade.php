@@ -44,13 +44,13 @@
                     <ul class="nav parent collapse" data-bs-parent="#navbarVerticalCollapse" id="nv-project-management" style="">
                       <li class="collapsed-nav-item-title d-none">Gestion de Pedidos
                       </li>
-                      <li class="nav-item"><a class="nav-link " href="../../apps/project-management/create-new.html" data-bs-toggle="" aria-expanded="false">
+                      <li class="nav-item"><a class="nav-link " href="/pedido/crearp" data-bs-toggle="" aria-expanded="false">
                           <div class="d-flex align-items-center"><span class="nav-link-text">Crear pedido</span>
                           </div>
                         </a>
                         <!-- more inner pages-->
                       </li>
-                      <li class="nav-item"><a class="nav-link" href="../../apps/project-management/project-list-view.html" data-bs-toggle="" aria-expanded="false">
+                      <li class="nav-item"><a class="nav-link" href="/pedido/indexdigitado" data-bs-toggle="" aria-expanded="false">
                           <div class="d-flex align-items-center"><span class="nav-link-text">Lista de pedidos</span>
                           </div>
                         </a>
@@ -90,3 +90,16 @@
         </div>
       </nav>
     
+      <script>
+        var navbarTopStyle = window.config.config.phoenixNavbarTopStyle;
+        var navbarTop = document.querySelector('.navbar-top');
+        if (navbarTopStyle === 'darker') {
+          navbarTop.classList.add('navbar-darker');
+        }
+
+        var navbarVerticalStyle = window.config.config.phoenixNavbarVerticalStyle;
+        var navbarVertical = document.querySelector('.navbar-vertical');
+        if (navbarVertical && navbarVerticalStyle === 'darker') {
+          navbarVertical.classList.add('navbar-darker');
+        }
+      </script>
