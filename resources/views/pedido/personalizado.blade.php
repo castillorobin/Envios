@@ -164,10 +164,9 @@
           <div class="navbar-logo">
 
             <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-            <a class="navbar-brand me-1 me-sm-3" href="../../index.html">
+            <a class="navbar-brand me-1 me-sm-3" href="/home">
               <div class="d-flex align-items-center">
-              <img alt="image" src="{{ asset('img/peque.jpeg') }}"
-                     class="mr-1 thumbnail user-thumbnail " width="70">
+              
                   <p class="logo-text ms-2 d-none d-sm-block">Melo Express</p>
                 </div>
               </div>
@@ -442,9 +441,15 @@
           </div>
         </div>
       </div>
-      <div class="content">
-        
-        <h2 class="mb-4">Crear Envio</h2>
+      <div class="content pt-8">
+      <nav class="mb-2" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="#!">Gestion de Pedidos</a></li>
+            <li class="breadcrumb-item active">Crear Pedido</li>
+          </ol>
+        </nav>
+        <h2 class="mb-3">Crear Envio</h2>
         <div class="row">
           <div class="col-xl-9">
              
@@ -462,7 +467,7 @@
 <div class="tab-content mt-3" id="myTabContent">
 
 <div class="tab-pane fade show active" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
-  <div class="border p-3 rounded">
+  <div class="p-1 rounded">
 
 
                    
@@ -588,7 +593,7 @@
           </div>
 
           <div class="tab-pane fade" id="tab-profile" role="tabpanel" aria-labelledby="profile-tab">
-  <div class="border p-3 rounded">
+  <div class="p-3 rounded">
 
 
   <div class="col-xl-12">
