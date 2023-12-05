@@ -3,15 +3,6 @@
 
 @section('content')
 
-    <section class="section">
-        <div class="section-header">
-            <h3 class="page__heading">Melo Express</h3>
-        </div>
-        <div class="section-body">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card"> 
-                        <div class="card-body">
 <style>
     @media print{
 @page {
@@ -173,8 +164,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -206,7 +197,7 @@ jQuery(document).ready(function($){
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
 
-<select class="form-control mi-selector" name="comer" id="comer">
+<select class="mi-selector" name="comer" id="comer">
     <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
@@ -249,7 +240,8 @@ jQuery(document).ready(function($){
 
 
 <br>
-<table id="tpedido" class="table table-striped mt-2">
+<div class="table-responsive scrollbar">
+<table id="tpedido" class="table fs--1 mb-0 border-top border-200">
 <thead style="background-color:#6777ef;">
         
         <th style="color: #fff;">ID</th>
@@ -267,10 +259,10 @@ jQuery(document).ready(function($){
         <th style="color: #fff;">Opciones</th>
     </tr>
 </thead>
-<tbody>
+<tbody class="list">
      
     @for ($i=0; $i< count($pedidos); $i++)
-    <tr >
+    <tr class="position-static">
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
@@ -372,7 +364,7 @@ jQuery(document).ready(function($){
 </tbody>
 </table>
 
-
+</div>
 
 
 <!-- Inicio Modal -->
@@ -690,11 +682,5 @@ $(document).ready(function(){
     );
 }); 
     </script>
-
-</div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    </section>    
+  
 @endsection

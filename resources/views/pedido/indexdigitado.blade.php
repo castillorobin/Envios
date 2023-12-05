@@ -3,30 +3,14 @@
 
 @section('content')
 
-    <section class="section">
-        <div class="section-header">
-            <h3 class="page__heading">Melo Express</h3>
-        </div>
-        <div class="section-body">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card"> 
-                        <div class="card-body">
+
 <style>
     @media print{
 @page {
 size: landscape;
 }
 }
-    /*
-    .dropdown-menu-center {
-  left: 2% !important;
-  right: auto !important;
-  text-align: center !important;
-  transform: translate(-50%, 0) !important;
-        margin-top: 25px;
-}
-*/
+   
 .opciones li {
     margin-right: 45px;
  display: block;
@@ -159,8 +143,7 @@ input[type="date"]:valid::before {
 }
 </style>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script>  
 jQuery(document).ready(function($){
     $(document).ready(function() {
@@ -171,8 +154,8 @@ jQuery(document).ready(function($){
             var data = e.params.data;
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
-    window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-   // window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
+   window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -186,8 +169,10 @@ jQuery(document).ready(function($){
 
 
 
-<br>
- 
+
+
+
+
 <div class="row" style="background-color: white;" >
     <div class="  col-sm-12 py-3" >
         <h3 class="text-center">Reporte de envíos</h3>
@@ -205,7 +190,7 @@ jQuery(document).ready(function($){
 <span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
 </div>
 
-<select class="form-control mi-selector" name="comer" id="comer">
+<select class="mi-selector" name="comer" id="comer">
     <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
@@ -446,6 +431,10 @@ jQuery(document).ready(function($){
 </div>
 </div>
 </div>
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 
@@ -468,14 +457,7 @@ jQuery(document).ready(function($){
 
     
     
-                 
-
-    <!--
- <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js" defer></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js" defer></script>
--->
-
+            
 
 
 <script>
@@ -592,10 +574,8 @@ $(document).ready(function(){
 }); 
     </script>
 
-</div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-    </section>    
+
+
+
+
 @endsection
