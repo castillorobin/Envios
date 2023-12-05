@@ -152,9 +152,10 @@ jQuery(document).ready(function($){
         $('#comer').on('select2:select', function (e) { 
             
             var data = e.params.data;
-    //console.log(data.text);
+    //console.log(data.text);   http://209.145.56.57/
     //document.getElementById('mostrar').value = data.text;
-    window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
+    //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
+    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text; 
    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
