@@ -570,6 +570,13 @@
                   <label for="floatingInputBudget">Estado del pago</label>
                 </div>
               </div>
+                
+              <div class="col-md-12 gy-6">
+                <div class="form-floating">
+                  <input class="form-control" id="total" type="textarea" placeholder="Budget">
+                  <label for="floatingInputBudget">Nota</label>
+                </div>
+              </div>
 
              
 
@@ -694,7 +701,149 @@
                   <label for="floatingInputBudget">Estado del pago</label>
                 </div>
               </div>
+                            
 
+              <div class="col-md-12 gy-6">
+                <div class="form-floating">
+                  <input class="form-control" id="total" type="textarea" placeholder="Budget">
+                  <label for="floatingInputBudget">Nota</label>
+                </div>
+              </div>
+             
+
+             
+              <div class="col-12 gy-6">
+                <div class="row g-3 justify-content-end">
+                  <div class="col-auto">
+                    <button class="btn btn-phoenix-primary px-5">Cancelar</button>
+                  </div>
+                  <div class="col-auto">
+                    <button class="btn btn-primary px-5 px-sm-15">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+
+          
+
+
+
+
+
+
+          <div class="tab-pane fade" id="tab-contact" role="tabpanel" aria-labelledby="contact-tab">
+  <div class="p-3 rounded">
+
+
+  <div class="col-xl-12">
+            <form class="row g-3 mb-12">
+              <h1>Casillero</h1>
+              <div class="col-sm-12 col-md-12">
+                <div class="form-floating">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">Comercio</label>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12">
+                <div class="form-floating">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">Destinatario </label>
+                </div>
+              </div>
+              
+              <div class="col-sm-6 col-md-8">
+              <div class="form-floating">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">Direccion </label>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+              <div class="form-floating">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">Telefono </label>
+                </div>
+              </div>
+              
+             
+              <div class="col-md-6 gy-6">
+              <div class="form-floating">
+                  <input class="form-control" id="costo" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">Costo del envio </label>
+                </div>
+              </div>
+              <div class="col-md-6 gy-6">
+                <div class="form-floating">
+                  <input class="form-control" id="precio" type="text" placeholder="Budget">
+                  <label for="floatingInputBudget">Precio del paquete</label>
+                </div>
+              </div>
+              
+              <div class="col-md-6 gy-6">
+              <div class="form-floating">
+                  <input class="form-control" id="envio" type="text" placeholder="Project title">
+                  <label for="floatingInputGrid">precio del envio </label>
+                </div>
+              </div>
+              <div class="col-md-6 gy-6">
+                <div class="form-floating">
+                  <input class="form-control" id="total" type="text" placeholder="Budget">
+                  <label for="floatingInputBudget">Total a pagar</label>
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="col-sm-6 col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelectAdmin">
+                  <option value="Entregado">Entregado</option>
+                    <option value="Creado" >Creado</option>
+                <option value="En ruta">En ruta</option>
+                <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
+                <option value="Reprogramado">Reprogramado</option>
+                <option value="Agencia San Salvador">Agencia San Salvador</option>
+                <option value="Agencia San Miguel">Agencia San Miguel</option>
+                <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+                <option value="No retirado">No retirado</option>
+                <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+                <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+                <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+                <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+                <option value="Casillero San Salvador">Casillero San Salvador</option>
+                <option value="Casillero San Miguel">Casillero San Miguel</option>
+                <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+
+                  </select>
+                  <label for="floatingSelectAdmin">Estado del envio</label>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-6">
+                <div class="form-floating">
+                <select id="pagado" name="pagado" class="form-select" id="floatingSelectAdmin">
+                    <option value="Por pagar">Por pagar</option>
+                    <option value="Pagado">Pagado</option>
+                    <option value="Trans. a la empresa">Trans. a la empresa</option>
+                    <option value="Trans. al comercio">Trans. al comercio</option>
+            
+                      </select>
+                  <label for="floatingInputBudget">Estado del pago</label>
+                </div>
+              </div>
+                            
+
+              <div class="col-md-12 gy-6">
+                <div class="form-floating">
+                  <input class="form-control" id="total" type="textarea" placeholder="Budget">
+                  <label for="floatingInputBudget">Nota</label>
+                </div>
+              </div>
              
 
              
