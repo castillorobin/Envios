@@ -475,6 +475,7 @@
                         
                     <div class="col-xl-12">
             <form class="row g-3 mb-12">
+              
               <h1>Personalizado</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
@@ -482,6 +483,7 @@
                   <label for="floatingInputGrid">Comercio</label>
                 </div>
               </div>
+
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
                   <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
@@ -495,6 +497,7 @@
                   <label for="floatingInputGrid">Direccion </label>
                 </div>
               </div>
+
               <div class="col-sm-6 col-md-4">
               <div class="form-floating">
                   <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
@@ -590,15 +593,14 @@
                   <div class="col-auto">
                     <button class="btn btn-primary px-5 px-sm-15">Guardar</button>
                   </div>
+
                 </div>
               </div>
             </form>
           </div>
-
-
-
-          </div>
-          </div>
+      </div>
+          
+      </div> 
 
           <div class="tab-pane fade" id="tab-profile" role="tabpanel" aria-labelledby="profile-tab">
   <div class="p-3 rounded">
@@ -725,16 +727,9 @@
               </div>
             </form>
           </div>
+          </div>
 
-
-
-          
-
-
-
-
-
-
+          </div> 
           <div class="tab-pane fade" id="tab-contact" role="tabpanel" aria-labelledby="contact-tab">
   <div class="p-3 rounded">
 
@@ -867,23 +862,8 @@
 </div>
 
 
-</div>
-
-
-
-
-
-
-         
-
-
-
-
-
-
-
-          </div>
-        </div>
+        
+        
         <footer class="footer position-absolute">
           <div class="row g-0 justify-content-between align-items-center h-100">
             <div class="col-12 col-sm-auto text-center">
