@@ -65,6 +65,14 @@ ul li ul:hover {
   
 }
 
+@media only screen and (max-width: 500px) {
+    .cambiar2 {
+        display: none;
+       
+        
+    }
+}
+
 .pagina1{
     margin-bottom: 30px;
     margin-top: -30px;
@@ -76,6 +84,15 @@ ul li ul:hover {
     padding-top: 10px;
     
 }
+
+@media only screen and (max-width: 500px) {
+    .pagina2 {
+        
+        margin: 20px;
+        
+    }
+}
+
 .pagina3{
     margin-bottom: 0px;
     margin-top: 0px;
