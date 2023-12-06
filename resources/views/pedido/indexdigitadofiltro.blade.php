@@ -84,6 +84,14 @@ ul li ul:hover {
     margin-top: -30px;
     
 }
+
+@media only screen and (max-width: 500px) {
+    .pagina1 {
+        margin-top: 20px;
+       
+        
+    }
+}
 .pagina2{
     
     margin-bottom: -25px;
