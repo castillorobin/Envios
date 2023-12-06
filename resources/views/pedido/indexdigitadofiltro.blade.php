@@ -103,6 +103,13 @@ ul li ul:hover {
     margin-top: 0px;
     
 }
+@media only screen and (max-width: 500px) {
+    .pagina4 {
+        display: none;
+       
+        
+    }
+}
 .dataTables_paginate a:hover {
     color: white !important;
     background:#0d6efd !important;
@@ -688,7 +695,7 @@ $(document).ready(function(){
         }
     },
 
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tr<"pagina4" i><"pagina1" p>',
         
         
        
