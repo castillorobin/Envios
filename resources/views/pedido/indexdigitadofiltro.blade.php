@@ -72,10 +72,25 @@ ul li ul:hover {
   
 }
 
+@media only screen and (max-width: 500px) {
+    .cambiar2 {
+        display: none;
+       
+        
+    }
+}
 .pagina1{
     margin-bottom: 30px;
     margin-top: -30px;
     
+}
+
+@media only screen and (max-width: 500px) {
+    .pagina1 {
+        margin-top: 20px;
+       
+        
+    }
 }
 .pagina2{
     
@@ -83,10 +98,25 @@ ul li ul:hover {
     padding-top: 10px;
     
 }
+
+@media only screen and (max-width: 500px) {
+    .pagina2 {
+        
+        margin: 20px;
+        
+    }
+}
 .pagina3{
     margin-bottom: 0px;
     margin-top: 0px;
     
+}
+@media only screen and (max-width: 500px) {
+    .pagina4 {
+        display: none;
+       
+        
+    }
 }
 .dataTables_paginate a:hover {
     color: white !important;
@@ -165,8 +195,8 @@ jQuery(document).ready(function($){
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
-    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
