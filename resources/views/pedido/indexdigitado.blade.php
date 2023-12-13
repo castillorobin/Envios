@@ -155,8 +155,8 @@ jQuery(document).ready(function($){
     //console.log(data.text);   http://209.145.56.57/
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text; 
-   //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text; 
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -236,21 +236,21 @@ jQuery(document).ready(function($){
 
 <br>
 <table id="tpedido" class="table table-striped mt-2">
-<thead style="background-color:#6777ef;">
+<thead style="">
         
-        <th style="color: #fff;">ID</th>
-        <th style="color: #fff;">Comercio</th>
-        <th style="color: #fff;">Destinatario</th>
-        <th style="color: #fff;">Direccion</th>
+        <th style="">ID</th>
+        <th style="">Comercio</th>
+        <th style="">Destinatario</th>
+        <th style="">Direccion</th>
         
-        <th style="color: #fff;">Tipo</th>
-        <th style="color: #fff;">Estado del envio</th>
-        <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Agencia</th>
-        <th style="color: #fff;">Repartidor</th>
-        <th style="color: #fff;">Ruta</th>
-        <th style="color: #fff;">Nota</th>
-        <th style="color: #fff;">Opciones</th>
+        <th style="">Tipo</th>
+        <th style="">Estado del envio</th>
+        <th style="">Fecha de entrega</th>
+        <th style="">Agencia</th>
+        <th style="">Repartidor</th>
+        <th style="">Ruta</th>
+        <th style="">Nota</th>
+        <th style="">Opciones</th>
     </tr>
 </thead>
 <tbody>
@@ -259,168 +259,6 @@ jQuery(document).ready(function($){
 </tbody>
 </table>
 
-
-
-
-<!-- Inicio Modal -->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel" style="float: left;"></h1> &nbsp; &nbsp; &nbsp;
-        <span style="float: right; text-align: right;"><button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button></span>
-      </div>
-      <div class="modal-body">
-        <div class="row p-3 m-3" style="border: solid 1px;">
-           
-            <table class="table table-borderless" >
-                <tr>
-                    <td  colspan="3"><h4>Datos del Comercio</h4>
-                        <hr>
-                    </td>
-                    
-                </tr>
-
-                <tr class="headt">
-                    <td width="230px">Nombre de comercio / Tienda </td>
-                    <td> <span ></span> <label for="" id="nombre"></label> </td>
-                    <td rowspan="22"><span ></span> <img alt="Foto1" class="grande " id="fotoss" width="250" > 
-                    <br> <img alt="" id="fotos2" width="250">
-                    <br> <img alt="" id="fotos3" width="250"></td>
-                </tr>
-
-                <tr class="headt">
-                    <td width="230px">Dirección </td>
-                    <td> <span ></span> </td>
-                    
-                </tr>
-                
-
-                <tr class="headt">
-                    <br>
-                    <td  colspan="3" class="pt-2"> <h4> Datos del destinatario</h4>
-                        <hr>
-                    </td>
-                      
-                </tr>
-
-                <tr class="headt">
-                    <td width="230px">Destinatario </td>
-                    <td> <span ></span> <label for="" id="desti"></label> </td>
-                    
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Telefono </td>
-                    <td> <span ></span> <label for="" id="telef"></label> </td>
-                    
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Direccion de entrega </td>
-                    <td> <span ></span> <label for="" id="direc"></label> </td>
-                    
-                </tr>
-                
-
-                <tr class="headt">
-                    <br>
-                    <td  colspan="3" class="pt-2"> <h4> Datos del paquete</h4>
-                        <hr>
-                    </td>
-                      
-                </tr>
- 
-                <tr class="headt">
-                    <td width="230px">Fecha de creacion </td>
-                    <td> <span ></span> <label for="" id="fecha"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Fecha de entrega </td>
-                    <td> <span ></span> <label for="" id="fechen"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Tipo de envio </td>
-                    <td> <span ></span> <label for="" id="tipoe"></label> </td>  
-                </tr>
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Estado del envio </td>
-                    <td> <span ></span> <label for="" id="este"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Estado del pago </td>
-                    <td> <span ></span> <label for="" id="estp"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Precio del paquete </td>
-                    <td> <span ></span> <label for="" id="preci"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Costo del envio </td>
-                    <td> <span ></span> <label for="" id="envio"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Total a cobrar </td>
-                    <td> <span ></span> <label for="" id="total"></label> </td>  
-                </tr>
-
-                <tr class="headt">
-                    <br>
-                    <td  colspan="3" class="pt-2"> <h4> Datos internos</h4>
-                        <hr>
-                    </td>
-                      
-                </tr>
-
-                <tr class="headt">
-                    <td width="230px">Usuario que registró </td>
-                    <td> <span ></span> <label for="" id="ingre"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Recepción agencia </td>
-                    <td> <span ></span> <label for="" id="agen"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Repartidor </td>
-                    <td> <span ></span> <label for="" id="repar"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Ruta </td>
-                    <td> <span ></span> <label for="" id="ruta1"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Nota </td>
-                    <td> <span ></span> <label for="" id="nota1"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Estante</td>
-                    <td> <span ></span> <label for="" id="estan"></label> </td>  
-                </tr>
-                <tr class="headt">
-                    <td width="230px">Cobro de envio</td>
-                    <td> <span ></span> <label for="" id="cobro"></label> </td>  
-                </tr>
-
-
-            </table>
-
-
-        </div>
-
-
-
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times" style="color: #ffffff;"></i> &nbsp; Cerrar</button>
-        <a id="impri" class="btn btn-primary" style="color: #ffffff;">Imprimir</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Termina Modal -->
 
 
 
@@ -564,7 +402,7 @@ $(document).ready(function(){
         }
     },
 
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        dom: '<"cambiar" f>tri<"pagina1" p>',
         
         
        

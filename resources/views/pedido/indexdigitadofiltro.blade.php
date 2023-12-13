@@ -165,8 +165,8 @@ jQuery(document).ready(function($){
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -183,31 +183,13 @@ jQuery(document).ready(function($){
 <br>
  
 <div class="row" style="background-color: white;" >
-    <div class="  col-sm-12 py-3" >
-        <h3 class="text-center">Reporte de envíos</h3>
-    </div>
+    
             
     <div class="col-12">  
     <div class="row mt-1 border mr-1">   
                 
-                <div class="col-sm-6 mt-4"> <!-- div buscar -->
-
-<div class="input-group mb-3 ">
-
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
-</div>
-
-<select class="mi-selector" name="comer" id="comer">
-    <option value="">Buscar Comercio</option>
-    @for($i=0;  $i< count($vendedores); $i++ )
-                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
-       
-                        @endfor
-</select>
-
-</div>
-</div> <!-- Termina div buscar  -->
+                <!-- div buscar -->
+<!-- Termina div buscar  -->
 
 
 <div class="col-6 mt-4">  <!-- div filtrros  -->
@@ -220,20 +202,64 @@ jQuery(document).ready(function($){
     <div class="col-12">
  
         
+    <nav class="mb-2" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="#!">Inicio</a></li>
+            <li class="breadcrumb-item">Lista de ordenes</li>
+            
+          </ol>
+        </nav>
 
-
-            <div class="d-flex justify-content-end">
-            @can('crear-envios')
-            <div >
-
-<a href="/pedidos/create" class="btn btn-warning" style="color:white;"><i class="fas fa-database"></i> Agregar Nuevo</a>
-<br>
+        <div class="row g-3 mb-4">
+            <div class="col-auto">
+              <h2 class="mb-0">Reporte de Ordenes</h2>
             </div>
-            @endcan
+          </div> 
 
-  
-            </div>
 
+            <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
+            
+            <li class="nav-item"><a class="nav-link" href="#"><span>Reprogramados </span><span class="text-700 fw-semi-bold">()</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><span>No entregados </span><span class="text-700 fw-semi-bold">()</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><span>Entregados</span><span class="text-700 fw-semi-bold">()</span></a></li>
+           
+          </ul>
+
+          <div class="row">
+
+          <div class="col-3 mt-2">
+            <div class="search-box">
+                    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+                      <input class="form-control search-input search" type="search" placeholder="Buscar ordenes" aria-label="Search">
+                      <svg class="svg-inline--fa fa-magnifying-glass search-box-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path></svg><!-- <span class="fas fa-search search-box-icon"></span> Font Awesome fontawesome.com -->
+
+                    </form>
+                  </div>
+
+         </div>
+
+
+                  <div class="col-6 mt-2">   
+                  
+
+                  <div class="search-box">
+
+<select class="mi-selector form-control search" name="comer" id="comer">
+    <option value="">  &nbsp; &nbsp; &nbsp; &nbsp; Buscar Comercio</option>
+    @for($i=0;  $i< count($vendedores); $i++ )
+                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
+       
+                        @endfor
+</select>
+<svg class="svg-inline--fa fa-magnifying-glass search-box-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"></path></svg><!-- <span class="fas fa-search search-box-icon"></span> Font Awesome fontawesome.com -->
+
+</div>
+</div> 
+
+
+
+
+</div>
 
 
 
@@ -243,21 +269,21 @@ jQuery(document).ready(function($){
 <br>
 <div class="table-responsive scrollbar">
 <table id="tpedido" class="table fs--1 mb-0 border-top border-200">
-<thead style="background-color:#6777ef;">
+<thead style="">
         
-        <th style="color: #fff;">ID</th>
-        <th style="color: #fff;">Comercio</th>
-        <th style="color: #fff;">Destinatario</th>
-        <th style="color: #fff;">Direccion</th>
+        <th style="">ID</th>
+        <th style="">Comercio</th>
+        <th style="">Destinatario</th>
+        <th style="">Direccion</th>
         
-        <th style="color: #fff;">Tipo</th>
-        <th style="color: #fff;">Estado del envio</th>
-        <th style="color: #fff;">Fecha de entrega</th>
-        <th style="color: #fff;">Agencia</th>
-        <th style="color: #fff;">Repartidor</th>
-        <th style="color: #fff;">Ruta</th>
-        <th style="color: #fff;">Nota</th>
-        <th style="color: #fff;">Opciones</th>
+        <th style="">Tipo</th>
+        <th style="">Estado del envio</th>
+        <th style="">Fecha de entrega</th>
+        <th style="">Agencia</th>
+        <th style="">Repartidor</th>
+        <th style="">Ruta</th>
+        <th style="">Nota</th>
+        <th style="">Opciones</th>
     </tr>
 </thead>
 <tbody class="list">
@@ -269,7 +295,12 @@ jQuery(document).ready(function($){
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     <td>{{ $pedidos[$i]->direccion }}</td>
     <td>{{ $pedidos[$i]->tipo }}</td>
-    <td style="background: #e3e8e7"> <h5><span class="badge badge-dark">{{ $pedidos[$i]->estado }}</span></h5></td>
+    <td > 
+
+    <span class="badge badge-phoenix fs--2 badge-phoenix-danger"><span class="badge-label">F{{ $pedidos[$i]->estado }}</span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x ms-1" style="height:12.8px;width:12.8px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
+
+
+</td>
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
     <td> {{ $pedidos[$i]->agencia }}</td>
     <td> {{ $pedidos[$i]->repartidor }}</td>
@@ -673,7 +704,7 @@ $(document).ready(function(){
         }
     },
 
-        dom: '<"cambiar" f><"pagina2" p><"cambiar2"l>tri<"pagina1" p>',
+        dom: 'tri<"pagina1" p>',
         
         
        
