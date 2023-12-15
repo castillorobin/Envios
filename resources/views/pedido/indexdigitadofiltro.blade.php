@@ -210,10 +210,7 @@ jQuery(document).ready(function($){
 
 
 
-<br>
- 
-
-    
+   
             
     <div class="col-12 pt-0">  
     <div class="row ">   
