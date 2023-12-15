@@ -195,8 +195,8 @@ jQuery(document).ready(function($){
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -242,13 +242,17 @@ jQuery(document).ready(function($){
               <h2 class="mb-0">Reporte de Ordenes</h2>
             </div>
           </div> 
+        
 
+
+
+         
 
             <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
             
-            <li class="nav-item"><a class="nav-link" href="#"><span>Reprogramados </span><span class="text-700 fw-semi-bold">()</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>No entregados </span><span class="text-700 fw-semi-bold">()</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>Entregados</span><span class="text-700 fw-semi-bold">()</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><span>Reprogramados </span><span class="text-700 fw-semi-bold">({{ $reprogra }})</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><span>No Retirados </span><span class="text-700 fw-semi-bold">({{ $noentrega }})</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><span>Entregados</span><span class="text-700 fw-semi-bold">( {{ $entrega }})</span></a></li>
            
           </ul>
 
@@ -319,7 +323,7 @@ jQuery(document).ready(function($){
     </tr>
 </thead>
 <tbody class="list">
-     
+
     @for ($i=0; $i< count($pedidos); $i++)
     <tr class="position-static">
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
@@ -327,12 +331,28 @@ jQuery(document).ready(function($){
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     <td>{{ $pedidos[$i]->direccion }}</td>
     <td>{{ $pedidos[$i]->tipo }}</td>
-    <td > 
 
-    <span class="badge badge-phoenix fs--2 badge-phoenix-danger"><span class="badge-label">F{{ $pedidos[$i]->estado }}</span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x ms-1" style="height:12.8px;width:12.8px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
+    <!--Empieza If s de estados -->
+
+    @if( $pedidos[$i]->estado =='Entregado')
+    <td><span class="badge badge-phoenix fs--2 badge-phoenix-success"><span class="badge-label">{{ $pedidos[$i]->estado }}</span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check ms-1" style="height:12.8px;width:12.8px;"><polyline points="20 6 9 17 4 12"></polyline></svg></span></td>
+    
+    
+    @elseif( $pedidos[$i]->estado =='No retirado')
+    <td><span class="badge badge-phoenix fs--2 badge-phoenix-danger"><span class="badge-label">{{ $pedidos[$i]->estado }}</span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x ms-1" style="height:12.8px;width:12.8px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+    
+
+    @elseif( $pedidos[$i]->estado =='Reprogramado')
+    <td><span class="badge badge-phoenix fs--2 badge-phoenix-danger"><span class="badge-label">{{ $pedidos[$i]->estado }}</span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x ms-1" style="height:12.8px;width:12.8px;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span></td>
+
+    @else
+    <td>{{ $pedidos[$i]->estado }}</td>
+    @endif
 
 
-</td>
+
+
+  <!--Termina If s de estados -->
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
     <td> {{ $pedidos[$i]->agencia }}</td>
     <td> {{ $pedidos[$i]->repartidor }}</td>

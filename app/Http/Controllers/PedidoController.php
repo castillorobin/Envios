@@ -64,7 +64,23 @@ class PedidoController extends Controller
         $pedidos = Pedido::where('vendedor', $comercio)->get();
         $vendedores = Vendedor::all();
         $nota= ' ';
-        return view('pedido.indexdigitadofiltro', compact('pedidos','vendedores','nota'));
+        $entrega = 0;
+        $reprogra = 0;
+        $noentrega = 0;
+
+        foreach($pedidos as $pedido) {
+           if ($pedido->estado == 'Entregado') {
+            $entrega+=1;
+           }
+           if ($pedido->estado == 'Reprogramado') {
+            $reprogra+=1;
+           }
+           if ($pedido->estado == 'No retirado') {
+            $noentrega+=1;
+           }
+        }
+
+        return view('pedido.indexdigitadofiltro', compact('pedidos','vendedores','nota','entrega','reprogra','noentrega'));
 
 
     }
