@@ -212,17 +212,17 @@ jQuery(document).ready(function($){
 
 <br>
  
-<div class="row" style="background-color: white;" >
+
     
             
-    <div class="col-12">  
-    <div class="row mt-1 border mr-1">   
+    <div class="col-12 pt-0">  
+    <div class="row ">   
                 
                 <!-- div buscar -->
 <!-- Termina div buscar  -->
 
 
-<div class="col-6 mt-4">  <!-- div filtrros  -->
+<div class="col-6">  <!-- div filtrros  -->
 
 
 <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
@@ -293,10 +293,15 @@ jQuery(document).ready(function($){
 
 
 
-<div class="table-responsive">
+
 
 
 <br>
+
+
+
+<div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
+
 <div class="table-responsive scrollbar">
 <table id="tpedido" class="table fs--1 mb-0 border-top border-200">
 <thead style="">

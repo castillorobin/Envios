@@ -200,14 +200,14 @@ jQuery(document).ready(function($){
 
 
 
-<div class="row" style="background-color: white;" >
-    <div class="  col-sm-12 py-3" >
+<div class="row" style="" >
+    <div class=" col-sm-12" >
         <h3 class="text-center">Reporte de envíos</h3>
     </div>
             
     <div class="col-12">   <!-- Inicia columna 8  -->
                 
-                <div class="row mt-1 border mr-1">   
+                <div class="row mt-1    mr-1">   
                 
                 <div class="col-sm-6 mt-4"> <!-- div buscar -->
 
@@ -255,9 +255,9 @@ jQuery(document).ready(function($){
             </div>
 
 
+            <div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
 
-
-<div class="table-responsive">
+<div class="table-responsive" >
 
 
 <br>
@@ -297,7 +297,7 @@ jQuery(document).ready(function($){
 </div>
 </div>
 
-
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
