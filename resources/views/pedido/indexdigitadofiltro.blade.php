@@ -309,19 +309,29 @@ jQuery(document).ready(function($){
 <div class="table-responsive scrollbar">
 <table id="tpedido" class="table fs--1 mb-0 border-top border-200">
 <thead style="">
-        
+<th class="white-space-nowrap fs--1 align-middle ps-0" style="width:26px;">
+                        <div class="form-check mb-0 fs-0">
+                          <input class="form-check-input" id="checkbox-bulk-order-select" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;order-table-body&quot;}">
+                        </div>
+                      </th>
         <th style="">ID</th>
+        <th style="">Total</th>
+        <th style="">Envio</th>
+        <th style="">Precio</th>
         <th style="">Comercio</th>
-        <th style="">Destinatario</th>
-        <th style="">Direccion</th>
+        <th style="">Cliente</th>
         
-        <th style="">Tipo</th>
-        <th style="">Estado del envio</th>
+        
+       
+        
+        <th style="">Tipo de orden</th>
+        <th style="">Estado del orden</th>
+        <th style="">Estado del pago</th>
         <th style="">Fecha de entrega</th>
-        <th style="">Agencia</th>
-        <th style="">Repartidor</th>
-        <th style="">Ruta</th>
-        <th style="">Nota</th>
+        
+        
+        
+    
         
     </tr>
 </thead>
@@ -329,10 +339,19 @@ jQuery(document).ready(function($){
 
     @for ($i=0; $i< count($pedidos); $i++)
     <tr class="position-static">
+    <td class="fs--1 align-middle px-0 py-3">
+                        <div class="form-check mb-0 fs-0">
+                          <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;order&quot;:2453,&quot;total&quot;:87,&quot;customer&quot;:{&quot;avatar&quot;:&quot;/team/32.webp&quot;,&quot;name&quot;:&quot;Carry Anna&quot;},&quot;payment_status&quot;:{&quot;label&quot;:&quot;Complete&quot;,&quot;type&quot;:&quot;badge-phoenix-success&quot;,&quot;icon&quot;:&quot;check&quot;},&quot;fulfilment_status&quot;:{&quot;label&quot;:&quot;Cancelled&quot;,&quot;type&quot;:&quot;badge-phoenix-secondary&quot;,&quot;icon&quot;:&quot;x&quot;},&quot;delivery_type&quot;:&quot;Cash on delivery&quot;,&quot;date&quot;:&quot;Dec 12, 12:56 PM&quot;}">
+                        </div>
+                      </td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
+    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->total }}</td>
+    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->envio }}</td>
+    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->precio }}</td>
+   
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
-    <td>{{ $pedidos[$i]->direccion }}</td>
+    
     <td>{{ $pedidos[$i]->tipo }}</td>
 
     <!--Empieza If s de estados -->
@@ -353,14 +372,14 @@ jQuery(document).ready(function($){
     @endif
 
 
-
+    <td>{{ $pedidos[$i]->pagado }}</td>
 
   <!--Termina If s de estados -->
     <td> {{ date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega)) }}</td>
-    <td> {{ $pedidos[$i]->agencia }}</td>
-    <td> {{ $pedidos[$i]->repartidor }}</td>
-    <td> {{ $pedidos[$i]->ruta }}</td>
-    <td> {{ $pedidos[$i]->nota }}</td>
+    
+   
+    
+   
  
 
     </tr>
