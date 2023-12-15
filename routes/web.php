@@ -64,6 +64,7 @@ Route::get('pedido/indexfiltro/{id}', [App\Http\Controllers\PedidoController::cl
 
 Route::get('pedido/indexdigitadofiltro/{id}', [App\Http\Controllers\PedidoController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
 Route::get('pedido/indexdigitado/', [App\Http\Controllers\PedidoController::class, 'indexdigitado'] )->name('indexdigitado') ;
+Route::get('digitadocomerestado/{comercio}/{estado}', [App\Http\Controllers\PedidoController::class, 'digitadocomerestado'] )->name('digitadocomerestado') ;
 
 Route::get('comercio/guardar', [App\Http\Controllers\VendedorController::class, 'guardar'] )->name('guardar') ;
 

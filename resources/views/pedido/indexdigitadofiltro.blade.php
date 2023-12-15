@@ -195,8 +195,8 @@ jQuery(document).ready(function($){
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -245,14 +245,17 @@ jQuery(document).ready(function($){
         
 
 
-
+       
          
 
             <ul class="nav nav-links mb-3 mb-lg-2 mx-n3">
+            <li class="nav-item"><a class="nav-link" href="{{url('digitadocomerestado',['comercio' => $comercio, 'estado' => 'Entregado'])}}"><span>Entregados</span><span class="text-700 fw-semi-bold">( {{ $entrega }})</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('digitadocomerestado',['comercio' => $comercio, 'estado' => 'Creado'])}}"><span>Creado</span><span class="text-700 fw-semi-bold">( {{ $creado }})</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('digitadocomerestado',['comercio' => $comercio, 'estado' => 'En ruta'])}}"><span>En ruta</span><span class="text-700 fw-semi-bold">( {{ $ruta }})</span></a></li>
+
             
-            <li class="nav-item"><a class="nav-link" href="#"><span>Reprogramados </span><span class="text-700 fw-semi-bold">({{ $reprogra }})</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>No Retirados </span><span class="text-700 fw-semi-bold">({{ $noentrega }})</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><span>Entregados</span><span class="text-700 fw-semi-bold">( {{ $entrega }})</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('digitadocomerestado',['comercio' => $comercio, 'estado' => 'No retirado'])}}"><span>No Retirados </span><span class="text-700 fw-semi-bold">({{ $noentrega }})</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url('digitadocomerestado',['comercio' => $comercio, 'estado' => 'Reprogramado'])}}"><span>Reprogramados </span><span class="text-700 fw-semi-bold">({{ $reprogra }})</span></a></li>
            
           </ul>
 
@@ -319,7 +322,7 @@ jQuery(document).ready(function($){
         <th style="">Repartidor</th>
         <th style="">Ruta</th>
         <th style="">Nota</th>
-        <th style="">Opciones</th>
+        
     </tr>
 </thead>
 <tbody class="list">
@@ -358,91 +361,8 @@ jQuery(document).ready(function($){
     <td> {{ $pedidos[$i]->repartidor }}</td>
     <td> {{ $pedidos[$i]->ruta }}</td>
     <td> {{ $pedidos[$i]->nota }}</td>
-    <span hidden id="nom{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->vendedor }}</span>
-    <span hidden id="des{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->destinatario }}</span>
-    <span hidden id="tel{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->telefono }}</span>
-    <span hidden id="dir{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->direccion}}</span>
-    <span hidden id="fec{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->created_at))  }}</span>
-    <span hidden id="fece{{ $pedidos[$i]->id }}"> {{  date('d/m/Y', strtotime($pedidos[$i]->fecha_entrega))}}</span>
-    <span hidden id="tip{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->tipo}}</span>
-    <span hidden id="este{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estado}}</span>
-    <span hidden id="estp{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->pagado}}</span>
-    <span hidden id="pre{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->precio}}</span>
-    <span hidden id="env{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->envio}}</span>
-    <span hidden id="tot{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->total}}</span>
-    <span hidden id="ing{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ingresado}}</span>
-    <span hidden id="ang{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->agencia}}</span>
-    <span hidden id="rep{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->repartidor}}</span>
-    <span hidden id="rut{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->ruta}}</span>
-    <span hidden id="not{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->nota}}</span>
-    <span hidden id="est{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->estante}}</span>
-    <span hidden id="cob{{ $pedidos[$i]->id }}"> {{ $pedidos[$i]->cobroenvio}}</span>
-    <span hidden id="fott{{ $pedidos[$i]->id }}"> /storage/{{ $pedidos[$i]->foto}}</span>
-    <span hidden id="fot2{{ $pedidos[$i]->id }}"> /storage/{{ $pedidos[$i]->foto2}}</span>
-    <span hidden id="fot3{{ $pedidos[$i]->id }}"> /storage/{{ $pedidos[$i]->foto3}}</span>
-
-    <td class="opciones text-center" style="">
-    
-   
-  
  
-    <a href="" class="dropdown-toggle" data-toggle="dropdown">
 
-    <i class="fas fa-list"></i></a>
-    <ul class="dropdown-menu" style="background-color: #ffffff;"> 
-     <div class="botones"> 
-     @can('crear-rol')
-    <li class="botones">
-    &nbsp;
-    <i class="fas fa-edit"></i>
-    &nbsp;&nbsp;
-    <a href="/pedidos/{{ $pedidos[$i]->id }}/edit" ><button style="background: none; border: 0;">Editar</button></a></li> 
-    @endcan
-    </div>  
-	<li class="botones">
-   
-    &nbsp;
-    <i class="fas fa-eye"></i>
-    &nbsp;&nbsp;
-    <button type="button" class="edit" data-toggle="modal" value="{{ $pedidos[$i]->id }}" data-target="#exampleModal" style="background: none; border: 0;">Ver</button>
-</form>
-</li>
-
-<div class="botones"> 
-    <li class="botones">
-    &nbsp;
-    <i class="fas fa-edit"></i>
-    &nbsp;&nbsp;
-    <a href="/pedidos/etiqueta/{{ $pedidos[$i]->id }}" target="_blank"><button style="background: none; border: 0;" formtarget="_blank">Etiqueta</button></a></li> 
-    </div>  
-    @can('crear-rol')
-   
-<li class="botones">
-    <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
-        @csrf
-        @method('DELETE')
-        &nbsp;
-        <i class="fas fa-trash-alt"></i> 
-        &nbsp;&nbsp;
-        <button style="background: none; border: 0;">Eliminar</button>
-        </form>
-        </li>
-        @endcan
-    </ul>
- 
-  <!--
- <a class="btn btn-info" href="{{ route('pedidos.edit', $pedidos[$i]->id) }}">Editar</a>
-
-
- <form action="{{ route ('pedidos.destroy', $pedidos[$i]->id)}}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-danger">Eliminar</button>
-        </form>
-
--->
-
-    </td>
     </tr>
     @endfor
 </tbody>

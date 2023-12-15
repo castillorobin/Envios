@@ -63,11 +63,13 @@ class PedidoController extends Controller
         //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
         $pedidos = Pedido::where('vendedor', $comercio)->get();
         $vendedores = Vendedor::all();
+        
         $nota= ' ';
         $entrega = 0;
         $reprogra = 0;
         $noentrega = 0;
-
+        $creado = 0;
+        $ruta = 0;
         foreach($pedidos as $pedido) {
            if ($pedido->estado == 'Entregado') {
             $entrega+=1;
@@ -78,14 +80,56 @@ class PedidoController extends Controller
            if ($pedido->estado == 'No retirado') {
             $noentrega+=1;
            }
+           if ($pedido->estado == 'Creado') {
+            $creado+=1;
+           }
+           if ($pedido->estado == 'En ruta') {
+            $ruta+=1;
+           }
         }
 
-        return view('pedido.indexdigitadofiltro', compact('pedidos','vendedores','nota','entrega','reprogra','noentrega'));
+        return view('pedido.indexdigitadofiltro', compact('pedidos','vendedores','nota','entrega','reprogra','noentrega','creado', 'comercio', 'ruta' ));
 
 
     }
+   
+
+    public function digitadocomerestado($comercio, $estado)
+    {
+        //$pedidos = Pedido::all();
+        //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        $pedidos = Pedido::where('vendedor', $comercio)->where('estado', $estado)->get();
+
+        $vendedores = Vendedor::all();
+        
+        $nota= ' ';
+        $entrega = 0;
+        $reprogra = 0;
+        $noentrega = 0;
+        $creado = 0;
+        $ruta = 0;
+        foreach($pedidos as $pedido) {
+           if ($pedido->estado == 'Entregado') {
+            $entrega+=1;
+           }
+           if ($pedido->estado == 'Reprogramado') {
+            $reprogra+=1;
+           }
+           if ($pedido->estado == 'No retirado') {
+            $noentrega+=1;
+           }
+           if ($pedido->estado == 'Creado') {
+            $creado+=1;
+           }
+           if ($pedido->estado == 'En ruta') {
+            $ruta+=1;
+           }
+        }
+
+        return view('pedido.indexdigitadofiltro', compact('pedidos','vendedores','nota','entrega','reprogra','noentrega','creado', 'comercio', 'ruta' ));
 
 
+    }
     public function descargarRespaldo()
 {
     // Configuración de la base de datos
