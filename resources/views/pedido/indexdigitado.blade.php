@@ -4,6 +4,8 @@
 @section('content')
 
 
+
+
 <style>
     @media print{
 @page {
