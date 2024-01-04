@@ -183,14 +183,23 @@ jQuery(document).ready(function($){
     //console.log(data.text);   http://209.145.56.57/
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text; 
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text; 
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
    
    
 });
+
+
+function actualizar(opcion){
+    var data = opcion.value;
+
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
+
+        
+    }
 
 
 
@@ -213,21 +222,18 @@ jQuery(document).ready(function($){
                 
                 <div class="col-sm-6 mt-4"> <!-- div buscar -->
 
-<div class="input-group mb-3 ">
 
-<div class="input-group-prepend">
-<span class="input-group-text" id="basic-addon1"> <i class="fas fa-search"></i> </span>
-</div>
 
-<select class="mi-selector" name="comer" id="comer">
-    <option value="">Buscar Comercio</option>
+<select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)">
+<option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
        
                         @endfor
+  
 </select>
 
-</div>
+
 </div> <!-- Termina div buscar  -->
 
 
@@ -266,19 +272,26 @@ jQuery(document).ready(function($){
 <table id="tpedido" class="table table-striped mt-2">
 <thead style="">
         
+<th class="white-space-nowrap fs--1 align-middle ps-0" style="width:26px;">
+                        <div class="form-check mb-0 fs-0">
+                          <input class="form-check-input" id="checkbox-bulk-order-select" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;order-table-body&quot;}">
+                        </div>
+                      </th>
         <th style="">ID</th>
+        <th style="">Total</th>
+        <th style="">Envio</th>
+        <th style="">Precio</th>
         <th style="">Comercio</th>
-        <th style="">Destinatario</th>
-        <th style="">Direccion</th>
+        <th style="">Cliente</th>
         
-        <th style="">Tipo</th>
-        <th style="">Estado del envio</th>
+        
+       
+        
+        <th style="">Tipo de orden</th>
+        <th style="">Estado del orden</th>
+        <th style="">Estado del pago</th>
         <th style="">Fecha de entrega</th>
-        <th style="">Agencia</th>
-        <th style="">Repartidor</th>
-        <th style="">Ruta</th>
-        <th style="">Nota</th>
-        <th style="">Opciones</th>
+        
     </tr>
 </thead>
 <tbody>
