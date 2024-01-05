@@ -263,7 +263,7 @@ function actualizar(opcion){
 
   
             </div>
-
+            <br>
 
             <div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
 
