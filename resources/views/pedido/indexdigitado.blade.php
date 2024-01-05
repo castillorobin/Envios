@@ -280,9 +280,7 @@ function actualizar(opcion){
                         </div>
                       </th>
         <th style="">ID</th>
-        <th style="">Total</th>
-        <th style="">Envio</th>
-        <th style="">Precio</th>
+        
         <th style="">Comercio</th>
         <th style="">Cliente</th>
         
@@ -290,6 +288,9 @@ function actualizar(opcion){
        
         
         <th style="">Tipo de orden</th>
+        <th style="">Total</th>
+        <th style="">Envio</th>
+        <th style="">Precio</th>
         <th style="">Estado del orden</th>
         <th style="">Estado del pago</th>
         <th style="">Fecha de entrega</th>
