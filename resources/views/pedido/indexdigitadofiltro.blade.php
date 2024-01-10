@@ -312,7 +312,9 @@ jQuery(document).ready(function($){
 function actualizar(opcion){
     var data = opcion.value;
 
-    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
+    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + opcion.value; 
+
+//window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
 
         
     }
@@ -415,9 +417,7 @@ function actualizar(opcion){
                         </div>
                       </th>
         <th style="">ID</th>
-        <th style="">Total</th>
-        <th style="">Envio</th>
-        <th style="">Precio</th>
+        
         <th style="">Comercio</th>
         <th style="">Cliente</th>
         
@@ -425,6 +425,9 @@ function actualizar(opcion){
        
         
         <th style="">Tipo de orden</th>
+        <th style="">Total</th>
+        <th style="">Envio</th>
+        <th style="">Precio</th>
         <th style="">Estado del orden</th>
         <th style="">Estado del pago</th>
         <th style="">Fecha de entrega</th>
@@ -445,15 +448,15 @@ function actualizar(opcion){
                         </div>
                       </td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
-    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->total }}</td>
-    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->envio }}</td>
-    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->precio }}</td>
+  
    
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     
     <td>{{ $pedidos[$i]->tipo }}</td>
-
+    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->total }}</td>
+    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->envio }}</td>
+    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->precio }}</td>
     <!--Empieza If s de estados -->
 
     @if( $pedidos[$i]->estado =='Entregado')

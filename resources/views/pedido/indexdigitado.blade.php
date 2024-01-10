@@ -196,7 +196,9 @@ jQuery(document).ready(function($){
 function actualizar(opcion){
     var data = opcion.value;
 
-    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
+    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + opcion.value; 
+
+    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
 
         
     }
@@ -261,7 +263,7 @@ function actualizar(opcion){
 
   
             </div>
-
+            <br>
 
             <div class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
 
@@ -278,9 +280,7 @@ function actualizar(opcion){
                         </div>
                       </th>
         <th style="">ID</th>
-        <th style="">Total</th>
-        <th style="">Envio</th>
-        <th style="">Precio</th>
+        
         <th style="">Comercio</th>
         <th style="">Cliente</th>
         
@@ -288,6 +288,9 @@ function actualizar(opcion){
        
         
         <th style="">Tipo de orden</th>
+        <th style="">Total</th>
+        <th style="">Envio</th>
+        <th style="">Precio</th>
         <th style="">Estado del orden</th>
         <th style="">Estado del pago</th>
         <th style="">Fecha de entrega</th>
