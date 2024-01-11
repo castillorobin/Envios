@@ -41,7 +41,7 @@
               <h1>Personalizado</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)">
+                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"placeholder":true}' name="comer" onchange="actualizar(this)" >
 <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
@@ -54,70 +54,66 @@
 
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="1">
                   <label for="floatingInputGrid">Destinatario </label>
                 </div>
               </div>
               
               <div class="col-sm-6 col-md-8">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="2">
                   <label for="floatingInputGrid">Direccion </label>
                 </div>
               </div>
 
               <div class="col-sm-6 col-md-4">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="4">
                   <label for="floatingInputGrid">Telefono </label>
                 </div>
               </div>
               
+              <div class="col-sm-6 col-md-6">
+                <div class="form-floating">
+                <select id="cenvio" name="cenvio" class="form-control" tabindex="5">
+          <option value="Pendiente">Pendiente</option>
+          <option value="Pagado">Pagado</option>
+          </select>
+                  <label for="floatingInputBudget">Cobro del envio</label>
+                </div>
+              </div>
              
               <div class="col-md-6 ">
               <div class="form-floating">
-                  <input class="form-control" id="costo" type="text" placeholder="Project title">
+                  <input class="form-control" id="costo" type="text" placeholder="Project title" tabindex="6">
                   <label for="floatingInputGrid">Precio del paquete</label>
                 </div>
               </div>
               <div class="col-md-6 ">
                 <div class="form-floating">
-                  <input class="form-control" id="precio" type="text" placeholder="Budget">
+                  <input class="form-control" id="precio" type="text" placeholder="Budget" tabindex="7">
                   <label for="floatingInputBudget">Precio del envio</label>
                 </div>
               </div>
               
               <div class="col-md-6 ">
               <div class="form-floating">
-                  <input class="form-control" id="envio" type="text" placeholder="Project title">
+                  <input class="form-control" id="envio" type="text" placeholder="Project title" tabindex="8">
                   <label for="floatingInputGrid">Total a pagar</label>
                 </div>
               </div>
-              <div class="col-sm-6 ">
-                <div class="form-floating">
-                <select id="tenvio" name="tenvio" class="form-control" tabindex="7">
-      
-      <option value="Personalizado">Personalizado</option>
-      <option value="Personalizado departamental">Personalizado departamental</option>
-      <option value="Punto fijo">Punto fijo</option>
-      <option value="Casillero departamental">Casillero departamental</option>
-      <option value="Casillero San Salvador">Casillero San Salvador</option>
-      <option value="Casillero San Miguel">Casillero San Miguel</option>
-      <option value="Casillero Santa Ana">Casillero Santa Ana</option>
-      <option value="Casillero centro logístico">Casillero centro logístico</option>
-    </select>
-                  <label for="floatingSelectAdmin">Tipo del envio</label>
-                </div>
-              </div>
+              
 
 
+              
+           
 
 
 
 
               <div class="col-sm-6 col-md-6">
                 <div class="form-floating">
-                  <select class="form-select" id="floatingSelectAdmin">
+                  <select class="form-select" id="floatingSelectAdmin" tabindex="9">
                   <option value="Creado" >Creado</option>
                   <option value="Entregado">Entregado</option>
                     
@@ -143,7 +139,7 @@
 
               <div class="col-sm-6 col-md-6">
                 <div class="form-floating">
-                <select id="pagado" name="pagado" class="form-select" id="floatingSelectAdmin">
+                <select id="pagado" name="pagado" class="form-select" id="floatingSelectAdmin" tabindex="10">
                     <option value="Por pagar">Por pagar</option>
                     <option value="Pagado">Pagado</option>
                     <option value="Trans. a la empresa">Trans. a la empresa</option>
@@ -154,26 +150,38 @@
                 </div>
               </div>
 
-              <div class="col-sm-6 col-md-6">
+
+
+
+              <div class="col-sm-6 ">
                 <div class="form-floating">
-                <select id="cenvio" name="cenvio" class="form-control" tabindex="8">
-          <option value="Pendiente">Pendiente</option>
-          <option value="Pagado">Pagado</option>
-          </select>
-                  <label for="floatingInputBudget">Cobro del envio</label>
+                <select id="tenvio" name="tenvio" class="form-control" tabindex="11">
+      
+      <option value="Personalizado">Personalizado</option>
+      <option value="Personalizado departamental">Personalizado departamental</option>
+      <option value="Punto fijo">Punto fijo</option>
+      <option value="Casillero departamental">Casillero departamental</option>
+      <option value="Casillero San Salvador">Casillero San Salvador</option>
+      <option value="Casillero San Miguel">Casillero San Miguel</option>
+      <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+      <option value="Casillero centro logístico">Casillero centro logístico</option>
+    </select>
+                  <label for="floatingSelectAdmin">Tipo del envio</label>
                 </div>
               </div>
+
+
                 
               <div class="col-md-6">
                 <div class="form-floating">
-                <input class="form-control" id="basic-form-dob" type="date" />
+                <input class="form-control" id="basic-form-dob" type="date" tabindex="12" />
                   <label for="floatingInputBudget">Fecha de entrega </label>
                 </div>
               </div>
 
               <div class="col-md-12">
                 <div class="form-floating">
-                  <input class="form-control" id="total" type="textarea" placeholder="Budget">
+                <textarea class="form-control" id="exampleTextarea" rows="3" tabindex="13"> </textarea>
                   <label for="floatingInputBudget">Nota</label>
                 </div>
               </div>
@@ -184,10 +192,10 @@
               <div class="col-12 ">
                 <div class="row g-3 justify-content-end">
                   <div class="col-auto">
-                    <button class="btn btn-phoenix-primary px-5">Cancelar</button>
+                    <button class="btn btn-phoenix-primary px-5" tabindex="14">Cancelar</button>
                   </div>
                   <div class="col-auto">
-                    <button class="btn btn-primary px-5 px-sm-15">Guardar</button>
+                    <button class="btn btn-primary px-5 px-sm-15" tabindex="15">Guardar</button>
                   </div>
 
                 </div>
