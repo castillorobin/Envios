@@ -2,6 +2,70 @@
 @extends('layouts.app')
 
 @section('content')
+
+<script>
+ 
+function myFunction() {
+  document.getElementById("myForm").reset();
+}
+ $(document).ready(function() {
+  
+   					$("#envio").change(function() {
+       												 //alert($(this).val());
+          const tenv = document.getElementById("cenvio").value;
+					const preci = parseFloat(document.getElementById("precio").value);						                                                    
+          const envi =parseFloat($(this).val()); 
+          
+          if(tenv=="Pagado")
+          {
+            document.getElementById("total").value = preci;
+          }else{
+            document.getElementById("total").value = preci - envi;
+          }
+                    
+
+
+    				});
+
+            $("#precio").change(function() {
+       												 //alert($(this).val());
+          const tenv2 = document.getElementById("cenvio").value;
+					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total").value = preci2;
+          }else{
+            document.getElementById("total").value = preci2 - envi2;
+          }
+                    
+
+
+    				});
+
+
+            $("#cenvio").change(function() {
+       												 //alert($(this).val());
+          const tenv3 = document.getElementById("precio").value;
+					const envi3 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci3 =document.getElementById("cenvio").value; 
+          
+          if(preci3=="Pagado")
+          {
+            document.getElementById("total").value = tenv3;
+          }else{
+            document.getElementById("total").value = tenv3 - envi3;
+          }
+                    											
+    				});
+              
+                                            });
+
+  
+</script>
+
+
       
       <div class="row">
       <nav class="mb-2" aria-label="breadcrumb">
@@ -68,7 +132,7 @@
 
               <div class="col-sm-6 col-md-4">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="4">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="4" data-inputmask="'mask': '9999-9999'">
                   <label for="floatingInputGrid">Telefono </label>
                 </div>
               </div>
@@ -85,20 +149,20 @@
              
               <div class="col-md-6 ">
               <div class="form-floating">
-                  <input class="form-control" id="costo" type="text" placeholder="Project title" tabindex="6">
+                  <input class="form-control" name="precio" id="precio" type="text" placeholder="Project title" tabindex="6">
                   <label for="floatingInputGrid">Precio del paquete</label>
                 </div>
               </div>
               <div class="col-md-6 ">
                 <div class="form-floating">
-                  <input class="form-control" id="precio" type="text" placeholder="Budget" tabindex="7">
+                  <input class="form-control" name="envio" id="envio" type="text" placeholder="Budget" tabindex="7">
                   <label for="floatingInputBudget">Precio del envio</label>
                 </div>
               </div>
               
               <div class="col-md-6 ">
               <div class="form-floating">
-                  <input class="form-control" id="envio" type="text" placeholder="Project title" tabindex="8">
+                  <input class="form-control" name="total" id="total" type="text" placeholder="Project title" tabindex="8">
                   <label for="floatingInputGrid">Total a pagar</label>
                 </div>
               </div>
@@ -465,6 +529,15 @@
           </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
 
+ 
+<script>
+  $(document).ready(function(){
+  
+ /* $(":input").inputmask();*/
+ Inputmask().mask(document.querySelectorAll("input"));
+});
+</script>
         
 @endsection
