@@ -148,7 +148,7 @@ function myFunction() {
               </div>
              
               <div class="col-md-6 ">
-              <div class="input-group mb-3 form-floating">
+              <div class="input-group form-floating">
                 <span class="input-group-text">$</span>
 
                 <input class="form-control" name="precio" id="precio" type="text" placeholder="Precio del paquete" tabindex="6" />
@@ -161,7 +161,7 @@ function myFunction() {
 
              
               <div class="col-md-6 ">
-              <div class="input-group mb-3 form-floating">
+              <div class="input-group form-floating">
                 <span class="input-group-text">$</span>
 
                 <input class="form-control" name="envio" id="envio" type="text" placeholder="Budget" tabindex="7">
@@ -175,7 +175,7 @@ function myFunction() {
             
 
               <div class="col-md-6 ">
-              <div class="input-group mb-3 form-floating">
+              <div class="input-group form-floating">
                 <span class="input-group-text">$</span>
 
                 <input class="form-control" name="total" id="total" type="text" placeholder="Project title" tabindex="8">
