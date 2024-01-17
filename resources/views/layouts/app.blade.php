@@ -77,6 +77,9 @@
     <link href="../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
     <link href="../../assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl" disabled="true">
     <link href="../../assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+
+   
+
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> 
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -144,6 +147,7 @@
     <script src="../../vendors/dayjs/dayjs.min.js"></script>
     <script src="../../vendors/choices/choices.min.js"></script>
     <script src="../../assets/js/phoenix.js"></script>
+    <script src="../../assets/js/flatpickr.js"></script>
 
 </body>
 <!--

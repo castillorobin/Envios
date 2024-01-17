@@ -105,7 +105,7 @@ function myFunction() {
               <h1>Personalizado</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"placeholder":true}' name="comer" onchange="actualizar(this)" >
+                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)" >
 <option value="">Buscar Comercio</option>
     @for($i=0;  $i< count($vendedores); $i++ )
                     <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
@@ -148,28 +148,45 @@ function myFunction() {
               </div>
              
               <div class="col-md-6 ">
-              <div class="form-floating">
-                  <input class="form-control" name="precio" id="precio" type="text" placeholder="Project title" tabindex="6">
-                  <label for="floatingInputGrid">Precio del paquete</label>
-                </div>
-              </div>
-              <div class="col-md-6 ">
-                <div class="form-floating">
-                  <input class="form-control" name="envio" id="envio" type="text" placeholder="Budget" tabindex="7">
-                  <label for="floatingInputBudget">Precio del envio</label>
-                </div>
-              </div>
-              
-              <div class="col-md-6 ">
-              <div class="form-floating">
-                  <input class="form-control" name="total" id="total" type="text" placeholder="Project title" tabindex="8">
-                  <label for="floatingInputGrid">Total a pagar</label>
-                </div>
-              </div>
-              
+              <div class="input-group mb-3 form-floating">
+                <span class="input-group-text">$</span>
 
+                <input class="form-control" name="precio" id="precio" type="text" placeholder="Precio del paquete" tabindex="6" />
+               
+                
+                <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Precio del paquete</label>
+                
+                </div>                                
+              </div>
 
-              
+             
+              <div class="col-md-6 ">
+              <div class="input-group mb-3 form-floating">
+                <span class="input-group-text">$</span>
+
+                <input class="form-control" name="envio" id="envio" type="text" placeholder="Budget" tabindex="7">
+               
+                
+                <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Precio del envio</label>
+                
+                </div>                                
+              </div>
+
+            
+
+              <div class="col-md-6 ">
+              <div class="input-group mb-3 form-floating">
+                <span class="input-group-text">$</span>
+
+                <input class="form-control" name="total" id="total" type="text" placeholder="Project title" tabindex="8">
+               
+                
+                <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Total a pagar</label>
+                
+                </div>                                
+              </div>
+
+                      
            
 
 
@@ -238,7 +255,7 @@ function myFunction() {
                 
               <div class="col-md-6">
                 <div class="form-floating">
-                <input class="form-control" id="basic-form-dob" type="date" tabindex="12" />
+                <input class="form-control datetimepicker" placeholder="dd/mm/yyyy" data-options='{"disableMobile":true,"dateFormat":"d/m/Y"}' id="basic-form-dob" type="date" tabindex="12" />
                   <label for="floatingInputBudget">Fecha de entrega </label>
                 </div>
               </div>
