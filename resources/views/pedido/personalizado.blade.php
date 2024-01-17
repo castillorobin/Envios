@@ -151,7 +151,7 @@ function myFunction() {
               <div class="input-group form-floating">
                 <span class="input-group-text">$</span>
 
-                <input class="form-control" name="precio" id="precio" type="text" placeholder="Precio del paquete" tabindex="6" />
+                <input class="form-control" name="precio" id="precio" type="text" placeholder="Precio del paquete" tabindex="6" value="0" />
                
                 
                 <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Precio del paquete</label>
@@ -164,7 +164,7 @@ function myFunction() {
               <div class="input-group form-floating">
                 <span class="input-group-text">$</span>
 
-                <input class="form-control" name="envio" id="envio" type="text" placeholder="Budget" tabindex="7">
+                <input class="form-control" name="envio" id="envio" type="text" placeholder="Budget" value="0" tabindex="7">
                
                 
                 <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Precio del envio</label>
