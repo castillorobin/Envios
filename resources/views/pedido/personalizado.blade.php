@@ -245,6 +245,15 @@ jQuery(document).ready(function($){
           maximumSelectionLength: 1
         });
 
+      
+    });
+});
+</script>
+
+<script>  
+jQuery(document).ready(function($){
+    $(document).ready(function() {
+       
         $('.mi-selector2').select2({
           maximumSelectionLength: 1
         });
@@ -283,7 +292,7 @@ jQuery(document).ready(function($){
   <div class="p-1 rounded">
 
 
-                   
+
                         
                     <div class="col-xl-12">
             <form class="row g-3 mb-12">
@@ -482,6 +491,10 @@ jQuery(document).ready(function($){
   <div class="p-1 rounded">
 
 
+  
+                        
+ 
+
                    
                         
                     <div class="col-xl-12">
@@ -490,11 +503,10 @@ jQuery(document).ready(function($){
               <h1>Personalizado departamental</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                    
+          
 
-<select id="comer2" name="comer2" class="form-select " tabindex="1" multiple="multiple">
+<select style="width:100%;" id="comer2" name="comer2" class="form-control mi-selector" tabindex="1" autofocus required multiple="multiple">
                
-     
                @foreach($vendedores as $vendedor)
                <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
                @endforeach
@@ -689,14 +701,14 @@ jQuery(document).ready(function($){
               <h1>Punto Fijo</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)" >
-<option value="">Buscar Comercio</option>
-    @for($i=0;  $i< count($vendedores); $i++ )
-                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
-       
-                        @endfor
-  
-</select>
+          
+
+<select style="width:100%;" id="comer3" name="comer3" class="form-control mi-selector" tabindex="1" autofocus required multiple="multiple">
+               
+               @foreach($vendedores as $vendedor)
+               <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+               @endforeach
+               </select>
                 </div>
               </div>
 
@@ -887,14 +899,14 @@ jQuery(document).ready(function($){
               <h1>Casillero</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)" >
-<option value="">Buscar Comercio</option>
-    @for($i=0;  $i< count($vendedores); $i++ )
-                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
-       
-                        @endfor
-  
-</select>
+          
+
+<select style="width:100%;" id="comer4" name="comer4" class="form-control mi-selector" tabindex="1" autofocus required multiple="multiple">
+               
+               @foreach($vendedores as $vendedor)
+               <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+               @endforeach
+               </select>
                 </div>
               </div>
 
