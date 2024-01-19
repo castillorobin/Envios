@@ -1378,4 +1378,60 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
         $pedido->delete();
         return redirect('/pedidos');
     }
+
+
+
+
+    public function casillerog(Request $request)
+    {
+        $last = Pedido::latest('id')->first();
+        $lastid =$last->id;
+        $uid=0;
+        if($lastid < 1){
+            $uid=1;
+        }else{
+            $uid= $lastid + 1;
+        }
+        $rutaf='seleccionar';
+        $pedidof='1970-01-01';
+        $repaf='';
+        $pedido = new Pedido();
+        
+        $pedido->vendedor = $request->get('comer4');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
+        $pedido->precio = $request->get('precio');
+        $pedido->envio = $request->get('envio');
+        $pedido->total = $request->get('total');
+        $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
+        $pedido->nota = $request->get('nota');
+        $pedido->cobroenvio = $request->get('cenvio');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        $pedido->estante = $request->get('estante');
+        //$pedidos->foto = $request->get('foto');
+
+       
+
+
+        $pedido->save();
+  
+            return view('/pedido/create')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
+        
+
+        
+       
+    }
+
+
+
+
+
 }

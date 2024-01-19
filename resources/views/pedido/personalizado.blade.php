@@ -894,7 +894,8 @@ jQuery(document).ready(function($){
   
                         
   <div class="col-xl-12">
-            <form class="row g-3 mb-12">
+  <form action="/pedidos/casillero" method="POST" id="myForm" enctype="multipart/form-data" class="row g-3 mb-12" >
+    @csrf
               
               <h1>Casillero</h1>
               <div class="col-sm-12 col-md-12">
@@ -1073,7 +1074,8 @@ jQuery(document).ready(function($){
                     <button class="btn btn-phoenix-primary px-5" tabindex="14">Cancelar</button>
                   </div>
                   <div class="col-auto">
-                    <button class="btn btn-primary px-5 px-sm-15" tabindex="15">Guardar</button>
+                 
+                    <button type="submit"  class="btn btn-primary px-5 px-sm-15" tabindex="15" name="casi">Guardar</button>
                   </div>
 
                 </div>

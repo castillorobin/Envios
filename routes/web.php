@@ -125,4 +125,7 @@ Route::get('pedido/camara', [App\Http\Controllers\PedidoController::class, 'cama
 
 Route::get('estatus/agregar', [App\Http\Controllers\EstatusController::class, 'agregar'] )->name('agregar') ;
 
+
+Route::get('pedidos/casillero', [App\Http\Controllers\PedidoController::class, 'casillerog'] )->name('casillerog') ;
+
 }); 
