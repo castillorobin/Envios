@@ -2,6 +2,13 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+
+.select2-selection{
+  height: 45px !important;
+ 
+}
+</style>
 
 <script>
  
@@ -230,6 +237,21 @@
 
   
 </script>
+
+<script>  
+jQuery(document).ready(function($){
+    $(document).ready(function() {
+        $('.mi-selector').select2({
+          maximumSelectionLength: 1
+        });
+
+        $('.mi-selector2').select2({
+          maximumSelectionLength: 1
+        });
+
+    });
+});
+</script>
       
       <div class="row">
       <nav class="mb-2" aria-label="breadcrumb">
@@ -269,27 +291,28 @@
               <h1>Personalizado</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)" >
-<option value="">Buscar Comercio</option>
-    @for($i=0;  $i< count($vendedores); $i++ )
-                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
-       
-                        @endfor
-  
-</select>
+          
+
+<select id="comer" name="comer" class="form-control mi-selector" tabindex="1" autofocus required multiple="multiple">
+               
+     
+               @foreach($vendedores as $vendedor)
+               <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+               @endforeach
+               </select>
                 </div>
               </div>
 
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="1">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="2">
                   <label for="floatingInputGrid">Destinatario </label>
                 </div>
               </div>
               
               <div class="col-sm-6 col-md-8">
               <div class="form-floating">
-                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="2">
+                  <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="3">
                   <label for="floatingInputGrid">Direccion </label>
                 </div>
               </div>
@@ -467,14 +490,15 @@
               <h1>Personalizado departamental</h1>
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)" >
-<option value="">Buscar Comercio</option>
-    @for($i=0;  $i< count($vendedores); $i++ )
-                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
-       
-                        @endfor
-  
-</select>
+                    
+
+<select id="comer2" name="comer2" class="form-select " tabindex="1" multiple="multiple">
+               
+     
+               @foreach($vendedores as $vendedor)
+               <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
+               @endforeach
+               </select>
                 </div>
               </div>
 
