@@ -1382,19 +1382,48 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
 
 
 
+    public function persodepa()
+    {
+        $usuarios = User::all();
+        
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+       
+        $fecha = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $fecha = strftime("%A %d de %B %Y");
+        return view('pedido.persodepa')->with(['vendedores'=>$vendedores, 'usuarios'=>$usuarios]);
+    }
+
+    public function pfijo()
+    {
+        $usuarios = User::all();
+        
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+       
+        $fecha = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $fecha = strftime("%A %d de %B %Y");
+        return view('pedido.pfijo')->with(['vendedores'=>$vendedores, 'usuarios'=>$usuarios]);
+    }
+
+    public function pcasi()
+    {
+        $usuarios = User::all();
+        
+        setlocale(LC_TIME, "spanish");
+        $vendedores = Vendedor::all();
+       
+        $fecha = Carbon::today();
+        //$date = $date->format('l jS F Y');
+        $fecha = strftime("%A %d de %B %Y");
+        return view('pedido.pcasi')->with(['vendedores'=>$vendedores, 'usuarios'=>$usuarios]);
+    }
+
     public function casillerog(Request $request)
     {
-        $last = Pedido::latest('id')->first();
-        $lastid =$last->id;
-        $uid=0;
-        if($lastid < 1){
-            $uid=1;
-        }else{
-            $uid= $lastid + 1;
-        }
-        $rutaf='seleccionar';
-        $pedidof='1970-01-01';
-        $repaf='';
+        
         $pedido = new Pedido();
         
         $pedido->vendedor = $request->get('comer4');
@@ -1423,15 +1452,118 @@ $fechal = $fecha->format('d') . ' de ' . $mes . ' de ' . $fecha->format('Y');
 
         $pedido->save();
   
-            return view('/pedido/create')->with(['pedidos'=>$pedidos, 'vendedores'=>$vendedores, 'date'=>$date, 'repartidores'=>$repartidores, 'uid'=>$uid, 'pedidof'=>$pedidof, 'rutaf'=>$rutaf, 'repaf'=>$repaf, 'last'=>$last]);
-        
-
-        
+        return redirect()->back();
+   
        
     }
 
+    public function personali(Request $request)
+    {
+        
+        $pedido = new Pedido();
+        
+        $pedido->vendedor = $request->get('comer4');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
+        $pedido->precio = $request->get('precio');
+        $pedido->envio = $request->get('envio');
+        $pedido->total = $request->get('total');
+        $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
+        $pedido->nota = $request->get('nota');
+        $pedido->cobroenvio = $request->get('cenvio');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        $pedido->estante = $request->get('estante');
+        //$pedidos->foto = $request->get('foto');
+
+       
 
 
+        $pedido->save();
+  
+        return redirect()->back();
+   
+       
+    }
+
+    public function persodepar(Request $request)
+    {
+        
+        $pedido = new Pedido();
+        
+        $pedido->vendedor = $request->get('comer2');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
+        $pedido->precio = $request->get('preciopd');
+        $pedido->envio = $request->get('enviopd');
+        $pedido->total = $request->get('totalpd');
+        $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
+        $pedido->nota = $request->get('nota');
+        $pedido->cobroenvio = $request->get('cenvio');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        $pedido->estante = $request->get('estante');
+        //$pedidos->foto = $request->get('foto');
+
+       
+
+
+        $pedido->save();
+  
+        return redirect()->back();
+   
+       
+    }
+
+    public function puntof(Request $request)
+    {
+        
+        $pedido = new Pedido();
+        
+        $pedido->vendedor = $request->get('comer3');
+        $pedido->destinatario = $request->get('desti');
+        $pedido->telefono = $request->get('telefono');
+        $pedido->direccion = $request->get('direccion');
+        $pedido->fecha_entrega = $request->get('fentrega');
+        $pedido->precio = $request->get('preciopf');
+        $pedido->envio = $request->get('enviopf');
+        $pedido->total = $request->get('totalpf');
+        $pedido->estado = $request->get('estado');
+        $pedido->pagado = $request->get('pagado');
+        $pedido->servicio = $request->get('servicio');
+        $pedido->tipo = $request->get('tenvio');
+        $pedido->nota = $request->get('nota');
+        $pedido->cobroenvio = $request->get('cenviof');
+        $pedido->ingresado = $request->get('ingresado');
+        $pedido->agencia = $request->get('agencia');
+        $pedido->repartidor = $request->get('repartidor');
+        $pedido->ruta = $request->get('ruta');
+        $pedido->estante = $request->get('estante');
+        //$pedidos->foto = $request->get('foto');
+
+       
+
+
+        $pedido->save();
+  
+        return redirect()->back();
+   
+       
+    }
 
 
 }

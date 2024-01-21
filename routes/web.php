@@ -126,6 +126,13 @@ Route::get('pedido/camara', [App\Http\Controllers\PedidoController::class, 'cama
 Route::get('estatus/agregar', [App\Http\Controllers\EstatusController::class, 'agregar'] )->name('agregar') ;
 
 
-Route::get('pedidos/casillero', [App\Http\Controllers\PedidoController::class, 'casillerog'] )->name('casillerog') ;
+Route::get('pedido/casillerog', [App\Http\Controllers\PedidoController::class, 'casillerog'] )->name('casillerog') ;
+Route::get('pedido/personali', [App\Http\Controllers\PedidoController::class, 'personali'] )->name('personali') ;
+Route::get('pedido/persodepar', [App\Http\Controllers\PedidoController::class, 'persodepar'] )->name('persodepar') ;
+Route::get('pedido/puntof', [App\Http\Controllers\PedidoController::class, 'puntof'] )->name('puntof') ;
+
+Route::get('pedido/persodepa', [App\Http\Controllers\PedidoController::class, 'persodepa'] )->name('persodepa') ;
+Route::get('pedido/pfijo', [App\Http\Controllers\PedidoController::class, 'pfijo'] )->name('pfijo') ;
+Route::get('pedido/pcasi', [App\Http\Controllers\PedidoController::class, 'pcasi'] )->name('pcasi') ;
 
 }); 
