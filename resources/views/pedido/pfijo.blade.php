@@ -277,7 +277,7 @@ jQuery(document).ready(function($){
           <ul class="nav nav-underline" id="myTab" role="tablist">
           <li class="nav-item"> <a href="/pedido/crearp"> <button class="btn btn-phoenix-secondary me-1 mb-1 nav-link" type="button">Personalizado</button></a></li>
   <li class="nav-item"> <a href="/pedido/persodepa"> <button class="btn btn-phoenix-secondary me-1 mb-1 nav-link " type="button">Personalizado Departamental</button></a></li>
-  <li class="nav-item"> <a class="active" href="/pedido/pfijo"> <button class="btn btn-phoenix-secondary me-1 mb-1 nav-link active" type="button">Punto fijo</button></a></li>
+  <li class="nav-item"> <a class="nav-link active" href="/pedido/pfijo"> Punto fijo</a></li>
   <li class="nav-item"> <a href="/pedido/pcasi"> <button class="btn btn-phoenix-secondary me-1 mb-1 nav-link" type="button">Casillero</button></a></li>
   
 </ul>                 
