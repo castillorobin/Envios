@@ -211,7 +211,7 @@ Inicia nuevo formulario
                     <div class="card"> 
                         
 
-
+ 
 
 <form action="/pedidos" method="POST" id="myForm" enctype="multipart/form-data" >
     @csrf
