@@ -261,6 +261,43 @@ jQuery(document).ready(function($){
     });
 });
 </script>
+
+
+<script>
+  $(document).ready(function() {
+  $("input").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+
+$(document).ready(function() {
+  $("select").focusout(function() {
+    var value = $(this).val();
+    if (value.length == 0) {
+      $(this).addClass("is-invalid");
+      $(this).removeClass("is-valid");
+    } else {
+      $(this).removeClass("is-invalid");
+      $(this).addClass("is-valid");
+    }
+    /*
+           
+    */
+    console.log('Este campo es obligatorio');
+  });
+});
+</script>
       
       <div class="row">
       <nav class="mb-2" aria-label="breadcrumb">
@@ -337,33 +374,41 @@ jQuery(document).ready(function($){
                 <div class="form-floating">
           
 
-<select style="width:100%;" id="comer3" name="comer3" class="form-control mi-selector" tabindex="1" autofocus required multiple="multiple">
+<select style="width:100%;" id="comer3" name="comer3" class="form-control mi-selector" required tabindex="1" autofocus required multiple="multiple">
                
                @foreach($vendedores as $vendedor)
                <option value="{{ $vendedor->nombre }}">{{ $vendedor->nombre }}</option>
                @endforeach
                </select>
+               <div class="invalid-feedback">Este campo es obligatorio.</div>
+               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
                 </div>
               </div>
 
               <div class="col-sm-12 col-md-12">
                 <div class="form-floating">
-                  <input class="form-control" name="desti" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="1">
+                  <input class="form-control" name="desti" id="floatingInputGrid" type="text" required placeholder="Project title" tabindex="1">
                   <label for="floatingInputGrid">Destinatario </label>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
                 </div>
               </div>
               
               <div class="col-sm-6 col-md-8">
               <div class="form-floating">
-                  <input class="form-control" name="direccion" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="2">
+                  <input class="form-control" name="direccion" id="floatingInputGrid" type="text" required placeholder="Project title" tabindex="2">
                   <label for="floatingInputGrid">Direccion </label>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
                 </div>
               </div>
 
               <div class="col-sm-6 col-md-4">
               <div class="form-floating">
-                  <input class="form-control" name="telefono" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="4" data-inputmask="'mask': '9999-9999'">
+                  <input class="form-control" name="telefono" id="floatingInputGrid" type="text" required placeholder="Project title" tabindex="4" data-inputmask="'mask': '9999-9999'">
                   <label for="floatingInputGrid">Telefono </label>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+               <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
                 </div>
               </div>
               
@@ -375,6 +420,7 @@ jQuery(document).ready(function($){
           
           </select>
                   <label for="floatingInputBudget">Cobro del envio</label>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
              
@@ -386,6 +432,7 @@ jQuery(document).ready(function($){
                
                 
                 <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Precio del paquete</label>
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 
                 </div>                                
               </div>
@@ -399,7 +446,7 @@ jQuery(document).ready(function($){
                
                 
                 <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Precio del envio</label>
-                
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>                                
               </div>
 
@@ -413,7 +460,7 @@ jQuery(document).ready(function($){
                
                 
                 <label for="floatingInputBudget"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Total a pagar</label>
-                
+                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>                                
               </div>
 
@@ -446,6 +493,7 @@ jQuery(document).ready(function($){
 
                   </select>
                   <label for="floatingSelectAdmin">Estado del envio</label>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
 
@@ -459,6 +507,7 @@ jQuery(document).ready(function($){
             
                       </select>
                   <label for="floatingInputBudget">Estado del pago</label>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
 
@@ -480,6 +529,7 @@ jQuery(document).ready(function($){
       <option value="Casillero centro logístico">Casillero centro logístico</option>
     </select>
                   <label for="floatingSelectAdmin">Tipo del envio</label>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
 
@@ -489,6 +539,7 @@ jQuery(document).ready(function($){
                 <div class="form-floating">
                 <input class="form-control datetimepicker" name="fentrega" placeholder="dd/mm/yyyy" data-options='{"disableMobile":true,"dateFormat":"d/m/Y"}' id="basic-form-dob" type="date" tabindex="12" />
                   <label for="floatingInputBudget">Fecha de entrega </label>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
 
@@ -496,6 +547,7 @@ jQuery(document).ready(function($){
                 <div class="form-floating">
                 <textarea class="form-control" name="nota" id="exampleTextarea" rows="3" tabindex="13"> </textarea>
                   <label for="floatingInputBudget">Nota</label>
+                  <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div> 
                 </div>
               </div>
 
