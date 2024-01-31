@@ -515,7 +515,7 @@ $(document).ready(function() {
               <div class="col-12 ">
                 <div class="row g-3 justify-content-end">
                   <div class="col-auto">
-                    <button class="btn btn-phoenix-primary px-5" tabindex="14">Cancelar</button>
+                 <a href="/pedido/crearp">   <button class="btn btn-phoenix-primary px-5" tabindex="14">Cancelar</button></a>
                   </div>
                   <div class="col-auto">
                   <button type="submit"  class="btn btn-primary px-5 px-sm-15" tabindex="15" name="casi">Guardar</button>

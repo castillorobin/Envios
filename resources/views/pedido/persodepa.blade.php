@@ -389,9 +389,9 @@ $(document).ready(function() {
 
               <div class="col-sm-6 col-md-4">
               <div class="form-floating">
-                  <input class="form-control" name="telefono" id="floatingInputGrid" type="text" placeholder="Project title" required tabindex="4" data-inputmask="'mask': '9999-9999'">
+                  <input class="form-control" name="telefono" id="floatingInputGrid" type="text" placeholder="Project title" tabindex="4" data-inputmask="'mask': '9999-9999'">
                   <label for="floatingInputGrid">Telefono </label>
-                  <div class="invalid-feedback">Este campo es obligatorio.</div>
+                  
                <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>  
                 </div>
               </div>
@@ -541,7 +541,7 @@ $(document).ready(function() {
               <div class="col-12 ">
                 <div class="row g-3 justify-content-end">
                   <div class="col-auto">
-                    <button class="btn btn-phoenix-primary px-5" tabindex="14">Cancelar</button>
+                  <a href="/pedido/persodepa">   <button class="btn btn-phoenix-primary px-5" tabindex="14">Cancelar</button></a>
                   </div>
                   <div class="col-auto">
                     <button class="btn btn-primary px-5 px-sm-15" tabindex="15">Guardar</button>
