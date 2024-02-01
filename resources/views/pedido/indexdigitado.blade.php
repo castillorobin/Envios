@@ -281,19 +281,16 @@ function actualizar(opcion){
                       </th>
         <th style="">ID</th>
         
-        <th style="">Comercio</th>
-        <th style="">Cliente</th>
+        <th style="">COMERCIO</th>
+        <th style="">CLIENTE</th>
         
-        
-       
-        
-        <th style="">Tipo de orden</th>
-        <th style="">Total</th>
-        <th style="">Envio</th>
-        <th style="">Precio</th>
-        <th style="">Estado del orden</th>
-        <th style="">Estado del pago</th>
-        <th style="">Fecha de entrega</th>
+        <th style="">TIPO DE ORDEN</th>
+        <th style="">TOTAL</th>
+        <th style="">ENVIO</th>
+        <th style="">PRECIO</th>
+        <th style="">ESTADO DE LA ORDEN</th>
+        <th style="">ESTADO DEL PAGO</th>
+        <th style="">FECHA DE ENTREGA</th>
         
     </tr>
 </thead>
