@@ -196,9 +196,9 @@ jQuery(document).ready(function($){
 function actualizar(opcion){
     var data = opcion.value;
 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + opcion.value; 
+   // window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + opcion.value; 
 
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + opcion.value;
 
         
     }

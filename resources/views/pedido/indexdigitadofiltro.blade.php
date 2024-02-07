@@ -300,8 +300,8 @@ jQuery(document).ready(function($){
     //console.log(data.text);
     //document.getElementById('mostrar').value = data.text;
     //window.location = "https://appmeloexpress.com/pedido/indexdigitadofiltro/" + data.text; 
-    window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
-    //window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
+    //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + data.text;
+    window.location = "http://127.0.0.1:8000/pedido/indexdigitadofiltro/" + data.text;
         });
 
     });
@@ -444,10 +444,10 @@ function actualizar(opcion){
                           <input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;order&quot;:2453,&quot;total&quot;:87,&quot;customer&quot;:{&quot;avatar&quot;:&quot;/team/32.webp&quot;,&quot;name&quot;:&quot;Carry Anna&quot;},&quot;payment_status&quot;:{&quot;label&quot;:&quot;Complete&quot;,&quot;type&quot;:&quot;badge-phoenix-success&quot;,&quot;icon&quot;:&quot;check&quot;},&quot;fulfilment_status&quot;:{&quot;label&quot;:&quot;Cancelled&quot;,&quot;type&quot;:&quot;badge-phoenix-secondary&quot;,&quot;icon&quot;:&quot;x&quot;},&quot;delivery_type&quot;:&quot;Cash on delivery&quot;,&quot;date&quot;:&quot;Dec 12, 12:56 PM&quot;}">
                         </div>
                       </td>
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->id }}</td>
+    <td style="font-weight: bolder; color: #484f55;"><a href="/pedido/verorden/{{ $pedidos[$i]->id }}">{{ $pedidos[$i]->id }}</a></td>
   
    
-    <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->vendedor }}</td>
+    <td style="font-weight: bolder; color: #484f55;"> <a href="/pedido/verorden/{{ $pedidos[$i]->vendedor }}"> {{ $pedidos[$i]->vendedor }}</a></td>
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     
     <td>{{ $pedidos[$i]->tipo }}</td>

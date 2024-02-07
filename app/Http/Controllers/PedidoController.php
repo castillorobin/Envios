@@ -718,6 +718,19 @@ class PedidoController extends Controller
 
     }
 
+    public function verorden($id)
+    {
+
+        $pedidos = Pedido::where('vendedor', $id)->get();
+       // $repartidores = Repartidor::all();
+       //$pedido = Vendedor::find($id);
+       $comercio = Vendedor::where('nombre', $id)->get();
+        return view('pedido.verorden', compact('comercio', 'pedidos'));
+
+        
+
+    }
+
     public function cambiarestatus(Request $request)
     {
 

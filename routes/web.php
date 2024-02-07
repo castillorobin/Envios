@@ -96,6 +96,8 @@ Route::get('pedido/cambiando', [App\Http\Controllers\EstatusController::class, '
  
 Route::get('pedido/verpedido/{id}', [App\Http\Controllers\PedidoController::class, 'verpedido'] )->name('verpedido') ;
 
+Route::get('pedido/verorden/{id}', [App\Http\Controllers\PedidoController::class, 'verorden'] )->name('verorden') ;
+
 Route::get('reportes', [App\Http\Controllers\PedidoController::class, 'reporte'] )->name('reporte')->middleware('auth') ;
 Route::get('reportes/envio', [App\Http\Controllers\PedidoController::class, 'reporteenvio'] )->name('reporteenvio') ;
 Route::get('reportes/ganancia', [App\Http\Controllers\PedidoController::class, 'reporteganancia'] )->name('reporteganancia') ;
