@@ -137,4 +137,14 @@ Route::get('pedido/persodepa', [App\Http\Controllers\PedidoController::class, 'p
 Route::get('pedido/pfijo', [App\Http\Controllers\PedidoController::class, 'pfijo'] )->name('pfijo') ;
 Route::get('pedido/pcasi', [App\Http\Controllers\PedidoController::class, 'pcasi'] )->name('pcasi') ;
 
+
+//empleados
+Route::get('/empleados', function () {
+    return view('empleados.index');
+});
+Route::get('/empleados/crear', function () {
+    return view('empleados.crear');
+});
+
+
 }); 
